@@ -31,6 +31,15 @@ namespace AbnfToAntlr.Web {
         protected global::System.Web.UI.WebControls.Label lblInput;
         
         /// <summary>
+        /// lstStandardGrammars control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList lstStandardGrammars;
+        
+        /// <summary>
         /// txtInput control.
         /// </summary>
         /// <remarks>

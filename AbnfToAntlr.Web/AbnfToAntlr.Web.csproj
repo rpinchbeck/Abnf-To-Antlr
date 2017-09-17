@@ -59,6 +59,10 @@
     <Content Include="Antlr3.Runtime.License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Data\ABNF Internet Message Format %28RFC 5322%29.txt" />
+    <Content Include="App_Data\ABNF Specification %28RFC 5234%29.txt" />
+    <Content Include="App_Data\ABNF Uniform Resource Identifier %28RFC 3986%29.txt" />
+    <Content Include="App_Data\Empty.txt" />
     <Content Include="Copying.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

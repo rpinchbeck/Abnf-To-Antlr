@@ -92,6 +92,47 @@ namespace AbnfToAntlr.Web
 
             if (IsPostBack)
             {
+            }
+            else
+            {
+                lstStandardGrammars.Items.Add(new ListItem("Custom", "Custom"));
+                lstStandardGrammars.Items.Add(new ListItem("RFC 3986 (Uniform Resource Identifier)", "rfc-3986"));
+                lstStandardGrammars.Items.Add(new ListItem("RFC 5322 (Internet Message Format)", "rfc-5322"));
+                lstStandardGrammars.Items.Add(new ListItem("RFC 5234 (Augmented Backus-Naur Form)", "rfc-5234"));
+                this.lblOutput.Visible = false;
+                this.txtOutput.Visible = false;
+                this.txtError.Visible = false;
+            }
+        }
+
+        protected void lstStandardGrammars_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedFile = "Empty.txt";
+
+            switch ((sender as DropDownList).SelectedValue)
+            {
+                case "rfc-3986":
+                    selectedFile = "ABNF Uniform Resource Identifier (RFC 3986).txt";
+                    break;
+
+                case "rfc-5322":
+                    selectedFile = "ABNF Internet Message Format (RFC 5322).txt";
+                    break;
+
+                case "rfc-5234":
+                    selectedFile = "ABNF Specification (RFC 5234).txt";
+                    break;
+
+            }
+
+            txtInput.Text = System.IO.File.ReadAllText(Server.MapPath("~") + "/App_Data/" + selectedFile);
+            txtOutput.Text = "";
+            lblOutput.Visible = false;
+            txtOutput.Visible = false;
+        }
+
+        protected void butTranslate_Click(object sender, EventArgs e)
+        {
                 try
                 {
                     var translator = new AbnfToAntlrTranslator();
@@ -127,13 +168,5 @@ namespace AbnfToAntlr.Web
                     this.txtOutput.Visible = false;
                 }
             }
-            else
-            {
-                this.lblOutput.Visible = false;
-                this.txtOutput.Visible = false;
-                this.txtError.Visible = false;
-            }
-        }
-
     }
 }

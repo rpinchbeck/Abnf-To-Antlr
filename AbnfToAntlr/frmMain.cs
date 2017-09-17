@@ -43,6 +43,8 @@ namespace AbnfToAntlr
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 btnTranslate.Enabled = false;
                 var translator = new AbnfToAntlrTranslator();
                 bool performDirectTranslation = false;
@@ -72,13 +74,57 @@ namespace AbnfToAntlr
             }
             finally
             {
+                this.Cursor = Cursors.Default;
                 btnTranslate.Enabled = true;
+                lblOutput.Visible = true;
+                txtOutput.Visible = true;
             }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            cboStandardGrammars.Items.Add(new ListItem("Custom", "Custom"));
+            cboStandardGrammars.Items.Add(new ListItem("RFC 3986 (Uniform Resource Identifier)", "rfc-3986"));
+            cboStandardGrammars.Items.Add(new ListItem("RFC 5322 (Internet Message Format)", "rfc-5322"));
+            cboStandardGrammars.Items.Add(new ListItem("RFC 5234 (Augmented Backus-Naur Form)", "rfc-5234"));
+
+            cboStandardGrammars.DisplayMember = "Text";
+            cboStandardGrammars.ValueMember = "Value";
+
+            cboStandardGrammars.SelectedIndex = 0;
+        }
+
+        private void cboStandardGrammars_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedFile = "Empty.txt";
+
+            var selectedListItem = (ListItem)(sender as ComboBox).SelectedItem;
+            switch (selectedListItem.Value)
+            {
+                case "rfc-3986":
+                    selectedFile = "ABNF Uniform Resource Identifier (RFC 3986).txt";
+                    break;
+
+                case "rfc-5322":
+                    selectedFile = "ABNF Internet Message Format (RFC 5322).txt";
+                    break;
+
+                case "rfc-5234":
+                    selectedFile = "ABNF Specification (RFC 5234).txt";
+                    break;
+
+            }
+
+            var path = System.IO.Path.Combine("App_Data", selectedFile);
+            txtInput.Text = System.IO.File.ReadAllText(path);
+            txtOutput.Text = "";
+            lblOutput.Visible = false;
+            txtOutput.Visible = false;
         }
     }
 }

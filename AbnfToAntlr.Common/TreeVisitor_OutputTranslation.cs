@@ -454,15 +454,31 @@ namespace AbnfToAntlr.Common
                         Write(" (");
                     }
 
-                    for (int index = minValue; index < maxValue; index++)
+                    for (int count = minValue; count < maxValue; count++)
                     {
-                        if (index > minValue)
+                        if (count == minValue)
                         {
-                            Write(" ");
+                            Visit(element);
+                            Write("?");
                         }
+                        else
+                        {
+                            Write(" | ");
 
-                        Visit(element);
-                        Write("?");
+                            Write("(");
+
+                            for (int subCount = minValue; subCount <= count; subCount++)
+                            {
+                                if (subCount > minValue)
+                                {
+                                    Write(" ");
+                                }
+
+                                Visit(element);
+                            }
+
+                            Write(")");
+                        }
                     }
 
                     _nestedRepetitionCount--;
