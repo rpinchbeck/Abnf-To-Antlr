@@ -36,7 +36,7 @@ namespace AbnfToAntlr
             Console.Error.WriteLine("Translate FILE to ANTLR format and write the results to standard output.");
             Console.Error.WriteLine("If --stdin is specified instead of FILE, then standard input is used.");
             Console.Error.WriteLine("If --direct is specified, then a direct translation is performed.");
-            Console.Error.WriteLine("Example: AbnfToAntlr \"AbnfGrammar.txt\" >AntlrGrammar.g");
+            Console.Error.WriteLine("Example: AbnfToAntlr \"AbnfGrammar.txt\" >\"AntlrGrammar.g4\"");
         }
 
         [STAThread]
@@ -47,9 +47,7 @@ namespace AbnfToAntlr
         {
             if (args.Length == 0)
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmMain());
+                WinFormsMain();
                 return 0;
             }
             else
@@ -58,11 +56,18 @@ namespace AbnfToAntlr
             }
         }
 
+        static void WinFormsMain()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmMain());
+        }
+
         static int ConsoleMain(string[] args)
         {
             bool shouldShowSyntax = false;
             bool shouldPerformDirectTranslation = false;
-            int fileIndex = 0;
+            int fileArgIndex = 0;
 
             if (args.Length == 0)
             {
@@ -84,17 +89,16 @@ namespace AbnfToAntlr
 
                     case "--direct":
                         shouldPerformDirectTranslation = true;
-                        fileIndex = 1;
+                        fileArgIndex = 1;
                         break;
                 }
             }
 
-            if (shouldShowSyntax || fileIndex >= args.Length || args.Length > fileIndex + 1)
+            if (shouldShowSyntax || fileArgIndex >= args.Length || args.Length > fileArgIndex + 1)
             {
                 ShowSyntax();
                 return 1;
             }
-
 
             string path = null;
             System.IO.TextReader reader;
@@ -104,7 +108,7 @@ namespace AbnfToAntlr
             try
             {
                 // open input stream
-                if (args[fileIndex] == "--stdin")
+                if (args[fileArgIndex] == "--stdin")
                 {
                     path = "stdin";
                     reader = System.Console.In;

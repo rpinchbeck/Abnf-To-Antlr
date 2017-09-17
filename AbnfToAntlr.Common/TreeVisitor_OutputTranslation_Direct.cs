@@ -36,8 +36,8 @@ namespace AbnfToAntlr.Common
     {
         protected List<string> _lexerRules;
 
-        public TreeVisitor_OutputTranslation_Direct(ITokenStream tokens, System.IO.TextWriter writer)
-            : base(tokens, writer)
+        public TreeVisitor_OutputTranslation_Direct(ITokenStream tokens, System.IO.TextWriter writer, INamedCharacterLookup lookup)
+            : base(tokens, writer, lookup)
         {
         }
 

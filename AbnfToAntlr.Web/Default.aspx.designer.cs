@@ -10,7 +10,7 @@
 namespace AbnfToAntlr.Web {
     
     
-    public partial class Default {
+    public partial class DefaultPage {
         
         /// <summary>
         /// form1 control.

@@ -37,8 +37,8 @@ namespace AbnfToAntlr.Common
     {
         Dictionary<char, NamedCharacter> _distinctCharacters;
 
-        public TreeVisitor_OutputTranslation_Indirect(ITokenStream tokens, System.IO.TextWriter writer, Dictionary<char, NamedCharacter> distinctCharacters)
-            : base(tokens, writer)
+        public TreeVisitor_OutputTranslation_Indirect(ITokenStream tokens, System.IO.TextWriter writer, Dictionary<char, NamedCharacter> distinctCharacters, INamedCharacterLookup lookup)
+            : base(tokens, writer, lookup)
         { 
             _distinctCharacters =distinctCharacters;
         }
@@ -68,7 +68,7 @@ namespace AbnfToAntlr.Common
                     Write(" ");
                 }
 
-                var namedCharacter = NamedCharacter.GetNamedCharacter(text[index]);
+                var namedCharacter = _lookup.GetNamedCharacter(text[index]);
                 Write(namedCharacter.Name);
             }
 
@@ -113,7 +113,7 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected override void WriteValue(int value)
         {
-            var namedCharacter = NamedCharacter.GetNamedCharacter((char)value);
+            var namedCharacter = _lookup.GetNamedCharacter((char)value);
 
             Write(namedCharacter.Name);
         }

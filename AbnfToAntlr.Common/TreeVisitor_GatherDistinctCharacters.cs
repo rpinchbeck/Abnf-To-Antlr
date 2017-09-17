@@ -32,10 +32,12 @@ namespace AbnfToAntlr.Common
     class TreeVisitor_GatherDistinctCharacters : TreeVisitor
     {
         IDictionary<char, NamedCharacter> _distinctCharacters;
+        INamedCharacterLookup _lookup;
 
-        public TreeVisitor_GatherDistinctCharacters(IDictionary<char, NamedCharacter> literals)
+        public TreeVisitor_GatherDistinctCharacters(IDictionary<char, NamedCharacter> literals, INamedCharacterLookup lookup)
         {
             _distinctCharacters = literals;
+            _lookup = lookup;
 
             CommonConstructor();
         }
@@ -167,7 +169,7 @@ namespace AbnfToAntlr.Common
                 }
                 else
                 {
-                    var namedCharacter = NamedCharacter.GetNamedCharacter(character);
+                    var namedCharacter = _lookup.GetNamedCharacter(character);
 
                     _distinctCharacters.Add(character, namedCharacter);
                 }
@@ -187,7 +189,7 @@ namespace AbnfToAntlr.Common
             }
             else
             {
-                var namedCharacter = NamedCharacter.GetNamedCharacter(character);
+                var namedCharacter = _lookup.GetNamedCharacter(character);
 
                 _distinctCharacters.Add(character, namedCharacter);
             }

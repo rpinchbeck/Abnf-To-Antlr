@@ -31,10 +31,11 @@
             this.txtInput = new System.Windows.Forms.TextBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnTranslate = new System.Windows.Forms.Button();
-            this.chkPerformDirectTranslation = new System.Windows.Forms.CheckBox();
             this.lblInput = new System.Windows.Forms.Label();
+            this.chkPerformDirectTranslation = new System.Windows.Forms.CheckBox();
+            this.btnTranslate = new System.Windows.Forms.Button();
             this.lblOutput = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -50,7 +51,7 @@
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
             this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtInput.Size = new System.Drawing.Size(454, 125);
+            this.txtInput.Size = new System.Drawing.Size(454, 109);
             this.txtInput.TabIndex = 0;
             // 
             // txtOutput
@@ -63,7 +64,7 @@
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOutput.Size = new System.Drawing.Size(454, 130);
+            this.txtOutput.Size = new System.Drawing.Size(454, 117);
             this.txtOutput.TabIndex = 1;
             // 
             // splitContainer1
@@ -86,32 +87,9 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.lblOutput);
             this.splitContainer1.Panel2.Controls.Add(this.txtOutput);
-            this.splitContainer1.Size = new System.Drawing.Size(460, 338);
-            this.splitContainer1.SplitterDistance = 179;
+            this.splitContainer1.Size = new System.Drawing.Size(460, 309);
+            this.splitContainer1.SplitterDistance = 163;
             this.splitContainer1.TabIndex = 2;
-            // 
-            // btnTranslate
-            // 
-            this.btnTranslate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTranslate.Location = new System.Drawing.Point(3, 153);
-            this.btnTranslate.Name = "btnTranslate";
-            this.btnTranslate.Size = new System.Drawing.Size(75, 23);
-            this.btnTranslate.TabIndex = 1;
-            this.btnTranslate.Text = "Translate";
-            this.btnTranslate.UseVisualStyleBackColor = true;
-            this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
-            // 
-            // chkPerformDirectTranslation
-            // 
-            this.chkPerformDirectTranslation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkPerformDirectTranslation.AutoSize = true;
-            this.chkPerformDirectTranslation.Location = new System.Drawing.Point(84, 157);
-            this.chkPerformDirectTranslation.Name = "chkPerformDirectTranslation";
-            this.chkPerformDirectTranslation.Size = new System.Drawing.Size(374, 17);
-            this.chkPerformDirectTranslation.TabIndex = 2;
-            this.chkPerformDirectTranslation.Text = "Perform direct translation (do not substitute lexer rules for character literals)" +
-    "";
-            this.chkPerformDirectTranslation.UseVisualStyleBackColor = true;
             // 
             // lblInput
             // 
@@ -122,6 +100,29 @@
             this.lblInput.TabIndex = 3;
             this.lblInput.Text = "ABNF Grammar:";
             // 
+            // chkPerformDirectTranslation
+            // 
+            this.chkPerformDirectTranslation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkPerformDirectTranslation.AutoSize = true;
+            this.chkPerformDirectTranslation.Location = new System.Drawing.Point(84, 141);
+            this.chkPerformDirectTranslation.Name = "chkPerformDirectTranslation";
+            this.chkPerformDirectTranslation.Size = new System.Drawing.Size(374, 17);
+            this.chkPerformDirectTranslation.TabIndex = 2;
+            this.chkPerformDirectTranslation.Text = "Perform direct translation (do not substitute lexer rules for character literals)" +
+    "";
+            this.chkPerformDirectTranslation.UseVisualStyleBackColor = true;
+            // 
+            // btnTranslate
+            // 
+            this.btnTranslate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTranslate.Location = new System.Drawing.Point(3, 137);
+            this.btnTranslate.Name = "btnTranslate";
+            this.btnTranslate.Size = new System.Drawing.Size(75, 23);
+            this.btnTranslate.TabIndex = 1;
+            this.btnTranslate.Text = "Translate";
+            this.btnTranslate.UseVisualStyleBackColor = true;
+            this.btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
+            // 
             // lblOutput
             // 
             this.lblOutput.AutoSize = true;
@@ -131,11 +132,25 @@
             this.lblOutput.TabIndex = 4;
             this.lblOutput.Text = "ANTLR Grammar:";
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Location = new System.Drawing.Point(397, 327);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(484, 362);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.splitContainer1);
             this.MinimumSize = new System.Drawing.Size(500, 200);
             this.Name = "frmMain";
@@ -159,6 +174,7 @@
         private System.Windows.Forms.Button btnTranslate;
         private System.Windows.Forms.Label lblInput;
         private System.Windows.Forms.Label lblOutput;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

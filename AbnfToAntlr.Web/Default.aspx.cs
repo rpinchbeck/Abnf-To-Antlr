@@ -84,7 +84,7 @@ using AbnfToAntlr.Common;
 
 namespace AbnfToAntlr.Web
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class DefaultPage : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -134,5 +134,6 @@ namespace AbnfToAntlr.Web
                 this.txtError.Visible = false;
             }
         }
+
     }
 }

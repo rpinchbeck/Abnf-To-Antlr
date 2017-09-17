@@ -47,13 +47,16 @@
     <Compile Include="AbnfAstLexer.cs" />
     <Compile Include="AbnfAstParser.cs" />
     <Compile Include="AbnfToAntlrTranslator.cs" />
+    <Compile Include="INamedCharacterLookup.cs" />
     <Compile Include="NamedCharacter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NamedCharacterLookupSimple.cs" />
     <Compile Include="TreeVisitor.cs" />
     <Compile Include="TreeVisitor_GatherDistinctCharacters.cs" />
     <Compile Include="TreeVisitor_OutputTranslation.cs" />
     <Compile Include="TreeVisitor_OutputTranslation_Direct.cs" />
     <Compile Include="TreeVisitor_OutputTranslation_Indirect.cs" />
+    <Compile Include="NamedCharacterLookupUnicode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

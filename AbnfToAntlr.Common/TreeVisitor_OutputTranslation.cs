@@ -33,6 +33,7 @@ namespace AbnfToAntlr.Common
     {
         protected System.IO.TextWriter _writer;            // writer to output the translated grammar
         protected ITokenStream _tokens;                    // the token stream output from the AbnfAstLexer class
+        protected INamedCharacterLookup _lookup;
 
         protected HashSet<string> _rawTranslatedRuleNames; // remember rule names for later name collision handling
         protected HashSet<IToken> _processedTokens;        // keep track of whitespace/comment tokens which have already been output
@@ -43,10 +44,11 @@ namespace AbnfToAntlr.Common
         protected int _finalNonWhiteSpaceTokenIndexInRule; // keep track of the final non-whitespace token in the current rule
         int _nestedRepetitionCount = 0;                    // keep track of nested repetitions (for preserving whitespace)
 
-        public TreeVisitor_OutputTranslation(ITokenStream tokens, System.IO.TextWriter writer)
+        public TreeVisitor_OutputTranslation(ITokenStream tokens, System.IO.TextWriter writer, INamedCharacterLookup lookup)
         {
             _tokens = tokens;
             _writer = writer;
+            _lookup = lookup;
 
             CommonConstructor();
         }
@@ -452,31 +454,15 @@ namespace AbnfToAntlr.Common
                         Write(" (");
                     }
 
-                    for (int count = minValue; count < maxValue; count++)
+                    for (int index = minValue; index < maxValue; index++)
                     {
-                        if (count == minValue)
+                        if (index > minValue)
                         {
-                            Visit(element);
-                            Write("?");
+                            Write(" ");
                         }
-                        else
-                        {
-                            Write(" | ");
 
-                            Write("(");
-
-                            for (int subCount = minValue; subCount <= count; subCount++)
-                            {
-                                if (count > 0)
-                                {
-                                    Write(" ");
-                                }
-
-                                Visit(element);
-                            }
-
-                            Write(")");
-                        }
+                        Visit(element);
+                        Write("?");
                     }
 
                     _nestedRepetitionCount--;

@@ -132,16 +132,20 @@ namespace AbnfToAntlr.Common
                 // get parse tree
                 var tree = results.Tree;
 
-                // gather set of disctinct literals
+                // give lexer rules unicode standard names
+                INamedCharacterLookup lookup = new NamedCharacterLookupUnicode();
+
+                // enable the next line to give lexer rules simple names
+                lookup = new NamedCharacterLookupSimple();
 
                 // output translated grammar
                 if (performDirectTranslation)
                 {
-                    OutputDirectTranslation(writer, tokens, tree);
+                    OutputDirectTranslation(writer, tokens, tree, lookup);
                 }
                 else
                 {
-                    OutputIndirectTranslation(writer, tokens, tree);
+                    OutputIndirectTranslation(writer, tokens, tree, lookup);
                 }
             }
         }
@@ -163,46 +167,51 @@ namespace AbnfToAntlr.Common
         }
 
 
-        void OutputDirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree)
+        void OutputDirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree, INamedCharacterLookup lookup)
         {
             // output ANTLR translation
-            var outputVisitor = new TreeVisitor_OutputTranslation_Direct(tokens, writer);
+            var outputVisitor = new TreeVisitor_OutputTranslation_Direct(tokens, writer, lookup);
             outputVisitor.Visit(tree);
         }
 
-        void OutputIndirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree)
+        void OutputIndirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree, INamedCharacterLookup lookup)
         {
             // gather distinct literals
             var distinctCharacters = new Dictionary<char, NamedCharacter>();
-            var literalVisitor = new TreeVisitor_GatherDistinctCharacters(distinctCharacters);
+            var literalVisitor = new TreeVisitor_GatherDistinctCharacters(distinctCharacters, lookup);
             literalVisitor.Visit(tree);
 
             // output ANTLR translation (substitute rules for character literals)
-            var outputVisitor = new TreeVisitor_OutputTranslation_Indirect(tokens, writer, distinctCharacters);
+            var outputVisitor = new TreeVisitor_OutputTranslation_Indirect(tokens, writer, distinctCharacters, lookup);
             outputVisitor.Visit(tree);
 
             // append literal rules to output
-            OutputLiteralRules(distinctCharacters, writer);
+            OutputLiteralRules(distinctCharacters, writer, lookup);
         }
 
-        void OutputLiteralRules(IDictionary<char, NamedCharacter> literals, TextWriter writer)
+        void OutputLiteralRules(IDictionary<char, NamedCharacter> literals, TextWriter writer, INamedCharacterLookup lookup)
         {
-            var knownValues = literals.Values
-                .Where(x => NamedCharacter.IsKnownCharacter(x.Character))
+            var knownValues = 
+                literals.Values
+                .Where(x => lookup.IsKnownCharacter(x.Character))
                 .OrderBy(x => x.Character)
                 .Select(x => x);
 
-            var unknownValues = literals.Values
-                .Where(x => !(NamedCharacter.IsKnownCharacter(x.Character)))
+            var unknownValues = 
+                literals.Values
+                .Where(x => !(lookup.IsKnownCharacter(x.Character)))
                 .OrderBy(x => x.Character)
                 .Select(x => x);
 
-            writer.WriteLine("");
-            writer.WriteLine(@"//////////////////////////////////////////////////////////////////////////");
-            writer.WriteLine(@"// Lexer rules generated for each distinct character in original grammar");
-            writer.WriteLine(@"// per http://www.unicode.org/charts/PDF/U0000.pdf");
-            writer.WriteLine(@"//////////////////////////////////////////////////////////////////////////");
-            writer.WriteLine("");
+            if (literals.Count > 0)
+            {
+                writer.WriteLine("");
+                writer.WriteLine(@"//////////////////////////////////////////////////////////////////////////");
+                writer.WriteLine(@"// Lexer rules generated for each distinct character in original grammar");
+                writer.WriteLine(@"// per http://www.unicode.org/charts/PDF/U0000.pdf");
+                writer.WriteLine(@"//////////////////////////////////////////////////////////////////////////");
+                writer.WriteLine("");
+            }
 
             // output known (named) literals first
             foreach (var value in knownValues)
