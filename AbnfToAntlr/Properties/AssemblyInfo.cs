@@ -1,37 +1,16 @@
-﻿/*
-
-    Copyright 2012-2013 Robert Pinchbeck
-  
-    This file is part of AbnfToAntlr.
-
-    AbnfToAntlr is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    AbnfToAntlr is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with AbnfToAntlr.  If not, see <http://www.gnu.org/licenses/>.
-  
-*/
-
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AbnfToAntlr.Console")]
+[assembly: AssemblyTitle("AbnfToAntlr")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Robert Pinchbeck")]
-[assembly: AssemblyProduct("AbnfToAntlr.Console")]
-[assembly: AssemblyCopyright("Copyright © 2012-2017")]
+[assembly: AssemblyProduct("AbnfToAntlr")]
+[assembly: AssemblyCopyright("Copyright © 2012 - 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -41,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("37f4ace6-0aaf-4361-8026-b6c4ab336e71")]
+[assembly: Guid("c3a6a5f6-a2cb-4e8f-9c60-e9d93c3e00e1")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -53,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyFileVersion("1.2.0.0")]

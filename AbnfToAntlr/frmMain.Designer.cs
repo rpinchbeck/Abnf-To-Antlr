@@ -1,4 +1,4 @@
-﻿namespace AbnfToAntlr.Windows
+﻿namespace AbnfToAntlr
 {
     partial class frmMain
     {

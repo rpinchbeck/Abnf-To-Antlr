@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbnfToAntlr.Windows", "AbnfToAntlr.Windows\AbnfToAntlr.Windows.csproj", "{7252D7F3-BF2B-4FE7-882D-9263E0F48102}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbnfToAntlr", "AbnfToAntlr\AbnfToAntlr.csproj", "{7252D7F3-BF2B-4FE7-882D-9263E0F48102}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbnfToAntlr.Web", "AbnfToAntlr.Web\AbnfToAntlr.Web.csproj", "{45437DFD-612F-4442-A50F-D6D30CF0F332}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbnfToAntlr.Console", "AbnfToAntlr.Console\AbnfToAntlr.Console.csproj", "{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbnfToAntlr.Common", "AbnfToAntlr.Common\AbnfToAntlr.Common.csproj", "{D7CE3280-2992-48A0-B01C-AB095DCB1B82}"
 EndProject
@@ -41,18 +39,6 @@ Global
 		{45437DFD-612F-4442-A50F-D6D30CF0F332}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{45437DFD-612F-4442-A50F-D6D30CF0F332}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{45437DFD-612F-4442-A50F-D6D30CF0F332}.Release|x86.ActiveCfg = Release|Any CPU
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Debug|Any CPU.Build.0 = Debug|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Debug|x86.ActiveCfg = Debug|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Debug|x86.Build.0 = Debug|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Release|Any CPU.ActiveCfg = Release|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Release|Any CPU.Build.0 = Release|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Release|Mixed Platforms.Build.0 = Release|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Release|x86.ActiveCfg = Release|x86
-		{B5EE7A1C-C22F-46E8-8DE2-10C314A63B8A}.Release|x86.Build.0 = Release|x86
 		{D7CE3280-2992-48A0-B01C-AB095DCB1B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7CE3280-2992-48A0-B01C-AB095DCB1B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7CE3280-2992-48A0-B01C-AB095DCB1B82}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -68,6 +54,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {48F40DBC-7BE0-4196-9854-72A6E746842E}
+		SolutionGuid = {00A68557-9FDA-4142-B173-D3EC22C685CF}
 	EndGlobalSection
 EndGlobal

@@ -30,7 +30,7 @@ using System.Windows.Forms;
 
 using AbnfToAntlr.Common;
 
-namespace AbnfToAntlr.Windows
+namespace AbnfToAntlr
 {
     public partial class frmMain : Form
     {
