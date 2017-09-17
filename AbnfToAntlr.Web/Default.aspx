@@ -55,7 +55,7 @@
     <br />
     <asp:Label ID="lblOutput" runat="server" Text="ANTLR&nbsp;Grammar:"></asp:Label>
     <br />
-    <asp:TextBox ID="txtOuput" runat="server" TextMode="MultiLine" ReadOnly="True" Height="300" Width="100%" Wrap="False"></asp:TextBox>
+    <asp:TextBox ID="txtOutput" runat="server" TextMode="MultiLine" ReadOnly="True" Height="300" Width="100%" Wrap="False"></asp:TextBox>
     <br />
     <asp:TextBox ID="txtError" runat="server" ForeColor="Red" ReadOnly="True" TextMode="MultiLine" Width="100%"></asp:TextBox>
     </form>

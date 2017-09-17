@@ -138,6 +138,14 @@ namespace AbnfToAntlr.Console
                 }
 
                 input = reader.ReadToEnd();
+                if (input.EndsWith("\r\n"))
+                {
+                    // do nothing
+                }
+                else
+                {
+                    input = input + "\r\n";
+                }
 
                 var translator = new AbnfToAntlrTranslator();
 

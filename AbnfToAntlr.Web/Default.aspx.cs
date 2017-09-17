@@ -102,10 +102,20 @@ namespace AbnfToAntlr.Web
                         performDirectTranslation = true;
                     }
 
-                    this.txtOuput.Text = translator.Translate(txtInput.Text, performDirectTranslation);
+                    var input = txtInput.Text;
+                    if (input.EndsWith("\r\n"))
+                    {
+                        // do nothing
+                    }
+                    else
+                    {
+                        input = input + "\r\n";
+                    }
+
+                    this.txtOutput.Text = translator.Translate(input, performDirectTranslation);
 
                     this.lblOutput.Visible = true;
-                    this.txtOuput.Visible = true;
+                    this.txtOutput.Visible = true;
                     this.txtError.Visible = false;
                 }
                 catch (Exception ex)
@@ -114,13 +124,13 @@ namespace AbnfToAntlr.Web
                     this.txtError.Visible = true;
 
                     this.lblOutput.Visible = false;
-                    this.txtOuput.Visible = false;
+                    this.txtOutput.Visible = false;
                 }
             }
             else
             {
                 this.lblOutput.Visible = false;
-                this.txtOuput.Visible = false;
+                this.txtOutput.Visible = false;
                 this.txtError.Visible = false;
             }
         }
