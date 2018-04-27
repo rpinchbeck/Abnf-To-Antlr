@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2012-2013 Robert Pinchbeck
+    Copyright 2012-2018 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -39,8 +39,8 @@ namespace AbnfToAntlr.Common
 
         public TreeVisitor_OutputTranslation_Indirect(ITokenStream tokens, System.IO.TextWriter writer, Dictionary<char, NamedCharacter> distinctCharacters, INamedCharacterLookup lookup)
             : base(tokens, writer, lookup)
-        { 
-            _distinctCharacters =distinctCharacters;
+        {
+            _distinctCharacters = distinctCharacters;
         }
 
         /// <summary>
@@ -68,8 +68,24 @@ namespace AbnfToAntlr.Common
                     Write(" ");
                 }
 
-                var namedCharacter = _lookup.GetNamedCharacter(text[index]);
-                Write(namedCharacter.Name);
+                var upperCharacter = char.ToUpperInvariant(text[index]);
+                var lowerCharacter = char.ToLowerInvariant(text[index]);
+
+                var namedUpperCharacter = _lookup.GetNamedCharacter(upperCharacter);
+                var namedLowerCharacter = _lookup.GetNamedCharacter(lowerCharacter);
+
+                if (upperCharacter == lowerCharacter)
+                {
+                    Write(namedUpperCharacter.Name);
+                }
+                else
+                {
+                    Write("(");
+                    Write(namedUpperCharacter.Name);
+                    Write(" | ");
+                    Write(namedLowerCharacter.Name);
+                    Write(")");
+                }
             }
 
             if (length > 1)

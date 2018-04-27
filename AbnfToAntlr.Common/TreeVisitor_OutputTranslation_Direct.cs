@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2012-2013 Robert Pinchbeck
+    Copyright 2012-2018 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -67,9 +67,50 @@ namespace AbnfToAntlr.Common
             text = text.Replace(@"\", @"\\"); // escape forwardslashes (order matters, this must be done before escaping anything else)
             text = text.Replace(@"'", @"\'"); // escape apostrophes
 
-            Write("'");
-            Write(text);
-            Write("'");
+            var length = text.Length;
+
+            if (length > 1)
+            {
+                Write("(");
+            }
+            for (int index = 0; index < length; index++)
+            {
+                if (index > 0)
+                {
+                    Write(" ");
+                }
+
+                var upperCharacter = char.ToUpperInvariant(text[index]);
+                var lowerCharacter = char.ToLowerInvariant(text[index]);
+
+                if (upperCharacter == lowerCharacter)
+                {
+                    Write("'");
+                    Write(upperCharacter.ToString());
+                    Write("'");
+                }
+                else
+                {
+                    Write("(");
+
+                    Write("'");
+                    Write(upperCharacter.ToString());
+                    Write("'");
+
+                    Write(" | ");
+
+                    Write("'");
+                    Write(lowerCharacter.ToString());
+                    Write("'");
+
+                    Write(")");
+                }
+            }
+
+            if (length > 1)
+            {
+                Write(")");
+            }
         }
 
         /// <summary>
