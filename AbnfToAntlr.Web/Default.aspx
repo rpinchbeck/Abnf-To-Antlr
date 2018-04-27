@@ -1,5 +1,5 @@
 ﻿<!--
-    Copyright 2012-2013 Robert Pinchbeck
+    Copyright 2012-2018 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -57,6 +57,7 @@
         <asp:TextBox ID="txtOutput" runat="server" TextMode="MultiLine" ReadOnly="True" Height="300" Width="100%" Wrap="False"></asp:TextBox>
         <br />
         <asp:TextBox ID="txtError" runat="server" ForeColor="Red" ReadOnly="True" TextMode="MultiLine" Width="100%"></asp:TextBox>
+        <h4>Version 1.5</h4>
     </form>
 </body>
 </html>
