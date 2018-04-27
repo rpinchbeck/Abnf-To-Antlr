@@ -106,7 +106,28 @@ namespace AbnfToAntlr.Common
             text = char_val.Text;
             text = text.Substring(1, text.Length - 2);
 
-            AddText(text);
+            foreach (char character in text)
+            {
+                var upperCharacter = char.ToUpperInvariant(character);
+                var lowerCharacter = char.ToLowerInvariant(character);
+
+                AddToDistinctCharacters(upperCharacter);
+                AddToDistinctCharacters(lowerCharacter);
+            }
+        }
+
+        void AddToDistinctCharacters(char character)
+        {
+            if (_distinctCharacters.ContainsKey(character))
+            {
+                // do nothing
+            }
+            else
+            {
+                var namedCharacter = _lookup.GetNamedCharacter(character);
+
+                _distinctCharacters.Add(character, namedCharacter);
+            }
         }
 
         /// <summary>
@@ -153,26 +174,6 @@ namespace AbnfToAntlr.Common
             for (int value = minValue; value <= maxValue; value++)
             {
                 AddValue(value);
-            }
-        }
-
-        /// <summary>
-        /// Gather the distinct characters of the specified string
-        /// </summary>
-        void AddText(string text)
-        {
-            foreach (char character in text)
-            {
-                if (_distinctCharacters.ContainsKey(character))
-                {
-                    // do nothing
-                }
-                else
-                {
-                    var namedCharacter = _lookup.GetNamedCharacter(character);
-
-                    _distinctCharacters.Add(character, namedCharacter);
-                }
             }
         }
 
