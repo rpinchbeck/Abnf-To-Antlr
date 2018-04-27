@@ -31,12 +31,13 @@
             this.txtInput = new System.Windows.Forms.TextBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cboStandardGrammars = new System.Windows.Forms.ComboBox();
             this.lblInput = new System.Windows.Forms.Label();
             this.chkPerformDirectTranslation = new System.Windows.Forms.CheckBox();
             this.btnTranslate = new System.Windows.Forms.Button();
             this.lblOutput = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.cboStandardGrammars = new System.Windows.Forms.ComboBox();
+            this.lblVersion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,6 +94,18 @@
             this.splitContainer1.SplitterDistance = 234;
             this.splitContainer1.TabIndex = 2;
             // 
+            // cboStandardGrammars
+            // 
+            this.cboStandardGrammars.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStandardGrammars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStandardGrammars.FormattingEnabled = true;
+            this.cboStandardGrammars.Location = new System.Drawing.Point(95, 3);
+            this.cboStandardGrammars.Name = "cboStandardGrammars";
+            this.cboStandardGrammars.Size = new System.Drawing.Size(337, 21);
+            this.cboStandardGrammars.TabIndex = 6;
+            this.cboStandardGrammars.SelectedIndexChanged += new System.EventHandler(this.cboStandardGrammars_SelectedIndexChanged);
+            // 
             // lblInput
             // 
             this.lblInput.AutoSize = true;
@@ -146,17 +159,16 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // cboStandardGrammars
+            // lblVersion
             // 
-            this.cboStandardGrammars.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboStandardGrammars.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboStandardGrammars.FormattingEnabled = true;
-            this.cboStandardGrammars.Location = new System.Drawing.Point(95, 3);
-            this.cboStandardGrammars.Name = "cboStandardGrammars";
-            this.cboStandardGrammars.Size = new System.Drawing.Size(337, 21);
-            this.cboStandardGrammars.TabIndex = 6;
-            this.cboStandardGrammars.SelectedIndexChanged += new System.EventHandler(this.cboStandardGrammars_SelectedIndexChanged);
+            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.Location = new System.Drawing.Point(12, 470);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(69, 13);
+            this.lblVersion.TabIndex = 5;
+            this.lblVersion.Text = "Version 1.5.1";
             // 
             // frmMain
             // 
@@ -164,6 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(484, 500);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.splitContainer1);
             this.MinimumSize = new System.Drawing.Size(500, 200);
@@ -177,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -191,6 +205,7 @@
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ComboBox cboStandardGrammars;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 
