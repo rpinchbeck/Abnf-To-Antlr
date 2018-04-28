@@ -153,7 +153,8 @@ namespace AbnfToAntlr.Common
                     throw new InvalidOperationException("Unexpected node type encountered while searching for lexer rules.");
                 }
 
-                ruleName = GetChildrenText(ruleNode.GetChild(0));
+                var ruleNameNode = ruleNode.GetChild(0);
+                ruleName = GetRuleName(ruleNameNode);
 
                 if (ContainsRuleName(ruleNode))
                 {

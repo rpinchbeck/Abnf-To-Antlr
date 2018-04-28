@@ -99,6 +99,19 @@ namespace AbnfToAntlr.Common
             WriteRuleNameNode(node);
         }
 
+        protected string GetRuleName(ITree ruleNameNode)
+        {
+            if (ruleNameNode.Type != AbnfAstParser.RULE_NAME_NODE)
+            {
+                throw new InvalidOperationException("Unexpected node type encountered in " + System.Reflection.MethodInfo.GetCurrentMethod().Name + " (rule name node expected)");
+            }
+
+            // ABNF rule names are case-insensitive, so return a lowercase rule name
+            var result = GetChildrenText(ruleNameNode).ToLowerInvariant();
+
+            return result;
+
+        }
         protected override void VisitAlternation(ITree node)
         {
             WriteChildren(node, "|");
@@ -303,7 +316,7 @@ namespace AbnfToAntlr.Common
             string mappedText;
             string ruleNameText;
 
-            ruleNameText = GetChildrenText(node);
+            ruleNameText = GetRuleName(node);
 
             // is rulename already mapped to a new name?
             if (_ruleNameMap.ContainsKey(ruleNameText))
@@ -571,12 +584,7 @@ namespace AbnfToAntlr.Common
 
                 ruleNameNode = ruleNode.GetChild(0);
 
-                if (ruleNameNode.Type != AbnfAstParser.RULE_NAME_NODE)
-                {
-                    throw new InvalidOperationException("Unexpected node type encountered in " + System.Reflection.MethodInfo.GetCurrentMethod().Name + " (rule name node expected)");
-                }
-
-                ruleName = GetChildrenText(ruleNameNode);
+                ruleName = GetRuleName(ruleNameNode);
 
                 translatedRuleName = TranslateRuleName(ruleName);
 

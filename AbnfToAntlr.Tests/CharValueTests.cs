@@ -37,11 +37,11 @@ namespace AbnfToAntlr.Tests
             IndirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"\"");
+                    inputBuilder.AppendLine(@"someCharValue = """"");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("somecharvalue : ;");
+                    expectedBuilder.AppendLine(@"somecharvalue : ;");
                 }
             );
         }
@@ -52,19 +52,19 @@ namespace AbnfToAntlr.Tests
             IndirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"A\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""A""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("somecharvalue : (CAP_A | A);");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("// Lexer rules generated for each distinct character in original grammar");
-                    expectedBuilder.AppendLine("// per http://www.unicode.org/charts/PDF/U0000.pdf");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("CAP_A : 'A';");
-                    expectedBuilder.AppendLine("A : 'a';");
+                    expectedBuilder.AppendLine(@"somecharvalue : (CAP_A | A);");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"// Lexer rules generated for each distinct character in original grammar");
+                    expectedBuilder.AppendLine(@"// per http://www.unicode.org/charts/PDF/U0000.pdf");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"CAP_A : 'A';");
+                    expectedBuilder.AppendLine(@"A : 'a';");
                 }
             );
         }
@@ -75,21 +75,21 @@ namespace AbnfToAntlr.Tests
             IndirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"AB\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""AB""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("somecharvalue : ((CAP_A | A) (CAP_B | B));");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("// Lexer rules generated for each distinct character in original grammar");
-                    expectedBuilder.AppendLine("// per http://www.unicode.org/charts/PDF/U0000.pdf");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("CAP_A : 'A';");
-                    expectedBuilder.AppendLine("CAP_B : 'B';");
-                    expectedBuilder.AppendLine("A : 'a';");
-                    expectedBuilder.AppendLine("B : 'b';");
+                    expectedBuilder.AppendLine(@"somecharvalue : ((CAP_A | A) (CAP_B | B));");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"// Lexer rules generated for each distinct character in original grammar");
+                    expectedBuilder.AppendLine(@"// per http://www.unicode.org/charts/PDF/U0000.pdf");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"CAP_A : 'A';");
+                    expectedBuilder.AppendLine(@"CAP_B : 'B';");
+                    expectedBuilder.AppendLine(@"A : 'a';");
+                    expectedBuilder.AppendLine(@"B : 'b';");
                 }
             );
         }
@@ -101,18 +101,18 @@ namespace AbnfToAntlr.Tests
             IndirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"1\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""1""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("somecharvalue : ONE;");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("// Lexer rules generated for each distinct character in original grammar");
-                    expectedBuilder.AppendLine("// per http://www.unicode.org/charts/PDF/U0000.pdf");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("ONE : '1';");
+                    expectedBuilder.AppendLine(@"somecharvalue : ONE;");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"// Lexer rules generated for each distinct character in original grammar");
+                    expectedBuilder.AppendLine(@"// per http://www.unicode.org/charts/PDF/U0000.pdf");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"ONE : '1';");
                 }
             );
         }
@@ -123,19 +123,19 @@ namespace AbnfToAntlr.Tests
             IndirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"12\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""12""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("somecharvalue : (ONE TWO);");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("// Lexer rules generated for each distinct character in original grammar");
-                    expectedBuilder.AppendLine("// per http://www.unicode.org/charts/PDF/U0000.pdf");
-                    expectedBuilder.AppendLine("//////////////////////////////////////////////////////////////////////////");
-                    expectedBuilder.AppendLine("");
-                    expectedBuilder.AppendLine("ONE : '1';");
-                    expectedBuilder.AppendLine("TWO : '2';");
+                    expectedBuilder.AppendLine(@"somecharvalue : (ONE TWO);");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"// Lexer rules generated for each distinct character in original grammar");
+                    expectedBuilder.AppendLine(@"// per http://www.unicode.org/charts/PDF/U0000.pdf");
+                    expectedBuilder.AppendLine(@"//////////////////////////////////////////////////////////////////////////");
+                    expectedBuilder.AppendLine(@"");
+                    expectedBuilder.AppendLine(@"ONE : '1';");
+                    expectedBuilder.AppendLine(@"TWO : '2';");
                 }
             );
         }
@@ -154,11 +154,11 @@ namespace AbnfToAntlr.Tests
             DirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"\"");
+                    inputBuilder.AppendLine(@"someCharValue = """"");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("SOMECHARVALUE : ;");
+                    expectedBuilder.AppendLine(@"SOMECHARVALUE : ;");
                 }
             );
         }
@@ -169,11 +169,11 @@ namespace AbnfToAntlr.Tests
             DirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"A\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""A""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("SOMECHARVALUE : ('A' | 'a');");
+                    expectedBuilder.AppendLine(@"SOMECHARVALUE : ('A' | 'a');");
                 }
             );
         }
@@ -184,11 +184,11 @@ namespace AbnfToAntlr.Tests
             DirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"AB\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""AB""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("SOMECHARVALUE : (('A' | 'a') ('B' | 'b'));");
+                    expectedBuilder.AppendLine(@"SOMECHARVALUE : (('A' | 'a') ('B' | 'b'));");
                 }
             );
         }
@@ -200,11 +200,11 @@ namespace AbnfToAntlr.Tests
             DirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"1\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""1""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("SOMECHARVALUE : '1';");
+                    expectedBuilder.AppendLine(@"SOMECHARVALUE : '1';");
                 }
             );
         }
@@ -215,11 +215,11 @@ namespace AbnfToAntlr.Tests
             DirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"12\"");
+                    inputBuilder.AppendLine(@"someCharValue = ""12""");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("SOMECHARVALUE : ('1' '2');");
+                    expectedBuilder.AppendLine(@"SOMECHARVALUE : ('1' '2');");
                 }
             );
         }
@@ -230,13 +230,14 @@ namespace AbnfToAntlr.Tests
             DirectTranslationTest(
                 (inputBuilder) =>
                 {
-                    inputBuilder.AppendLine("someCharValue = \"12\" / someRule");
+                    inputBuilder.AppendLine(@"someCharValue = ""12"" / someRule");
                 },
                 (expectedBuilder) =>
                 {
-                    expectedBuilder.AppendLine("somecharvalue : ('1' '2') | somerule;");
+                    expectedBuilder.AppendLine(@"somecharvalue : ('1' '2') | somerule;");
                 }
             );
         }
+
     }
 }
