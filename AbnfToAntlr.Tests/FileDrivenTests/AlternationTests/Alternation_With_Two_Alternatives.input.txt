@@ -1,0 +1,4 @@
+rule-with-two-alternatives-1 = "1" / "2"
+rule-with-two-alternatives-2 = "1" /"2"
+rule-with-two-alternatives-3 = "1"/ "2"
+rule-with-two-alternatives-4 = "1"/"2"

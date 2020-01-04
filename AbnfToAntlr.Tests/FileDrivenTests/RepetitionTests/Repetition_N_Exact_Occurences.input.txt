@@ -1,0 +1,3 @@
+repetition-n-exact-occurences-with-one-digit = 4"5"
+
+repetition-n-exact-occurences-with-two-digits = 44"5"

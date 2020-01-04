@@ -1,0 +1,10 @@
+//leading comment followed by whitespace
+
+rule_after_comment : ; //comment inline after rule followed by whitespace
+
+//trailing comment
+
+
+//leading comment
+rule_after_comment_without_whitespace:;//comment inline after rule
+//trailing comment

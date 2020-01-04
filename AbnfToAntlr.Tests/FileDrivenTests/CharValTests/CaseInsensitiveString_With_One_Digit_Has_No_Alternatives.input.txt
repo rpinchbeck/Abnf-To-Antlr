@@ -1,0 +1,1 @@
+case-insensitive-string-with-one-digit = %i"1"

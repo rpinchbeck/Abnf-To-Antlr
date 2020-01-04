@@ -50,6 +50,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInput.Location = new System.Drawing.Point(3, 30);
+            this.txtInput.MaxLength = 2147483647;
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
             this.txtInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -68,6 +69,7 @@
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtOutput.Size = new System.Drawing.Size(454, 184);
             this.txtOutput.TabIndex = 1;
+            this.txtOutput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtOutput_KeyUp);
             // 
             // splitContainer1
             // 
@@ -168,7 +170,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(69, 13);
             this.lblVersion.TabIndex = 5;
-            this.lblVersion.Text = "Version 1.5.1";
+            this.lblVersion.Text = "Version 1.6.0";
             // 
             // frmMain
             // 

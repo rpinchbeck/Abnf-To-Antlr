@@ -1,0 +1,1 @@
+bin-val-range = %b1000001-1000011 ;equivalent to (%s"A" | %s"B" | %s"C")

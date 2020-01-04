@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2012-2018 Robert Pinchbeck
+    Copyright 2012-2020 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -59,57 +59,62 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected override void WriteCharValNode(ITree node)
         {
-            string text;
-            var char_val = node.GetChild(0);
-
-            text = char_val.Text;
-            text = text.Substring(1, text.Length - 2);
-            text = text.Replace(@"\", @"\\"); // escape forwardslashes (order matters, this must be done before escaping anything else)
-            text = text.Replace(@"'", @"\'"); // escape apostrophes
+            var isCaseSensitive = IsCaseSensitive(node);
+            var text = GetStringValue(node);
 
             var length = text.Length;
 
-            if (length > 1)
+            if (isCaseSensitive && length > 0)
             {
-                Write("(");
+                Write("'");
+                Write(text);
+                Write("'");
             }
-            for (int index = 0; index < length; index++)
+            else
             {
-                if (index > 0)
-                {
-                    Write(" ");
-                }
-
-                var upperCharacter = char.ToUpperInvariant(text[index]);
-                var lowerCharacter = char.ToLowerInvariant(text[index]);
-
-                if (upperCharacter == lowerCharacter)
-                {
-                    Write("'");
-                    Write(upperCharacter.ToString());
-                    Write("'");
-                }
-                else
+                if (length > 1)
                 {
                     Write("(");
+                }
 
-                    Write("'");
-                    Write(upperCharacter.ToString());
-                    Write("'");
+                for (int index = 0; index < length; index++)
+                {
+                    if (index > 0)
+                    {
+                        Write(" ");
+                    }
 
-                    Write(" | ");
+                    var upperCharacter = char.ToUpperInvariant(text[index]);
+                    var lowerCharacter = char.ToLowerInvariant(text[index]);
 
-                    Write("'");
-                    Write(lowerCharacter.ToString());
-                    Write("'");
+                    if (upperCharacter == lowerCharacter)
+                    {
+                        Write("'");
+                        Write(AntlrHelper.CharEscape(lowerCharacter));
+                        Write("'");
+                    }
+                    else
+                    {
+                        Write("(");
 
+                        Write("'");
+                        Write(AntlrHelper.CharEscape(upperCharacter));
+                        Write("'");
+
+                        Write(" | ");
+
+                        Write("'");
+                        Write(AntlrHelper.CharEscape(lowerCharacter));
+                        Write("'");
+
+                        Write(")");
+                    }
+                }
+
+                if (length > 1)
+                {
                     Write(")");
                 }
-            }
-
-            if (length > 1)
-            {
-                Write(")");
             }
         }
 
@@ -118,8 +123,8 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected override void WriteValueRangeNode(ITree node)
         {
-            var min = node.GetChild(0);
-            var max = node.GetChild(1);
+            var min = node.GetAndValidateChild(0);
+            var max = node.GetAndValidateChild(1);
 
             Visit(min);
             Write("..");
@@ -146,16 +151,17 @@ namespace AbnfToAntlr.Common
 
             for (int index = 0; index < ruleListNode.ChildCount; index++)
             {
-                ruleNode = ruleListNode.GetChild(index);
+                ruleNode = ruleListNode.GetAndValidateChild(index);
 
                 if (ruleNode.Type != AbnfAstParser.RULE_NODE)
                 {
                     throw new InvalidOperationException("Unexpected node type encountered while searching for lexer rules.");
                 }
 
-                ruleName = GetChildrenText(ruleNode.GetChild(0));
+                var ruleNameNode = ruleNode.GetAndValidateChild(0);
+                ruleName = GetRuleName(ruleNameNode);
 
-                if (ContainsRuleName(ruleNode))
+                if (ContainsAnyRuleName(ruleNode))
                 {
                     // do nothing
                 }
@@ -170,7 +176,7 @@ namespace AbnfToAntlr.Common
         /// Determine if the specified node contains any rule name nodes
         /// </summary>
         /// <returns>true if the specified node contains a rule name node, false otherwise</returns>
-        protected bool ContainsRuleName(ITree node)
+        protected bool ContainsAnyRuleName(ITree node)
         {
             int minIndex;
             ITree child;
@@ -191,9 +197,9 @@ namespace AbnfToAntlr.Common
 
             for (int index = minIndex; index < node.ChildCount; index++)
             {
-                child = node.GetChild(index);
+                child = node.GetAndValidateChild(index);
 
-                if (ContainsRuleName(child))
+                if (ContainsAnyRuleName(child))
                 {
                     return true;
                 }

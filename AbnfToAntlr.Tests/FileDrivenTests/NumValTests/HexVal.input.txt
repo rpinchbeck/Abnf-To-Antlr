@@ -1,0 +1,1 @@
+hex-val = %x47 ;equivalent to (%s"G")

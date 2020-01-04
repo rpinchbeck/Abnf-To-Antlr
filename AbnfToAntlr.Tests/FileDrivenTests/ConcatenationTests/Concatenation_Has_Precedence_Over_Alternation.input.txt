@@ -1,0 +1,1 @@
+concatenation-and-alternation-without-grouping = concatenation1 concatenation2 / concatenation3 concatenation4

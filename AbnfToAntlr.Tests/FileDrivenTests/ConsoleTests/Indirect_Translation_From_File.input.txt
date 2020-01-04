@@ -1,0 +1,1 @@
+simple-rule-for-indirect-translation-from-file = ""

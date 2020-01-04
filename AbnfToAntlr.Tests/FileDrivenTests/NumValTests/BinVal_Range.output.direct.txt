@@ -1,0 +1,1 @@
+BIN_VAL_RANGE : '\u0041'..'\u0043'; //equivalent to (%s"A" | %s"B" | %s"C")

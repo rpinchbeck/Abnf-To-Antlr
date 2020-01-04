@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2013 Robert Pinchbeck
+    Copyright 2013-2020 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -24,11 +24,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 using AbnfToAntlr.Common;
+using Antlr.Runtime;
 
 namespace AbnfToAntlr
 {
@@ -65,12 +67,26 @@ namespace AbnfToAntlr
                 }
 
                 this.txtOutput.Text = translator.Translate(input, performDirectTranslation);
-                this.txtOutput.ForeColor = Color.Black;
+                this.txtOutput.ForeColor = this.ForeColor;
+                this.txtOutput.BackColor = this.BackColor; // readonly textbox forecolor only changes when backcolor is set
+            }
+            catch (TranslationException ex)
+            {
+                this.txtOutput.Text = AntlrHelper.GetErrorMessages(ex.ParserRecognitionExceptions) + AntlrHelper.GetErrorMessages(ex.LexerRecognitionExceptions);
+                this.txtOutput.ForeColor = Color.DarkRed;
+                this.txtOutput.BackColor = this.BackColor; // readonly textbox forecolor only changes when backcolor is set
+            }
+            catch (RecognitionException ex)
+            {
+                this.txtOutput.Text = AntlrHelper.GetErrorMessage(ex);
+                this.txtOutput.ForeColor = Color.DarkRed;
+                this.txtOutput.BackColor = this.BackColor; // readonly textbox forecolor only changes when backcolor is set
             }
             catch (Exception ex)
             {
                 this.txtOutput.Text = ex.Message;
-                this.txtOutput.ForeColor = Color.Red;
+                this.txtOutput.ForeColor = Color.DarkRed;
+                this.txtOutput.BackColor = this.BackColor; // readonly textbox forecolor only changes when backcolor is set
             }
             finally
             {
@@ -115,7 +131,7 @@ namespace AbnfToAntlr
                     break;
 
                 case "rfc-5234":
-                    selectedFile = "ABNF Specification (RFC 5234).txt";
+                    selectedFile = "ABNF Specification (RFC 5234 and RFC 7405 and Errata 5334).txt";
                     break;
 
             }
@@ -125,6 +141,14 @@ namespace AbnfToAntlr
             txtOutput.Text = "";
             lblOutput.Visible = false;
             txtOutput.Visible = false;
+        }
+
+        private void txtOutput_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true && e.KeyCode == Keys.A)
+            {
+                txtOutput.SelectAll();
+            }
         }
     }
 }

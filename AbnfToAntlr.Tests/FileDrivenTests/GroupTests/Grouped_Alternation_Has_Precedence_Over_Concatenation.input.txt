@@ -1,0 +1,1 @@
+concatenation-of-grouped-alternation = concatenation1 (alternative1 / alternative2) concatenation3

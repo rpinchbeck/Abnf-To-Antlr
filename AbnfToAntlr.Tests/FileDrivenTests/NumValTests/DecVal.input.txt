@@ -1,0 +1,1 @@
+dec-val = %d68 ;equivalent to (%s"D")

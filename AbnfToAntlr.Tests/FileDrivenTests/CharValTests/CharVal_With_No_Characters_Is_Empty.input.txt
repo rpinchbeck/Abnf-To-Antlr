@@ -1,0 +1,1 @@
+char-val-with-no-characters = ""

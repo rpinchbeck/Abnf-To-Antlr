@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2012-2013 Robert Pinchbeck
+    Copyright 2012-2020 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -51,6 +51,10 @@ namespace AbnfToAntlr.Common
 
                 case AbnfAstParser.RULE_NAME_NODE:
                     VisitRuleName(node);
+                    break;
+
+                case AbnfAstParser.DEFINED_AS_NODE:
+                    VisitDefinedAs(node);
                     break;
 
                 case AbnfAstParser.ALTERNATION_NODE:
@@ -130,7 +134,26 @@ namespace AbnfToAntlr.Common
                     break;
 
                 default:
-                    throw new InvalidOperationException("Unexpected node type encountered.");
+
+                    if (node is CommonErrorNode)
+                    {
+                        var commonErrorNode = node as CommonErrorNode;
+
+                        var trappedException = commonErrorNode.trappedException;
+
+                        throw trappedException;
+                    }
+                    else
+                    {
+                        var ancestorNode = node;
+
+                        while (ancestorNode.Line <= 0 && ancestorNode.Parent != null)
+                        {
+                            ancestorNode = ancestorNode.Parent;
+                        }
+
+                        throw new InvalidOperationException("Unexpected node type encountered near line " + ancestorNode.Line + ", position " + ancestorNode.CharPositionInLine + ".");
+                    }
             }
 
             AfterVisit(node);
@@ -145,7 +168,7 @@ namespace AbnfToAntlr.Common
 
             for (int index = 0; index < childCount; index++)
             {
-                var child = node.GetChild(index);
+                var child = node.GetAndValidateChild(index);
 
                 Visit(child);
             }
@@ -177,7 +200,7 @@ namespace AbnfToAntlr.Common
                     break;
 
                 default:
-                    throw new InvalidOperationException("Unexpected value node encountered.");
+                    throw new InvalidOperationException("Unexpected node type encountered while getting value.");
             }
 
             return result;
@@ -195,7 +218,7 @@ namespace AbnfToAntlr.Common
             var maxIndex = node.ChildCount;
             for (int index = 0; index < maxIndex; index++)
             {
-                child = node.GetChild(index);
+                child = node.GetAndValidateChild(index);
 
                 if (child.ChildCount == 0)
                 {
@@ -203,192 +226,225 @@ namespace AbnfToAntlr.Common
                 }
                 else
                 {
-                    throw new InvalidOperationException("Unexpected child node encountered.");
+                    throw new InvalidOperationException("Unexpected node type encountered while getting text of children.");
                 }
             }
 
             return builder.ToString();
         }
 
+        public string GetStringValue(ITree node)
+        {
+            ITree char_val;
+
+            if (node.Type == AbnfAstParser.CHAR_VAL_NODE)
+            {
+                var string_node = node.GetAndValidateChild(0);
+
+                char_val = string_node.GetAndValidateChild(0);
+            }
+            else if (node.Type == AbnfAstParser.PROSE_VAL_NODE)
+            {
+                char_val = node.GetAndValidateChild(0);
+            }
+            else
+            {
+                throw new Exception("Unexpected node type encountered while getting string value");
+            }
+
+            var result = char_val.Text;
+            result = result.Substring(1, result.Length - 2);
+
+            return result;
+        }
+
+        public bool IsCaseSensitive(ITree node)
+        {
+            bool result;
+
+            if (node.Type == AbnfAstParser.CHAR_VAL_NODE)
+            {
+                var string_node = node.GetAndValidateChild(0);
+
+                result = (string_node.Type == AbnfAstParser.CASE_SENSITIVE_STRING_NODE);
+            }
+            else if (node.Type == AbnfAstParser.PROSE_VAL_NODE)
+            {
+                result = true;
+            }
+            else
+            {
+                throw new Exception("Unexpected node type encountered while checking case sensitivity of string value");
+            }
+
+            return result;
+        }
+
+        public readonly HashSet<string> ReservedKeywords =
+            new HashSet<string>
+            {
+                // ANTLR reserved keywords
+                "catch",
+                "finally",
+                "fragment",
+                "grammar",
+                "import",
+                "lexer",
+                "locals",
+                "mode",
+                "options",
+                "parser",
+                "returns",
+                "throws",
+                "tokens",
+
+                // ANTLR recommended reserved keywords
+                "rule",
+
+
+                // Java reserved keywords
+                "abstract",
+                "assert",
+                "boolean",
+                "break",
+                "byte",
+                "case",
+                "catch", // ANTLR keyword too
+                "char",
+                "class",
+                "const",
+                "continue",
+                "default",
+                "do",
+                "double",
+                "else",
+                "enum",
+                "extends",
+                "final",
+                "finally", // ANTLR keyword too
+                "float",
+                "for",
+                "goto",
+                "if",
+                "implements",
+                "import", // ANTLR keyword too
+                "instanceof",
+                "int",
+                "interface",
+                "long",
+                "native",
+                "new",
+                "package",
+                "private",
+                "protected",
+                "public",
+                "return",
+                "short",
+                "static",
+                "strictfp",
+                "super",
+                "switch",
+                "synchronized",
+                "this",
+                "throw",
+                "throws", // ANTLR keyword too
+                "transient",
+                "try",
+                "void",
+                "volatile",
+                "while",
+
+                "false",
+                "null",
+                "true",
+
+                // C# reserved keywords
+                "abstract",
+                "as",
+                "base",
+                "bool",
+                "break",
+                "byte",
+                "case",
+                "catch",
+                "char",
+                "checked",
+                "class",
+                "const",
+                "continue",
+                "decimal",
+                "default",
+                "delegate",
+                "do",
+                "double",
+                "else",
+                "enum",
+                "event",
+                "explicit",
+                "extern",
+                "false",
+                "finally",
+                "fixed",
+                "float",
+                "for",
+                "foreach",
+                "goto",
+                "if",
+                "implicit",
+                "in",
+                "int",
+                "interface",
+                "internal",
+                "is",
+                "lock",
+                "long",
+                "namespace",
+                "new",
+                "null",
+                "object",
+                "operator",
+                "out",
+                "override",
+                "params",
+                "private",
+                "protected",
+                "public",
+                "readonly",
+                "ref",
+                "return",
+                "sbyte",
+                "sealed",
+                "short",
+                "sizeof",
+                "stackalloc",
+                "static",
+                "string",
+                "struct",
+                "switch",
+                "this",
+                "throw",
+                "true",
+                "try",
+                "typeof",
+                "uint",
+                "ulong",
+                "unchecked",
+                "unsafe",
+                "ushort",
+                "using",
+                "virtual",
+                "void",
+                "volatile",
+                "while"
+            };
+
         /// <summary>
         /// Determine if the specified string is a reserved keyword in ANTLR, Java or C#
         /// </summary>
         protected bool IsReservedKeyWord(string text)
         {
-            bool result;
+            var result = ReservedKeywords.Contains(text);
 
-            // prevent collisions with ANTLR keywords (give colliding rule names a numeric suffix)
-            switch (text)
-            {
-                // ANTLR reserved keywords
-                case "catch":
-                case "finally":
-                case "fragment":
-                case "grammar":
-                case "import":
-                case "lexer":
-                case "locals":
-                case "mode":
-                case "options":
-                case "parser":
-                case "returns":
-                case "throws":
-                case "tokens":
-
-                // ANTLR recommended reserved keywords
-                case "rule":
-                    result = true;
-                    goto ReturnResult;
-            }
-
-            // Java reserved keywords
-            switch (text)
-            {
-                case "abstract":
-                case "assert":
-                case "boolean":
-                case "break":
-                case "byte":
-                case "case":
-                case "catch": // ANTLR keyword too
-                case "char":
-                case "class":
-                case "const":
-                case "continue":
-                case "default":
-                case "do":
-                case "double":
-                case "else":
-                case "enum":
-                case "extends":
-                case "final":
-                case "finally": // ANTLR keyword too
-                case "float":
-                case "for":
-                case "goto":
-                case "if":
-                case "implements":
-                case "import": // ANTLR keyword too
-                case "instanceof":
-                case "int":
-                case "interface":
-                case "long":
-                case "native":
-                case "new":
-                case "package":
-                case "private":
-                case "protected":
-                case "public":
-                case "return":
-                case "short":
-                case "static":
-                case "strictfp":
-                case "super":
-                case "switch":
-                case "synchronized":
-                case "this":
-                case "throw":
-                case "throws": // ANTLR keyword too
-                case "transient":
-                case "try":
-                case "void":
-                case "volatile":
-                case "while":
-
-                case "false":
-                case "null":
-                case "true":
-                    result = true;
-                    goto ReturnResult;
-            }
-
-            // C# reserved keywords
-            switch (text)
-            {
-                case "abstract":
-                case "as":
-                case "base":
-                case "bool":
-                case "break":
-                case "byte":
-                case "case":
-                case "catch":
-                case "char":
-                case "checked":
-                case "class":
-                case "const":
-                case "continue":
-                case "decimal":
-                case "default":
-                case "delegate":
-                case "do":
-                case "double":
-                case "else":
-                case "enum":
-                case "event":
-                case "explicit":
-                case "extern":
-                case "false":
-                case "finally":
-                case "fixed":
-                case "float":
-                case "for":
-                case "foreach":
-                case "goto":
-                case "if":
-                case "implicit":
-                case "in":
-                case "int":
-                case "interface":
-                case "internal":
-                case "is":
-                case "lock":
-                case "long":
-                case "namespace":
-                case "new":
-                case "null":
-                case "object":
-                case "operator":
-                case "out":
-                case "override":
-                case "params":
-                case "private":
-                case "protected":
-                case "public":
-                case "readonly":
-                case "ref":
-                case "return":
-                case "sbyte":
-                case "sealed":
-                case "short":
-                case "sizeof":
-                case "stackalloc":
-                case "static":
-                case "string":
-                case "struct":
-                case "switch":
-                case "this":
-                case "throw":
-                case "true":
-                case "try":
-                case "typeof":
-                case "uint":
-                case "ulong":
-                case "unchecked":
-                case "unsafe":
-                case "ushort":
-                case "using":
-                case "virtual":
-                case "void":
-                case "volatile":
-                case "while":
-                    result = true;
-                    goto ReturnResult;
-            }
-
-            result = false;
-
-        ReturnResult:
             return result;
         }
 
@@ -418,6 +474,11 @@ namespace AbnfToAntlr.Common
             // do nothing, terminal node
         }
 
+        protected virtual void VisitDefinedAs(ITree node)
+        {
+            // do nothing, terminal node
+        }
+
         protected virtual void VisitAlternation(ITree node)
         {
             VisitChildren(node);
@@ -440,7 +501,7 @@ namespace AbnfToAntlr.Common
 
         protected virtual void VisitRepetition(ITree node)
         {
-            var element = node.GetChild(0);
+            var element = node.GetAndValidateChild(0);
 
             Visit(element);
         }

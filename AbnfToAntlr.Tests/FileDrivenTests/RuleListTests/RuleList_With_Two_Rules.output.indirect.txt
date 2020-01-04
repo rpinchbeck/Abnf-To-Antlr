@@ -1,0 +1,2 @@
+rulelist_with_two_rules_1 : ;
+rulelist_with_two_rules_2 : ;

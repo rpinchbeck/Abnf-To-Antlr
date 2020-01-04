@@ -1,0 +1,1 @@
+hex-val-range = %x47-49 ;equivalent to (%s"G" / %s"H" / %s"I")

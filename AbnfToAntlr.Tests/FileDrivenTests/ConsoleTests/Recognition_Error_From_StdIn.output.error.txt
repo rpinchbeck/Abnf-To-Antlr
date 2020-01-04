@@ -1,0 +1,5 @@
+An error occurred while processing 'stdin':
+
+A recognition error occurred at line 1 column 6 "MismatchedSetException(41!=)"
+
+

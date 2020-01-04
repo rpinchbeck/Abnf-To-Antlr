@@ -1,0 +1,16 @@
+rule_with_three_alternatives_1 : ONE | TWO | THREE;
+rule_with_three_alternatives_2 : ONE | TWO |THREE;
+rule_with_three_alternatives_3 : ONE | TWO| THREE;
+rule_with_three_alternatives_4 : ONE | TWO|THREE;
+rule_with_three_alternatives_5 : ONE |TWO|THREE;
+rule_with_three_alternatives_6 : ONE| TWO|THREE;
+rule_with_three_alternatives_7 : ONE|TWO|THREE;
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Lexer rules generated for each distinct character in original grammar
+// Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ONE : '1';
+TWO : '2';
+THREE : '3';

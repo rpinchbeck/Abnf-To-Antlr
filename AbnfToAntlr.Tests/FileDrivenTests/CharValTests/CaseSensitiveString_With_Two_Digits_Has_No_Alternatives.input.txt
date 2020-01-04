@@ -1,0 +1,1 @@
+case-sensitive-string-with-two-digits = %s"12"

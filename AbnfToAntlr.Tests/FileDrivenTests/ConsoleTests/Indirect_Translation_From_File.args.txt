@@ -1,0 +1,1 @@
+..\..\FileDrivenTests\ConsoleTests\Indirect_Translation_From_File.input.txt

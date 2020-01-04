@@ -1,0 +1,10 @@
+;leading comment followed by whitespace
+
+rule-after-comment = "" ;comment inline after rule followed by whitespace
+
+;trailing comment
+
+
+;leading comment
+rule-after-comment-without-whitespace="";comment inline after rule
+;trailing comment

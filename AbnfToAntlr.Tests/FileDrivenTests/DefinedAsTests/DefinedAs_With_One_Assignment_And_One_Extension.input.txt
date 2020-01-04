@@ -1,0 +1,11 @@
+rule-using-assignment-1 = ""
+rule-using-extension-1 =/ ""
+
+rule-using-assignment-2 =""
+rule-using-extension-2 =/""
+
+rule-using-assignment-3= ""
+rule-using-extension-3=/ ""
+
+rule-using-assignment-4=""
+rule-using-extension-4=/""

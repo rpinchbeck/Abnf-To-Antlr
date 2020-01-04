@@ -1,0 +1,2 @@
+--direct
+..\..\FileDrivenTests\ConsoleTests\Direct_Translation_From_File.input.txt

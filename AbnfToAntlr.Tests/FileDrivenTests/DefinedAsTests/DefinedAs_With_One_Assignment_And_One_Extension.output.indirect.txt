@@ -1,0 +1,11 @@
+rule_using_assignment_1 : ;
+rule_using_extension_1 : ;
+
+rule_using_assignment_2 :;
+rule_using_extension_2 :;
+
+rule_using_assignment_3: ;
+rule_using_extension_3: ;
+
+rule_using_assignment_4:;
+rule_using_extension_4:;
