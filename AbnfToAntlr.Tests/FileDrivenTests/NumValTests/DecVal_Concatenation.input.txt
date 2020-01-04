@@ -1,0 +1,1 @@
+dec-val-concatenation = %d68.101 ;equivalent to (%s"De")

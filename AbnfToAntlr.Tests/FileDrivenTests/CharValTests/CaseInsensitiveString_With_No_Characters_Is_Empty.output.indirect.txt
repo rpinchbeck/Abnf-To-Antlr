@@ -1,0 +1,1 @@
+case_insensitive_string_with_no_characters : ;

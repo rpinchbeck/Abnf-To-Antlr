@@ -1,0 +1,1 @@
+BIN_VAL : '\u0041'; //equivalent to (%s"A")

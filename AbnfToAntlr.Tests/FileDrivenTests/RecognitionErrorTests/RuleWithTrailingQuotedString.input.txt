@@ -1,0 +1,3 @@
+
+rule-followed-by-quoted-string-on-next-line = 
+"1"

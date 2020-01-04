@@ -1,0 +1,1 @@
+bin-val-concatenation = %b1000001.1100010 ;equivalent to (%s"Ab")

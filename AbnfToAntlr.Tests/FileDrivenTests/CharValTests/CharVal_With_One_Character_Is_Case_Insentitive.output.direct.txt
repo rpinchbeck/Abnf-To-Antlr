@@ -1,0 +1,1 @@
+CHAR_VAL_WITH_ONE_CHARACTER : ('A' | 'a');

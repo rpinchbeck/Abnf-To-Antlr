@@ -1,0 +1,5 @@
+Usage: AbnfToAntlr [--direct] [--stdin | FILE]
+Translate FILE to ANTLR format and write the results to standard output.
+If --stdin is specified instead of FILE, then standard input is used.
+If --direct is specified, then a direct translation is performed.
+Example: AbnfToAntlr "AbnfGrammar.txt" >"AntlrGrammar.g4"

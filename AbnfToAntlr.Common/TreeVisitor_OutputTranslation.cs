@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2012-2013 Robert Pinchbeck
+    Copyright 2012-2020 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -217,9 +217,14 @@ namespace AbnfToAntlr.Common
 
             // detect the special case when multiple concatenations are contained within an alternation rule which also has multiple alternatives
             // (in ABNF, the concatenation rule has higher precedence than the alternation rule; therefore, surround the concatenation with parentheses)
-            if (node.Type == AbnfAstParser.CONCATENATION_NODE)
+            //
+            // for example:   somerule = concatenation1 concatenation2 / concatenation3 concatenation4
+            // translates to: somerule : (concatenation1 concatenation2) / (concatenation3 concatenation4)
+            if (node.Type == AbnfAstParser.CONCATENATION_NODE && node.ChildCount > 1)
             {
-                if (node.ChildCount > 1 && node.Parent.ChildCount > 1)
+                var parent = node.Parent;
+
+                if (parent.Type == AbnfAstParser.ALTERNATION_NODE && parent.ChildCount > 1)
                 {
                     isSpecialConcatenationCase = true;
                 }
@@ -232,6 +237,8 @@ namespace AbnfToAntlr.Common
             }
 
             var maxIndex = node.ChildCount;
+            var lastIndex = maxIndex - 1;
+
             for (int index = 0; index < maxIndex; index++)
             {
                 if (index > 0)
@@ -239,17 +246,14 @@ namespace AbnfToAntlr.Common
                     Write(separator);
                 }
 
-                child = node.GetChild(index);
+                child = node.GetAndValidateChild(index);
 
                 Visit(child);
 
-                if (isSpecialConcatenationCase)
+                if (index == lastIndex && isSpecialConcatenationCase)
                 {
-                    if (index == maxIndex - 1)
-                    {
-                        // in ABNF, the concatenation rule has higher precedence than the alternation rule; therefore, surround the concatenation with parentheses
-                        Write(")");
-                    }
+                    // in ABNF, the concatenation rule has higher precedence than the alternation rule; therefore, surround the concatenation with parentheses
+                    Write(")");
                 }
 
                 // preserve whitespace and comments
@@ -282,7 +286,7 @@ namespace AbnfToAntlr.Common
         protected void WriteRuleNode(ITree node)
         {
             ITree element = null;
-            var rulename = node.GetChild(0);
+            var rulename = node.GetAndValidateChild(0);
 
             _finalNonWhiteSpaceTokenIndexInRule = FindStartOfWhiteSpaceBlock(node.TokenStopIndex + 1) - 1;
 
@@ -295,7 +299,7 @@ namespace AbnfToAntlr.Common
             var maxIndex = node.ChildCount;
             for (int index = 1; index < maxIndex; index++)
             {
-                element = node.GetChild(index);
+                element = node.GetAndValidateChild(index);
                 Visit(element);
             }
 
@@ -366,9 +370,9 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected void WriteRepetitionNode(ITree node)
         {
-            var element = node.GetChild(0);
-            var min = node.GetChild(1);
-            var max = node.GetChild(2);
+            var element = node.GetAndValidateChild(0);
+            var min = node.GetAndValidateChild(1);
+            var max = node.GetAndValidateChild(2);
 
             int minValue;
             int maxValue;
@@ -405,6 +409,7 @@ namespace AbnfToAntlr.Common
                             {
                                 Write(" ");
                             }
+
                             Visit(element);
                         }
 
@@ -462,25 +467,41 @@ namespace AbnfToAntlr.Common
                         Visit(element);
                     }
 
-                    if (minValue < maxValue)
+                    _nestedRepetitionCount--;
+
+                    var needsParentheses = (maxValue - minValue > 1);
+
+                    if (needsParentheses)
                     {
                         Write(" (");
                     }
 
-                    for (int count = minValue; count < maxValue; count++)
+                    _nestedRepetitionCount++;
+
+                    for (int count = maxValue; count > minValue; count--)
                     {
-                        if (count == minValue)
+                        if (count < maxValue)
                         {
+                            Write(" | ");
+                        }
+
+                        if (count - minValue == 1)
+                        {
+                            if (minValue > 0 && !needsParentheses)
+                            {
+                                Write(" ");
+                            }
+
                             Visit(element);
                             Write("?");
                         }
                         else
                         {
-                            Write(" | ");
-
                             Write("(");
 
-                            for (int subCount = minValue; subCount <= count; subCount++)
+                            _nestedRepetitionCount++;
+
+                            for (int subCount = minValue; subCount < count; subCount++)
                             {
                                 if (subCount > minValue)
                                 {
@@ -490,13 +511,15 @@ namespace AbnfToAntlr.Common
                                 Visit(element);
                             }
 
+                            _nestedRepetitionCount--;
+
                             Write(")");
                         }
                     }
 
                     _nestedRepetitionCount--;
 
-                    if (minValue < maxValue)
+                    if (needsParentheses)
                     {
                         Write(")");
                     }
@@ -549,7 +572,7 @@ namespace AbnfToAntlr.Common
         protected void WriteValueConcatNode(ITree node)
         {
             Write("(");
-            WriteChildren(node, "|");
+            WriteChildren(node, " ");
             Write(")");
         }
 
@@ -575,14 +598,14 @@ namespace AbnfToAntlr.Common
 
             for (int index = 0; index < ruleListNode.ChildCount; index++)
             {
-                ruleNode = ruleListNode.GetChild(index);
+                ruleNode = ruleListNode.GetAndValidateChild(index);
 
                 if (ruleNode.Type != AbnfAstParser.RULE_NODE)
                 {
                     throw new InvalidOperationException("Unexpected node type encountered in " + System.Reflection.MethodInfo.GetCurrentMethod().Name + " (rule node expected)");
                 }
 
-                ruleNameNode = ruleNode.GetChild(0);
+                ruleNameNode = ruleNode.GetAndValidateChild(0);
 
                 ruleName = GetRuleName(ruleNameNode);
 

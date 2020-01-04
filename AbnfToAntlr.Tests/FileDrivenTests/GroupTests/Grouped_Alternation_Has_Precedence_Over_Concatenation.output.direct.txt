@@ -1,0 +1,1 @@
+concatenation_of_grouped_alternation : concatenation1 (alternative1 | alternative2) concatenation3;

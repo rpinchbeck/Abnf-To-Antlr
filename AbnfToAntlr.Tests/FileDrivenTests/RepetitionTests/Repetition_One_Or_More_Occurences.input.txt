@@ -1,0 +1,1 @@
+repetition-one-or-more-occurences = 1*"7"

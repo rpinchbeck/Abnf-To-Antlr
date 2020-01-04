@@ -1,0 +1,1 @@
+bin-val = %b1000001 ;equivalent to (%s"A")

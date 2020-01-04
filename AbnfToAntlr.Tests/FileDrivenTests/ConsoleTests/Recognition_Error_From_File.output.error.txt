@@ -1,0 +1,5 @@
+An error occurred while processing '..\..\FileDrivenTests\ConsoleTests\Recognition_Error_From_File.input.txt':
+
+A recognition error occurred at line 1 column 6 "MismatchedSetException(41!=)"
+
+

@@ -1,0 +1,1 @@
+DEC_VAL_RANGE : '\u0044'..'\u0046'; //equivalent to (%s"D" | %s"E" | %s"F")

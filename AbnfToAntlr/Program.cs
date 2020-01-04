@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2013 Robert Pinchbeck
+    Copyright 2013-2020 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -28,15 +29,15 @@ using AbnfToAntlr.Common;
 
 namespace AbnfToAntlr
 {
-    static class Program
+    public class Program
     {
-        static void ShowSyntax()
+        static void ShowSyntax(TextWriter stderr)
         {
-            Console.Error.WriteLine("Usage: AbnfToAntlr [--direct] [--stdin | FILE]");
-            Console.Error.WriteLine("Translate FILE to ANTLR format and write the results to standard output.");
-            Console.Error.WriteLine("If --stdin is specified instead of FILE, then standard input is used.");
-            Console.Error.WriteLine("If --direct is specified, then a direct translation is performed.");
-            Console.Error.WriteLine("Example: AbnfToAntlr \"AbnfGrammar.txt\" >\"AntlrGrammar.g4\"");
+            stderr.WriteLine("Usage: AbnfToAntlr [--direct] [--stdin | FILE]");
+            stderr.WriteLine("Translate FILE to ANTLR format and write the results to standard output.");
+            stderr.WriteLine("If --stdin is specified instead of FILE, then standard input is used.");
+            stderr.WriteLine("If --direct is specified, then a direct translation is performed.");
+            stderr.WriteLine("Example: AbnfToAntlr \"AbnfGrammar.txt\" >\"AntlrGrammar.g4\"");
         }
 
         [STAThread]
@@ -45,25 +46,32 @@ namespace AbnfToAntlr
         /// </summary>
         static int Main(string[] args)
         {
+            int result;
+
+            var program = new Program();
+
             if (args.Length == 0)
             {
-                WinFormsMain();
-                return 0;
+                result = program.WinFormsMain();
             }
             else
             {
-                return ConsoleMain(args);
+                result = program.ConsoleMain(args, Console.In, Console.Out, Console.Error);
             }
+
+            return result;
         }
 
-        static void WinFormsMain()
+        int WinFormsMain()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+
+            return 0;
         }
 
-        static int ConsoleMain(string[] args)
+        public int ConsoleMain(string[] args, TextReader stdin, TextWriter stdout, TextWriter stderr)
         {
             bool shouldShowSyntax = false;
             bool shouldPerformDirectTranslation = false;
@@ -75,12 +83,16 @@ namespace AbnfToAntlr
             }
             else
             {
-                switch (args[0])
+                switch (args[0].ToLowerInvariant())
                 {
                     case "-h":
                     case "/h":
+                    case "--h":
+
                     case "-?":
                     case "/?":
+                    case "--?":
+
                     case "-help":
                     case "/help":
                     case "--help":
@@ -96,7 +108,7 @@ namespace AbnfToAntlr
 
             if (shouldShowSyntax || fileArgIndex >= args.Length || args.Length > fileArgIndex + 1)
             {
-                ShowSyntax();
+                ShowSyntax(stderr);
                 return 1;
             }
 
@@ -111,11 +123,11 @@ namespace AbnfToAntlr
                 if (args[fileArgIndex] == "--stdin")
                 {
                     path = "stdin";
-                    reader = System.Console.In;
+                    reader = stdin;
                 }
                 else
                 {
-                    path = args[0];
+                    path = args[fileArgIndex];
                     reader = new System.IO.StreamReader(path);
                 }
 
@@ -133,20 +145,13 @@ namespace AbnfToAntlr
 
                 output = translator.Translate(input, shouldPerformDirectTranslation);
 
-                System.Console.Write(output);
-
-#if DEBUG
-                // when debugging, output the resulting string builder to a file
-                if (System.Diagnostics.Debugger.IsAttached)
-                {
-                    System.IO.File.WriteAllText(@"..\..\_AbnfToAntlr_Debug_Output.txt", output);
-                }
-#endif
+                stdout.Write(output);
             }
             catch (Exception ex)
             {
-                Console.Error.WriteLine(string.Format("An error occurred while processing '{0}':", path));
-                Console.Error.WriteLine(ex.Message);
+                stderr.WriteLine(string.Format("An error occurred while processing '{0}':", path));
+                stderr.WriteLine();
+                stderr.WriteLine(ex.Message);
                 return 2;
             }
 

@@ -1,0 +1,3 @@
+repetition-n-or-more-occurences-with-one-digit = 3*"9"
+
+repetition-n-or-more-occurences-with-two-digits = 33*"9"

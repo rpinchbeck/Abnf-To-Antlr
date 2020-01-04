@@ -1,0 +1,1 @@
+HEX_VAL : '\u0047'; //equivalent to (%s"G")

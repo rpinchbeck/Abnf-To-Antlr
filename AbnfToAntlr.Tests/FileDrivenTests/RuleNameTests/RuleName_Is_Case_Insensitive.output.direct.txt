@@ -1,0 +1,2 @@
+RULE_WITH_UPPERCASE_AND_LOWERCASE_NAME : ;
+rule_referring_to_rulename_using_different_case : RULE_WITH_UPPERCASE_AND_LOWERCASE_NAME;

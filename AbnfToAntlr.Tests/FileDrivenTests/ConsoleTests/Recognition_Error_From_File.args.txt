@@ -1,0 +1,1 @@
+..\..\FileDrivenTests\ConsoleTests\Recognition_Error_From_File.input.txt

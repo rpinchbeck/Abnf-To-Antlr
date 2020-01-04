@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -40,21 +43,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RuleNameTests.cs" />
-    <Compile Include="CharValueTests.cs" />
+    <Compile Include="UnitTests\AlternationTests.cs" />
+    <Compile Include="UnitTests\BinValTests.cs" />
+    <Compile Include="UnitTests\ConcatenationTests.cs" />
+    <Compile Include="UnitTests\ConsoleTests.cs" />
+    <Compile Include="UnitTests\DefinedAsTests.cs" />
+    <Compile Include="FileDrivenTestBase.cs" />
+    <Compile Include="UnitTests\GroupTests.cs" />
+    <Compile Include="UnitTests\OptionTests.cs" />
+    <Compile Include="UnitTests\ProseValTests.cs" />
+    <Compile Include="UnitTests\RecognitionErrorTests.cs" />
+    <Compile Include="UnitTests\RepetitionTests.cs" />
+    <Compile Include="UnitTests\RuleListTests.cs" />
+    <Compile Include="UnitTests\RuleNameTests.cs" />
+    <Compile Include="UnitTests\CharValueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
-    <Compile Include="TranslatorTestBase.cs" />
+    <Compile Include="UnitTests\CommentTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FileDrivenTests\AlternationTests\" />
+    <Folder Include="FileDrivenTests\CharValTests\" />
+    <Folder Include="FileDrivenTests\CommentTests\" />
+    <Folder Include="FileDrivenTests\ConcatenationTests\" />
+    <Folder Include="FileDrivenTests\ConsoleTests\" />
+    <Folder Include="FileDrivenTests\DefinedAsTests\" />
+    <Folder Include="FileDrivenTests\GroupTests\" />
+    <Folder Include="FileDrivenTests\NumValTests\" />
+    <Folder Include="FileDrivenTests\OptionTests\" />
+    <Folder Include="FileDrivenTests\ProseValTests\" />
+    <Folder Include="FileDrivenTests\RecognitionErrorTests\" />
+    <Folder Include="FileDrivenTests\RepetitionTests\" />
+    <Folder Include="FileDrivenTests\RuleListTests\" />
+    <Folder Include="FileDrivenTests\RuleNameTests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AbnfToAntlr.Common\AbnfToAntlr.Common.csproj">
       <Project>{d7ce3280-2992-48a0-b01c-ab095dcb1b82}</Project>
       <Name>AbnfToAntlr.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbnfToAntlr\AbnfToAntlr.csproj">
+      <Project>{7252d7f3-bf2b-4fe7-882d-9263e0f48102}</Project>
+      <Name>AbnfToAntlr</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

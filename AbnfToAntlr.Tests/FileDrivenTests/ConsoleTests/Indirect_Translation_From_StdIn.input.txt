@@ -1,0 +1,1 @@
+simple-rule-for-direct-translation-from-stdin = ""

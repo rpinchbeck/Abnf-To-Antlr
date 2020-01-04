@@ -1,0 +1,1 @@
+HEX_VAL_RANGE : '\u0047'..'\u0049'; //equivalent to (%s"G" / %s"H" / %s"I")

@@ -1,0 +1,1 @@
+concatenation-with-one-repetition = "1"

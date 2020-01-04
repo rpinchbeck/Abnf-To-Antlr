@@ -1,0 +1,3 @@
+HEX_VAL_FULL_RANGE : '\u0000'..'\uFFFF';
+
+HEX_VAL_FULL_RANGE_2 : '\u0000'..'\uFFFF';

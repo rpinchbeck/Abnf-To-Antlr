@@ -1,0 +1,1 @@
+char_val_with_no_characters : ;

@@ -1,0 +1,3 @@
+repetition-zero-to-n-occurrences-with-one-digit = *3"6"
+
+repetition-zero-to-n-occurrences-with-two-digits = *33"6"

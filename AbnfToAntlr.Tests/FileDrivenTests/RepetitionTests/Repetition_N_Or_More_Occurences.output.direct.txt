@@ -1,0 +1,3 @@
+REPETITION_N_OR_MORE_OCCURENCES_WITH_ONE_DIGIT : '9' '9' '9'+;
+
+REPETITION_N_OR_MORE_OCCURENCES_WITH_TWO_DIGITS : '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9'+;

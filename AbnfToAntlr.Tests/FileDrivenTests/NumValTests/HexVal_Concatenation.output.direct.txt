@@ -1,0 +1,1 @@
+HEX_VAL_CONCATENATION : ('\u0047' '\u0068'); //equivalent to (%s"Gh")

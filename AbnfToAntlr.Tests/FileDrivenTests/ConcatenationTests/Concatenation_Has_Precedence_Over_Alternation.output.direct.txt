@@ -1,0 +1,1 @@
+concatenation_and_alternation_without_grouping : (concatenation1 concatenation2) | (concatenation3 concatenation4);

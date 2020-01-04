@@ -1,0 +1,7 @@
+rule-with-three-alternatives-1 = "1" / "2" / "3"
+rule-with-three-alternatives-2 = "1" / "2" /"3"
+rule-with-three-alternatives-3 = "1" / "2"/ "3"
+rule-with-three-alternatives-4 = "1" / "2"/"3"
+rule-with-three-alternatives-5 = "1" /"2"/"3"
+rule-with-three-alternatives-6 = "1"/ "2"/"3"
+rule-with-three-alternatives-7 = "1"/"2"/"3"

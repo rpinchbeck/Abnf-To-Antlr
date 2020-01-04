@@ -1,0 +1,1 @@
+repetition-one-to-N-occurences = 1*4"6"

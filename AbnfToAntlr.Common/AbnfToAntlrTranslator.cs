@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2012-2013 Robert Pinchbeck
+    Copyright 2012-2020 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
@@ -48,7 +48,7 @@
     http://www.robertpinchbeck.com
 
 
-    The following articles were instrumental in developing this solution...
+    The following articles were instrumental in developing this solution:
 
     How To Use Antlr With Visual Studio 2010...
     http://techblog.adrianlowdon.co.uk/tag/antlr/
@@ -65,10 +65,16 @@
     Preserving whitespace during translation...
     http://www.antlr.org/article/whitespace/index.html
 
-    Augmented BNF for Syntax Specifications (RFC 5234)
+    Augmented BNF for Syntax Specifications (RFC 5234)...
     http://tools.ietf.org/html/rfc5234
 
-    Official character names from Unicode.org
+    Case-Sensitive String Support in ABNF (RFC 7405)...
+    https://tools.ietf.org/html/rfc7405
+
+    Errata 5334...
+    https://www.rfc-editor.org/errata/eid5334
+
+    Official character names from Unicode.org...
     http://www.unicode.org/charts/PDF/U0000.pdf
 
     --------------------------------------------------------------------------------
@@ -129,14 +135,24 @@ namespace AbnfToAntlr.Common
                 // parse token stream
                 var results = parser.start();
 
+                if (parser.RecognitionExceptions.Count > 0 || lexer.RecognitionExceptions.Count > 0)
+                {
+                    var message =
+                        AntlrHelper.GetErrorMessages(parser.RecognitionExceptions)
+                        + AntlrHelper.GetErrorMessages(lexer.RecognitionExceptions)
+                        ;
+
+                    throw new TranslationException(message, parser.RecognitionExceptions, lexer.RecognitionExceptions);
+                }
+
                 // get parse tree
                 var tree = results.Tree;
 
-                // give lexer rules unicode standard names
-                INamedCharacterLookup lookup = new NamedCharacterLookupUnicode();
+                // Use simplified named characters for indirect translation
+                var lookup = new NamedCharacterLookupSimple();
 
-                // enable the next line to give lexer rules simple names
-                lookup = new NamedCharacterLookupSimple();
+                // enable this line to use Unicode named characters for indirect translation
+                // var lookup = new NamedCharacterLookupUnicode();
 
                 // output translated grammar
                 if (performDirectTranslation)
@@ -206,10 +222,10 @@ namespace AbnfToAntlr.Common
             if (literals.Count > 0)
             {
                 writer.WriteLine("");
-                writer.WriteLine(@"//////////////////////////////////////////////////////////////////////////");
+                writer.WriteLine(@"////////////////////////////////////////////////////////////////////////////////////////////");
                 writer.WriteLine(@"// Lexer rules generated for each distinct character in original grammar");
-                writer.WriteLine(@"// per http://www.unicode.org/charts/PDF/U0000.pdf");
-                writer.WriteLine(@"//////////////////////////////////////////////////////////////////////////");
+                writer.WriteLine(@"// " + lookup.Description);
+                writer.WriteLine(@"////////////////////////////////////////////////////////////////////////////////////////////");
                 writer.WriteLine("");
             }
 
@@ -223,23 +239,7 @@ namespace AbnfToAntlr.Common
 
                 var character = value.Character;
 
-                if (character == '\'')
-                {
-                    writer.Write(@"\'");
-                }
-                else if (character == '\\')
-                {
-                    writer.Write(@"\\");
-                }
-                else if (character < 32)
-                {
-                    writer.Write(@"\u");
-                    writer.Write(((int)character).ToString("X4"));
-                }
-                else
-                {
-                    writer.Write(character);
-                }
+                writer.Write(AntlrHelper.CharEscape(character));
 
                 writer.Write("'");
 

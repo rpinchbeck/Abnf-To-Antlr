@@ -56,8 +56,8 @@
         <br />
         <asp:TextBox ID="txtOutput" runat="server" TextMode="MultiLine" ReadOnly="True" Height="300" Width="100%" Wrap="False"></asp:TextBox>
         <br />
-        <asp:TextBox ID="txtError" runat="server" ForeColor="Red" ReadOnly="True" TextMode="MultiLine" Width="100%"></asp:TextBox>
-        <p><i>Version 1.5.1</i></p>
+        <asp:TextBox ID="txtError" runat="server" ForeColor="DarkRed" ReadOnly="True" TextMode="MultiLine" Width="100%"></asp:TextBox>
+        <p><i>Version 1.6.0</i></p>
     </form>
 </body>
 </html>
