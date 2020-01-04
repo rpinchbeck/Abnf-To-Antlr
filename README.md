@@ -12,6 +12,6 @@ The translator makes the following corrections automatically:
 4. All rule names are converted to lowercase (parser rules).
 5. By default, all character literals are converted into lexer rules (resulting in a scannerless parser).
 
-The provided translator binary can also be compiled from source code using Visual Studio 2012 or a compatible product like SharpDevelop.
+The provided translator binary can also be compiled from source code using Visual Studio or a compatible product like SharpDevelop.
 
 Happy translating!
