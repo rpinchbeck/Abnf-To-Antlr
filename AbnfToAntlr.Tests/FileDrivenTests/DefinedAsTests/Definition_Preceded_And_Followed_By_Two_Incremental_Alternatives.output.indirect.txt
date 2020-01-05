@@ -1,0 +1,16 @@
+definition_preceded_and_followed_by_two_incremental_alternatives_1 : (TWO) | definition_preceded_and_followed_by_two_incremental_alternatives_2;
+definition_preceded_and_followed_by_two_incremental_alternatives_2 : (THREE) | definition_preceded_and_followed_by_two_incremental_alternatives_3;
+definition_preceded_and_followed_by_two_incremental_alternatives : (ONE) | definition_preceded_and_followed_by_two_incremental_alternatives_1;
+definition_preceded_and_followed_by_two_incremental_alternatives_3 : (FOUR) | definition_preceded_and_followed_by_two_incremental_alternatives_4;
+definition_preceded_and_followed_by_two_incremental_alternatives_4 : FIVE;
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Lexer rules generated for each distinct character in original grammar
+// Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ONE : '1';
+TWO : '2';
+THREE : '3';
+FOUR : '4';
+FIVE : '5';

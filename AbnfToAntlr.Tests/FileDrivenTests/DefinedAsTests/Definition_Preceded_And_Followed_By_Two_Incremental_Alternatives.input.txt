@@ -1,0 +1,5 @@
+definition-preceded-and-followed-by-two-incremental-alternatives =/ "2"
+definition-preceded-and-followed-by-two-incremental-alternatives =/ "3"
+definition-preceded-and-followed-by-two-incremental-alternatives = "1"
+definition-preceded-and-followed-by-two-incremental-alternatives =/ "4"
+definition-preceded-and-followed-by-two-incremental-alternatives =/ "5"

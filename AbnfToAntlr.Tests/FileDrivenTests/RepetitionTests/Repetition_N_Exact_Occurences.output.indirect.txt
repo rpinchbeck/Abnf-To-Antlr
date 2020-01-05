@@ -1,6 +1,6 @@
-repetition_n_exact_occurences_with_one_digit : FIVE FIVE FIVE FIVE;
+repetition_n_exact_occurences_with_one_digit : (FIVE FIVE FIVE FIVE);
 
-repetition_n_exact_occurences_with_two_digits : FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE;
+repetition_n_exact_occurences_with_two_digits : (FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE FIVE);
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar

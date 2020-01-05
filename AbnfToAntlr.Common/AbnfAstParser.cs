@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 AbnfAst.g3 2020-01-04 12:59:49
+// $ANTLR 3.5.1 AbnfAst.g3 2020-01-05 10:41:05
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -143,7 +143,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_start();
 	partial void LeaveRule_start();
 	// $ANTLR start "start"
-	// AbnfAst.g3:88:8: public start : rulelist ;
+	// AbnfAst.g3:89:8: public start : rulelist ;
 	[GrammarRule("start")]
 	public AstParserRuleReturnScope<CommonTree, CommonToken> start()
 	{
@@ -158,17 +158,17 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		AstParserRuleReturnScope<CommonTree, CommonToken> rulelist1 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
 		try { DebugEnterRule(GrammarFileName, "start");
-		DebugLocation(88, 2);
+		DebugLocation(89, 2);
 		try
 		{
-			// AbnfAst.g3:89:2: ( rulelist )
+			// AbnfAst.g3:90:2: ( rulelist )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:90:3: rulelist
+			// AbnfAst.g3:91:3: rulelist
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(90, 3);
-			PushFollow(Follow._rulelist_in_start189);
+			DebugLocation(91, 3);
+			PushFollow(Follow._rulelist_in_start205);
 			rulelist1=rulelist();
 			PopFollow();
 			if (state.failed) return retval;
@@ -196,7 +196,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("start", 1);
 			LeaveRule_start();
 		}
-		DebugLocation(91, 2);
+		DebugLocation(92, 2);
 		} finally { DebugExitRule(GrammarFileName, "start"); }
 		return retval;
 
@@ -206,7 +206,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_rulelist();
 	partial void LeaveRule_rulelist();
 	// $ANTLR start "rulelist"
-	// AbnfAst.g3:93:1: rulelist : ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+ EOF -> ^( RULE_LIST_NODE ( rule )+ ) ;
+	// AbnfAst.g3:94:1: rulelist : ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+ EOF -> ^( RULE_LIST_NODE ( rule )+ ) ;
 	[GrammarRule("rulelist")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> rulelist()
 	{
@@ -229,15 +229,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		RewriteRuleSubtreeStream stream_c_nl=new RewriteRuleSubtreeStream(adaptor,"rule c_nl");
 		try { DebugEnterRule(GrammarFileName, "rulelist");
-		DebugLocation(93, 2);
+		DebugLocation(94, 2);
 		try
 		{
-			// AbnfAst.g3:94:2: ( ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+ EOF -> ^( RULE_LIST_NODE ( rule )+ ) )
+			// AbnfAst.g3:95:2: ( ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+ EOF -> ^( RULE_LIST_NODE ( rule )+ ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:95:3: ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+ EOF
+			// AbnfAst.g3:96:3: ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+ EOF
 			{
-			DebugLocation(95, 3);
-			// AbnfAst.g3:95:3: ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+
+			DebugLocation(96, 3);
+			// AbnfAst.g3:96:3: ( rule | ( ( c_wsp )* ( c_nl )=> c_nl ) )+
 			int cnt2=0;
 			try { DebugEnterSubRule(2);
 			while (true)
@@ -261,10 +261,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:95:5: rule
+					// AbnfAst.g3:96:5: rule
 					{
-					DebugLocation(95, 5);
-					PushFollow(Follow._rule_in_rulelist205);
+					DebugLocation(96, 5);
+					PushFollow(Follow._rule_in_rulelist221);
 					rule2=rule();
 					PopFollow();
 					if (state.failed) return retval;
@@ -274,15 +274,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// AbnfAst.g3:95:12: ( ( c_wsp )* ( c_nl )=> c_nl )
+					// AbnfAst.g3:96:12: ( ( c_wsp )* ( c_nl )=> c_nl )
 					{
-					DebugLocation(95, 12);
-					// AbnfAst.g3:95:12: ( ( c_wsp )* ( c_nl )=> c_nl )
+					DebugLocation(96, 12);
+					// AbnfAst.g3:96:12: ( ( c_wsp )* ( c_nl )=> c_nl )
 					DebugEnterAlt(1);
-					// AbnfAst.g3:95:13: ( c_wsp )* ( c_nl )=> c_nl
+					// AbnfAst.g3:96:13: ( c_wsp )* ( c_nl )=> c_nl
 					{
-					DebugLocation(95, 13);
-					// AbnfAst.g3:95:13: ( c_wsp )*
+					DebugLocation(96, 13);
+					// AbnfAst.g3:96:13: ( c_wsp )*
 					try { DebugEnterSubRule(1);
 					while (true)
 					{
@@ -340,10 +340,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// AbnfAst.g3:95:13: c_wsp
+							// AbnfAst.g3:96:13: c_wsp
 							{
-							DebugLocation(95, 13);
-							PushFollow(Follow._c_wsp_in_rulelist210);
+							DebugLocation(96, 13);
+							PushFollow(Follow._c_wsp_in_rulelist226);
 							c_wsp3=c_wsp();
 							PopFollow();
 							if (state.failed) return retval;
@@ -362,8 +362,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 					} finally { DebugExitSubRule(1); }
 
-					DebugLocation(95, 28);
-					PushFollow(Follow._c_nl_in_rulelist217);
+					DebugLocation(96, 28);
+					PushFollow(Follow._c_nl_in_rulelist233);
 					c_nl4=c_nl();
 					PopFollow();
 					if (state.failed) return retval;
@@ -391,8 +391,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(2); }
 
-			DebugLocation(95, 37);
-			EOF5=(CommonToken)Match(input,EOF,Follow._EOF_in_rulelist223); if (state.failed) return retval; 
+			DebugLocation(96, 37);
+			EOF5=(CommonToken)Match(input,EOF,Follow._EOF_in_rulelist239); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_EOF.Add(EOF5);
 
 
@@ -410,23 +410,23 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 95:41: -> ^( RULE_LIST_NODE ( rule )+ )
+			// 96:41: -> ^( RULE_LIST_NODE ( rule )+ )
 			{
-				DebugLocation(95, 44);
-				// AbnfAst.g3:95:44: ^( RULE_LIST_NODE ( rule )+ )
+				DebugLocation(96, 44);
+				// AbnfAst.g3:96:44: ^( RULE_LIST_NODE ( rule )+ )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(95, 46);
+				DebugLocation(96, 46);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(RULE_LIST_NODE, "RULE_LIST_NODE"), root_1);
 
-				DebugLocation(95, 61);
+				DebugLocation(96, 61);
 				if (!(stream_rule.HasNext))
 				{
 					throw new RewriteEarlyExitException();
 				}
 				while ( stream_rule.HasNext )
 				{
-					DebugLocation(95, 61);
+					DebugLocation(96, 61);
 					adaptor.AddChild(root_1, stream_rule.NextTree());
 
 				}
@@ -463,7 +463,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("rulelist", 2);
 			LeaveRule_rulelist();
 		}
-		DebugLocation(96, 2);
+		DebugLocation(97, 2);
 		} finally { DebugExitRule(GrammarFileName, "rulelist"); }
 		return retval;
 
@@ -473,7 +473,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_rule();
 	partial void LeaveRule_rule();
 	// $ANTLR start "rule"
-	// AbnfAst.g3:98:1: rule : rulename defined_as elements ( c_nl | EOF ) -> ^( RULE_NODE rulename defined_as elements ) ;
+	// AbnfAst.g3:99:1: rule : rulename defined_as elements ( c_nl | EOF ) -> ^( RULE_NODE rulename defined_as elements ) ;
 	[GrammarRule("rule")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> rule()
 	{
@@ -498,33 +498,33 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_elements=new RewriteRuleSubtreeStream(adaptor,"rule elements");
 		RewriteRuleSubtreeStream stream_c_nl=new RewriteRuleSubtreeStream(adaptor,"rule c_nl");
 		try { DebugEnterRule(GrammarFileName, "rule");
-		DebugLocation(98, 2);
+		DebugLocation(99, 2);
 		try
 		{
-			// AbnfAst.g3:99:2: ( rulename defined_as elements ( c_nl | EOF ) -> ^( RULE_NODE rulename defined_as elements ) )
+			// AbnfAst.g3:100:2: ( rulename defined_as elements ( c_nl | EOF ) -> ^( RULE_NODE rulename defined_as elements ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:100:3: rulename defined_as elements ( c_nl | EOF )
+			// AbnfAst.g3:101:3: rulename defined_as elements ( c_nl | EOF )
 			{
-			DebugLocation(100, 3);
-			PushFollow(Follow._rulename_in_rule246);
+			DebugLocation(101, 3);
+			PushFollow(Follow._rulename_in_rule262);
 			rulename6=rulename();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_rulename.Add(rulename6.Tree);
-			DebugLocation(100, 12);
-			PushFollow(Follow._defined_as_in_rule248);
+			DebugLocation(101, 12);
+			PushFollow(Follow._defined_as_in_rule264);
 			defined_as7=defined_as();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_defined_as.Add(defined_as7.Tree);
-			DebugLocation(100, 23);
-			PushFollow(Follow._elements_in_rule250);
+			DebugLocation(101, 23);
+			PushFollow(Follow._elements_in_rule266);
 			elements8=elements();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_elements.Add(elements8.Tree);
-			DebugLocation(100, 32);
-			// AbnfAst.g3:100:32: ( c_nl | EOF )
+			DebugLocation(101, 32);
+			// AbnfAst.g3:101:32: ( c_nl | EOF )
 			int alt3=2;
 			try { DebugEnterSubRule(3);
 			try { DebugEnterDecision(3, false);
@@ -550,10 +550,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:100:33: c_nl
+				// AbnfAst.g3:101:33: c_nl
 				{
-				DebugLocation(100, 33);
-				PushFollow(Follow._c_nl_in_rule253);
+				DebugLocation(101, 33);
+				PushFollow(Follow._c_nl_in_rule269);
 				c_nl9=c_nl();
 				PopFollow();
 				if (state.failed) return retval;
@@ -563,10 +563,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:100:40: EOF
+				// AbnfAst.g3:101:40: EOF
 				{
-				DebugLocation(100, 40);
-				EOF10=(CommonToken)Match(input,EOF,Follow._EOF_in_rule257); if (state.failed) return retval; 
+				DebugLocation(101, 40);
+				EOF10=(CommonToken)Match(input,EOF,Follow._EOF_in_rule273); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_EOF.Add(EOF10);
 
 
@@ -591,20 +591,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 100:45: -> ^( RULE_NODE rulename defined_as elements )
+			// 101:45: -> ^( RULE_NODE rulename defined_as elements )
 			{
-				DebugLocation(100, 48);
-				// AbnfAst.g3:100:48: ^( RULE_NODE rulename defined_as elements )
+				DebugLocation(101, 48);
+				// AbnfAst.g3:101:48: ^( RULE_NODE rulename defined_as elements )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(100, 50);
+				DebugLocation(101, 50);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(RULE_NODE, "RULE_NODE"), root_1);
 
-				DebugLocation(100, 60);
+				DebugLocation(101, 60);
 				adaptor.AddChild(root_1, stream_rulename.NextTree());
-				DebugLocation(100, 69);
+				DebugLocation(101, 69);
 				adaptor.AddChild(root_1, stream_defined_as.NextTree());
-				DebugLocation(100, 80);
+				DebugLocation(101, 80);
 				adaptor.AddChild(root_1, stream_elements.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -638,7 +638,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("rule", 3);
 			LeaveRule_rule();
 		}
-		DebugLocation(103, 2);
+		DebugLocation(104, 2);
 		} finally { DebugExitRule(GrammarFileName, "rule"); }
 		return retval;
 
@@ -648,7 +648,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_rulename();
 	partial void LeaveRule_rulename();
 	// $ANTLR start "rulename"
-	// AbnfAst.g3:105:1: rulename : rulechars -> ^( RULE_NAME_NODE rulechars ) ;
+	// AbnfAst.g3:106:1: rulename : rulechars -> ^( RULE_NAME_NODE rulechars ) ;
 	[GrammarRule("rulename")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> rulename()
 	{
@@ -664,15 +664,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		RewriteRuleSubtreeStream stream_rulechars=new RewriteRuleSubtreeStream(adaptor,"rule rulechars");
 		try { DebugEnterRule(GrammarFileName, "rulename");
-		DebugLocation(105, 2);
+		DebugLocation(106, 2);
 		try
 		{
-			// AbnfAst.g3:106:2: ( rulechars -> ^( RULE_NAME_NODE rulechars ) )
+			// AbnfAst.g3:107:2: ( rulechars -> ^( RULE_NAME_NODE rulechars ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:107:3: rulechars
+			// AbnfAst.g3:108:3: rulechars
 			{
-			DebugLocation(107, 3);
-			PushFollow(Follow._rulechars_in_rulename290);
+			DebugLocation(108, 3);
+			PushFollow(Follow._rulechars_in_rulename306);
 			rulechars11=rulechars();
 			PopFollow();
 			if (state.failed) return retval;
@@ -692,16 +692,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 107:13: -> ^( RULE_NAME_NODE rulechars )
+			// 108:13: -> ^( RULE_NAME_NODE rulechars )
 			{
-				DebugLocation(107, 16);
-				// AbnfAst.g3:107:16: ^( RULE_NAME_NODE rulechars )
+				DebugLocation(108, 16);
+				// AbnfAst.g3:108:16: ^( RULE_NAME_NODE rulechars )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(107, 18);
+				DebugLocation(108, 18);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(RULE_NAME_NODE, "RULE_NAME_NODE"), root_1);
 
-				DebugLocation(107, 33);
+				DebugLocation(108, 33);
 				adaptor.AddChild(root_1, stream_rulechars.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -735,7 +735,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("rulename", 4);
 			LeaveRule_rulename();
 		}
-		DebugLocation(108, 2);
+		DebugLocation(109, 2);
 		} finally { DebugExitRule(GrammarFileName, "rulename"); }
 		return retval;
 
@@ -745,7 +745,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_rulechars();
 	partial void LeaveRule_rulechars();
 	// $ANTLR start "rulechars"
-	// AbnfAst.g3:110:1: rulechars : ( HEX_ALPHA | OTHER_ALPHA ) ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )* ;
+	// AbnfAst.g3:111:1: rulechars : ( HEX_ALPHA | OTHER_ALPHA ) ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )* ;
 	[GrammarRule("rulechars")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> rulechars()
 	{
@@ -763,16 +763,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		CommonTree set12_tree = default(CommonTree);
 		CommonTree set13_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "rulechars");
-		DebugLocation(110, 2);
+		DebugLocation(111, 2);
 		try
 		{
-			// AbnfAst.g3:111:2: ( ( HEX_ALPHA | OTHER_ALPHA ) ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )* )
+			// AbnfAst.g3:112:2: ( ( HEX_ALPHA | OTHER_ALPHA ) ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )* )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:112:3: ( HEX_ALPHA | OTHER_ALPHA ) ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )*
+			// AbnfAst.g3:113:3: ( HEX_ALPHA | OTHER_ALPHA ) ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )*
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(112, 3);
+			DebugLocation(113, 3);
 
 			set12=(CommonToken)input.LT(1);
 			if (input.LA(1)==HEX_ALPHA||input.LA(1)==OTHER_ALPHA)
@@ -789,8 +789,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				throw mse;
 			}
 
-			DebugLocation(112, 31);
-			// AbnfAst.g3:112:31: ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )*
+			DebugLocation(113, 31);
+			// AbnfAst.g3:113:31: ( HEX_ALPHA | OTHER_ALPHA | ZERO | ONE | OTHER_DIGIT | DASH )*
 			try { DebugEnterSubRule(4);
 			while (true)
 			{
@@ -811,7 +811,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(112, 31);
+					DebugLocation(113, 31);
 
 					set13=(CommonToken)input.LT(1);
 					if (input.LA(1)==DASH||input.LA(1)==HEX_ALPHA||input.LA(1)==ONE||(input.LA(1)>=OTHER_ALPHA && input.LA(1)<=OTHER_DIGIT)||input.LA(1)==ZERO)
@@ -865,7 +865,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("rulechars", 5);
 			LeaveRule_rulechars();
 		}
-		DebugLocation(114, 2);
+		DebugLocation(115, 2);
 		} finally { DebugExitRule(GrammarFileName, "rulechars"); }
 		return retval;
 
@@ -875,7 +875,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_defined_as();
 	partial void LeaveRule_defined_as();
 	// $ANTLR start "defined_as"
-	// AbnfAst.g3:116:1: defined_as : ( c_wsp )* ( defined_as_operator ) ( c_wsp )* -> ^( DEFINED_AS_NODE defined_as_operator ) ;
+	// AbnfAst.g3:117:1: defined_as : ( c_wsp )* ( defined_as_operator ) ( c_wsp )* -> ^( DEFINED_AS_NODE defined_as_operator ) ;
 	[GrammarRule("defined_as")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> defined_as()
 	{
@@ -894,15 +894,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		RewriteRuleSubtreeStream stream_defined_as_operator=new RewriteRuleSubtreeStream(adaptor,"rule defined_as_operator");
 		try { DebugEnterRule(GrammarFileName, "defined_as");
-		DebugLocation(116, 2);
+		DebugLocation(117, 2);
 		try
 		{
-			// AbnfAst.g3:117:2: ( ( c_wsp )* ( defined_as_operator ) ( c_wsp )* -> ^( DEFINED_AS_NODE defined_as_operator ) )
+			// AbnfAst.g3:118:2: ( ( c_wsp )* ( defined_as_operator ) ( c_wsp )* -> ^( DEFINED_AS_NODE defined_as_operator ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:118:3: ( c_wsp )* ( defined_as_operator ) ( c_wsp )*
+			// AbnfAst.g3:119:3: ( c_wsp )* ( defined_as_operator ) ( c_wsp )*
 			{
-			DebugLocation(118, 3);
-			// AbnfAst.g3:118:3: ( c_wsp )*
+			DebugLocation(119, 3);
+			// AbnfAst.g3:119:3: ( c_wsp )*
 			try { DebugEnterSubRule(5);
 			while (true)
 			{
@@ -921,10 +921,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:118:3: c_wsp
+					// AbnfAst.g3:119:3: c_wsp
 					{
-					DebugLocation(118, 3);
-					PushFollow(Follow._c_wsp_in_defined_as364);
+					DebugLocation(119, 3);
+					PushFollow(Follow._c_wsp_in_defined_as380);
 					c_wsp14=c_wsp();
 					PopFollow();
 					if (state.failed) return retval;
@@ -943,13 +943,13 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(5); }
 
-			DebugLocation(118, 10);
-			// AbnfAst.g3:118:10: ( defined_as_operator )
+			DebugLocation(119, 10);
+			// AbnfAst.g3:119:10: ( defined_as_operator )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:118:12: defined_as_operator
+			// AbnfAst.g3:119:12: defined_as_operator
 			{
-			DebugLocation(118, 12);
-			PushFollow(Follow._defined_as_operator_in_defined_as369);
+			DebugLocation(119, 12);
+			PushFollow(Follow._defined_as_operator_in_defined_as385);
 			defined_as_operator15=defined_as_operator();
 			PopFollow();
 			if (state.failed) return retval;
@@ -957,8 +957,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			}
 
-			DebugLocation(118, 34);
-			// AbnfAst.g3:118:34: ( c_wsp )*
+			DebugLocation(119, 34);
+			// AbnfAst.g3:119:34: ( c_wsp )*
 			try { DebugEnterSubRule(6);
 			while (true)
 			{
@@ -977,10 +977,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:118:34: c_wsp
+					// AbnfAst.g3:119:34: c_wsp
 					{
-					DebugLocation(118, 34);
-					PushFollow(Follow._c_wsp_in_defined_as373);
+					DebugLocation(119, 34);
+					PushFollow(Follow._c_wsp_in_defined_as389);
 					c_wsp16=c_wsp();
 					PopFollow();
 					if (state.failed) return retval;
@@ -1014,16 +1014,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 118:41: -> ^( DEFINED_AS_NODE defined_as_operator )
+			// 119:41: -> ^( DEFINED_AS_NODE defined_as_operator )
 			{
-				DebugLocation(118, 44);
-				// AbnfAst.g3:118:44: ^( DEFINED_AS_NODE defined_as_operator )
+				DebugLocation(119, 44);
+				// AbnfAst.g3:119:44: ^( DEFINED_AS_NODE defined_as_operator )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(118, 46);
+				DebugLocation(119, 46);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(DEFINED_AS_NODE, "DEFINED_AS_NODE"), root_1);
 
-				DebugLocation(118, 62);
+				DebugLocation(119, 62);
 				adaptor.AddChild(root_1, stream_defined_as_operator.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -1057,7 +1057,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("defined_as", 6);
 			LeaveRule_defined_as();
 		}
-		DebugLocation(121, 2);
+		DebugLocation(122, 2);
 		} finally { DebugExitRule(GrammarFileName, "defined_as"); }
 		return retval;
 
@@ -1067,7 +1067,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_defined_as_operator();
 	partial void LeaveRule_defined_as_operator();
 	// $ANTLR start "defined_as_operator"
-	// AbnfAst.g3:123:1: defined_as_operator : ( '=' | '=/' );
+	// AbnfAst.g3:124:1: defined_as_operator : ( '=' | '=/' );
 	[GrammarRule("defined_as_operator")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> defined_as_operator()
 	{
@@ -1083,16 +1083,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree set17_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "defined_as_operator");
-		DebugLocation(123, 2);
+		DebugLocation(124, 2);
 		try
 		{
-			// AbnfAst.g3:124:2: ( '=' | '=/' )
+			// AbnfAst.g3:125:2: ( '=' | '=/' )
 			DebugEnterAlt(1);
 			// AbnfAst.g3:
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(124, 2);
+			DebugLocation(125, 2);
 
 			set17=(CommonToken)input.LT(1);
 			if ((input.LA(1)>=64 && input.LA(1)<=65))
@@ -1132,7 +1132,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("defined_as_operator", 7);
 			LeaveRule_defined_as_operator();
 		}
-		DebugLocation(126, 2);
+		DebugLocation(127, 2);
 		} finally { DebugExitRule(GrammarFileName, "defined_as_operator"); }
 		return retval;
 
@@ -1142,7 +1142,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_elements();
 	partial void LeaveRule_elements();
 	// $ANTLR start "elements"
-	// AbnfAst.g3:128:1: elements : alternation ( ( c_wsp )=> c_wsp )* -> alternation ;
+	// AbnfAst.g3:129:1: elements : alternation ( ( c_wsp )=> c_wsp )* -> alternation ;
 	[GrammarRule("elements")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> elements()
 	{
@@ -1160,21 +1160,21 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_alternation=new RewriteRuleSubtreeStream(adaptor,"rule alternation");
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		try { DebugEnterRule(GrammarFileName, "elements");
-		DebugLocation(128, 2);
+		DebugLocation(129, 2);
 		try
 		{
-			// AbnfAst.g3:129:2: ( alternation ( ( c_wsp )=> c_wsp )* -> alternation )
+			// AbnfAst.g3:130:2: ( alternation ( ( c_wsp )=> c_wsp )* -> alternation )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:130:3: alternation ( ( c_wsp )=> c_wsp )*
+			// AbnfAst.g3:131:3: alternation ( ( c_wsp )=> c_wsp )*
 			{
-			DebugLocation(130, 3);
-			PushFollow(Follow._alternation_in_elements420);
+			DebugLocation(131, 3);
+			PushFollow(Follow._alternation_in_elements436);
 			alternation18=alternation();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_alternation.Add(alternation18.Tree);
-			DebugLocation(130, 15);
-			// AbnfAst.g3:130:15: ( ( c_wsp )=> c_wsp )*
+			DebugLocation(131, 15);
+			// AbnfAst.g3:131:15: ( ( c_wsp )=> c_wsp )*
 			try { DebugEnterSubRule(7);
 			while (true)
 			{
@@ -1194,10 +1194,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:130:16: ( c_wsp )=> c_wsp
+					// AbnfAst.g3:131:16: ( c_wsp )=> c_wsp
 					{
-					DebugLocation(130, 25);
-					PushFollow(Follow._c_wsp_in_elements427);
+					DebugLocation(131, 25);
+					PushFollow(Follow._c_wsp_in_elements443);
 					c_wsp19=c_wsp();
 					PopFollow();
 					if (state.failed) return retval;
@@ -1231,9 +1231,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 130:33: -> alternation
+			// 131:33: -> alternation
 			{
-				DebugLocation(130, 36);
+				DebugLocation(131, 36);
 				adaptor.AddChild(root_0, stream_alternation.NextTree());
 
 			}
@@ -1264,7 +1264,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("elements", 8);
 			LeaveRule_elements();
 		}
-		DebugLocation(131, 2);
+		DebugLocation(132, 2);
 		} finally { DebugExitRule(GrammarFileName, "elements"); }
 		return retval;
 
@@ -1274,7 +1274,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_c_wsp();
 	partial void LeaveRule_c_wsp();
 	// $ANTLR start "c_wsp"
-	// AbnfAst.g3:133:1: c_wsp : ( WSP | ( c_nl WSP ) );
+	// AbnfAst.g3:134:1: c_wsp : ( WSP | ( c_nl WSP ) );
 	[GrammarRule("c_wsp")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> c_wsp()
 	{
@@ -1293,10 +1293,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		CommonTree WSP20_tree = default(CommonTree);
 		CommonTree WSP22_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "c_wsp");
-		DebugLocation(133, 2);
+		DebugLocation(134, 2);
 		try
 		{
-			// AbnfAst.g3:134:2: ( WSP | ( c_nl WSP ) )
+			// AbnfAst.g3:135:2: ( WSP | ( c_nl WSP ) )
 			int alt8=2;
 			try { DebugEnterDecision(8, false);
 			int LA8_1 = input.LA(1);
@@ -1321,12 +1321,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:135:3: WSP
+				// AbnfAst.g3:136:3: WSP
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(135, 3);
-				WSP20=(CommonToken)Match(input,WSP,Follow._WSP_in_c_wsp447); if (state.failed) return retval;
+				DebugLocation(136, 3);
+				WSP20=(CommonToken)Match(input,WSP,Follow._WSP_in_c_wsp463); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				WSP20_tree = (CommonTree)adaptor.Create(WSP20);
 				adaptor.AddChild(root_0, WSP20_tree);
@@ -1336,23 +1336,23 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:135:9: ( c_nl WSP )
+				// AbnfAst.g3:136:9: ( c_nl WSP )
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(135, 9);
-				// AbnfAst.g3:135:9: ( c_nl WSP )
+				DebugLocation(136, 9);
+				// AbnfAst.g3:136:9: ( c_nl WSP )
 				DebugEnterAlt(1);
-				// AbnfAst.g3:135:11: c_nl WSP
+				// AbnfAst.g3:136:11: c_nl WSP
 				{
-				DebugLocation(135, 11);
-				PushFollow(Follow._c_nl_in_c_wsp453);
+				DebugLocation(136, 11);
+				PushFollow(Follow._c_nl_in_c_wsp469);
 				c_nl21=c_nl();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) adaptor.AddChild(root_0, c_nl21.Tree);
-				DebugLocation(135, 16);
-				WSP22=(CommonToken)Match(input,WSP,Follow._WSP_in_c_wsp455); if (state.failed) return retval;
+				DebugLocation(136, 16);
+				WSP22=(CommonToken)Match(input,WSP,Follow._WSP_in_c_wsp471); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				WSP22_tree = (CommonTree)adaptor.Create(WSP22);
 				adaptor.AddChild(root_0, WSP22_tree);
@@ -1385,7 +1385,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("c_wsp", 9);
 			LeaveRule_c_wsp();
 		}
-		DebugLocation(136, 2);
+		DebugLocation(137, 2);
 		} finally { DebugExitRule(GrammarFileName, "c_wsp"); }
 		return retval;
 
@@ -1395,7 +1395,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_c_nl();
 	partial void LeaveRule_c_nl();
 	// $ANTLR start "c_nl"
-	// AbnfAst.g3:138:1: c_nl : ( comment | CRLF );
+	// AbnfAst.g3:139:1: c_nl : ( comment | CRLF );
 	[GrammarRule("c_nl")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> c_nl()
 	{
@@ -1412,10 +1412,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree CRLF24_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "c_nl");
-		DebugLocation(138, 2);
+		DebugLocation(139, 2);
 		try
 		{
-			// AbnfAst.g3:139:2: ( comment | CRLF )
+			// AbnfAst.g3:140:2: ( comment | CRLF )
 			int alt9=2;
 			try { DebugEnterDecision(9, false);
 			int LA9_1 = input.LA(1);
@@ -1440,12 +1440,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:140:3: comment
+				// AbnfAst.g3:141:3: comment
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(140, 3);
-				PushFollow(Follow._comment_in_c_nl471);
+				DebugLocation(141, 3);
+				PushFollow(Follow._comment_in_c_nl487);
 				comment23=comment();
 				PopFollow();
 				if (state.failed) return retval;
@@ -1455,12 +1455,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:140:13: CRLF
+				// AbnfAst.g3:141:13: CRLF
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(140, 13);
-				CRLF24=(CommonToken)Match(input,CRLF,Follow._CRLF_in_c_nl475); if (state.failed) return retval;
+				DebugLocation(141, 13);
+				CRLF24=(CommonToken)Match(input,CRLF,Follow._CRLF_in_c_nl491); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				CRLF24_tree = (CommonTree)adaptor.Create(CRLF24);
 				adaptor.AddChild(root_0, CRLF24_tree);
@@ -1490,7 +1490,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("c_nl", 10);
 			LeaveRule_c_nl();
 		}
-		DebugLocation(142, 2);
+		DebugLocation(143, 2);
 		} finally { DebugExitRule(GrammarFileName, "c_nl"); }
 		return retval;
 
@@ -1500,7 +1500,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_comment();
 	partial void LeaveRule_comment();
 	// $ANTLR start "comment"
-	// AbnfAst.g3:144:1: comment : COMMENT ;
+	// AbnfAst.g3:145:1: comment : COMMENT ;
 	[GrammarRule("comment")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> comment()
 	{
@@ -1516,17 +1516,17 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree COMMENT25_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "comment");
-		DebugLocation(144, 2);
+		DebugLocation(145, 2);
 		try
 		{
-			// AbnfAst.g3:145:2: ( COMMENT )
+			// AbnfAst.g3:146:2: ( COMMENT )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:146:3: COMMENT
+			// AbnfAst.g3:147:3: COMMENT
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(146, 3);
-			COMMENT25=(CommonToken)Match(input,COMMENT,Follow._COMMENT_in_comment492); if (state.failed) return retval;
+			DebugLocation(147, 3);
+			COMMENT25=(CommonToken)Match(input,COMMENT,Follow._COMMENT_in_comment508); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			COMMENT25_tree = (CommonTree)adaptor.Create(COMMENT25);
 			adaptor.AddChild(root_0, COMMENT25_tree);
@@ -1554,7 +1554,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("comment", 11);
 			LeaveRule_comment();
 		}
-		DebugLocation(147, 2);
+		DebugLocation(148, 2);
 		} finally { DebugExitRule(GrammarFileName, "comment"); }
 		return retval;
 
@@ -1564,7 +1564,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_alternation();
 	partial void LeaveRule_alternation();
 	// $ANTLR start "alternation"
-	// AbnfAst.g3:149:1: alternation : concatenation ( ( c_wsp )* '/' ( c_wsp )* concatenation )* -> ^( ALTERNATION_NODE ( concatenation )+ ) ;
+	// AbnfAst.g3:150:1: alternation : concatenation ( ( c_wsp )* '/' ( c_wsp )* concatenation )* -> ^( ALTERNATION_NODE ( concatenation )+ ) ;
 	[GrammarRule("alternation")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> alternation()
 	{
@@ -1587,21 +1587,21 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_concatenation=new RewriteRuleSubtreeStream(adaptor,"rule concatenation");
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		try { DebugEnterRule(GrammarFileName, "alternation");
-		DebugLocation(149, 2);
+		DebugLocation(150, 2);
 		try
 		{
-			// AbnfAst.g3:150:2: ( concatenation ( ( c_wsp )* '/' ( c_wsp )* concatenation )* -> ^( ALTERNATION_NODE ( concatenation )+ ) )
+			// AbnfAst.g3:151:2: ( concatenation ( ( c_wsp )* '/' ( c_wsp )* concatenation )* -> ^( ALTERNATION_NODE ( concatenation )+ ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:151:3: concatenation ( ( c_wsp )* '/' ( c_wsp )* concatenation )*
+			// AbnfAst.g3:152:3: concatenation ( ( c_wsp )* '/' ( c_wsp )* concatenation )*
 			{
-			DebugLocation(151, 3);
-			PushFollow(Follow._concatenation_in_alternation506);
+			DebugLocation(152, 3);
+			PushFollow(Follow._concatenation_in_alternation522);
 			concatenation26=concatenation();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_concatenation.Add(concatenation26.Tree);
-			DebugLocation(151, 17);
-			// AbnfAst.g3:151:17: ( ( c_wsp )* '/' ( c_wsp )* concatenation )*
+			DebugLocation(152, 17);
+			// AbnfAst.g3:152:17: ( ( c_wsp )* '/' ( c_wsp )* concatenation )*
 			try { DebugEnterSubRule(12);
 			while (true)
 			{
@@ -1621,10 +1621,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:151:19: ( c_wsp )* '/' ( c_wsp )* concatenation
+					// AbnfAst.g3:152:19: ( c_wsp )* '/' ( c_wsp )* concatenation
 					{
-					DebugLocation(151, 19);
-					// AbnfAst.g3:151:19: ( c_wsp )*
+					DebugLocation(152, 19);
+					// AbnfAst.g3:152:19: ( c_wsp )*
 					try { DebugEnterSubRule(10);
 					while (true)
 					{
@@ -1643,10 +1643,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// AbnfAst.g3:151:19: c_wsp
+							// AbnfAst.g3:152:19: c_wsp
 							{
-							DebugLocation(151, 19);
-							PushFollow(Follow._c_wsp_in_alternation510);
+							DebugLocation(152, 19);
+							PushFollow(Follow._c_wsp_in_alternation526);
 							c_wsp27=c_wsp();
 							PopFollow();
 							if (state.failed) return retval;
@@ -1665,12 +1665,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 					} finally { DebugExitSubRule(10); }
 
-					DebugLocation(151, 26);
-					char_literal28=(CommonToken)Match(input,63,Follow._63_in_alternation513); if (state.failed) return retval; 
+					DebugLocation(152, 26);
+					char_literal28=(CommonToken)Match(input,63,Follow._63_in_alternation529); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_63.Add(char_literal28);
 
-					DebugLocation(151, 30);
-					// AbnfAst.g3:151:30: ( c_wsp )*
+					DebugLocation(152, 30);
+					// AbnfAst.g3:152:30: ( c_wsp )*
 					try { DebugEnterSubRule(11);
 					while (true)
 					{
@@ -1689,10 +1689,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// AbnfAst.g3:151:30: c_wsp
+							// AbnfAst.g3:152:30: c_wsp
 							{
-							DebugLocation(151, 30);
-							PushFollow(Follow._c_wsp_in_alternation515);
+							DebugLocation(152, 30);
+							PushFollow(Follow._c_wsp_in_alternation531);
 							c_wsp29=c_wsp();
 							PopFollow();
 							if (state.failed) return retval;
@@ -1711,8 +1711,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 					} finally { DebugExitSubRule(11); }
 
-					DebugLocation(151, 37);
-					PushFollow(Follow._concatenation_in_alternation518);
+					DebugLocation(152, 37);
+					PushFollow(Follow._concatenation_in_alternation534);
 					concatenation30=concatenation();
 					PopFollow();
 					if (state.failed) return retval;
@@ -1746,23 +1746,23 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 151:54: -> ^( ALTERNATION_NODE ( concatenation )+ )
+			// 152:54: -> ^( ALTERNATION_NODE ( concatenation )+ )
 			{
-				DebugLocation(151, 57);
-				// AbnfAst.g3:151:57: ^( ALTERNATION_NODE ( concatenation )+ )
+				DebugLocation(152, 57);
+				// AbnfAst.g3:152:57: ^( ALTERNATION_NODE ( concatenation )+ )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(151, 59);
+				DebugLocation(152, 59);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(ALTERNATION_NODE, "ALTERNATION_NODE"), root_1);
 
-				DebugLocation(151, 76);
+				DebugLocation(152, 76);
 				if (!(stream_concatenation.HasNext))
 				{
 					throw new RewriteEarlyExitException();
 				}
 				while ( stream_concatenation.HasNext )
 				{
-					DebugLocation(151, 76);
+					DebugLocation(152, 76);
 					adaptor.AddChild(root_1, stream_concatenation.NextTree());
 
 				}
@@ -1799,7 +1799,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("alternation", 12);
 			LeaveRule_alternation();
 		}
-		DebugLocation(152, 2);
+		DebugLocation(153, 2);
 		} finally { DebugExitRule(GrammarFileName, "alternation"); }
 		return retval;
 
@@ -1809,7 +1809,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_concatenation();
 	partial void LeaveRule_concatenation();
 	// $ANTLR start "concatenation"
-	// AbnfAst.g3:154:1: concatenation : repetition ( ( c_wsp )+ repetition )* -> ^( CONCATENATION_NODE ( repetition )+ ) ;
+	// AbnfAst.g3:155:1: concatenation : repetition ( ( c_wsp )+ repetition )* -> ^( CONCATENATION_NODE ( repetition )+ ) ;
 	[GrammarRule("concatenation")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> concatenation()
 	{
@@ -1828,21 +1828,21 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_repetition=new RewriteRuleSubtreeStream(adaptor,"rule repetition");
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		try { DebugEnterRule(GrammarFileName, "concatenation");
-		DebugLocation(154, 2);
+		DebugLocation(155, 2);
 		try
 		{
-			// AbnfAst.g3:155:2: ( repetition ( ( c_wsp )+ repetition )* -> ^( CONCATENATION_NODE ( repetition )+ ) )
+			// AbnfAst.g3:156:2: ( repetition ( ( c_wsp )+ repetition )* -> ^( CONCATENATION_NODE ( repetition )+ ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:156:3: repetition ( ( c_wsp )+ repetition )*
+			// AbnfAst.g3:157:3: repetition ( ( c_wsp )+ repetition )*
 			{
-			DebugLocation(156, 3);
-			PushFollow(Follow._repetition_in_concatenation544);
+			DebugLocation(157, 3);
+			PushFollow(Follow._repetition_in_concatenation560);
 			repetition31=repetition();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_repetition.Add(repetition31.Tree);
-			DebugLocation(156, 14);
-			// AbnfAst.g3:156:14: ( ( c_wsp )+ repetition )*
+			DebugLocation(157, 14);
+			// AbnfAst.g3:157:14: ( ( c_wsp )+ repetition )*
 			try { DebugEnterSubRule(14);
 			while (true)
 			{
@@ -1862,10 +1862,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:156:16: ( c_wsp )+ repetition
+					// AbnfAst.g3:157:16: ( c_wsp )+ repetition
 					{
-					DebugLocation(156, 16);
-					// AbnfAst.g3:156:16: ( c_wsp )+
+					DebugLocation(157, 16);
+					// AbnfAst.g3:157:16: ( c_wsp )+
 					int cnt13=0;
 					try { DebugEnterSubRule(13);
 					while (true)
@@ -1885,10 +1885,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// AbnfAst.g3:156:16: c_wsp
+							// AbnfAst.g3:157:16: c_wsp
 							{
-							DebugLocation(156, 16);
-							PushFollow(Follow._c_wsp_in_concatenation548);
+							DebugLocation(157, 16);
+							PushFollow(Follow._c_wsp_in_concatenation564);
 							c_wsp32=c_wsp();
 							PopFollow();
 							if (state.failed) return retval;
@@ -1913,8 +1913,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 					} finally { DebugExitSubRule(13); }
 
-					DebugLocation(156, 23);
-					PushFollow(Follow._repetition_in_concatenation551);
+					DebugLocation(157, 23);
+					PushFollow(Follow._repetition_in_concatenation567);
 					repetition33=repetition();
 					PopFollow();
 					if (state.failed) return retval;
@@ -1948,23 +1948,23 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 156:37: -> ^( CONCATENATION_NODE ( repetition )+ )
+			// 157:37: -> ^( CONCATENATION_NODE ( repetition )+ )
 			{
-				DebugLocation(156, 40);
-				// AbnfAst.g3:156:40: ^( CONCATENATION_NODE ( repetition )+ )
+				DebugLocation(157, 40);
+				// AbnfAst.g3:157:40: ^( CONCATENATION_NODE ( repetition )+ )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(156, 42);
+				DebugLocation(157, 42);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CONCATENATION_NODE, "CONCATENATION_NODE"), root_1);
 
-				DebugLocation(156, 61);
+				DebugLocation(157, 61);
 				if (!(stream_repetition.HasNext))
 				{
 					throw new RewriteEarlyExitException();
 				}
 				while ( stream_repetition.HasNext )
 				{
-					DebugLocation(156, 61);
+					DebugLocation(157, 61);
 					adaptor.AddChild(root_1, stream_repetition.NextTree());
 
 				}
@@ -2001,7 +2001,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("concatenation", 13);
 			LeaveRule_concatenation();
 		}
-		DebugLocation(157, 2);
+		DebugLocation(158, 2);
 		} finally { DebugExitRule(GrammarFileName, "concatenation"); }
 		return retval;
 
@@ -2011,7 +2011,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_repetition();
 	partial void LeaveRule_repetition();
 	// $ANTLR start "repetition"
-	// AbnfAst.g3:159:1: repetition : ( ASTERISK number element -> ^( REPETITION_NODE element ZERO_OCCURENCES number ) |min= number ASTERISK max= number element -> ^( REPETITION_NODE element $min $max) | number ASTERISK element -> ^( REPETITION_NODE element number ORMORE_OCCURENCES ) | ASTERISK element -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES ) | number element -> ^( REPETITION_NODE element number EXACT_OCCURENCES ) | element -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES ) );
+	// AbnfAst.g3:160:1: repetition : ( ASTERISK number element -> ^( REPETITION_NODE element ZERO_OCCURENCES number ) |min= number ASTERISK max= number element -> ^( REPETITION_NODE element $min $max) | number ASTERISK element -> ^( REPETITION_NODE element number ORMORE_OCCURENCES ) | ASTERISK element -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES ) | number element -> ^( REPETITION_NODE element number EXACT_OCCURENCES ) | element -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES ) );
 	[GrammarRule("repetition")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> repetition()
 	{
@@ -2047,10 +2047,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_number=new RewriteRuleSubtreeStream(adaptor,"rule number");
 		RewriteRuleSubtreeStream stream_element=new RewriteRuleSubtreeStream(adaptor,"rule element");
 		try { DebugEnterRule(GrammarFileName, "repetition");
-		DebugLocation(159, 2);
+		DebugLocation(160, 2);
 		try
 		{
-			// AbnfAst.g3:160:2: ( ASTERISK number element -> ^( REPETITION_NODE element ZERO_OCCURENCES number ) |min= number ASTERISK max= number element -> ^( REPETITION_NODE element $min $max) | number ASTERISK element -> ^( REPETITION_NODE element number ORMORE_OCCURENCES ) | ASTERISK element -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES ) | number element -> ^( REPETITION_NODE element number EXACT_OCCURENCES ) | element -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES ) )
+			// AbnfAst.g3:161:2: ( ASTERISK number element -> ^( REPETITION_NODE element ZERO_OCCURENCES number ) |min= number ASTERISK max= number element -> ^( REPETITION_NODE element $min $max) | number ASTERISK element -> ^( REPETITION_NODE element number ORMORE_OCCURENCES ) | ASTERISK element -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES ) | number element -> ^( REPETITION_NODE element number EXACT_OCCURENCES ) | element -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES ) )
 			int alt15=6;
 			try { DebugEnterDecision(15, false);
 			try
@@ -2067,20 +2067,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:161:3: ASTERISK number element
+				// AbnfAst.g3:162:3: ASTERISK number element
 				{
-				DebugLocation(161, 3);
-				ASTERISK34=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition577); if (state.failed) return retval; 
+				DebugLocation(162, 3);
+				ASTERISK34=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition593); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ASTERISK.Add(ASTERISK34);
 
-				DebugLocation(161, 12);
-				PushFollow(Follow._number_in_repetition579);
+				DebugLocation(162, 12);
+				PushFollow(Follow._number_in_repetition595);
 				number35=number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_number.Add(number35.Tree);
-				DebugLocation(161, 19);
-				PushFollow(Follow._element_in_repetition581);
+				DebugLocation(162, 19);
+				PushFollow(Follow._element_in_repetition597);
 				element36=element();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2100,20 +2100,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 161:44: -> ^( REPETITION_NODE element ZERO_OCCURENCES number )
+				// 162:44: -> ^( REPETITION_NODE element ZERO_OCCURENCES number )
 				{
-					DebugLocation(161, 47);
-					// AbnfAst.g3:161:47: ^( REPETITION_NODE element ZERO_OCCURENCES number )
+					DebugLocation(162, 47);
+					// AbnfAst.g3:162:47: ^( REPETITION_NODE element ZERO_OCCURENCES number )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(161, 49);
+					DebugLocation(162, 49);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(REPETITION_NODE, "REPETITION_NODE"), root_1);
 
-					DebugLocation(161, 65);
+					DebugLocation(162, 65);
 					adaptor.AddChild(root_1, stream_element.NextTree());
-					DebugLocation(161, 73);
+					DebugLocation(162, 73);
 					adaptor.AddChild(root_1, (CommonTree)adaptor.Create(ZERO_OCCURENCES, "ZERO_OCCURENCES"));
-					DebugLocation(161, 89);
+					DebugLocation(162, 89);
 					adaptor.AddChild(root_1, stream_number.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -2129,26 +2129,26 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:162:5: min= number ASTERISK max= number element
+				// AbnfAst.g3:163:5: min= number ASTERISK max= number element
 				{
-				DebugLocation(162, 8);
-				PushFollow(Follow._number_in_repetition618);
+				DebugLocation(163, 8);
+				PushFollow(Follow._number_in_repetition634);
 				min=number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_number.Add(min.Tree);
-				DebugLocation(162, 16);
-				ASTERISK37=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition620); if (state.failed) return retval; 
+				DebugLocation(163, 16);
+				ASTERISK37=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition636); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ASTERISK.Add(ASTERISK37);
 
-				DebugLocation(162, 28);
-				PushFollow(Follow._number_in_repetition624);
+				DebugLocation(163, 28);
+				PushFollow(Follow._number_in_repetition640);
 				max=number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_number.Add(max.Tree);
-				DebugLocation(162, 36);
-				PushFollow(Follow._element_in_repetition626);
+				DebugLocation(163, 36);
+				PushFollow(Follow._element_in_repetition642);
 				element38=element();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2170,20 +2170,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 162:44: -> ^( REPETITION_NODE element $min $max)
+				// 163:44: -> ^( REPETITION_NODE element $min $max)
 				{
-					DebugLocation(162, 47);
-					// AbnfAst.g3:162:47: ^( REPETITION_NODE element $min $max)
+					DebugLocation(163, 47);
+					// AbnfAst.g3:163:47: ^( REPETITION_NODE element $min $max)
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(162, 49);
+					DebugLocation(163, 49);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(REPETITION_NODE, "REPETITION_NODE"), root_1);
 
-					DebugLocation(162, 65);
+					DebugLocation(163, 65);
 					adaptor.AddChild(root_1, stream_element.NextTree());
-					DebugLocation(162, 74);
+					DebugLocation(163, 74);
 					adaptor.AddChild(root_1, stream_min.NextTree());
-					DebugLocation(162, 79);
+					DebugLocation(163, 79);
 					adaptor.AddChild(root_1, stream_max.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -2199,20 +2199,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// AbnfAst.g3:163:5: number ASTERISK element
+				// AbnfAst.g3:164:5: number ASTERISK element
 				{
-				DebugLocation(163, 5);
-				PushFollow(Follow._number_in_repetition646);
+				DebugLocation(164, 5);
+				PushFollow(Follow._number_in_repetition662);
 				number39=number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_number.Add(number39.Tree);
-				DebugLocation(163, 12);
-				ASTERISK40=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition648); if (state.failed) return retval; 
+				DebugLocation(164, 12);
+				ASTERISK40=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition664); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ASTERISK.Add(ASTERISK40);
 
-				DebugLocation(163, 21);
-				PushFollow(Follow._element_in_repetition650);
+				DebugLocation(164, 21);
+				PushFollow(Follow._element_in_repetition666);
 				element41=element();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2232,20 +2232,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 163:44: -> ^( REPETITION_NODE element number ORMORE_OCCURENCES )
+				// 164:44: -> ^( REPETITION_NODE element number ORMORE_OCCURENCES )
 				{
-					DebugLocation(163, 47);
-					// AbnfAst.g3:163:47: ^( REPETITION_NODE element number ORMORE_OCCURENCES )
+					DebugLocation(164, 47);
+					// AbnfAst.g3:164:47: ^( REPETITION_NODE element number ORMORE_OCCURENCES )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(163, 49);
+					DebugLocation(164, 49);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(REPETITION_NODE, "REPETITION_NODE"), root_1);
 
-					DebugLocation(163, 65);
+					DebugLocation(164, 65);
 					adaptor.AddChild(root_1, stream_element.NextTree());
-					DebugLocation(163, 73);
+					DebugLocation(164, 73);
 					adaptor.AddChild(root_1, stream_number.NextTree());
-					DebugLocation(163, 80);
+					DebugLocation(164, 80);
 					adaptor.AddChild(root_1, (CommonTree)adaptor.Create(ORMORE_OCCURENCES, "ORMORE_OCCURENCES"));
 
 					adaptor.AddChild(root_0, root_1);
@@ -2261,14 +2261,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// AbnfAst.g3:164:5: ASTERISK element
+				// AbnfAst.g3:165:5: ASTERISK element
 				{
-				DebugLocation(164, 5);
-				ASTERISK42=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition683); if (state.failed) return retval; 
+				DebugLocation(165, 5);
+				ASTERISK42=(CommonToken)Match(input,ASTERISK,Follow._ASTERISK_in_repetition699); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ASTERISK.Add(ASTERISK42);
 
-				DebugLocation(164, 14);
-				PushFollow(Follow._element_in_repetition685);
+				DebugLocation(165, 14);
+				PushFollow(Follow._element_in_repetition701);
 				element43=element();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2288,20 +2288,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 164:44: -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES )
+				// 165:44: -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES )
 				{
-					DebugLocation(164, 47);
-					// AbnfAst.g3:164:47: ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES )
+					DebugLocation(165, 47);
+					// AbnfAst.g3:165:47: ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(164, 49);
+					DebugLocation(165, 49);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(REPETITION_NODE, "REPETITION_NODE"), root_1);
 
-					DebugLocation(164, 65);
+					DebugLocation(165, 65);
 					adaptor.AddChild(root_1, stream_element.NextTree());
-					DebugLocation(164, 73);
+					DebugLocation(165, 73);
 					adaptor.AddChild(root_1, (CommonTree)adaptor.Create(ZERO_OCCURENCES, "ZERO_OCCURENCES"));
-					DebugLocation(164, 89);
+					DebugLocation(165, 89);
 					adaptor.AddChild(root_1, (CommonTree)adaptor.Create(ORMORE_OCCURENCES, "ORMORE_OCCURENCES"));
 
 					adaptor.AddChild(root_0, root_1);
@@ -2317,16 +2317,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// AbnfAst.g3:165:5: number element
+				// AbnfAst.g3:166:5: number element
 				{
-				DebugLocation(165, 5);
-				PushFollow(Follow._number_in_repetition725);
+				DebugLocation(166, 5);
+				PushFollow(Follow._number_in_repetition741);
 				number44=number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_number.Add(number44.Tree);
-				DebugLocation(165, 12);
-				PushFollow(Follow._element_in_repetition727);
+				DebugLocation(166, 12);
+				PushFollow(Follow._element_in_repetition743);
 				element45=element();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2346,20 +2346,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 165:44: -> ^( REPETITION_NODE element number EXACT_OCCURENCES )
+				// 166:44: -> ^( REPETITION_NODE element number EXACT_OCCURENCES )
 				{
-					DebugLocation(165, 47);
-					// AbnfAst.g3:165:47: ^( REPETITION_NODE element number EXACT_OCCURENCES )
+					DebugLocation(166, 47);
+					// AbnfAst.g3:166:47: ^( REPETITION_NODE element number EXACT_OCCURENCES )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(165, 49);
+					DebugLocation(166, 49);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(REPETITION_NODE, "REPETITION_NODE"), root_1);
 
-					DebugLocation(165, 65);
+					DebugLocation(166, 65);
 					adaptor.AddChild(root_1, stream_element.NextTree());
-					DebugLocation(165, 73);
+					DebugLocation(166, 73);
 					adaptor.AddChild(root_1, stream_number.NextTree());
-					DebugLocation(165, 80);
+					DebugLocation(166, 80);
 					adaptor.AddChild(root_1, (CommonTree)adaptor.Create(EXACT_OCCURENCES, "EXACT_OCCURENCES"));
 
 					adaptor.AddChild(root_0, root_1);
@@ -2375,10 +2375,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// AbnfAst.g3:166:5: element
+				// AbnfAst.g3:167:5: element
 				{
-				DebugLocation(166, 5);
-				PushFollow(Follow._element_in_repetition769);
+				DebugLocation(167, 5);
+				PushFollow(Follow._element_in_repetition785);
 				element46=element();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2398,20 +2398,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 166:44: -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES )
+				// 167:44: -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES )
 				{
-					DebugLocation(166, 47);
-					// AbnfAst.g3:166:47: ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES )
+					DebugLocation(167, 47);
+					// AbnfAst.g3:167:47: ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(166, 49);
+					DebugLocation(167, 49);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(REPETITION_NODE, "REPETITION_NODE"), root_1);
 
-					DebugLocation(166, 65);
+					DebugLocation(167, 65);
 					adaptor.AddChild(root_1, stream_element.NextTree());
-					DebugLocation(166, 73);
+					DebugLocation(167, 73);
 					adaptor.AddChild(root_1, (CommonTree)adaptor.Create(ONE_OCCURENCE, "ONE_OCCURENCE"));
-					DebugLocation(166, 87);
+					DebugLocation(167, 87);
 					adaptor.AddChild(root_1, (CommonTree)adaptor.Create(EXACT_OCCURENCES, "EXACT_OCCURENCES"));
 
 					adaptor.AddChild(root_0, root_1);
@@ -2447,7 +2447,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("repetition", 14);
 			LeaveRule_repetition();
 		}
-		DebugLocation(167, 2);
+		DebugLocation(168, 2);
 		} finally { DebugExitRule(GrammarFileName, "repetition"); }
 		return retval;
 
@@ -2457,7 +2457,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_number();
 	partial void LeaveRule_number();
 	// $ANTLR start "number"
-	// AbnfAst.g3:169:1: number : number_val -> ^( NUMBER_NODE number_val ) ;
+	// AbnfAst.g3:170:1: number : number_val -> ^( NUMBER_NODE number_val ) ;
 	[GrammarRule("number")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> number()
 	{
@@ -2473,15 +2473,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		RewriteRuleSubtreeStream stream_number_val=new RewriteRuleSubtreeStream(adaptor,"rule number_val");
 		try { DebugEnterRule(GrammarFileName, "number");
-		DebugLocation(169, 2);
+		DebugLocation(170, 2);
 		try
 		{
-			// AbnfAst.g3:170:2: ( number_val -> ^( NUMBER_NODE number_val ) )
+			// AbnfAst.g3:171:2: ( number_val -> ^( NUMBER_NODE number_val ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:171:3: number_val
+			// AbnfAst.g3:172:3: number_val
 			{
-			DebugLocation(171, 3);
-			PushFollow(Follow._number_val_in_number826);
+			DebugLocation(172, 3);
+			PushFollow(Follow._number_val_in_number842);
 			number_val47=number_val();
 			PopFollow();
 			if (state.failed) return retval;
@@ -2501,16 +2501,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 171:14: -> ^( NUMBER_NODE number_val )
+			// 172:14: -> ^( NUMBER_NODE number_val )
 			{
-				DebugLocation(171, 17);
-				// AbnfAst.g3:171:17: ^( NUMBER_NODE number_val )
+				DebugLocation(172, 17);
+				// AbnfAst.g3:172:17: ^( NUMBER_NODE number_val )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(171, 19);
+				DebugLocation(172, 19);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(NUMBER_NODE, "NUMBER_NODE"), root_1);
 
-				DebugLocation(171, 31);
+				DebugLocation(172, 31);
 				adaptor.AddChild(root_1, stream_number_val.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -2544,7 +2544,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("number", 15);
 			LeaveRule_number();
 		}
-		DebugLocation(172, 2);
+		DebugLocation(173, 2);
 		} finally { DebugExitRule(GrammarFileName, "number"); }
 		return retval;
 
@@ -2554,7 +2554,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_number_val();
 	partial void LeaveRule_number_val();
 	// $ANTLR start "number_val"
-	// AbnfAst.g3:174:1: number_val : ( ZERO | ONE | OTHER_DIGIT )+ ;
+	// AbnfAst.g3:175:1: number_val : ( ZERO | ONE | OTHER_DIGIT )+ ;
 	[GrammarRule("number_val")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> number_val()
 	{
@@ -2570,17 +2570,17 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree set48_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "number_val");
-		DebugLocation(174, 2);
+		DebugLocation(175, 2);
 		try
 		{
-			// AbnfAst.g3:175:2: ( ( ZERO | ONE | OTHER_DIGIT )+ )
+			// AbnfAst.g3:176:2: ( ( ZERO | ONE | OTHER_DIGIT )+ )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:176:3: ( ZERO | ONE | OTHER_DIGIT )+
+			// AbnfAst.g3:177:3: ( ZERO | ONE | OTHER_DIGIT )+
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(176, 3);
-			// AbnfAst.g3:176:3: ( ZERO | ONE | OTHER_DIGIT )+
+			DebugLocation(177, 3);
+			// AbnfAst.g3:177:3: ( ZERO | ONE | OTHER_DIGIT )+
 			int cnt16=0;
 			try { DebugEnterSubRule(16);
 			while (true)
@@ -2602,7 +2602,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(176, 3);
+					DebugLocation(177, 3);
 
 					set48=(CommonToken)input.LT(1);
 					if (input.LA(1)==ONE||input.LA(1)==OTHER_DIGIT||input.LA(1)==ZERO)
@@ -2662,7 +2662,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("number_val", 16);
 			LeaveRule_number_val();
 		}
-		DebugLocation(178, 2);
+		DebugLocation(179, 2);
 		} finally { DebugExitRule(GrammarFileName, "number_val"); }
 		return retval;
 
@@ -2672,7 +2672,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_element();
 	partial void LeaveRule_element();
 	// $ANTLR start "element"
-	// AbnfAst.g3:180:1: element : ( rulename | group | option | char_val | num_val | prose_val );
+	// AbnfAst.g3:181:1: element : ( rulename | group | option | char_val | num_val | prose_val );
 	[GrammarRule("element")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> element()
 	{
@@ -2692,10 +2692,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		AstParserRuleReturnScope<CommonTree, CommonToken> prose_val54 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
 		try { DebugEnterRule(GrammarFileName, "element");
-		DebugLocation(180, 2);
+		DebugLocation(181, 2);
 		try
 		{
-			// AbnfAst.g3:181:2: ( rulename | group | option | char_val | num_val | prose_val )
+			// AbnfAst.g3:182:2: ( rulename | group | option | char_val | num_val | prose_val )
 			int alt17=6;
 			try { DebugEnterDecision(17, false);
 			switch (input.LA(1))
@@ -2750,12 +2750,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:182:3: rulename
+				// AbnfAst.g3:183:3: rulename
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(182, 3);
-				PushFollow(Follow._rulename_in_element878);
+				DebugLocation(183, 3);
+				PushFollow(Follow._rulename_in_element894);
 				rulename49=rulename();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2765,12 +2765,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:183:5: group
+				// AbnfAst.g3:184:5: group
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(183, 5);
-				PushFollow(Follow._group_in_element884);
+				DebugLocation(184, 5);
+				PushFollow(Follow._group_in_element900);
 				group50=group();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2780,12 +2780,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// AbnfAst.g3:184:5: option
+				// AbnfAst.g3:185:5: option
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(184, 5);
-				PushFollow(Follow._option_in_element890);
+				DebugLocation(185, 5);
+				PushFollow(Follow._option_in_element906);
 				option51=option();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2795,12 +2795,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// AbnfAst.g3:185:5: char_val
+				// AbnfAst.g3:186:5: char_val
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(185, 5);
-				PushFollow(Follow._char_val_in_element896);
+				DebugLocation(186, 5);
+				PushFollow(Follow._char_val_in_element912);
 				char_val52=char_val();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2810,12 +2810,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// AbnfAst.g3:186:5: num_val
+				// AbnfAst.g3:187:5: num_val
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(186, 5);
-				PushFollow(Follow._num_val_in_element902);
+				DebugLocation(187, 5);
+				PushFollow(Follow._num_val_in_element918);
 				num_val53=num_val();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2825,12 +2825,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// AbnfAst.g3:187:5: prose_val
+				// AbnfAst.g3:188:5: prose_val
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(187, 5);
-				PushFollow(Follow._prose_val_in_element908);
+				DebugLocation(188, 5);
+				PushFollow(Follow._prose_val_in_element924);
 				prose_val54=prose_val();
 				PopFollow();
 				if (state.failed) return retval;
@@ -2860,7 +2860,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("element", 17);
 			LeaveRule_element();
 		}
-		DebugLocation(188, 2);
+		DebugLocation(189, 2);
 		} finally { DebugExitRule(GrammarFileName, "element"); }
 		return retval;
 
@@ -2870,7 +2870,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_group();
 	partial void LeaveRule_group();
 	// $ANTLR start "group"
-	// AbnfAst.g3:190:1: group : '(' ( c_wsp )* alternation ( c_wsp )* ')' -> ^( GROUP_NODE alternation ) ;
+	// AbnfAst.g3:191:1: group : '(' ( c_wsp )* alternation ( c_wsp )* ')' -> ^( GROUP_NODE alternation ) ;
 	[GrammarRule("group")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> group()
 	{
@@ -2895,19 +2895,19 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		RewriteRuleSubtreeStream stream_alternation=new RewriteRuleSubtreeStream(adaptor,"rule alternation");
 		try { DebugEnterRule(GrammarFileName, "group");
-		DebugLocation(190, 2);
+		DebugLocation(191, 2);
 		try
 		{
-			// AbnfAst.g3:191:2: ( '(' ( c_wsp )* alternation ( c_wsp )* ')' -> ^( GROUP_NODE alternation ) )
+			// AbnfAst.g3:192:2: ( '(' ( c_wsp )* alternation ( c_wsp )* ')' -> ^( GROUP_NODE alternation ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:192:3: '(' ( c_wsp )* alternation ( c_wsp )* ')'
+			// AbnfAst.g3:193:3: '(' ( c_wsp )* alternation ( c_wsp )* ')'
 			{
-			DebugLocation(192, 3);
-			char_literal55=(CommonToken)Match(input,60,Follow._60_in_group922); if (state.failed) return retval; 
+			DebugLocation(193, 3);
+			char_literal55=(CommonToken)Match(input,60,Follow._60_in_group938); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_60.Add(char_literal55);
 
-			DebugLocation(192, 7);
-			// AbnfAst.g3:192:7: ( c_wsp )*
+			DebugLocation(193, 7);
+			// AbnfAst.g3:193:7: ( c_wsp )*
 			try { DebugEnterSubRule(18);
 			while (true)
 			{
@@ -2926,10 +2926,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:192:7: c_wsp
+					// AbnfAst.g3:193:7: c_wsp
 					{
-					DebugLocation(192, 7);
-					PushFollow(Follow._c_wsp_in_group924);
+					DebugLocation(193, 7);
+					PushFollow(Follow._c_wsp_in_group940);
 					c_wsp56=c_wsp();
 					PopFollow();
 					if (state.failed) return retval;
@@ -2948,14 +2948,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(18); }
 
-			DebugLocation(192, 14);
-			PushFollow(Follow._alternation_in_group927);
+			DebugLocation(193, 14);
+			PushFollow(Follow._alternation_in_group943);
 			alternation57=alternation();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_alternation.Add(alternation57.Tree);
-			DebugLocation(192, 26);
-			// AbnfAst.g3:192:26: ( c_wsp )*
+			DebugLocation(193, 26);
+			// AbnfAst.g3:193:26: ( c_wsp )*
 			try { DebugEnterSubRule(19);
 			while (true)
 			{
@@ -2974,10 +2974,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:192:26: c_wsp
+					// AbnfAst.g3:193:26: c_wsp
 					{
-					DebugLocation(192, 26);
-					PushFollow(Follow._c_wsp_in_group929);
+					DebugLocation(193, 26);
+					PushFollow(Follow._c_wsp_in_group945);
 					c_wsp58=c_wsp();
 					PopFollow();
 					if (state.failed) return retval;
@@ -2996,8 +2996,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(19); }
 
-			DebugLocation(192, 33);
-			char_literal59=(CommonToken)Match(input,61,Follow._61_in_group932); if (state.failed) return retval; 
+			DebugLocation(193, 33);
+			char_literal59=(CommonToken)Match(input,61,Follow._61_in_group948); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_61.Add(char_literal59);
 
 
@@ -3015,16 +3015,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 192:37: -> ^( GROUP_NODE alternation )
+			// 193:37: -> ^( GROUP_NODE alternation )
 			{
-				DebugLocation(192, 40);
-				// AbnfAst.g3:192:40: ^( GROUP_NODE alternation )
+				DebugLocation(193, 40);
+				// AbnfAst.g3:193:40: ^( GROUP_NODE alternation )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(192, 42);
+				DebugLocation(193, 42);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(GROUP_NODE, "GROUP_NODE"), root_1);
 
-				DebugLocation(192, 53);
+				DebugLocation(193, 53);
 				adaptor.AddChild(root_1, stream_alternation.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -3058,7 +3058,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("group", 18);
 			LeaveRule_group();
 		}
-		DebugLocation(193, 2);
+		DebugLocation(194, 2);
 		} finally { DebugExitRule(GrammarFileName, "group"); }
 		return retval;
 
@@ -3068,7 +3068,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_option();
 	partial void LeaveRule_option();
 	// $ANTLR start "option"
-	// AbnfAst.g3:195:1: option : '[' ( c_wsp )* alternation ( c_wsp )* ']' -> ^( OPTION_NODE alternation ) ;
+	// AbnfAst.g3:196:1: option : '[' ( c_wsp )* alternation ( c_wsp )* ']' -> ^( OPTION_NODE alternation ) ;
 	[GrammarRule("option")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> option()
 	{
@@ -3093,19 +3093,19 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		RewriteRuleSubtreeStream stream_alternation=new RewriteRuleSubtreeStream(adaptor,"rule alternation");
 		try { DebugEnterRule(GrammarFileName, "option");
-		DebugLocation(195, 2);
+		DebugLocation(196, 2);
 		try
 		{
-			// AbnfAst.g3:196:2: ( '[' ( c_wsp )* alternation ( c_wsp )* ']' -> ^( OPTION_NODE alternation ) )
+			// AbnfAst.g3:197:2: ( '[' ( c_wsp )* alternation ( c_wsp )* ']' -> ^( OPTION_NODE alternation ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:197:3: '[' ( c_wsp )* alternation ( c_wsp )* ']'
+			// AbnfAst.g3:198:3: '[' ( c_wsp )* alternation ( c_wsp )* ']'
 			{
-			DebugLocation(197, 3);
-			char_literal60=(CommonToken)Match(input,66,Follow._66_in_option954); if (state.failed) return retval; 
+			DebugLocation(198, 3);
+			char_literal60=(CommonToken)Match(input,66,Follow._66_in_option970); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_66.Add(char_literal60);
 
-			DebugLocation(197, 7);
-			// AbnfAst.g3:197:7: ( c_wsp )*
+			DebugLocation(198, 7);
+			// AbnfAst.g3:198:7: ( c_wsp )*
 			try { DebugEnterSubRule(20);
 			while (true)
 			{
@@ -3124,10 +3124,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:197:7: c_wsp
+					// AbnfAst.g3:198:7: c_wsp
 					{
-					DebugLocation(197, 7);
-					PushFollow(Follow._c_wsp_in_option956);
+					DebugLocation(198, 7);
+					PushFollow(Follow._c_wsp_in_option972);
 					c_wsp61=c_wsp();
 					PopFollow();
 					if (state.failed) return retval;
@@ -3146,14 +3146,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(20); }
 
-			DebugLocation(197, 14);
-			PushFollow(Follow._alternation_in_option959);
+			DebugLocation(198, 14);
+			PushFollow(Follow._alternation_in_option975);
 			alternation62=alternation();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_alternation.Add(alternation62.Tree);
-			DebugLocation(197, 26);
-			// AbnfAst.g3:197:26: ( c_wsp )*
+			DebugLocation(198, 26);
+			// AbnfAst.g3:198:26: ( c_wsp )*
 			try { DebugEnterSubRule(21);
 			while (true)
 			{
@@ -3172,10 +3172,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:197:26: c_wsp
+					// AbnfAst.g3:198:26: c_wsp
 					{
-					DebugLocation(197, 26);
-					PushFollow(Follow._c_wsp_in_option961);
+					DebugLocation(198, 26);
+					PushFollow(Follow._c_wsp_in_option977);
 					c_wsp63=c_wsp();
 					PopFollow();
 					if (state.failed) return retval;
@@ -3194,8 +3194,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(21); }
 
-			DebugLocation(197, 33);
-			char_literal64=(CommonToken)Match(input,67,Follow._67_in_option964); if (state.failed) return retval; 
+			DebugLocation(198, 33);
+			char_literal64=(CommonToken)Match(input,67,Follow._67_in_option980); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_67.Add(char_literal64);
 
 
@@ -3213,16 +3213,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 197:37: -> ^( OPTION_NODE alternation )
+			// 198:37: -> ^( OPTION_NODE alternation )
 			{
-				DebugLocation(197, 40);
-				// AbnfAst.g3:197:40: ^( OPTION_NODE alternation )
+				DebugLocation(198, 40);
+				// AbnfAst.g3:198:40: ^( OPTION_NODE alternation )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(197, 42);
+				DebugLocation(198, 42);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(OPTION_NODE, "OPTION_NODE"), root_1);
 
-				DebugLocation(197, 54);
+				DebugLocation(198, 54);
 				adaptor.AddChild(root_1, stream_alternation.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -3256,7 +3256,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("option", 19);
 			LeaveRule_option();
 		}
-		DebugLocation(198, 2);
+		DebugLocation(199, 2);
 		} finally { DebugExitRule(GrammarFileName, "option"); }
 		return retval;
 
@@ -3266,7 +3266,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_num_val();
 	partial void LeaveRule_num_val();
 	// $ANTLR start "num_val"
-	// AbnfAst.g3:200:1: num_val : ( bin_val | dec_val | hex_val ) ;
+	// AbnfAst.g3:201:1: num_val : ( bin_val | dec_val | hex_val ) ;
 	[GrammarRule("num_val")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> num_val()
 	{
@@ -3283,17 +3283,17 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		AstParserRuleReturnScope<CommonTree, CommonToken> hex_val67 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
 		try { DebugEnterRule(GrammarFileName, "num_val");
-		DebugLocation(200, 2);
+		DebugLocation(201, 2);
 		try
 		{
-			// AbnfAst.g3:201:2: ( ( bin_val | dec_val | hex_val ) )
+			// AbnfAst.g3:202:2: ( ( bin_val | dec_val | hex_val ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:202:3: ( bin_val | dec_val | hex_val )
+			// AbnfAst.g3:203:3: ( bin_val | dec_val | hex_val )
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(202, 3);
-			// AbnfAst.g3:202:3: ( bin_val | dec_val | hex_val )
+			DebugLocation(203, 3);
+			// AbnfAst.g3:203:3: ( bin_val | dec_val | hex_val )
 			int alt22=3;
 			try { DebugEnterSubRule(22);
 			try { DebugEnterDecision(22, false);
@@ -3328,10 +3328,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:202:5: bin_val
+				// AbnfAst.g3:203:5: bin_val
 				{
-				DebugLocation(202, 5);
-				PushFollow(Follow._bin_val_in_num_val988);
+				DebugLocation(203, 5);
+				PushFollow(Follow._bin_val_in_num_val1004);
 				bin_val65=bin_val();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3341,10 +3341,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:202:15: dec_val
+				// AbnfAst.g3:203:15: dec_val
 				{
-				DebugLocation(202, 15);
-				PushFollow(Follow._dec_val_in_num_val992);
+				DebugLocation(203, 15);
+				PushFollow(Follow._dec_val_in_num_val1008);
 				dec_val66=dec_val();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3354,10 +3354,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// AbnfAst.g3:202:25: hex_val
+				// AbnfAst.g3:203:25: hex_val
 				{
-				DebugLocation(202, 25);
-				PushFollow(Follow._hex_val_in_num_val996);
+				DebugLocation(203, 25);
+				PushFollow(Follow._hex_val_in_num_val1012);
 				hex_val67=hex_val();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3392,7 +3392,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("num_val", 20);
 			LeaveRule_num_val();
 		}
-		DebugLocation(203, 2);
+		DebugLocation(204, 2);
 		} finally { DebugExitRule(GrammarFileName, "num_val"); }
 		return retval;
 
@@ -3402,7 +3402,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_char_val();
 	partial void LeaveRule_char_val();
 	// $ANTLR start "char_val"
-	// AbnfAst.g3:205:1: char_val : ( case_insensitive_string -> ^( CHAR_VAL_NODE case_insensitive_string ) | case_sensitive_string -> ^( CHAR_VAL_NODE case_sensitive_string ) );
+	// AbnfAst.g3:206:1: char_val : ( case_insensitive_string -> ^( CHAR_VAL_NODE case_insensitive_string ) | case_sensitive_string -> ^( CHAR_VAL_NODE case_sensitive_string ) );
 	[GrammarRule("char_val")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> char_val()
 	{
@@ -3420,10 +3420,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleSubtreeStream stream_case_insensitive_string=new RewriteRuleSubtreeStream(adaptor,"rule case_insensitive_string");
 		RewriteRuleSubtreeStream stream_case_sensitive_string=new RewriteRuleSubtreeStream(adaptor,"rule case_sensitive_string");
 		try { DebugEnterRule(GrammarFileName, "char_val");
-		DebugLocation(205, 2);
+		DebugLocation(206, 2);
 		try
 		{
-			// AbnfAst.g3:206:2: ( case_insensitive_string -> ^( CHAR_VAL_NODE case_insensitive_string ) | case_sensitive_string -> ^( CHAR_VAL_NODE case_sensitive_string ) )
+			// AbnfAst.g3:207:2: ( case_insensitive_string -> ^( CHAR_VAL_NODE case_insensitive_string ) | case_sensitive_string -> ^( CHAR_VAL_NODE case_sensitive_string ) )
 			int alt23=2;
 			try { DebugEnterDecision(23, false);
 			int LA23_1 = input.LA(1);
@@ -3448,10 +3448,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:207:3: case_insensitive_string
+				// AbnfAst.g3:208:3: case_insensitive_string
 				{
-				DebugLocation(207, 3);
-				PushFollow(Follow._case_insensitive_string_in_char_val1012);
+				DebugLocation(208, 3);
+				PushFollow(Follow._case_insensitive_string_in_char_val1028);
 				case_insensitive_string68=case_insensitive_string();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3471,16 +3471,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 207:27: -> ^( CHAR_VAL_NODE case_insensitive_string )
+				// 208:27: -> ^( CHAR_VAL_NODE case_insensitive_string )
 				{
-					DebugLocation(207, 30);
-					// AbnfAst.g3:207:30: ^( CHAR_VAL_NODE case_insensitive_string )
+					DebugLocation(208, 30);
+					// AbnfAst.g3:208:30: ^( CHAR_VAL_NODE case_insensitive_string )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(207, 32);
+					DebugLocation(208, 32);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CHAR_VAL_NODE, "CHAR_VAL_NODE"), root_1);
 
-					DebugLocation(207, 46);
+					DebugLocation(208, 46);
 					adaptor.AddChild(root_1, stream_case_insensitive_string.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -3496,10 +3496,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:208:5: case_sensitive_string
+				// AbnfAst.g3:209:5: case_sensitive_string
 				{
-				DebugLocation(208, 5);
-				PushFollow(Follow._case_sensitive_string_in_char_val1026);
+				DebugLocation(209, 5);
+				PushFollow(Follow._case_sensitive_string_in_char_val1042);
 				case_sensitive_string69=case_sensitive_string();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3519,16 +3519,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 208:27: -> ^( CHAR_VAL_NODE case_sensitive_string )
+				// 209:27: -> ^( CHAR_VAL_NODE case_sensitive_string )
 				{
-					DebugLocation(208, 30);
-					// AbnfAst.g3:208:30: ^( CHAR_VAL_NODE case_sensitive_string )
+					DebugLocation(209, 30);
+					// AbnfAst.g3:209:30: ^( CHAR_VAL_NODE case_sensitive_string )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(208, 32);
+					DebugLocation(209, 32);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CHAR_VAL_NODE, "CHAR_VAL_NODE"), root_1);
 
-					DebugLocation(208, 46);
+					DebugLocation(209, 46);
 					adaptor.AddChild(root_1, stream_case_sensitive_string.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -3564,7 +3564,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("char_val", 21);
 			LeaveRule_char_val();
 		}
-		DebugLocation(209, 2);
+		DebugLocation(210, 2);
 		} finally { DebugExitRule(GrammarFileName, "char_val"); }
 		return retval;
 
@@ -3574,7 +3574,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_case_insensitive_string();
 	partial void LeaveRule_case_insensitive_string();
 	// $ANTLR start "case_insensitive_string"
-	// AbnfAst.g3:211:1: case_insensitive_string : ( '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) ;
+	// AbnfAst.g3:212:1: case_insensitive_string : ( '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) ;
 	[GrammarRule("case_insensitive_string")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> case_insensitive_string()
 	{
@@ -3594,15 +3594,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_58=new RewriteRuleITokenStream(adaptor,"token 58");
 		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 		try { DebugEnterRule(GrammarFileName, "case_insensitive_string");
-		DebugLocation(211, 2);
+		DebugLocation(212, 2);
 		try
 		{
-			// AbnfAst.g3:212:2: ( ( '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) )
+			// AbnfAst.g3:213:2: ( ( '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:213:3: ( '%i' )? QUOTED_STRING
+			// AbnfAst.g3:214:3: ( '%i' )? QUOTED_STRING
 			{
-			DebugLocation(213, 3);
-			// AbnfAst.g3:213:3: ( '%i' )?
+			DebugLocation(214, 3);
+			// AbnfAst.g3:214:3: ( '%i' )?
 			int alt24=2;
 			try { DebugEnterSubRule(24);
 			try { DebugEnterDecision(24, false);
@@ -3617,10 +3617,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:213:3: '%i'
+				// AbnfAst.g3:214:3: '%i'
 				{
-				DebugLocation(213, 3);
-				string_literal70=(CommonToken)Match(input,58,Follow._58_in_case_insensitive_string1048); if (state.failed) return retval; 
+				DebugLocation(214, 3);
+				string_literal70=(CommonToken)Match(input,58,Follow._58_in_case_insensitive_string1064); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_58.Add(string_literal70);
 
 
@@ -3630,8 +3630,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			}
 			} finally { DebugExitSubRule(24); }
 
-			DebugLocation(213, 9);
-			QUOTED_STRING71=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_insensitive_string1051); if (state.failed) return retval; 
+			DebugLocation(214, 9);
+			QUOTED_STRING71=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_insensitive_string1067); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_QUOTED_STRING.Add(QUOTED_STRING71);
 
 
@@ -3649,16 +3649,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 213:23: -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
+			// 214:23: -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
 			{
-				DebugLocation(213, 26);
-				// AbnfAst.g3:213:26: ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
+				DebugLocation(214, 26);
+				// AbnfAst.g3:214:26: ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(213, 28);
+				DebugLocation(214, 28);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CASE_INSENSITIVE_STRING_NODE, "CASE_INSENSITIVE_STRING_NODE"), root_1);
 
-				DebugLocation(213, 57);
+				DebugLocation(214, 57);
 				adaptor.AddChild(root_1, stream_QUOTED_STRING.NextNode());
 
 				adaptor.AddChild(root_0, root_1);
@@ -3692,7 +3692,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("case_insensitive_string", 22);
 			LeaveRule_case_insensitive_string();
 		}
-		DebugLocation(214, 2);
+		DebugLocation(215, 2);
 		} finally { DebugExitRule(GrammarFileName, "case_insensitive_string"); }
 		return retval;
 
@@ -3702,7 +3702,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_case_sensitive_string();
 	partial void LeaveRule_case_sensitive_string();
 	// $ANTLR start "case_sensitive_string"
-	// AbnfAst.g3:216:1: case_sensitive_string : ( ( '%s' QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) );
+	// AbnfAst.g3:217:1: case_sensitive_string : ( ( '%s' QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) );
 	[GrammarRule("case_sensitive_string")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> case_sensitive_string()
 	{
@@ -3725,10 +3725,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 		RewriteRuleITokenStream stream_SINGLE_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token SINGLE_QUOTED_STRING");
 		try { DebugEnterRule(GrammarFileName, "case_sensitive_string");
-		DebugLocation(216, 2);
+		DebugLocation(217, 2);
 		try
 		{
-			// AbnfAst.g3:217:2: ( ( '%s' QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) )
+			// AbnfAst.g3:218:2: ( ( '%s' QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) )
 			int alt25=2;
 			try { DebugEnterDecision(25, false);
 			int LA25_1 = input.LA(1);
@@ -3753,19 +3753,19 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:218:3: ( '%s' QUOTED_STRING )
+				// AbnfAst.g3:219:3: ( '%s' QUOTED_STRING )
 				{
-				DebugLocation(218, 3);
-				// AbnfAst.g3:218:3: ( '%s' QUOTED_STRING )
+				DebugLocation(219, 3);
+				// AbnfAst.g3:219:3: ( '%s' QUOTED_STRING )
 				DebugEnterAlt(1);
-				// AbnfAst.g3:218:4: '%s' QUOTED_STRING
+				// AbnfAst.g3:219:4: '%s' QUOTED_STRING
 				{
-				DebugLocation(218, 4);
-				string_literal72=(CommonToken)Match(input,59,Follow._59_in_case_sensitive_string1074); if (state.failed) return retval; 
+				DebugLocation(219, 4);
+				string_literal72=(CommonToken)Match(input,59,Follow._59_in_case_sensitive_string1090); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_59.Add(string_literal72);
 
-				DebugLocation(218, 9);
-				QUOTED_STRING73=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_sensitive_string1076); if (state.failed) return retval; 
+				DebugLocation(219, 9);
+				QUOTED_STRING73=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_sensitive_string1092); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_QUOTED_STRING.Add(QUOTED_STRING73);
 
 
@@ -3786,16 +3786,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 218:24: -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
+				// 219:24: -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
 				{
-					DebugLocation(218, 27);
-					// AbnfAst.g3:218:27: ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
+					DebugLocation(219, 27);
+					// AbnfAst.g3:219:27: ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(218, 29);
+					DebugLocation(219, 29);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CASE_SENSITIVE_STRING_NODE, "CASE_SENSITIVE_STRING_NODE"), root_1);
 
-					DebugLocation(218, 56);
+					DebugLocation(219, 56);
 					adaptor.AddChild(root_1, stream_QUOTED_STRING.NextNode());
 
 					adaptor.AddChild(root_0, root_1);
@@ -3811,10 +3811,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:219:5: SINGLE_QUOTED_STRING
+				// AbnfAst.g3:220:5: SINGLE_QUOTED_STRING
 				{
-				DebugLocation(219, 5);
-				SINGLE_QUOTED_STRING74=(CommonToken)Match(input,SINGLE_QUOTED_STRING,Follow._SINGLE_QUOTED_STRING_in_case_sensitive_string1091); if (state.failed) return retval; 
+				DebugLocation(220, 5);
+				SINGLE_QUOTED_STRING74=(CommonToken)Match(input,SINGLE_QUOTED_STRING,Follow._SINGLE_QUOTED_STRING_in_case_sensitive_string1107); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SINGLE_QUOTED_STRING.Add(SINGLE_QUOTED_STRING74);
 
 
@@ -3832,16 +3832,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 219:26: -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING )
+				// 220:26: -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING )
 				{
-					DebugLocation(219, 29);
-					// AbnfAst.g3:219:29: ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING )
+					DebugLocation(220, 29);
+					// AbnfAst.g3:220:29: ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(219, 31);
+					DebugLocation(220, 31);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CASE_SENSITIVE_STRING_NODE, "CASE_SENSITIVE_STRING_NODE"), root_1);
 
-					DebugLocation(219, 58);
+					DebugLocation(220, 58);
 					adaptor.AddChild(root_1, stream_SINGLE_QUOTED_STRING.NextNode());
 
 					adaptor.AddChild(root_0, root_1);
@@ -3877,7 +3877,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("case_sensitive_string", 23);
 			LeaveRule_case_sensitive_string();
 		}
-		DebugLocation(220, 2);
+		DebugLocation(221, 2);
 		} finally { DebugExitRule(GrammarFileName, "case_sensitive_string"); }
 		return retval;
 
@@ -3887,7 +3887,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_bin_val();
 	partial void LeaveRule_bin_val();
 	// $ANTLR start "bin_val"
-	// AbnfAst.g3:222:1: bin_val : ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) );
+	// AbnfAst.g3:223:1: bin_val : ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) );
 	[GrammarRule("bin_val")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> bin_val()
 	{
@@ -3920,10 +3920,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_62=new RewriteRuleITokenStream(adaptor,"token 62");
 		RewriteRuleSubtreeStream stream_bin_val_number=new RewriteRuleSubtreeStream(adaptor,"rule bin_val_number");
 		try { DebugEnterRule(GrammarFileName, "bin_val");
-		DebugLocation(222, 2);
+		DebugLocation(223, 2);
 		try
 		{
-			// AbnfAst.g3:223:2: ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) )
+			// AbnfAst.g3:224:2: ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) )
 			int alt27=3;
 			try { DebugEnterDecision(27, false);
 			try
@@ -3940,24 +3940,24 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:224:3: BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number
+				// AbnfAst.g3:225:3: BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number
 				{
-				DebugLocation(224, 3);
-				BIN_VAL_PREFIX75=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1113); if (state.failed) return retval; 
+				DebugLocation(225, 3);
+				BIN_VAL_PREFIX75=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1129); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX75);
 
-				DebugLocation(224, 21);
-				PushFollow(Follow._bin_val_number_in_bin_val1117);
+				DebugLocation(225, 21);
+				PushFollow(Follow._bin_val_number_in_bin_val1133);
 				min=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_bin_val_number.Add(min.Tree);
-				DebugLocation(224, 37);
-				DASH76=(CommonToken)Match(input,DASH,Follow._DASH_in_bin_val1119); if (state.failed) return retval; 
+				DebugLocation(225, 37);
+				DASH76=(CommonToken)Match(input,DASH,Follow._DASH_in_bin_val1135); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DASH.Add(DASH76);
 
-				DebugLocation(224, 45);
-				PushFollow(Follow._bin_val_number_in_bin_val1123);
+				DebugLocation(225, 45);
+				PushFollow(Follow._bin_val_number_in_bin_val1139);
 				max=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -3979,18 +3979,18 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 224:61: -> ^( BIN_VAL_RANGE_NODE $min $max)
+				// 225:61: -> ^( BIN_VAL_RANGE_NODE $min $max)
 				{
-					DebugLocation(224, 64);
-					// AbnfAst.g3:224:64: ^( BIN_VAL_RANGE_NODE $min $max)
+					DebugLocation(225, 64);
+					// AbnfAst.g3:225:64: ^( BIN_VAL_RANGE_NODE $min $max)
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(224, 66);
+					DebugLocation(225, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(BIN_VAL_RANGE_NODE, "BIN_VAL_RANGE_NODE"), root_1);
 
-					DebugLocation(224, 86);
+					DebugLocation(225, 86);
 					adaptor.AddChild(root_1, stream_min.NextTree());
-					DebugLocation(224, 91);
+					DebugLocation(225, 91);
 					adaptor.AddChild(root_1, stream_max.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -4006,20 +4006,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:225:5: BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+
+				// AbnfAst.g3:226:5: BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+
 				{
-				DebugLocation(225, 5);
-				BIN_VAL_PREFIX77=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1141); if (state.failed) return retval; 
+				DebugLocation(226, 5);
+				BIN_VAL_PREFIX77=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1157); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX77);
 
-				DebugLocation(225, 20);
-				PushFollow(Follow._bin_val_number_in_bin_val1143);
+				DebugLocation(226, 20);
+				PushFollow(Follow._bin_val_number_in_bin_val1159);
 				bin_val_number78=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_bin_val_number.Add(bin_val_number78.Tree);
-				DebugLocation(225, 35);
-				// AbnfAst.g3:225:35: ( '.' bin_val_number )+
+				DebugLocation(226, 35);
+				// AbnfAst.g3:226:35: ( '.' bin_val_number )+
 				int cnt26=0;
 				try { DebugEnterSubRule(26);
 				while (true)
@@ -4039,14 +4039,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// AbnfAst.g3:225:36: '.' bin_val_number
+						// AbnfAst.g3:226:36: '.' bin_val_number
 						{
-						DebugLocation(225, 36);
-						char_literal79=(CommonToken)Match(input,62,Follow._62_in_bin_val1146); if (state.failed) return retval; 
+						DebugLocation(226, 36);
+						char_literal79=(CommonToken)Match(input,62,Follow._62_in_bin_val1162); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_62.Add(char_literal79);
 
-						DebugLocation(225, 40);
-						PushFollow(Follow._bin_val_number_in_bin_val1148);
+						DebugLocation(226, 40);
+						PushFollow(Follow._bin_val_number_in_bin_val1164);
 						bin_val_number80=bin_val_number();
 						PopFollow();
 						if (state.failed) return retval;
@@ -4086,23 +4086,23 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 225:61: -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ )
+				// 226:61: -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ )
 				{
-					DebugLocation(225, 64);
-					// AbnfAst.g3:225:64: ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ )
+					DebugLocation(226, 64);
+					// AbnfAst.g3:226:64: ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(225, 66);
+					DebugLocation(226, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(BIN_VAL_CONCAT_NODE, "BIN_VAL_CONCAT_NODE"), root_1);
 
-					DebugLocation(225, 86);
+					DebugLocation(226, 86);
 					if (!(stream_bin_val_number.HasNext))
 					{
 						throw new RewriteEarlyExitException();
 					}
 					while ( stream_bin_val_number.HasNext )
 					{
-						DebugLocation(225, 86);
+						DebugLocation(226, 86);
 						adaptor.AddChild(root_1, stream_bin_val_number.NextTree());
 
 					}
@@ -4121,14 +4121,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// AbnfAst.g3:226:5: BIN_VAL_PREFIX bin_val_number
+				// AbnfAst.g3:227:5: BIN_VAL_PREFIX bin_val_number
 				{
-				DebugLocation(226, 5);
-				BIN_VAL_PREFIX81=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1169); if (state.failed) return retval; 
+				DebugLocation(227, 5);
+				BIN_VAL_PREFIX81=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1185); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX81);
 
-				DebugLocation(226, 20);
-				PushFollow(Follow._bin_val_number_in_bin_val1171);
+				DebugLocation(227, 20);
+				PushFollow(Follow._bin_val_number_in_bin_val1187);
 				bin_val_number82=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4148,16 +4148,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 226:61: -> ^( BIN_VAL_NODE bin_val_number )
+				// 227:61: -> ^( BIN_VAL_NODE bin_val_number )
 				{
-					DebugLocation(226, 64);
-					// AbnfAst.g3:226:64: ^( BIN_VAL_NODE bin_val_number )
+					DebugLocation(227, 64);
+					// AbnfAst.g3:227:64: ^( BIN_VAL_NODE bin_val_number )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(226, 66);
+					DebugLocation(227, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(BIN_VAL_NODE, "BIN_VAL_NODE"), root_1);
 
-					DebugLocation(226, 79);
+					DebugLocation(227, 79);
 					adaptor.AddChild(root_1, stream_bin_val_number.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -4193,7 +4193,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("bin_val", 24);
 			LeaveRule_bin_val();
 		}
-		DebugLocation(229, 2);
+		DebugLocation(230, 2);
 		} finally { DebugExitRule(GrammarFileName, "bin_val"); }
 		return retval;
 
@@ -4203,7 +4203,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_bin_val_number();
 	partial void LeaveRule_bin_val_number();
 	// $ANTLR start "bin_val_number"
-	// AbnfAst.g3:231:1: bin_val_number : bin_number -> ^( BIN_VAL_NUMBER_NODE bin_number ) ;
+	// AbnfAst.g3:232:1: bin_val_number : bin_number -> ^( BIN_VAL_NUMBER_NODE bin_number ) ;
 	[GrammarRule("bin_val_number")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> bin_val_number()
 	{
@@ -4219,15 +4219,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		RewriteRuleSubtreeStream stream_bin_number=new RewriteRuleSubtreeStream(adaptor,"rule bin_number");
 		try { DebugEnterRule(GrammarFileName, "bin_val_number");
-		DebugLocation(231, 2);
+		DebugLocation(232, 2);
 		try
 		{
-			// AbnfAst.g3:232:2: ( bin_number -> ^( BIN_VAL_NUMBER_NODE bin_number ) )
+			// AbnfAst.g3:233:2: ( bin_number -> ^( BIN_VAL_NUMBER_NODE bin_number ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:233:3: bin_number
+			// AbnfAst.g3:234:3: bin_number
 			{
-			DebugLocation(233, 3);
-			PushFollow(Follow._bin_number_in_bin_val_number1237);
+			DebugLocation(234, 3);
+			PushFollow(Follow._bin_number_in_bin_val_number1253);
 			bin_number83=bin_number();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4247,16 +4247,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 233:14: -> ^( BIN_VAL_NUMBER_NODE bin_number )
+			// 234:14: -> ^( BIN_VAL_NUMBER_NODE bin_number )
 			{
-				DebugLocation(233, 17);
-				// AbnfAst.g3:233:17: ^( BIN_VAL_NUMBER_NODE bin_number )
+				DebugLocation(234, 17);
+				// AbnfAst.g3:234:17: ^( BIN_VAL_NUMBER_NODE bin_number )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(233, 19);
+				DebugLocation(234, 19);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(BIN_VAL_NUMBER_NODE, "BIN_VAL_NUMBER_NODE"), root_1);
 
-				DebugLocation(233, 39);
+				DebugLocation(234, 39);
 				adaptor.AddChild(root_1, stream_bin_number.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -4290,7 +4290,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("bin_val_number", 25);
 			LeaveRule_bin_val_number();
 		}
-		DebugLocation(234, 2);
+		DebugLocation(235, 2);
 		} finally { DebugExitRule(GrammarFileName, "bin_val_number"); }
 		return retval;
 
@@ -4300,7 +4300,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_bin_number();
 	partial void LeaveRule_bin_number();
 	// $ANTLR start "bin_number"
-	// AbnfAst.g3:236:1: bin_number : ( ZERO | ONE )+ ;
+	// AbnfAst.g3:237:1: bin_number : ( ZERO | ONE )+ ;
 	[GrammarRule("bin_number")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> bin_number()
 	{
@@ -4316,17 +4316,17 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree set84_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "bin_number");
-		DebugLocation(236, 2);
+		DebugLocation(237, 2);
 		try
 		{
-			// AbnfAst.g3:237:2: ( ( ZERO | ONE )+ )
+			// AbnfAst.g3:238:2: ( ( ZERO | ONE )+ )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:238:3: ( ZERO | ONE )+
+			// AbnfAst.g3:239:3: ( ZERO | ONE )+
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(238, 3);
-			// AbnfAst.g3:238:3: ( ZERO | ONE )+
+			DebugLocation(239, 3);
+			// AbnfAst.g3:239:3: ( ZERO | ONE )+
 			int cnt28=0;
 			try { DebugEnterSubRule(28);
 			while (true)
@@ -4348,7 +4348,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(238, 3);
+					DebugLocation(239, 3);
 
 					set84=(CommonToken)input.LT(1);
 					if (input.LA(1)==ONE||input.LA(1)==ZERO)
@@ -4408,7 +4408,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("bin_number", 26);
 			LeaveRule_bin_number();
 		}
-		DebugLocation(240, 2);
+		DebugLocation(241, 2);
 		} finally { DebugExitRule(GrammarFileName, "bin_number"); }
 		return retval;
 
@@ -4418,7 +4418,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_dec_val();
 	partial void LeaveRule_dec_val();
 	// $ANTLR start "dec_val"
-	// AbnfAst.g3:242:1: dec_val : ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) );
+	// AbnfAst.g3:243:1: dec_val : ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) );
 	[GrammarRule("dec_val")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> dec_val()
 	{
@@ -4451,10 +4451,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_62=new RewriteRuleITokenStream(adaptor,"token 62");
 		RewriteRuleSubtreeStream stream_dec_val_number=new RewriteRuleSubtreeStream(adaptor,"rule dec_val_number");
 		try { DebugEnterRule(GrammarFileName, "dec_val");
-		DebugLocation(242, 2);
+		DebugLocation(243, 2);
 		try
 		{
-			// AbnfAst.g3:243:2: ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) )
+			// AbnfAst.g3:244:2: ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) )
 			int alt30=3;
 			try { DebugEnterDecision(30, false);
 			try
@@ -4471,24 +4471,24 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:244:3: DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number
+				// AbnfAst.g3:245:3: DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number
 				{
-				DebugLocation(244, 3);
-				DEC_VAL_PREFIX85=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1285); if (state.failed) return retval; 
+				DebugLocation(245, 3);
+				DEC_VAL_PREFIX85=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1301); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX85);
 
-				DebugLocation(244, 21);
-				PushFollow(Follow._dec_val_number_in_dec_val1289);
+				DebugLocation(245, 21);
+				PushFollow(Follow._dec_val_number_in_dec_val1305);
 				min=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_dec_val_number.Add(min.Tree);
-				DebugLocation(244, 37);
-				DASH86=(CommonToken)Match(input,DASH,Follow._DASH_in_dec_val1291); if (state.failed) return retval; 
+				DebugLocation(245, 37);
+				DASH86=(CommonToken)Match(input,DASH,Follow._DASH_in_dec_val1307); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DASH.Add(DASH86);
 
-				DebugLocation(244, 45);
-				PushFollow(Follow._dec_val_number_in_dec_val1295);
+				DebugLocation(245, 45);
+				PushFollow(Follow._dec_val_number_in_dec_val1311);
 				max=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4510,18 +4510,18 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 244:61: -> ^( DEC_VAL_RANGE_NODE $min $max)
+				// 245:61: -> ^( DEC_VAL_RANGE_NODE $min $max)
 				{
-					DebugLocation(244, 64);
-					// AbnfAst.g3:244:64: ^( DEC_VAL_RANGE_NODE $min $max)
+					DebugLocation(245, 64);
+					// AbnfAst.g3:245:64: ^( DEC_VAL_RANGE_NODE $min $max)
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(244, 66);
+					DebugLocation(245, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(DEC_VAL_RANGE_NODE, "DEC_VAL_RANGE_NODE"), root_1);
 
-					DebugLocation(244, 86);
+					DebugLocation(245, 86);
 					adaptor.AddChild(root_1, stream_min.NextTree());
-					DebugLocation(244, 91);
+					DebugLocation(245, 91);
 					adaptor.AddChild(root_1, stream_max.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -4537,20 +4537,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:245:5: DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+
+				// AbnfAst.g3:246:5: DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+
 				{
-				DebugLocation(245, 5);
-				DEC_VAL_PREFIX87=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1313); if (state.failed) return retval; 
+				DebugLocation(246, 5);
+				DEC_VAL_PREFIX87=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1329); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX87);
 
-				DebugLocation(245, 20);
-				PushFollow(Follow._dec_val_number_in_dec_val1315);
+				DebugLocation(246, 20);
+				PushFollow(Follow._dec_val_number_in_dec_val1331);
 				dec_val_number88=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_dec_val_number.Add(dec_val_number88.Tree);
-				DebugLocation(245, 35);
-				// AbnfAst.g3:245:35: ( '.' dec_val_number )+
+				DebugLocation(246, 35);
+				// AbnfAst.g3:246:35: ( '.' dec_val_number )+
 				int cnt29=0;
 				try { DebugEnterSubRule(29);
 				while (true)
@@ -4570,14 +4570,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// AbnfAst.g3:245:36: '.' dec_val_number
+						// AbnfAst.g3:246:36: '.' dec_val_number
 						{
-						DebugLocation(245, 36);
-						char_literal89=(CommonToken)Match(input,62,Follow._62_in_dec_val1318); if (state.failed) return retval; 
+						DebugLocation(246, 36);
+						char_literal89=(CommonToken)Match(input,62,Follow._62_in_dec_val1334); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_62.Add(char_literal89);
 
-						DebugLocation(245, 40);
-						PushFollow(Follow._dec_val_number_in_dec_val1320);
+						DebugLocation(246, 40);
+						PushFollow(Follow._dec_val_number_in_dec_val1336);
 						dec_val_number90=dec_val_number();
 						PopFollow();
 						if (state.failed) return retval;
@@ -4617,23 +4617,23 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 245:61: -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ )
+				// 246:61: -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ )
 				{
-					DebugLocation(245, 64);
-					// AbnfAst.g3:245:64: ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ )
+					DebugLocation(246, 64);
+					// AbnfAst.g3:246:64: ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(245, 66);
+					DebugLocation(246, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(DEC_VAL_CONCAT_NODE, "DEC_VAL_CONCAT_NODE"), root_1);
 
-					DebugLocation(245, 86);
+					DebugLocation(246, 86);
 					if (!(stream_dec_val_number.HasNext))
 					{
 						throw new RewriteEarlyExitException();
 					}
 					while ( stream_dec_val_number.HasNext )
 					{
-						DebugLocation(245, 86);
+						DebugLocation(246, 86);
 						adaptor.AddChild(root_1, stream_dec_val_number.NextTree());
 
 					}
@@ -4652,14 +4652,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// AbnfAst.g3:246:5: DEC_VAL_PREFIX dec_val_number
+				// AbnfAst.g3:247:5: DEC_VAL_PREFIX dec_val_number
 				{
-				DebugLocation(246, 5);
-				DEC_VAL_PREFIX91=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1341); if (state.failed) return retval; 
+				DebugLocation(247, 5);
+				DEC_VAL_PREFIX91=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1357); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX91);
 
-				DebugLocation(246, 20);
-				PushFollow(Follow._dec_val_number_in_dec_val1343);
+				DebugLocation(247, 20);
+				PushFollow(Follow._dec_val_number_in_dec_val1359);
 				dec_val_number92=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4679,16 +4679,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 246:61: -> ^( DEC_VAL_NODE dec_val_number )
+				// 247:61: -> ^( DEC_VAL_NODE dec_val_number )
 				{
-					DebugLocation(246, 64);
-					// AbnfAst.g3:246:64: ^( DEC_VAL_NODE dec_val_number )
+					DebugLocation(247, 64);
+					// AbnfAst.g3:247:64: ^( DEC_VAL_NODE dec_val_number )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(246, 66);
+					DebugLocation(247, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(DEC_VAL_NODE, "DEC_VAL_NODE"), root_1);
 
-					DebugLocation(246, 79);
+					DebugLocation(247, 79);
 					adaptor.AddChild(root_1, stream_dec_val_number.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -4724,7 +4724,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("dec_val", 27);
 			LeaveRule_dec_val();
 		}
-		DebugLocation(247, 2);
+		DebugLocation(248, 2);
 		} finally { DebugExitRule(GrammarFileName, "dec_val"); }
 		return retval;
 
@@ -4734,7 +4734,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_dec_val_number();
 	partial void LeaveRule_dec_val_number();
 	// $ANTLR start "dec_val_number"
-	// AbnfAst.g3:249:1: dec_val_number : dec_number -> ^( DEC_VAL_NUMBER_NODE dec_number ) ;
+	// AbnfAst.g3:250:1: dec_val_number : dec_number -> ^( DEC_VAL_NUMBER_NODE dec_number ) ;
 	[GrammarRule("dec_val_number")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> dec_val_number()
 	{
@@ -4750,15 +4750,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		RewriteRuleSubtreeStream stream_dec_number=new RewriteRuleSubtreeStream(adaptor,"rule dec_number");
 		try { DebugEnterRule(GrammarFileName, "dec_val_number");
-		DebugLocation(249, 2);
+		DebugLocation(250, 2);
 		try
 		{
-			// AbnfAst.g3:250:2: ( dec_number -> ^( DEC_VAL_NUMBER_NODE dec_number ) )
+			// AbnfAst.g3:251:2: ( dec_number -> ^( DEC_VAL_NUMBER_NODE dec_number ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:251:3: dec_number
+			// AbnfAst.g3:252:3: dec_number
 			{
-			DebugLocation(251, 3);
-			PushFollow(Follow._dec_number_in_dec_val_number1391);
+			DebugLocation(252, 3);
+			PushFollow(Follow._dec_number_in_dec_val_number1407);
 			dec_number93=dec_number();
 			PopFollow();
 			if (state.failed) return retval;
@@ -4778,16 +4778,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 251:14: -> ^( DEC_VAL_NUMBER_NODE dec_number )
+			// 252:14: -> ^( DEC_VAL_NUMBER_NODE dec_number )
 			{
-				DebugLocation(251, 17);
-				// AbnfAst.g3:251:17: ^( DEC_VAL_NUMBER_NODE dec_number )
+				DebugLocation(252, 17);
+				// AbnfAst.g3:252:17: ^( DEC_VAL_NUMBER_NODE dec_number )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(251, 19);
+				DebugLocation(252, 19);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(DEC_VAL_NUMBER_NODE, "DEC_VAL_NUMBER_NODE"), root_1);
 
-				DebugLocation(251, 39);
+				DebugLocation(252, 39);
 				adaptor.AddChild(root_1, stream_dec_number.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -4821,7 +4821,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("dec_val_number", 28);
 			LeaveRule_dec_val_number();
 		}
-		DebugLocation(252, 2);
+		DebugLocation(253, 2);
 		} finally { DebugExitRule(GrammarFileName, "dec_val_number"); }
 		return retval;
 
@@ -4831,7 +4831,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_dec_number();
 	partial void LeaveRule_dec_number();
 	// $ANTLR start "dec_number"
-	// AbnfAst.g3:254:1: dec_number : ( ZERO | ONE | OTHER_DIGIT )+ ;
+	// AbnfAst.g3:255:1: dec_number : ( ZERO | ONE | OTHER_DIGIT )+ ;
 	[GrammarRule("dec_number")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> dec_number()
 	{
@@ -4847,17 +4847,17 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree set94_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "dec_number");
-		DebugLocation(254, 2);
+		DebugLocation(255, 2);
 		try
 		{
-			// AbnfAst.g3:255:2: ( ( ZERO | ONE | OTHER_DIGIT )+ )
+			// AbnfAst.g3:256:2: ( ( ZERO | ONE | OTHER_DIGIT )+ )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:256:3: ( ZERO | ONE | OTHER_DIGIT )+
+			// AbnfAst.g3:257:3: ( ZERO | ONE | OTHER_DIGIT )+
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(256, 3);
-			// AbnfAst.g3:256:3: ( ZERO | ONE | OTHER_DIGIT )+
+			DebugLocation(257, 3);
+			// AbnfAst.g3:257:3: ( ZERO | ONE | OTHER_DIGIT )+
 			int cnt31=0;
 			try { DebugEnterSubRule(31);
 			while (true)
@@ -4879,7 +4879,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(256, 3);
+					DebugLocation(257, 3);
 
 					set94=(CommonToken)input.LT(1);
 					if (input.LA(1)==ONE||input.LA(1)==OTHER_DIGIT||input.LA(1)==ZERO)
@@ -4939,7 +4939,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("dec_number", 29);
 			LeaveRule_dec_number();
 		}
-		DebugLocation(258, 2);
+		DebugLocation(259, 2);
 		} finally { DebugExitRule(GrammarFileName, "dec_number"); }
 		return retval;
 
@@ -4949,7 +4949,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_hex_val();
 	partial void LeaveRule_hex_val();
 	// $ANTLR start "hex_val"
-	// AbnfAst.g3:260:1: hex_val : ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) );
+	// AbnfAst.g3:261:1: hex_val : ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) );
 	[GrammarRule("hex_val")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> hex_val()
 	{
@@ -4982,10 +4982,10 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		RewriteRuleITokenStream stream_62=new RewriteRuleITokenStream(adaptor,"token 62");
 		RewriteRuleSubtreeStream stream_hex_val_number=new RewriteRuleSubtreeStream(adaptor,"rule hex_val_number");
 		try { DebugEnterRule(GrammarFileName, "hex_val");
-		DebugLocation(260, 2);
+		DebugLocation(261, 2);
 		try
 		{
-			// AbnfAst.g3:261:2: ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) )
+			// AbnfAst.g3:262:2: ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) )
 			int alt33=3;
 			try { DebugEnterDecision(33, false);
 			try
@@ -5002,24 +5002,24 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:262:3: HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number
+				// AbnfAst.g3:263:3: HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number
 				{
-				DebugLocation(262, 3);
-				HEX_VAL_PREFIX95=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1441); if (state.failed) return retval; 
+				DebugLocation(263, 3);
+				HEX_VAL_PREFIX95=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1457); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX95);
 
-				DebugLocation(262, 21);
-				PushFollow(Follow._hex_val_number_in_hex_val1445);
+				DebugLocation(263, 21);
+				PushFollow(Follow._hex_val_number_in_hex_val1461);
 				min=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_hex_val_number.Add(min.Tree);
-				DebugLocation(262, 37);
-				DASH96=(CommonToken)Match(input,DASH,Follow._DASH_in_hex_val1447); if (state.failed) return retval; 
+				DebugLocation(263, 37);
+				DASH96=(CommonToken)Match(input,DASH,Follow._DASH_in_hex_val1463); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DASH.Add(DASH96);
 
-				DebugLocation(262, 45);
-				PushFollow(Follow._hex_val_number_in_hex_val1451);
+				DebugLocation(263, 45);
+				PushFollow(Follow._hex_val_number_in_hex_val1467);
 				max=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -5041,18 +5041,18 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 262:61: -> ^( HEX_VAL_RANGE_NODE $min $max)
+				// 263:61: -> ^( HEX_VAL_RANGE_NODE $min $max)
 				{
-					DebugLocation(262, 64);
-					// AbnfAst.g3:262:64: ^( HEX_VAL_RANGE_NODE $min $max)
+					DebugLocation(263, 64);
+					// AbnfAst.g3:263:64: ^( HEX_VAL_RANGE_NODE $min $max)
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(262, 66);
+					DebugLocation(263, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(HEX_VAL_RANGE_NODE, "HEX_VAL_RANGE_NODE"), root_1);
 
-					DebugLocation(262, 86);
+					DebugLocation(263, 86);
 					adaptor.AddChild(root_1, stream_min.NextTree());
-					DebugLocation(262, 91);
+					DebugLocation(263, 91);
 					adaptor.AddChild(root_1, stream_max.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -5068,20 +5068,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// AbnfAst.g3:263:5: HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+
+				// AbnfAst.g3:264:5: HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+
 				{
-				DebugLocation(263, 5);
-				HEX_VAL_PREFIX97=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1469); if (state.failed) return retval; 
+				DebugLocation(264, 5);
+				HEX_VAL_PREFIX97=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1485); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX97);
 
-				DebugLocation(263, 20);
-				PushFollow(Follow._hex_val_number_in_hex_val1471);
+				DebugLocation(264, 20);
+				PushFollow(Follow._hex_val_number_in_hex_val1487);
 				hex_val_number98=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_hex_val_number.Add(hex_val_number98.Tree);
-				DebugLocation(263, 35);
-				// AbnfAst.g3:263:35: ( '.' hex_val_number )+
+				DebugLocation(264, 35);
+				// AbnfAst.g3:264:35: ( '.' hex_val_number )+
 				int cnt32=0;
 				try { DebugEnterSubRule(32);
 				while (true)
@@ -5101,14 +5101,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// AbnfAst.g3:263:36: '.' hex_val_number
+						// AbnfAst.g3:264:36: '.' hex_val_number
 						{
-						DebugLocation(263, 36);
-						char_literal99=(CommonToken)Match(input,62,Follow._62_in_hex_val1474); if (state.failed) return retval; 
+						DebugLocation(264, 36);
+						char_literal99=(CommonToken)Match(input,62,Follow._62_in_hex_val1490); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_62.Add(char_literal99);
 
-						DebugLocation(263, 40);
-						PushFollow(Follow._hex_val_number_in_hex_val1476);
+						DebugLocation(264, 40);
+						PushFollow(Follow._hex_val_number_in_hex_val1492);
 						hex_val_number100=hex_val_number();
 						PopFollow();
 						if (state.failed) return retval;
@@ -5148,23 +5148,23 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 263:61: -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ )
+				// 264:61: -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ )
 				{
-					DebugLocation(263, 64);
-					// AbnfAst.g3:263:64: ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ )
+					DebugLocation(264, 64);
+					// AbnfAst.g3:264:64: ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(263, 66);
+					DebugLocation(264, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(HEX_VAL_CONCAT_NODE, "HEX_VAL_CONCAT_NODE"), root_1);
 
-					DebugLocation(263, 86);
+					DebugLocation(264, 86);
 					if (!(stream_hex_val_number.HasNext))
 					{
 						throw new RewriteEarlyExitException();
 					}
 					while ( stream_hex_val_number.HasNext )
 					{
-						DebugLocation(263, 86);
+						DebugLocation(264, 86);
 						adaptor.AddChild(root_1, stream_hex_val_number.NextTree());
 
 					}
@@ -5183,14 +5183,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// AbnfAst.g3:264:5: HEX_VAL_PREFIX hex_val_number
+				// AbnfAst.g3:265:5: HEX_VAL_PREFIX hex_val_number
 				{
-				DebugLocation(264, 5);
-				HEX_VAL_PREFIX101=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1497); if (state.failed) return retval; 
+				DebugLocation(265, 5);
+				HEX_VAL_PREFIX101=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1513); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX101);
 
-				DebugLocation(264, 20);
-				PushFollow(Follow._hex_val_number_in_hex_val1499);
+				DebugLocation(265, 20);
+				PushFollow(Follow._hex_val_number_in_hex_val1515);
 				hex_val_number102=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -5210,16 +5210,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 264:61: -> ^( HEX_VAL_NODE hex_val_number )
+				// 265:61: -> ^( HEX_VAL_NODE hex_val_number )
 				{
-					DebugLocation(264, 64);
-					// AbnfAst.g3:264:64: ^( HEX_VAL_NODE hex_val_number )
+					DebugLocation(265, 64);
+					// AbnfAst.g3:265:64: ^( HEX_VAL_NODE hex_val_number )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(264, 66);
+					DebugLocation(265, 66);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(HEX_VAL_NODE, "HEX_VAL_NODE"), root_1);
 
-					DebugLocation(264, 79);
+					DebugLocation(265, 79);
 					adaptor.AddChild(root_1, stream_hex_val_number.NextTree());
 
 					adaptor.AddChild(root_0, root_1);
@@ -5255,7 +5255,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("hex_val", 30);
 			LeaveRule_hex_val();
 		}
-		DebugLocation(265, 2);
+		DebugLocation(266, 2);
 		} finally { DebugExitRule(GrammarFileName, "hex_val"); }
 		return retval;
 
@@ -5265,7 +5265,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_hex_val_number();
 	partial void LeaveRule_hex_val_number();
 	// $ANTLR start "hex_val_number"
-	// AbnfAst.g3:267:1: hex_val_number : hex_number -> ^( HEX_VAL_NUMBER_NODE hex_number ) ;
+	// AbnfAst.g3:268:1: hex_val_number : hex_number -> ^( HEX_VAL_NUMBER_NODE hex_number ) ;
 	[GrammarRule("hex_val_number")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> hex_val_number()
 	{
@@ -5281,15 +5281,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		RewriteRuleSubtreeStream stream_hex_number=new RewriteRuleSubtreeStream(adaptor,"rule hex_number");
 		try { DebugEnterRule(GrammarFileName, "hex_val_number");
-		DebugLocation(267, 2);
+		DebugLocation(268, 2);
 		try
 		{
-			// AbnfAst.g3:268:2: ( hex_number -> ^( HEX_VAL_NUMBER_NODE hex_number ) )
+			// AbnfAst.g3:269:2: ( hex_number -> ^( HEX_VAL_NUMBER_NODE hex_number ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:269:3: hex_number
+			// AbnfAst.g3:270:3: hex_number
 			{
-			DebugLocation(269, 3);
-			PushFollow(Follow._hex_number_in_hex_val_number1547);
+			DebugLocation(270, 3);
+			PushFollow(Follow._hex_number_in_hex_val_number1563);
 			hex_number103=hex_number();
 			PopFollow();
 			if (state.failed) return retval;
@@ -5309,16 +5309,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 269:14: -> ^( HEX_VAL_NUMBER_NODE hex_number )
+			// 270:14: -> ^( HEX_VAL_NUMBER_NODE hex_number )
 			{
-				DebugLocation(269, 17);
-				// AbnfAst.g3:269:17: ^( HEX_VAL_NUMBER_NODE hex_number )
+				DebugLocation(270, 17);
+				// AbnfAst.g3:270:17: ^( HEX_VAL_NUMBER_NODE hex_number )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(269, 19);
+				DebugLocation(270, 19);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(HEX_VAL_NUMBER_NODE, "HEX_VAL_NUMBER_NODE"), root_1);
 
-				DebugLocation(269, 39);
+				DebugLocation(270, 39);
 				adaptor.AddChild(root_1, stream_hex_number.NextTree());
 
 				adaptor.AddChild(root_0, root_1);
@@ -5352,7 +5352,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("hex_val_number", 31);
 			LeaveRule_hex_val_number();
 		}
-		DebugLocation(270, 2);
+		DebugLocation(271, 2);
 		} finally { DebugExitRule(GrammarFileName, "hex_val_number"); }
 		return retval;
 
@@ -5362,7 +5362,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_hex_number();
 	partial void LeaveRule_hex_number();
 	// $ANTLR start "hex_number"
-	// AbnfAst.g3:272:1: hex_number : ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+ ;
+	// AbnfAst.g3:273:1: hex_number : ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+ ;
 	[GrammarRule("hex_number")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> hex_number()
 	{
@@ -5378,17 +5378,17 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree set104_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "hex_number");
-		DebugLocation(272, 2);
+		DebugLocation(273, 2);
 		try
 		{
-			// AbnfAst.g3:273:2: ( ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+ )
+			// AbnfAst.g3:274:2: ( ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+ )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:274:3: ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+
+			// AbnfAst.g3:275:3: ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
-			DebugLocation(274, 3);
-			// AbnfAst.g3:274:3: ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+
+			DebugLocation(275, 3);
+			// AbnfAst.g3:275:3: ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+
 			int cnt34=0;
 			try { DebugEnterSubRule(34);
 			while (true)
@@ -5410,7 +5410,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(274, 3);
+					DebugLocation(275, 3);
 
 					set104=(CommonToken)input.LT(1);
 					if (input.LA(1)==HEX_ALPHA||input.LA(1)==ONE||input.LA(1)==OTHER_DIGIT||input.LA(1)==ZERO)
@@ -5470,7 +5470,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("hex_number", 32);
 			LeaveRule_hex_number();
 		}
-		DebugLocation(276, 2);
+		DebugLocation(277, 2);
 		} finally { DebugExitRule(GrammarFileName, "hex_number"); }
 		return retval;
 
@@ -5480,7 +5480,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_prose_val();
 	partial void LeaveRule_prose_val();
 	// $ANTLR start "prose_val"
-	// AbnfAst.g3:278:1: prose_val : PROSE_VAL -> ^( PROSE_VAL_NODE PROSE_VAL ) ;
+	// AbnfAst.g3:279:1: prose_val : PROSE_VAL -> ^( PROSE_VAL_NODE PROSE_VAL ) ;
 	[GrammarRule("prose_val")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> prose_val()
 	{
@@ -5497,15 +5497,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		CommonTree PROSE_VAL105_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_PROSE_VAL=new RewriteRuleITokenStream(adaptor,"token PROSE_VAL");
 		try { DebugEnterRule(GrammarFileName, "prose_val");
-		DebugLocation(278, 2);
+		DebugLocation(279, 2);
 		try
 		{
-			// AbnfAst.g3:279:2: ( PROSE_VAL -> ^( PROSE_VAL_NODE PROSE_VAL ) )
+			// AbnfAst.g3:280:2: ( PROSE_VAL -> ^( PROSE_VAL_NODE PROSE_VAL ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:280:3: PROSE_VAL
+			// AbnfAst.g3:281:3: PROSE_VAL
 			{
-			DebugLocation(280, 3);
-			PROSE_VAL105=(CommonToken)Match(input,PROSE_VAL,Follow._PROSE_VAL_in_prose_val1601); if (state.failed) return retval; 
+			DebugLocation(281, 3);
+			PROSE_VAL105=(CommonToken)Match(input,PROSE_VAL,Follow._PROSE_VAL_in_prose_val1617); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_PROSE_VAL.Add(PROSE_VAL105);
 
 
@@ -5523,16 +5523,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 280:13: -> ^( PROSE_VAL_NODE PROSE_VAL )
+			// 281:13: -> ^( PROSE_VAL_NODE PROSE_VAL )
 			{
-				DebugLocation(280, 16);
-				// AbnfAst.g3:280:16: ^( PROSE_VAL_NODE PROSE_VAL )
+				DebugLocation(281, 16);
+				// AbnfAst.g3:281:16: ^( PROSE_VAL_NODE PROSE_VAL )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(280, 18);
+				DebugLocation(281, 18);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(PROSE_VAL_NODE, "PROSE_VAL_NODE"), root_1);
 
-				DebugLocation(280, 33);
+				DebugLocation(281, 33);
 				adaptor.AddChild(root_1, stream_PROSE_VAL.NextNode());
 
 				adaptor.AddChild(root_0, root_1);
@@ -5566,7 +5566,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			LeaveRule("prose_val", 33);
 			LeaveRule_prose_val();
 		}
-		DebugLocation(285, 2);
+		DebugLocation(286, 2);
 		} finally { DebugExitRule(GrammarFileName, "prose_val"); }
 		return retval;
 
@@ -5584,12 +5584,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		TraceIn("synpred1_AbnfAst_fragment", 34);
 		try
 		{
-			// AbnfAst.g3:95:20: ( c_nl )
+			// AbnfAst.g3:96:20: ( c_nl )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:95:21: c_nl
+			// AbnfAst.g3:96:21: c_nl
 			{
-			DebugLocation(95, 21);
-			PushFollow(Follow._c_nl_in_synpred1_AbnfAst214);
+			DebugLocation(96, 21);
+			PushFollow(Follow._c_nl_in_synpred1_AbnfAst230);
 			c_nl();
 			PopFollow();
 			if (state.failed) return;
@@ -5617,12 +5617,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		TraceIn("synpred2_AbnfAst_fragment", 35);
 		try
 		{
-			// AbnfAst.g3:130:16: ( c_wsp )
+			// AbnfAst.g3:131:16: ( c_wsp )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:130:17: c_wsp
+			// AbnfAst.g3:131:17: c_wsp
 			{
-			DebugLocation(130, 17);
-			PushFollow(Follow._c_wsp_in_synpred2_AbnfAst424);
+			DebugLocation(131, 17);
+			PushFollow(Follow._c_wsp_in_synpred2_AbnfAst440);
 			c_wsp();
 			PopFollow();
 			if (state.failed) return;
@@ -5748,7 +5748,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			this.transition = DFA7_transition;
 		}
 
-		public override string Description { get { return "()* loopback of 130:15: ( ( c_wsp )=> c_wsp )*"; } }
+		public override string Description { get { return "()* loopback of 131:15: ( ( c_wsp )=> c_wsp )*"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -5935,7 +5935,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			this.transition = DFA12_transition;
 		}
 
-		public override string Description { get { return "()* loopback of 151:17: ( ( c_wsp )* '/' ( c_wsp )* concatenation )*"; } }
+		public override string Description { get { return "()* loopback of 152:17: ( ( c_wsp )* '/' ( c_wsp )* concatenation )*"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -6034,7 +6034,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			this.transition = DFA14_transition;
 		}
 
-		public override string Description { get { return "()* loopback of 156:14: ( ( c_wsp )+ repetition )*"; } }
+		public override string Description { get { return "()* loopback of 157:14: ( ( c_wsp )+ repetition )*"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -6109,7 +6109,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			this.transition = DFA15_transition;
 		}
 
-		public override string Description { get { return "159:1: repetition : ( ASTERISK number element -> ^( REPETITION_NODE element ZERO_OCCURENCES number ) |min= number ASTERISK max= number element -> ^( REPETITION_NODE element $min $max) | number ASTERISK element -> ^( REPETITION_NODE element number ORMORE_OCCURENCES ) | ASTERISK element -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES ) | number element -> ^( REPETITION_NODE element number EXACT_OCCURENCES ) | element -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES ) );"; } }
+		public override string Description { get { return "160:1: repetition : ( ASTERISK number element -> ^( REPETITION_NODE element ZERO_OCCURENCES number ) |min= number ASTERISK max= number element -> ^( REPETITION_NODE element $min $max) | number ASTERISK element -> ^( REPETITION_NODE element number ORMORE_OCCURENCES ) | ASTERISK element -> ^( REPETITION_NODE element ZERO_OCCURENCES ORMORE_OCCURENCES ) | number element -> ^( REPETITION_NODE element number EXACT_OCCURENCES ) | element -> ^( REPETITION_NODE element ONE_OCCURENCE EXACT_OCCURENCES ) );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -6173,7 +6173,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			this.transition = DFA27_transition;
 		}
 
-		public override string Description { get { return "222:1: bin_val : ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) );"; } }
+		public override string Description { get { return "223:1: bin_val : ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -6237,7 +6237,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			this.transition = DFA30_transition;
 		}
 
-		public override string Description { get { return "242:1: dec_val : ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) );"; } }
+		public override string Description { get { return "243:1: dec_val : ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -6301,7 +6301,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			this.transition = DFA33_transition;
 		}
 
-		public override string Description { get { return "260:1: hex_val : ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) );"; } }
+		public override string Description { get { return "261:1: hex_val : ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -6315,115 +6315,115 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	#region Follow sets
 	private static class Follow
 	{
-		public static readonly BitSet _rulelist_in_start189 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _rule_in_rulelist205 = new BitSet(new ulong[]{0x0UL});
-		public static readonly BitSet _c_wsp_in_rulelist210 = new BitSet(new ulong[]{0x80000000024000UL});
-		public static readonly BitSet _c_nl_in_rulelist217 = new BitSet(new ulong[]{0x0UL});
-		public static readonly BitSet _EOF_in_rulelist223 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _rulename_in_rule246 = new BitSet(new ulong[]{0x80000000024000UL,0x3UL});
-		public static readonly BitSet _defined_as_in_rule248 = new BitSet(new ulong[]{0x1D104E2110400220UL,0x4UL});
-		public static readonly BitSet _elements_in_rule250 = new BitSet(new ulong[]{0x0UL});
-		public static readonly BitSet _c_nl_in_rule253 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _EOF_in_rule257 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _rulechars_in_rulename290 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_rulechars312 = new BitSet(new ulong[]{0x100062010040002UL});
-		public static readonly BitSet _c_wsp_in_defined_as364 = new BitSet(new ulong[]{0x80000000024000UL,0x3UL});
-		public static readonly BitSet _defined_as_operator_in_defined_as369 = new BitSet(new ulong[]{0x80000000024002UL});
-		public static readonly BitSet _c_wsp_in_defined_as373 = new BitSet(new ulong[]{0x80000000024002UL});
-		public static readonly BitSet _alternation_in_elements420 = new BitSet(new ulong[]{0x80000000024002UL});
-		public static readonly BitSet _c_wsp_in_elements427 = new BitSet(new ulong[]{0x80000000024002UL});
-		public static readonly BitSet _WSP_in_c_wsp447 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _c_nl_in_c_wsp453 = new BitSet(new ulong[]{0x80000000000000UL});
-		public static readonly BitSet _WSP_in_c_wsp455 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _comment_in_c_nl471 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _CRLF_in_c_nl475 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _COMMENT_in_comment492 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _concatenation_in_alternation506 = new BitSet(new ulong[]{0x8080000000024002UL});
-		public static readonly BitSet _c_wsp_in_alternation510 = new BitSet(new ulong[]{0x8080000000024000UL});
-		public static readonly BitSet _63_in_alternation513 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _c_wsp_in_alternation515 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _concatenation_in_alternation518 = new BitSet(new ulong[]{0x8080000000024002UL});
-		public static readonly BitSet _repetition_in_concatenation544 = new BitSet(new ulong[]{0x80000000024002UL});
-		public static readonly BitSet _c_wsp_in_concatenation548 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _repetition_in_concatenation551 = new BitSet(new ulong[]{0x80000000024002UL});
-		public static readonly BitSet _ASTERISK_in_repetition577 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _number_in_repetition579 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
-		public static readonly BitSet _element_in_repetition581 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _number_in_repetition618 = new BitSet(new ulong[]{0x20UL});
-		public static readonly BitSet _ASTERISK_in_repetition620 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _number_in_repetition624 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
-		public static readonly BitSet _element_in_repetition626 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _number_in_repetition646 = new BitSet(new ulong[]{0x20UL});
-		public static readonly BitSet _ASTERISK_in_repetition648 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
-		public static readonly BitSet _element_in_repetition650 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ASTERISK_in_repetition683 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
-		public static readonly BitSet _element_in_repetition685 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _number_in_repetition725 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
-		public static readonly BitSet _element_in_repetition727 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _element_in_repetition769 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _number_val_in_number826 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _rulename_in_element878 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _group_in_element884 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _option_in_element890 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _char_val_in_element896 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _num_val_in_element902 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _prose_val_in_element908 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _60_in_group922 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _c_wsp_in_group924 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _alternation_in_group927 = new BitSet(new ulong[]{0x2080000000024000UL});
-		public static readonly BitSet _c_wsp_in_group929 = new BitSet(new ulong[]{0x2080000000024000UL});
-		public static readonly BitSet _61_in_group932 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _66_in_option954 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _c_wsp_in_option956 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _alternation_in_option959 = new BitSet(new ulong[]{0x80000000024000UL,0x8UL});
-		public static readonly BitSet _c_wsp_in_option961 = new BitSet(new ulong[]{0x80000000024000UL,0x8UL});
-		public static readonly BitSet _67_in_option964 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _bin_val_in_num_val988 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _dec_val_in_num_val992 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _hex_val_in_num_val996 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _case_insensitive_string_in_char_val1012 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _case_sensitive_string_in_char_val1026 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _58_in_case_insensitive_string1048 = new BitSet(new ulong[]{0x400000000000UL});
-		public static readonly BitSet _QUOTED_STRING_in_case_insensitive_string1051 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _59_in_case_sensitive_string1074 = new BitSet(new ulong[]{0x400000000000UL});
-		public static readonly BitSet _QUOTED_STRING_in_case_sensitive_string1076 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SINGLE_QUOTED_STRING_in_case_sensitive_string1091 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1113 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1117 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _DASH_in_bin_val1119 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1123 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1141 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1143 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_bin_val1146 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1148 = new BitSet(new ulong[]{0x4000000000000002UL});
-		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1169 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1171 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _bin_number_in_bin_val_number1237 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1285 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1289 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _DASH_in_dec_val1291 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1295 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1313 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1315 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_dec_val1318 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1320 = new BitSet(new ulong[]{0x4000000000000002UL});
-		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1341 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1343 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _dec_number_in_dec_val_number1391 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1441 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1445 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _DASH_in_hex_val1447 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1451 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1469 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1471 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_hex_val1474 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1476 = new BitSet(new ulong[]{0x4000000000000002UL});
-		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1497 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1499 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _hex_number_in_hex_val_number1547 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _PROSE_VAL_in_prose_val1601 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _c_nl_in_synpred1_AbnfAst214 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _c_wsp_in_synpred2_AbnfAst424 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _rulelist_in_start205 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _rule_in_rulelist221 = new BitSet(new ulong[]{0x0UL});
+		public static readonly BitSet _c_wsp_in_rulelist226 = new BitSet(new ulong[]{0x80000000024000UL});
+		public static readonly BitSet _c_nl_in_rulelist233 = new BitSet(new ulong[]{0x0UL});
+		public static readonly BitSet _EOF_in_rulelist239 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _rulename_in_rule262 = new BitSet(new ulong[]{0x80000000024000UL,0x3UL});
+		public static readonly BitSet _defined_as_in_rule264 = new BitSet(new ulong[]{0x1D104E2110400220UL,0x4UL});
+		public static readonly BitSet _elements_in_rule266 = new BitSet(new ulong[]{0x0UL});
+		public static readonly BitSet _c_nl_in_rule269 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _EOF_in_rule273 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _rulechars_in_rulename306 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _set_in_rulechars328 = new BitSet(new ulong[]{0x100062010040002UL});
+		public static readonly BitSet _c_wsp_in_defined_as380 = new BitSet(new ulong[]{0x80000000024000UL,0x3UL});
+		public static readonly BitSet _defined_as_operator_in_defined_as385 = new BitSet(new ulong[]{0x80000000024002UL});
+		public static readonly BitSet _c_wsp_in_defined_as389 = new BitSet(new ulong[]{0x80000000024002UL});
+		public static readonly BitSet _alternation_in_elements436 = new BitSet(new ulong[]{0x80000000024002UL});
+		public static readonly BitSet _c_wsp_in_elements443 = new BitSet(new ulong[]{0x80000000024002UL});
+		public static readonly BitSet _WSP_in_c_wsp463 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _c_nl_in_c_wsp469 = new BitSet(new ulong[]{0x80000000000000UL});
+		public static readonly BitSet _WSP_in_c_wsp471 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _comment_in_c_nl487 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _CRLF_in_c_nl491 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _COMMENT_in_comment508 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _concatenation_in_alternation522 = new BitSet(new ulong[]{0x8080000000024002UL});
+		public static readonly BitSet _c_wsp_in_alternation526 = new BitSet(new ulong[]{0x8080000000024000UL});
+		public static readonly BitSet _63_in_alternation529 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _c_wsp_in_alternation531 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _concatenation_in_alternation534 = new BitSet(new ulong[]{0x8080000000024002UL});
+		public static readonly BitSet _repetition_in_concatenation560 = new BitSet(new ulong[]{0x80000000024002UL});
+		public static readonly BitSet _c_wsp_in_concatenation564 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _repetition_in_concatenation567 = new BitSet(new ulong[]{0x80000000024002UL});
+		public static readonly BitSet _ASTERISK_in_repetition593 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _number_in_repetition595 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _element_in_repetition597 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _number_in_repetition634 = new BitSet(new ulong[]{0x20UL});
+		public static readonly BitSet _ASTERISK_in_repetition636 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _number_in_repetition640 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _element_in_repetition642 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _number_in_repetition662 = new BitSet(new ulong[]{0x20UL});
+		public static readonly BitSet _ASTERISK_in_repetition664 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _element_in_repetition666 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ASTERISK_in_repetition699 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _element_in_repetition701 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _number_in_repetition741 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _element_in_repetition743 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _element_in_repetition785 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _number_val_in_number842 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _rulename_in_element894 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _group_in_element900 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _option_in_element906 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _char_val_in_element912 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _num_val_in_element918 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _prose_val_in_element924 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _60_in_group938 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _c_wsp_in_group940 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _alternation_in_group943 = new BitSet(new ulong[]{0x2080000000024000UL});
+		public static readonly BitSet _c_wsp_in_group945 = new BitSet(new ulong[]{0x2080000000024000UL});
+		public static readonly BitSet _61_in_group948 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _66_in_option970 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _c_wsp_in_option972 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _alternation_in_option975 = new BitSet(new ulong[]{0x80000000024000UL,0x8UL});
+		public static readonly BitSet _c_wsp_in_option977 = new BitSet(new ulong[]{0x80000000024000UL,0x8UL});
+		public static readonly BitSet _67_in_option980 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _bin_val_in_num_val1004 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _dec_val_in_num_val1008 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _hex_val_in_num_val1012 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _case_insensitive_string_in_char_val1028 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _case_sensitive_string_in_char_val1042 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _58_in_case_insensitive_string1064 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _QUOTED_STRING_in_case_insensitive_string1067 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _59_in_case_sensitive_string1090 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _QUOTED_STRING_in_case_sensitive_string1092 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SINGLE_QUOTED_STRING_in_case_sensitive_string1107 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1129 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1133 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _DASH_in_bin_val1135 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1139 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1157 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1159 = new BitSet(new ulong[]{0x4000000000000000UL});
+		public static readonly BitSet _62_in_bin_val1162 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1164 = new BitSet(new ulong[]{0x4000000000000002UL});
+		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1185 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1187 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _bin_number_in_bin_val_number1253 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1301 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1305 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _DASH_in_dec_val1307 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1311 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1329 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1331 = new BitSet(new ulong[]{0x4000000000000000UL});
+		public static readonly BitSet _62_in_dec_val1334 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1336 = new BitSet(new ulong[]{0x4000000000000002UL});
+		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1357 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1359 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _dec_number_in_dec_val_number1407 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1457 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1461 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _DASH_in_hex_val1463 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1467 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1485 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1487 = new BitSet(new ulong[]{0x4000000000000000UL});
+		public static readonly BitSet _62_in_hex_val1490 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1492 = new BitSet(new ulong[]{0x4000000000000002UL});
+		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1513 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1515 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _hex_number_in_hex_val_number1563 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _PROSE_VAL_in_prose_val1617 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _c_nl_in_synpred1_AbnfAst230 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _c_wsp_in_synpred2_AbnfAst440 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

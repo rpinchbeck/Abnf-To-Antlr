@@ -1,4 +1,4 @@
-nested_repetitions :  (((EIGHT EIGHT EIGHT ((EIGHT EIGHT) | EIGHT?)) (EIGHT EIGHT EIGHT ((EIGHT EIGHT) | EIGHT?))) | (EIGHT EIGHT EIGHT ((EIGHT EIGHT) | EIGHT?))?);
+nested_repetitions : (((((EIGHT EIGHT EIGHT ((EIGHT EIGHT) | EIGHT?))) ((EIGHT EIGHT EIGHT ((EIGHT EIGHT) | EIGHT?)))) | ((EIGHT EIGHT EIGHT ((EIGHT EIGHT) | EIGHT?)))?));
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar

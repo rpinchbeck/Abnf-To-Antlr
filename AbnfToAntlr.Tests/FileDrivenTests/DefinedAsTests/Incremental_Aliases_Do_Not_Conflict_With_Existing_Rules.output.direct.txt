@@ -1,0 +1,7 @@
+fragment_2 : ('2') | fragment_3;
+fragment_3 : ('3') | fragment_4;
+fragment_1 : ('1') | fragment_2;
+fragment_4 : ('4') | FRAGMENT_6;
+FRAGMENT_6 : '5';
+
+FRAGMENT_5 : '6';

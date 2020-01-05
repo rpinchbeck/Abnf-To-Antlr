@@ -33,23 +33,46 @@ namespace AbnfToAntlr.Tests
     public class DefinedAsTests : FileDrivenTestBase
     {
         [TestMethod]
-        public void DefinedAs_With_One_Assignment()
+        public void Definition_Followed_By_One_Incremental_Alternative()
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
         }
 
         [TestMethod]
-        public void DefinedAs_With_One_Extension()
+        public void Definition_Followed_By_Two_Incremental_Alternatives()
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
         }
 
         [TestMethod]
-        public void DefinedAs_With_One_Assignment_And_One_Extension()
+        public void Definition_Preceded_By_One_Incremental_Alternative()
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
         }
 
+        [TestMethod]
+        public void Definition_Preceded_By_Two_Incremental_Alternatives()
+        {
+            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+        }
+
+        [TestMethod]
+        public void Definition_Preceded_And_Followed_By_One_Incremental_Alternative()
+        {
+            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+        }
+
+        [TestMethod]
+        public void Definition_Preceded_And_Followed_By_Two_Incremental_Alternatives()
+        {
+            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+        }
+
+        [TestMethod]
+        public void Incremental_Aliases_Do_Not_Conflict_With_Existing_Rules()
+        {
+            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+        }
     }
 }
 

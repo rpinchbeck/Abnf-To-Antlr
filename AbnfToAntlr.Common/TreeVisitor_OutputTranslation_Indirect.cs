@@ -37,8 +37,8 @@ namespace AbnfToAntlr.Common
     {
         Dictionary<char, NamedCharacter> _distinctCharacters;
 
-        public TreeVisitor_OutputTranslation_Indirect(ITokenStream tokens, System.IO.TextWriter writer, Dictionary<char, NamedCharacter> distinctCharacters, INamedCharacterLookup lookup)
-            : base(tokens, writer, lookup)
+        public TreeVisitor_OutputTranslation_Indirect(ITokenStream tokens, System.IO.TextWriter writer, INamedCharacterLookup lookup, RuleStatistics ruleStatistics, Dictionary<char, NamedCharacter> distinctCharacters)
+            : base(tokens, writer, lookup, ruleStatistics)
         {
             _distinctCharacters = distinctCharacters;
         }
@@ -105,8 +105,8 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected override void WriteValueRangeNode(ITree node)
         {
-            var minValue = GetValue(node.GetAndValidateChild(0));
-            var maxValue = GetValue(node.GetAndValidateChild(1));
+            var minValue = GetValue(node.GetChildWithValidation(0));
+            var maxValue = GetValue(node.GetChildWithValidation(1));
 
             if (maxValue > minValue)
             {
@@ -139,6 +139,10 @@ namespace AbnfToAntlr.Common
             Write(namedCharacter.Name);
         }
 
+        protected override string GetLexerRuleName(string alias)
+        {
+            return alias;
+        }
 
     } // class
 } // namespace

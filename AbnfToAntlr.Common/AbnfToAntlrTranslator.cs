@@ -29,7 +29,7 @@
     some ABNF grammars are inherently ambiguous and ANTLR will complain about them 
     until the ambiguity is resolved by the user.
   
-    The solution can be built with Visual Studio 2010 or a compatible product like 
+    The solution can be built with Visual Studio or a compatible product like 
     SharpDevelop.  Open the solution, build it, and use the resulting executable to 
     translate any ABNF grammar to an ANTLR grammar.
 
@@ -154,14 +154,18 @@ namespace AbnfToAntlr.Common
                 // enable this line to use Unicode named characters for indirect translation
                 // var lookup = new NamedCharacterLookupUnicode();
 
+                var ruleStatistics = new RuleStatistics();
+                var statisticsVisitor = new TreeVisitor_GatherRuleStatistics(ruleStatistics);
+                statisticsVisitor.Visit(tree);
+
                 // output translated grammar
                 if (performDirectTranslation)
                 {
-                    OutputDirectTranslation(writer, tokens, tree, lookup);
+                    OutputDirectTranslation(writer, tokens, tree, lookup, ruleStatistics);
                 }
                 else
                 {
-                    OutputIndirectTranslation(writer, tokens, tree, lookup);
+                    OutputIndirectTranslation(writer, tokens, tree, lookup, ruleStatistics);
                 }
             }
         }
@@ -183,22 +187,22 @@ namespace AbnfToAntlr.Common
         }
 
 
-        void OutputDirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree, INamedCharacterLookup lookup)
+        void OutputDirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree, INamedCharacterLookup lookup, RuleStatistics ruleStatistics)
         {
             // output ANTLR translation
-            var outputVisitor = new TreeVisitor_OutputTranslation_Direct(tokens, writer, lookup);
+            var outputVisitor = new TreeVisitor_OutputTranslation_Direct(tokens, writer, lookup, ruleStatistics);
             outputVisitor.Visit(tree);
         }
 
-        void OutputIndirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree, INamedCharacterLookup lookup)
+        void OutputIndirectTranslation(TextWriter writer, CommonTokenStream tokens, CommonTree tree, INamedCharacterLookup lookup, RuleStatistics ruleStatistics)
         {
             // gather distinct literals
             var distinctCharacters = new Dictionary<char, NamedCharacter>();
-            var literalVisitor = new TreeVisitor_GatherDistinctCharacters(distinctCharacters, lookup);
+            var literalVisitor = new TreeVisitor_GatherDistinctCharacters(distinctCharacters, lookup, ruleStatistics);
             literalVisitor.Visit(tree);
 
             // output ANTLR translation (substitute rules for character literals)
-            var outputVisitor = new TreeVisitor_OutputTranslation_Indirect(tokens, writer, distinctCharacters, lookup);
+            var outputVisitor = new TreeVisitor_OutputTranslation_Indirect(tokens, writer, lookup, ruleStatistics, distinctCharacters);
             outputVisitor.Visit(tree);
 
             // append literal rules to output

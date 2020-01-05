@@ -34,22 +34,17 @@ namespace AbnfToAntlr.Common
     /// </summary>
     public class TreeVisitor_OutputTranslation_Direct : TreeVisitor_OutputTranslation
     {
-        protected List<string> _lexerRules;
-
-        public TreeVisitor_OutputTranslation_Direct(ITokenStream tokens, System.IO.TextWriter writer, INamedCharacterLookup lookup)
-            : base(tokens, writer, lookup)
+        public TreeVisitor_OutputTranslation_Direct(ITokenStream tokens, System.IO.TextWriter writer, INamedCharacterLookup lookup, RuleStatistics ruleStatistics)
+            : base(tokens, writer, lookup, ruleStatistics)
         {
         }
 
         /// <summary>
-        /// Preprocess rules list: determine unique rule names for all rules, determine which rules are lexer rules
+        /// Output the ANTLR translation of the specified rule list
         /// </summary>
         protected override void VisitRuleList(ITree node)
         {
-            CommonConstructor();
-
-            CreateRuleNamesCollection(node);
-            CreateLexerRulesCollection(node);
+            Reset();
 
             VisitChildren(node);
         }
@@ -123,8 +118,8 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected override void WriteValueRangeNode(ITree node)
         {
-            var min = node.GetAndValidateChild(0);
-            var max = node.GetAndValidateChild(1);
+            var min = node.GetChildWithValidation(0);
+            var max = node.GetChildWithValidation(1);
 
             Visit(min);
             Write("..");
@@ -139,104 +134,10 @@ namespace AbnfToAntlr.Common
             Write(string.Format(@"'\u{0:X4}'", value));
         }
 
-        /// <summary>
-        /// Scan the specified tree for rules that contain only literals
-        /// </summary>
-        protected void CreateLexerRulesCollection(ITree ruleListNode)
+        protected override string GetLexerRuleName(string alias)
         {
-            string ruleName;
-            ITree ruleNode;
-
-            _lexerRules = new List<string>();
-
-            for (int index = 0; index < ruleListNode.ChildCount; index++)
-            {
-                ruleNode = ruleListNode.GetAndValidateChild(index);
-
-                if (ruleNode.Type != AbnfAstParser.RULE_NODE)
-                {
-                    throw new InvalidOperationException("Unexpected node type encountered while searching for lexer rules.");
-                }
-
-                var ruleNameNode = ruleNode.GetAndValidateChild(0);
-                ruleName = GetRuleName(ruleNameNode);
-
-                if (ContainsAnyRuleName(ruleNode))
-                {
-                    // do nothing
-                }
-                else
-                {
-                    _lexerRules.Add(ruleName);
-                }
-            }
+            return alias.ToUpperInvariant();
         }
 
-        /// <summary>
-        /// Determine if the specified node contains any rule name nodes
-        /// </summary>
-        /// <returns>true if the specified node contains a rule name node, false otherwise</returns>
-        protected bool ContainsAnyRuleName(ITree node)
-        {
-            int minIndex;
-            ITree child;
-
-            if (node.Type == AbnfAstParser.RULE_NODE)
-            {
-                minIndex = 1;
-            }
-            else
-            {
-                minIndex = 0;
-            }
-
-            if (node.Type == AbnfAstParser.RULE_NAME_NODE)
-            {
-                return true;
-            }
-
-            for (int index = minIndex; index < node.ChildCount; index++)
-            {
-                child = node.GetAndValidateChild(index);
-
-                if (ContainsAnyRuleName(child))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Determine if the specified rule name is a lexer rule
-        /// </summary>
-        /// <returns>true if the specified rule is a lexer rule, false otherwise</returns>
-        protected bool IsLexerRule(string ruleName)
-        {
-            if (_lexerRules.Contains(ruleName))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Post-processing of mapped rule names
-        /// </summary>
-        protected override string ProcessMappedRuleName(string ruleNameText, string mappedText)
-        {
-            string result = mappedText;
-
-            if (IsLexerRule(ruleNameText))
-            {
-                // capitalize the entire rule name of lexer rules 
-                result = mappedText.ToUpperInvariant();
-            }
-
-            return result;
-        }
-
-    } // class
-} // namespace
+    }
+}

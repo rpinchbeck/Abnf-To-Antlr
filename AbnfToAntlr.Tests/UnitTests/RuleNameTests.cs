@@ -43,5 +43,11 @@ namespace AbnfToAntlr.Tests
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
         }
+
+        [TestMethod]
+        public void Aliases_Do_Not_Conflict_With_Existing_Rule_Names()
+        {
+            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+        }
     }
 }

@@ -1,4 +1,0 @@
-rule-using-assignment-1 = ""
-rule-using-assignment-2 =""
-rule-using-assignment-3= ""
-rule-using-assignment-4=""

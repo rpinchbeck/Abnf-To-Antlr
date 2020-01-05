@@ -1,4 +1,4 @@
-repetition_one_to_n_occurences : SIX ((SIX SIX SIX) | (SIX SIX) | SIX?);
+repetition_one_to_n_occurences : (SIX ((SIX SIX SIX) | (SIX SIX) | SIX?));
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar

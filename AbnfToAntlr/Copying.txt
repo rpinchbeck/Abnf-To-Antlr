@@ -1,4 +1,4 @@
-﻿Copyright 2013-2018 Robert Pinchbeck
+﻿Copyright 2013-2020 Robert Pinchbeck
 
 This file is part of AbnfToAntlr.
   

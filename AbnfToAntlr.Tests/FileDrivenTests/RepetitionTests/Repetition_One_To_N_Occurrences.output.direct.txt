@@ -1,1 +1,1 @@
-REPETITION_ONE_TO_N_OCCURENCES : '6' (('6' '6' '6') | ('6' '6') | '6'?);
+REPETITION_ONE_TO_N_OCCURENCES : ('6' (('6' '6' '6') | ('6' '6') | '6'?));

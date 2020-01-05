@@ -1,0 +1,3 @@
+definition_preceded_by_two_incremental_alternatives_1 : ('2') | DEFINITION_PRECEDED_BY_TWO_INCREMENTAL_ALTERNATIVES_2;
+DEFINITION_PRECEDED_BY_TWO_INCREMENTAL_ALTERNATIVES_2 : '3';
+definition_preceded_by_two_incremental_alternatives : ('1') | definition_preceded_by_two_incremental_alternatives_1;

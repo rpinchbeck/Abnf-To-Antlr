@@ -1,0 +1,2 @@
+definition-preceded-by-one-incremental-alternative =/ "2"
+definition-preceded-by-one-incremental-alternative = "1"

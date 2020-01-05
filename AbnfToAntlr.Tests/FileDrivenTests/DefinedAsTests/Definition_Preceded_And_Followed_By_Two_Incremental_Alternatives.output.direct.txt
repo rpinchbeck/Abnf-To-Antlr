@@ -1,0 +1,5 @@
+definition_preceded_and_followed_by_two_incremental_alternatives_1 : ('2') | definition_preceded_and_followed_by_two_incremental_alternatives_2;
+definition_preceded_and_followed_by_two_incremental_alternatives_2 : ('3') | definition_preceded_and_followed_by_two_incremental_alternatives_3;
+definition_preceded_and_followed_by_two_incremental_alternatives : ('1') | definition_preceded_and_followed_by_two_incremental_alternatives_1;
+definition_preceded_and_followed_by_two_incremental_alternatives_3 : ('4') | DEFINITION_PRECEDED_AND_FOLLOWED_BY_TWO_INCREMENTAL_ALTERNATIVES_4;
+DEFINITION_PRECEDED_AND_FOLLOWED_BY_TWO_INCREMENTAL_ALTERNATIVES_4 : '5';

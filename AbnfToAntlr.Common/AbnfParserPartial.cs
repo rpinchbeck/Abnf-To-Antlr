@@ -1,6 +1,6 @@
 ﻿/*
 
-    Copyright 2012-2020 Robert Pinchbeck
+    Copyright 2020 Robert Pinchbeck
   
     This file is part of AbnfToAntlr.
 
