@@ -50,6 +50,7 @@
     <Compile Include="UnitTests\ConsoleTests.cs" />
     <Compile Include="UnitTests\DefinedAsTests.cs" />
     <Compile Include="FileDrivenTestBase.cs" />
+    <Compile Include="UnitTests\GrammarTests.cs" />
     <Compile Include="UnitTests\GroupTests.cs" />
     <Compile Include="UnitTests\OptionTests.cs" />
     <Compile Include="UnitTests\ProseValTests.cs" />
@@ -72,6 +73,7 @@
     <Folder Include="FileDrivenTests\ConcatenationTests\" />
     <Folder Include="FileDrivenTests\ConsoleTests\" />
     <Folder Include="FileDrivenTests\DefinedAsTests\" />
+    <Folder Include="FileDrivenTests\GrammarTests\" />
     <Folder Include="FileDrivenTests\GroupTests\" />
     <Folder Include="FileDrivenTests\NumValTests\" />
     <Folder Include="FileDrivenTests\OptionTests\" />

@@ -94,7 +94,6 @@ namespace AbnfToAntlr.Common
 
         protected override void VisitProseVal(ITree node)
         {
-
             var proseVal = GetProseVal(node);
 
             var proseValAsRuleName = proseVal.ToLowerInvariant();

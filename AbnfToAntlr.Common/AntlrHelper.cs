@@ -42,6 +42,15 @@ namespace AbnfToAntlr.Common
             return result;
         }
 
+        public static ITree GetChildWithValidation(this ITree node, int index, int expectedNodeType)
+        {
+            var result = node.GetChildWithValidation(index);
+
+            result.Validate(expectedNodeType);
+
+            return result;
+        }
+
         public static void Validate(this ITree node, int expectedNodeType)
         {
             ThrowIfErrorNode(node);

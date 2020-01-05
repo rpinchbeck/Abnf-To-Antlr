@@ -1,0 +1,3 @@
+rule_with_forward_reference_to_lexer_rule : LEXER_RULE;
+
+LEXER_RULE : '1';

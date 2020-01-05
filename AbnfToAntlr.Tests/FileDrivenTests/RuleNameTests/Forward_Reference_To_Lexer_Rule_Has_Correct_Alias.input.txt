@@ -1,0 +1,3 @@
+rule-with-forward-reference-to-lexer-rule = lexer-rule
+
+lexer-rule = "1"

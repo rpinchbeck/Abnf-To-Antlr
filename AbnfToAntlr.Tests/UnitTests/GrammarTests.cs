@@ -30,28 +30,16 @@ using System.Text;
 namespace AbnfToAntlr.Tests
 {
     [TestClass]
-    public class RuleNameTests  : FileDrivenTestBase
+    public class GrammarTests : FileDrivenTestBase
     {
         [TestMethod]
-        public void RuleName_Is_Case_Insensitive()
+        public void Abnf()
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
         }
 
         [TestMethod]
-        public void Reserved_RuleName_Is_Renamed()
-        {
-            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
-        }
-
-        [TestMethod]
-        public void Aliases_Do_Not_Conflict_With_Existing_Rule_Names()
-        {
-            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
-        }
-
-        [TestMethod]
-        public void Forward_Reference_To_Lexer_Rule_Has_Correct_Alias()
+        public void Uri()
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
         }
