@@ -1,0 +1,148 @@
+
+// Uniform Resource Identifier (RFC 3986)
+//
+// ABNF grammar extracted from http://tools.ietf.org/html/rfc3986
+
+// -------------------------------------------------------
+// Appendix A. Collected ABNF for URI
+// -------------------------------------------------------
+
+uri           : scheme ':' hier_part ( '?' query )? ( '#' fragment_1 )?;
+
+hier_part     : (('/' '/') authority path_abempty)
+                | path_absolute
+                | path_rootless
+                | path_empty;
+
+uri_reference : uri | relative_ref;
+
+absolute_uri  : scheme ':' hier_part ( '?' query )?;
+
+relative_ref  : relative_part ( '?' query )? ( '#' fragment_1 )?;
+
+relative_part : (('/' '/') authority path_abempty)
+                | path_absolute
+                | path_noscheme
+                | path_empty;
+
+scheme        : ALPHA ( ALPHA | DIGIT | '+' | '-' | '.' )*;
+
+authority     : ( userinfo '@' )? host ( ':' port )?;
+userinfo      : ( unreserved | pct_encoded | SUB_DELIMS | ':' )*;
+host          : ip_literal | ipv4address | reg_name;
+port          : DIGIT*;
+
+ip_literal    : '[' ( ipv6address | ipvfuture  ) ']';
+
+ipvfuture     : ('V' | 'v') hexdig+ '.' ( unreserved | SUB_DELIMS | ':' )+;
+
+ipv6address   :                            ((( h16 ':' ) (h16 ':') (h16 ':') (h16 ':') (h16 ':') (h16 ':')) ls32)
+                |                       ((':' ':') (( h16 ':' ) (h16 ':') (h16 ':') (h16 ':') (h16 ':')) ls32)
+                | ((               h16 )? (':' ':') (( h16 ':' ) (h16 ':') (h16 ':') (h16 ':')) ls32)
+                | (( ( h16 ':' )? h16 )? (':' ':') (( h16 ':' ) (h16 ':') (h16 ':')) ls32)
+                | (( (((( h16 ':' ) (h16 ':')) | (h16 ':')?)) h16 )? (':' ':') (( h16 ':' ) (h16 ':')) ls32)
+                | (( (((( h16 ':' ) (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':')) | (h16 ':')?)) h16 )? (':' ':')    h16 ':'   ls32)
+                | (( (((( h16 ':' ) (h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':')) | (h16 ':')?)) h16 )? (':' ':')              ls32)
+                | (( (((( h16 ':' ) (h16 ':') (h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':')) | (h16 ':')?)) h16 )? (':' ':')              h16)
+                | (( (((( h16 ':' ) (h16 ':') (h16 ':') (h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':') (h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':') (h16 ':')) | ((h16 ':') (h16 ':')) | (h16 ':')?)) h16 )? (':' ':'));
+
+h16           : (hexdig ((hexdig hexdig hexdig) | (hexdig hexdig) | hexdig?));
+ls32          : ( h16 ':' h16 ) | ipv4address;
+ipv4address   : dec_octet '.' dec_octet '.' dec_octet '.' dec_octet;
+
+dec_octet     : DIGIT                 // 0-9
+                | ('\u0031'..'\u0039' DIGIT)         // 10-99
+                | ('1' (DIGIT DIGIT))            // 100-199
+                | ('2' '\u0030'..'\u0034' DIGIT)     // 200-249
+                | (('2' '5') '\u0030'..'\u0035');          // 250-255
+
+reg_name      : ( unreserved | pct_encoded | SUB_DELIMS )*;
+
+path          : path_abempty    // begins with "/" or is empty
+                | path_absolute   // begins with "/" but not "//"
+                | path_noscheme   // begins with a non-colon segment
+                | path_rootless   // begins with a segment
+                | path_empty;      // zero characters
+
+path_abempty  : ( '/' segment )*;
+path_absolute : '/' ( segment_nz ( '/' segment )* )?;
+path_noscheme : segment_nz_nc ( '/' segment )*;
+path_rootless : segment_nz ( '/' segment )*;
+path_empty    : ;
+
+segment       : pchar*;
+segment_nz    : pchar+;
+segment_nz_nc : ( unreserved | pct_encoded | SUB_DELIMS | '@' )+;
+                // non-zero-length segment without any colon ":"
+
+pchar         : unreserved | pct_encoded | SUB_DELIMS | ':' | '@';
+
+query         : ( pchar | '/' | '?' )*;
+
+fragment_1      : ( pchar | '/' | '?' )*;
+
+pct_encoded   : '%' hexdig hexdig;
+
+unreserved    : ALPHA | DIGIT | '-' | '.' | '_' | '~';
+reserved      : GEN_DELIMS | SUB_DELIMS;
+GEN_DELIMS    : ':' | '/' | '?' | '#' | '[' | ']' | '@';
+SUB_DELIMS    : '!' | '$' | '&' | '\'' | '(' | ')'
+                | '*' | '+' | ',' | ';' | '=';
+
+// -------------------------------------------------------
+// -- RFC 5234
+// -- B.1. Core Rules
+// -------------------------------------------------------
+
+ALPHA          :  '\u0041'..'\u005A' | '\u0061'..'\u007A';   // A-Z / a-z
+
+BIT            :  '0' | '1';
+
+CHAR_1           :  '\u0001'..'\u007F';
+                    // any 7-bit US-ASCII character,
+                    //  excluding NUL
+
+CR             :  '\u000D';
+                    // carriage return
+
+crlf           :  CR LF;
+                    // Internet standard newline
+
+CTL            :  '\u0000'..'\u001F' | '\u007F';
+                    // controls
+
+DIGIT          :  '\u0030'..'\u0039';
+                    // 0-9
+
+DQUOTE         :  '\u0022';
+                    // " (Double Quote)
+
+hexdig         :  DIGIT | ('A' | 'a') | ('B' | 'b') | ('C' | 'c') | ('D' | 'd') | ('E' | 'e') | ('F' | 'f');
+
+HTAB           :  '\u0009';
+                    // horizontal tab
+
+LF             :  '\u000A';
+                    // linefeed
+
+lwsp           :  (wsp | (crlf wsp))*;
+                    // Use of this linear-white-space rule
+                    //  permits lines containing only white
+                    //  space that are no longer legal in
+                    //  mail headers and have caused
+                    //  interoperability problems in other
+                    //  contexts.
+                    // Do not use when defining mail
+                    //  headers and use with caution in
+                    //  other contexts.
+
+OCTET          :  '\u0000'..'\u00FF';
+                    // 8 bits of data
+
+SP             :  '\u0020';
+
+VCHAR          :  '\u0021'..'\u007E';
+                    // visible (printing) characters
+
+wsp            :  SP | HTAB;
+                    // white space

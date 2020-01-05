@@ -45,6 +45,8 @@ namespace AbnfToAntlr.Common
 
         protected override void VisitRuleList(ITree node)
         {
+            node.Validate(AbnfAstParser.RULE_LIST_NODE);
+
             // Start over each time the rule list is visited
             Reset();
 
@@ -58,6 +60,8 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected void ProcessLeftHandSide(ITree ruleListNode)
         {
+            ruleListNode.Validate(AbnfAstParser.RULE_LIST_NODE);
+
             ITree ruleNode;
             ITree ruleNameNode;
             string ruleName;
@@ -65,28 +69,35 @@ namespace AbnfToAntlr.Common
 
             for (int index = 0; index < ruleListNode.ChildCount; index++)
             {
-                ruleNode = ruleListNode.GetChildWithValidation(index);
+                ruleNode = ruleListNode.GetChildWithValidation(index, AbnfAstParser.RULE_NODE);
 
-                ruleNode.Validate(AbnfAstParser.RULE_NODE);
-
-                ruleNameNode = ruleNode.GetChildWithValidation(0);
+                ruleNameNode = ruleNode.GetChildWithValidation(0, AbnfAstParser.RULE_NAME_NODE);
 
                 ruleName = GetRuleName(ruleNameNode);
-                _ruleStatistics.LhsRawRuleNames.Add(ruleName);
 
                 parserRuleName = AntlrHelper.GetParserRuleName(ruleName);
-                _ruleStatistics.LhsParserRuleNames.Add(parserRuleName);
 
+                _ruleStatistics.LhsRawRuleNames.Add(ruleName);
+                _ruleStatistics.LhsParserRuleNames.Add(parserRuleName);
                 _ruleStatistics.AllParserRuleNames.Add(parserRuleName);
+            }
+
+            for (int index = 0; index < ruleListNode.ChildCount; index++)
+            {
+                ruleNode = ruleListNode.GetChildWithValidation(index, AbnfAstParser.RULE_NODE);
+
+                GetOrCreateLhsRuleDetail(ruleNode);
             }
         }
 
         protected override void VisitRule(ITree node)
         {
-            var definedAsNode = node.GetChildWithValidation(1);
+            node.Validate(AbnfAstParser.RULE_NODE);
+
+            var definedAsNode = node.GetChildWithValidation(1, AbnfAstParser.DEFINED_AS_NODE);
             var definedAsOperator = GetChildrenText(definedAsNode);
 
-            var ruleDetail = GetOrCreateRuleDetail(node);
+            var ruleDetail = GetOrCreateLhsRuleDetail(node);
 
             if (definedAsOperator == "=")
             {
@@ -97,6 +108,7 @@ namespace AbnfToAntlr.Common
                 ruleDetail.CountOfIncrementalAlternatives++;
             }
 
+            // visit rule body
             ITree element;
             var maxIndex = node.ChildCount;
             for (int index = 1; index < maxIndex; index++)
@@ -108,15 +120,17 @@ namespace AbnfToAntlr.Common
 
         protected override void VisitRuleName(ITree node)
         {
-            var ruleNode = node.Parent;
+            node.Validate(AbnfAstParser.RULE_NAME_NODE);
 
-            var ruleDetail = GetOrCreateRuleDetail(ruleNode);
+            var ruleDetail = GetOrCreateRhsRuleDetail(node);
 
             ruleDetail.CountOfReferences++;
         }
 
-        RuleDetail GetOrCreateRuleDetail(ITree ruleNode)
+        RuleDetail GetOrCreateLhsRuleDetail(ITree ruleNode)
         {
+            ruleNode.Validate(AbnfAstParser.RULE_NODE);
+
             var ruleNameNode = ruleNode.GetChildWithValidation(0);
 
             var ruleName = GetRuleName(ruleNameNode);
@@ -129,8 +143,6 @@ namespace AbnfToAntlr.Common
             }
             else
             {
-                _ruleStatistics.AllRawRuleNames.Add(ruleName);
-
                 // determine alias
                 var parserRuleName = AntlrHelper.GetParserRuleName(ruleName);
 
@@ -150,20 +162,77 @@ namespace AbnfToAntlr.Common
                     }
                 }
 
-                _ruleStatistics.Aliases.Add(alias);
+                var isLexerRule = (!(ContainsAnyRuleName(ruleNode, _ruleStatistics.LhsRawRuleNames)));
 
                 result = new RuleDetail
                 {
                     Name = ruleName,
                     Alias = alias,
-                    IsLexerRule = (!ContainsAnyRuleName(ruleNode, _ruleStatistics.LhsRawRuleNames))
+                    IsLexerRule = isLexerRule
                 };
 
+                _ruleStatistics.Aliases.Add(alias);
+                _ruleStatistics.LhsRawRuleNames.Add(ruleName);
+                _ruleStatistics.AllRawRuleNames.Add(ruleName);
+                _ruleStatistics.LhsParserRuleNames.Add(parserRuleName);
+                _ruleStatistics.AllParserRuleNames.Add(parserRuleName);
                 _ruleStatistics.RuleDetails.Add(ruleName, result);
             }
 
             return result;
         }
 
+        RuleDetail GetOrCreateRhsRuleDetail(ITree ruleNameNode)
+        {
+            ruleNameNode.Validate(AbnfAstParser.RULE_NAME_NODE);
+
+            var ruleName = GetRuleName(ruleNameNode);
+
+            RuleDetail result;
+
+            if (_ruleStatistics.RuleDetails.TryGetValue(ruleName, out result))
+            {
+                // do nothing, rule details already recorded
+            }
+            else
+            {
+                // if we wind up here, then we have an unmatched rule reference
+                // (there are no rule definitions matching this rule reference)
+                // determine alias
+                var parserRuleName = AntlrHelper.GetParserRuleName(ruleName);
+
+                var alias = parserRuleName;
+
+                int counter = 0;
+
+                while (AntlrHelper.IsReservedKeyWord(alias) || _ruleStatistics.Aliases.Contains(alias))
+                {
+                    counter++;
+                    alias = parserRuleName + "_" + counter;
+
+                    while (_ruleStatistics.AllParserRuleNames.Contains(alias))
+                    {
+                        counter++;
+                        alias = parserRuleName + "_" + counter;
+                    }
+                }
+
+                result = new RuleDetail
+                {
+                    Name = ruleName,
+                    Alias = alias,
+                    IsLexerRule = false // treat unmatched rule references as parser rules
+                };
+
+                _ruleStatistics.Aliases.Add(alias);
+                _ruleStatistics.RhsRawRuleNames.Add(ruleName);
+                _ruleStatistics.AllRawRuleNames.Add(ruleName);
+                _ruleStatistics.RhsParserRuleNames.Add(parserRuleName);
+                _ruleStatistics.AllParserRuleNames.Add(parserRuleName);
+                _ruleStatistics.RuleDetails.Add(ruleName, result);
+            }
+
+            return result;
+        }
     }
 }
