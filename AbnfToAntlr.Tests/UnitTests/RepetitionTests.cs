@@ -49,6 +49,12 @@ namespace AbnfToAntlr.Tests
         }
 
         [TestMethod]
+        public void Repetition_Zero_To_Three_Occurrences()
+        {
+            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+        }
+
+        [TestMethod]
         public void Repetition_Zero_To_N_Occurrences()
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
@@ -78,6 +84,12 @@ namespace AbnfToAntlr.Tests
 
         [TestMethod]
         public void Repetition_One_To_Two_Occurrences()
+        {
+            PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+        }
+
+        [TestMethod]
+        public void Repetition_One_To_Three_Occurrences()
         {
             PerformTranslationTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
         }

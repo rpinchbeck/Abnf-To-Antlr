@@ -29,7 +29,7 @@
     some ABNF grammars are inherently ambiguous and ANTLR will complain about them 
     until the ambiguity is resolved by the user.
   
-    The solution can be built with Visual Studio 2010 or a compatible product like 
+    The solution can be built with Visual Studio or a compatible product like 
     SharpDevelop.  Open the solution, build it, and use the resulting executable to 
     translate any ABNF grammar to an ANTLR grammar.
 

@@ -1,3 +1,3 @@
 RULE_REFERENCED_IN_PROSE_VAL : ;
 
-PROSE_VAL : 'prose explanation of what should happen with referenced rule' 'rule-referenced-in-prose-val';
+prose_val : 'prose explanation of what should happen with referenced rule' RULE_REFERENCED_IN_PROSE_VAL;

@@ -31,39 +31,58 @@ namespace AbnfToAntlr.Common
 {
     public abstract class TreeVisitor_OutputTranslation : TreeVisitor
     {
+
+        HashSet<string> _allIncrementalAliases = new HashSet<string>();
+        Dictionary<string, string[]> _mapRuleNameToIncrementalAliases = new Dictionary<string, string[]>();
+        Dictionary<string, int> _lhsIncrementalRuleCounters = new Dictionary<string, int>();
+
+
         protected System.IO.TextWriter _writer;            // writer to output the translated grammar
         protected ITokenStream _tokens;                    // the token stream output from the AbnfAstLexer class
         protected INamedCharacterLookup _lookup;
+        protected RuleStatistics _ruleStatistics;
 
-        protected HashSet<string> _rawTranslatedRuleNames; // remember rule names for later name collision handling
         protected HashSet<IToken> _processedTokens;        // keep track of whitespace/comment tokens which have already been output
         protected HashSet<ITree> _visitedNodes;            // keep track of whitespace/comment tokens which have already been output
-        protected Dictionary<string, string> _ruleNameMap; // map original rule names to new rule names
         protected ITree _finalRuleElement;                 // keep track of the final node in the tree (the final node is the one immediately before any trailing whitespace in the token stream)
         protected int _finalNonWhiteSpaceTokenIndex;       // keep track of the final non-whitespace token in the token stream
         protected int _finalNonWhiteSpaceTokenIndexInRule; // keep track of the final non-whitespace token in the current rule
         int _nestedRepetitionCount = 0;                    // keep track of nested repetitions (for preserving whitespace)
 
-        public TreeVisitor_OutputTranslation(ITokenStream tokens, System.IO.TextWriter writer, INamedCharacterLookup lookup)
+        public TreeVisitor_OutputTranslation(ITokenStream tokens, System.IO.TextWriter writer, INamedCharacterLookup lookup, RuleStatistics ruleStatistics)
         {
             _tokens = tokens;
             _writer = writer;
             _lookup = lookup;
+            _ruleStatistics = ruleStatistics;
 
-            CommonConstructor();
+            Reset();
         }
 
-        protected void CommonConstructor()
+        protected void Reset()
         {
             // initialize
-            _ruleNameMap = new Dictionary<string, string>();
             _processedTokens = new HashSet<IToken>();
             _visitedNodes = new HashSet<ITree>();
             _finalRuleElement = null;
 
             _finalNonWhiteSpaceTokenIndex = FindStartOfWhiteSpaceBlock(_tokens.Count) - 1;
             _finalNonWhiteSpaceTokenIndexInRule = _finalNonWhiteSpaceTokenIndex;
+            _nestedRepetitionCount = 0;
+
+            _allIncrementalAliases.Clear();
+            _mapRuleNameToIncrementalAliases.Clear();
+            _lhsIncrementalRuleCounters.Clear();
+
+            GatherIncrementalAliases();
         }
+
+        protected abstract void WriteCharValNode(ITree node);
+
+        protected abstract void WriteValue(int value);
+
+        protected abstract string GetLexerRuleName(string alias);
+
 
         protected override void BeforeVisit(Antlr.Runtime.Tree.ITree node)
         {
@@ -82,9 +101,7 @@ namespace AbnfToAntlr.Common
 
         protected override void VisitRuleList(ITree node)
         {
-            CommonConstructor();
-
-            CreateRuleNamesCollection(node);
+            Reset();
 
             VisitChildren(node);
         }
@@ -99,19 +116,6 @@ namespace AbnfToAntlr.Common
             WriteRuleNameNode(node);
         }
 
-        protected string GetRuleName(ITree ruleNameNode)
-        {
-            if (ruleNameNode.Type != AbnfAstParser.RULE_NAME_NODE)
-            {
-                throw new InvalidOperationException("Unexpected node type encountered in " + System.Reflection.MethodInfo.GetCurrentMethod().Name + " (rule name node expected)");
-            }
-
-            // ABNF rule names are case-insensitive, so return a lowercase rule name
-            var result = GetChildrenText(ruleNameNode).ToLowerInvariant();
-
-            return result;
-
-        }
         protected override void VisitAlternation(ITree node)
         {
             WriteChildren(node, "|");
@@ -204,7 +208,7 @@ namespace AbnfToAntlr.Common
 
         protected override void VisitProseVal(ITree node)
         {
-            WriteCharValNode(node);
+            WriteProseValNode(node);
         }
 
         /// <summary>
@@ -246,7 +250,7 @@ namespace AbnfToAntlr.Common
                     Write(separator);
                 }
 
-                child = node.GetAndValidateChild(index);
+                child = node.GetChildWithValidation(index);
 
                 Visit(child);
 
@@ -285,22 +289,90 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected void WriteRuleNode(ITree node)
         {
-            ITree element = null;
-            var rulename = node.GetAndValidateChild(0);
+            var ruleNameNode = node.GetChildWithValidation(0);
+            var ruleName = GetRuleName(ruleNameNode);
+            var ruleDetail = _ruleStatistics.RuleDetails[ruleName];
+
+            var definedAsNode = node.GetChildWithValidation(1);
+            var definedAsOperator = GetChildrenText(definedAsNode);
 
             _finalNonWhiteSpaceTokenIndexInRule = FindStartOfWhiteSpaceBlock(node.TokenStopIndex + 1) - 1;
 
-            Visit(rulename);
+            var ruleAlias = GetLhsAlias(ruleName, definedAsOperator);
 
-            WriteWhiteSpaceAfterNode(rulename);
+            // never output uppercase rule names when there are incremental alternatives 
+            // because they will be rewritten later as parser rules
+            if (ruleDetail.CountOfIncrementalAlternatives > 0)
+            {
+                var incrementalIndex = _lhsIncrementalRuleCounters[ruleName];
+                var lastIncrementalIndex = ruleDetail.CountOfIncrementalAlternatives - 1;
+
+                if (definedAsOperator == "=" || incrementalIndex < lastIncrementalIndex)
+                {
+                    ruleAlias = ruleAlias.ToLowerInvariant();
+                }
+            }
+
+            Write(ruleAlias);
+
+            WriteWhiteSpaceAfterNode(ruleNameNode);
 
             Write(":");
 
+            WriteWhiteSpaceAfterNode(definedAsNode.GetChildWithValidation(0));
+
+            bool ruleBodyNeedsParentheses = false;
+
+            // parentheses are needed for some rules with incremental alternatives
+            if (ruleDetail.CountOfIncrementalAlternatives > 0)
+            {
+                var incrementalIndex = _lhsIncrementalRuleCounters[ruleName];
+                var lastIncrementalIndex = ruleDetail.CountOfIncrementalAlternatives - 1;
+
+                ruleBodyNeedsParentheses = (incrementalIndex < lastIncrementalIndex || definedAsOperator == "=");
+            }
+
+            if (ruleBodyNeedsParentheses)
+            {
+                Write("(");
+            }
+
+            // write rule body
+            ITree element;
             var maxIndex = node.ChildCount;
             for (int index = 1; index < maxIndex; index++)
             {
-                element = node.GetAndValidateChild(index);
+                element = node.GetChildWithValidation(index);
                 Visit(element);
+            }
+
+            if (ruleBodyNeedsParentheses)
+            {
+                Write(")");
+            }
+
+            // append reference to incremental alternative rule (if any)
+            if (ruleDetail.CountOfIncrementalAlternatives > 0)
+            {
+                var incrementalIndex = _lhsIncrementalRuleCounters[ruleName];
+                var lastIncrementalIndex = ruleDetail.CountOfIncrementalAlternatives - 1;
+
+                if (definedAsOperator == "=")
+                {
+                    Write(" | ");
+                    Write(_mapRuleNameToIncrementalAliases[ruleName][0]);
+                }
+                else
+                {
+                    if (incrementalIndex < lastIncrementalIndex)
+                    {
+                        Write(" | ");
+                        Write(_mapRuleNameToIncrementalAliases[ruleName][incrementalIndex + 1]);
+                    }
+
+                    _lhsIncrementalRuleCounters[ruleName]++;
+                }
+
             }
 
             Write(";");
@@ -317,32 +389,54 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected void WriteRuleNameNode(ITree node)
         {
-            string mappedText;
-            string ruleNameText;
+            var ruleName = GetRuleName(node);
 
-            ruleNameText = GetRuleName(node);
+            var alias = GetRhsAlias(ruleName);
 
-            // is rulename already mapped to a new name?
-            if (_ruleNameMap.ContainsKey(ruleNameText))
+            Write(alias);
+        }
+
+        string GetLhsAlias(string ruleName, string definedAsOperator)
+        {
+            string result;
+
+            var ruleDetail = _ruleStatistics.RuleDetails[ruleName];
+
+            if (definedAsOperator == "=/")
             {
-                // rulename is already mapped, so use the mapped name...
-                mappedText = _ruleNameMap[ruleNameText];
+                var index = _lhsIncrementalRuleCounters[ruleName];
+
+                var incrementalAliases = _mapRuleNameToIncrementalAliases[ruleName];
+
+                result = incrementalAliases[index];
             }
             else
             {
-                // rulename is not mapped, so map it now...
-
-                mappedText = TranslateRuleName(ruleNameText);
-
-                mappedText = GetUniqueRuleName(mappedText);
-
-                // remember the mapping of the original rule name to the new rule name
-                _ruleNameMap[ruleNameText] = mappedText;
+                result = GetAlias(ruleName);
             }
 
-            mappedText = ProcessMappedRuleName(ruleNameText, mappedText);
+            return result;
+        }
 
-            Write(mappedText);
+        string GetRhsAlias(string ruleName)
+        {
+            var result = GetAlias(ruleName);
+
+            return result;
+        }
+
+        string GetAlias(string ruleName)
+        {
+            var ruleDetails = _ruleStatistics.RuleDetails[ruleName];
+
+            var result = ruleDetails.Alias;
+
+            if (ruleDetails.IsLexerRule)
+            {
+                result = GetLexerRuleName(result);
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -353,6 +447,34 @@ namespace AbnfToAntlr.Common
             Write("(");
             WriteChildren(node);
             Write(")");
+        }
+
+        /// <summary>
+        /// Output the ANTLR translation of the specified prose val node
+        /// </summary>
+        private void WriteProseValNode(ITree node)
+        {
+            var proseVal = GetProseVal(node);
+
+            var proseValAsRuleName = proseVal.ToLowerInvariant();
+
+            if (_ruleStatistics.LhsRawRuleNames.Contains(proseVal))
+            {
+                var ruleDetail = _ruleStatistics.RuleDetails[proseValAsRuleName];
+
+                var alias = ruleDetail.Alias;
+
+                if (ruleDetail.IsLexerRule)
+                {
+                    alias = GetLexerRuleName(alias);
+                }
+
+                Write(alias);
+            }
+            else
+            {
+                WriteCharValNode(node);
+            }
         }
 
         /// <summary>
@@ -370,9 +492,9 @@ namespace AbnfToAntlr.Common
         /// </summary>
         protected void WriteRepetitionNode(ITree node)
         {
-            var element = node.GetAndValidateChild(0);
-            var min = node.GetAndValidateChild(1);
-            var max = node.GetAndValidateChild(2);
+            var element = node.GetChildWithValidation(0);
+            var min = node.GetChildWithValidation(1);
+            var max = node.GetChildWithValidation(2);
 
             int minValue;
             int maxValue;
@@ -395,12 +517,18 @@ namespace AbnfToAntlr.Common
             switch (max.Type)
             {
                 case AbnfAstParser.EXACT_OCCURENCES:
-                    if (minValue == 1)
+                    if (minValue == 0)
+                    {
+                        // do nothing
+                    }
+                    else if (minValue == 1)
                     {
                         Visit(element);
                     }
                     else
                     {
+                        Write("(");
+
                         _nestedRepetitionCount++;
 
                         for (int count = 0; count < minValue; count++)
@@ -414,6 +542,8 @@ namespace AbnfToAntlr.Common
                         }
 
                         _nestedRepetitionCount--;
+
+                        Write(")");
                     }
 
                     break;
@@ -431,6 +561,8 @@ namespace AbnfToAntlr.Common
                     }
                     else
                     {
+                        Write("(");
+
                         _nestedRepetitionCount++;
 
                         for (int count = 0; count < minValue; count++)
@@ -446,6 +578,8 @@ namespace AbnfToAntlr.Common
                         _nestedRepetitionCount--;
 
                         Write("+");
+
+                        Write(")");
                     }
 
                     break;
@@ -456,6 +590,13 @@ namespace AbnfToAntlr.Common
                     maxValue = Int32.Parse(maxText, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture);
 
                     _nestedRepetitionCount++;
+
+                    var needsOuterParentheses = (maxValue > 1);
+                    
+                    if (needsOuterParentheses)
+                    {
+                        Write("(");
+                    }
 
                     for (int count = 0; count < minValue; count++)
                     {
@@ -469,11 +610,16 @@ namespace AbnfToAntlr.Common
 
                     _nestedRepetitionCount--;
 
-                    var needsParentheses = (maxValue - minValue > 1);
+                    var needsInnerParentheses = (maxValue - minValue > 1);
 
-                    if (needsParentheses)
+                    if (minValue > 0 && maxValue > minValue)
                     {
-                        Write(" (");
+                        Write(" ");
+                    }
+
+                    if (needsInnerParentheses)
+                    {
+                        Write("(");
                     }
 
                     _nestedRepetitionCount++;
@@ -487,7 +633,7 @@ namespace AbnfToAntlr.Common
 
                         if (count - minValue == 1)
                         {
-                            if (minValue > 0 && !needsParentheses)
+                            if (minValue > 0 && !needsInnerParentheses)
                             {
                                 Write(" ");
                             }
@@ -519,7 +665,12 @@ namespace AbnfToAntlr.Common
 
                     _nestedRepetitionCount--;
 
-                    if (needsParentheses)
+                    if (needsInnerParentheses)
+                    {
+                        Write(")");
+                    }
+
+                    if (needsOuterParentheses)
                     {
                         Write(")");
                     }
@@ -527,11 +678,6 @@ namespace AbnfToAntlr.Common
                     break;
             }
         }
-
-
-        protected abstract void WriteCharValNode(ITree node);
-
-        protected abstract void WriteValue(int value);
 
 
         protected void WriteValueNode(ITree node)
@@ -582,93 +728,6 @@ namespace AbnfToAntlr.Common
         protected void Write(string text)
         {
             _writer.Write(text);
-        }
-
-        /// <summary>
-        /// Scan the speficied tree for rule names and remember them for later name collision handling
-        /// </summary>
-        protected void CreateRuleNamesCollection(ITree ruleListNode)
-        {
-            ITree ruleNode;
-            ITree ruleNameNode;
-            string ruleName;
-            string translatedRuleName;
-
-            _rawTranslatedRuleNames = new HashSet<string>();
-
-            for (int index = 0; index < ruleListNode.ChildCount; index++)
-            {
-                ruleNode = ruleListNode.GetAndValidateChild(index);
-
-                if (ruleNode.Type != AbnfAstParser.RULE_NODE)
-                {
-                    throw new InvalidOperationException("Unexpected node type encountered in " + System.Reflection.MethodInfo.GetCurrentMethod().Name + " (rule node expected)");
-                }
-
-                ruleNameNode = ruleNode.GetAndValidateChild(0);
-
-                ruleName = GetRuleName(ruleNameNode);
-
-                translatedRuleName = TranslateRuleName(ruleName);
-
-                if (_rawTranslatedRuleNames.Contains(translatedRuleName))
-                {
-                    // do nothing
-                }
-                else
-                {
-                    _rawTranslatedRuleNames.Add(translatedRuleName);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Get ANTLR compatible rule name
-        /// </summary>
-        /// <returns>ANTLR compatible rule name</returns>
-        protected string TranslateRuleName(string ruleName)
-        {
-            string result;
-
-            result = ruleName;
-
-            // translate all rules into parser rules until they are later proven to be lexer rules
-            result = result.ToLowerInvariant();
-
-            // dashes are not allowed in ANTLR rule names (so replace them with underscores)
-            result = result.Replace("-", "_");
-
-            return result;
-        }
-
-        /// <summary>
-        /// Append numeric suffixes to rulename until a unique one is found
-        /// </summary>
-        /// <param name="startCounter">first numeric suffix to attempt</param>
-        /// <returns>unique rule name with numeric suffix</returns>
-        protected string GetUniqueRuleName(string ruleName)
-        {
-            string result;
-            int uniqueIndex;
-
-            uniqueIndex = 0;
-            result = ruleName;
-
-            while (IsMappedRule(result) || IsReservedKeyWord(result))
-            {
-                uniqueIndex++;
-                result = ruleName + "_" + uniqueIndex;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determine if the specified rule name is already related (mapped) to another rule name
-        /// </summary>
-        protected bool IsMappedRule(string ruleName)
-        {
-            return (_ruleNameMap.ContainsKey(ruleName) || _ruleNameMap.ContainsValue(ruleName));
         }
 
         /// <summary>
@@ -848,14 +907,58 @@ namespace AbnfToAntlr.Common
             return result;
         }
 
-        /// <summary>
-        /// Post-processing of rule name
-        /// </summary>
-        protected virtual string ProcessMappedRuleName(string ruleNameText, string mappedText)
+        public void GatherIncrementalAliases()
         {
-            // do not modify the specified rule name
-            return mappedText;
-        }
+            foreach (var ruleName in _ruleStatistics.LhsRawRuleNames)
+            {
+                var ruleDetail = _ruleStatistics.RuleDetails[ruleName];
 
-    } // class
-} // namespace
+                var countOfIncrementalAlternatives = ruleDetail.CountOfIncrementalAlternatives;
+
+                if (countOfIncrementalAlternatives > 0)
+                {
+                    var incrementalAliases = new string[countOfIncrementalAlternatives];
+
+                    var lastIndex = countOfIncrementalAlternatives - 1;
+
+                    for (int index = 0; index < countOfIncrementalAlternatives; index++)
+                    {
+                        // determine alias
+                        var parserRuleName = AntlrHelper.GetParserRuleName(ruleName);
+
+                        var alias = parserRuleName;
+
+                        int counter = 0;
+
+                        while (AntlrHelper.IsReservedKeyWord(alias) || _ruleStatistics.Aliases.Contains(alias) || _allIncrementalAliases.Contains(alias))
+                        {
+                            counter++;
+                            alias = parserRuleName + "_" + counter;
+
+                            while (_ruleStatistics.AllParserRuleNames.Contains(alias))
+                            {
+                                counter++;
+                                alias = parserRuleName + "_" + counter;
+                            }
+                        }
+
+                        _allIncrementalAliases.Add(alias);
+
+                        if (index == lastIndex)
+                        {
+                            if (ruleDetail.IsLexerRule)
+                            {
+                                alias = GetLexerRuleName(alias);
+                            }
+                        }
+
+                        incrementalAliases[index] = alias;
+                    }
+
+                    _mapRuleNameToIncrementalAliases.Add(ruleName, incrementalAliases);
+                    _lhsIncrementalRuleCounters[ruleName] = 0;
+                }
+            }
+        }
+    }
+}

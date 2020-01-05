@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 AbnfAst.g3 2020-01-04 12:59:49
+// $ANTLR 3.5.1 AbnfAst.g3 2020-01-05 10:41:05
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -487,14 +487,14 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = COMMENT;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:288:2: ( ';' ( WSP | VCHAR )* CRLF )
+			// AbnfAst.g3:289:2: ( ';' ( WSP | VCHAR )* CRLF )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:289:3: ';' ( WSP | VCHAR )* CRLF
+			// AbnfAst.g3:290:3: ';' ( WSP | VCHAR )* CRLF
 			{
-			DebugLocation(289, 3);
+			DebugLocation(290, 3);
 			Match(';'); 
-			DebugLocation(289, 7);
-			// AbnfAst.g3:289:7: ( WSP | VCHAR )*
+			DebugLocation(290, 7);
+			// AbnfAst.g3:290:7: ( WSP | VCHAR )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -517,18 +517,18 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// AbnfAst.g3:289:9: WSP
+					// AbnfAst.g3:290:9: WSP
 					{
-					DebugLocation(289, 9);
+					DebugLocation(290, 9);
 					mWSP(); 
 
 					}
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// AbnfAst.g3:289:15: VCHAR
+					// AbnfAst.g3:290:15: VCHAR
 					{
-					DebugLocation(289, 15);
+					DebugLocation(290, 15);
 					mVCHAR(); 
 
 					}
@@ -544,7 +544,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(1); }
 
-			DebugLocation(289, 24);
+			DebugLocation(290, 24);
 			mCRLF(); 
 
 			}
@@ -575,11 +575,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = BIN_VAL_PREFIX;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:293:2: ( '%b' )
+			// AbnfAst.g3:294:2: ( '%b' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:294:3: '%b'
+			// AbnfAst.g3:295:3: '%b'
 			{
-			DebugLocation(294, 3);
+			DebugLocation(295, 3);
 			Match("%b"); 
 
 
@@ -611,11 +611,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DEC_VAL_PREFIX;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:298:2: ( '%d' )
+			// AbnfAst.g3:299:2: ( '%d' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:299:3: '%d'
+			// AbnfAst.g3:300:3: '%d'
 			{
-			DebugLocation(299, 3);
+			DebugLocation(300, 3);
 			Match("%d"); 
 
 
@@ -647,11 +647,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = HEX_VAL_PREFIX;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:303:2: ( '%x' )
+			// AbnfAst.g3:304:2: ( '%x' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:304:3: '%x'
+			// AbnfAst.g3:305:3: '%x'
 			{
-			DebugLocation(304, 3);
+			DebugLocation(305, 3);
 			Match("%x"); 
 
 
@@ -683,14 +683,14 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PROSE_VAL;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:308:2: ( '<' ( '\\u0020' .. '\\u003D' | '\\u003F' .. '\\u007E' )* '>' )
+			// AbnfAst.g3:309:2: ( '<' ( '\\u0020' .. '\\u003D' | '\\u003F' .. '\\u007E' )* '>' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:309:3: '<' ( '\\u0020' .. '\\u003D' | '\\u003F' .. '\\u007E' )* '>'
+			// AbnfAst.g3:310:3: '<' ( '\\u0020' .. '\\u003D' | '\\u003F' .. '\\u007E' )* '>'
 			{
-			DebugLocation(309, 3);
+			DebugLocation(310, 3);
 			Match('<'); 
-			DebugLocation(309, 7);
-			// AbnfAst.g3:309:7: ( '\\u0020' .. '\\u003D' | '\\u003F' .. '\\u007E' )*
+			DebugLocation(310, 7);
+			// AbnfAst.g3:310:7: ( '\\u0020' .. '\\u003D' | '\\u003F' .. '\\u007E' )*
 			try { DebugEnterSubRule(2);
 			while (true)
 			{
@@ -711,7 +711,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(309, 7);
+					DebugLocation(310, 7);
 					input.Consume();
 
 
@@ -728,7 +728,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(2); }
 
-			DebugLocation(309, 52);
+			DebugLocation(310, 52);
 			Match('>'); 
 
 			}
@@ -759,11 +759,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = HEX_ALPHA;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:313:2: ( 'A' .. 'F' )
+			// AbnfAst.g3:314:2: ( 'A' .. 'F' )
 			DebugEnterAlt(1);
 			// AbnfAst.g3:
 			{
-			DebugLocation(313, 2);
+			DebugLocation(314, 2);
 			if ((input.LA(1)>='A' && input.LA(1)<='F'))
 			{
 				input.Consume();
@@ -805,11 +805,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = OTHER_ALPHA;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:318:2: ( 'G' .. 'Z' | 'a' .. 'z' )
+			// AbnfAst.g3:319:2: ( 'G' .. 'Z' | 'a' .. 'z' )
 			DebugEnterAlt(1);
 			// AbnfAst.g3:
 			{
-			DebugLocation(318, 2);
+			DebugLocation(319, 2);
 			if ((input.LA(1)>='G' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z'))
 			{
 				input.Consume();
@@ -851,11 +851,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ASTERISK;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:323:2: ( '*' )
+			// AbnfAst.g3:324:2: ( '*' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:324:3: '*'
+			// AbnfAst.g3:325:3: '*'
 			{
-			DebugLocation(324, 3);
+			DebugLocation(325, 3);
 			Match('*'); 
 
 			}
@@ -886,11 +886,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DASH;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:328:2: ( '-' )
+			// AbnfAst.g3:329:2: ( '-' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:329:3: '-'
+			// AbnfAst.g3:330:3: '-'
 			{
-			DebugLocation(329, 3);
+			DebugLocation(330, 3);
 			Match('-'); 
 
 			}
@@ -919,11 +919,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		TraceIn("CR", 20);
 		try
 		{
-			// AbnfAst.g3:333:2: ( '\\u000D' )
+			// AbnfAst.g3:334:2: ( '\\u000D' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:334:3: '\\u000D'
+			// AbnfAst.g3:335:3: '\\u000D'
 			{
-			DebugLocation(334, 3);
+			DebugLocation(335, 3);
 			Match('\r'); 
 
 			}
@@ -952,13 +952,13 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = CRLF;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:339:2: ( CR LF )
+			// AbnfAst.g3:340:2: ( CR LF )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:340:3: CR LF
+			// AbnfAst.g3:341:3: CR LF
 			{
-			DebugLocation(340, 3);
+			DebugLocation(341, 3);
 			mCR(); 
-			DebugLocation(340, 6);
+			DebugLocation(341, 6);
 			mLF(); 
 
 			}
@@ -989,11 +989,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ZERO;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:345:2: ( '0' )
+			// AbnfAst.g3:346:2: ( '0' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:346:3: '0'
+			// AbnfAst.g3:347:3: '0'
 			{
-			DebugLocation(346, 3);
+			DebugLocation(347, 3);
 			Match('0'); 
 
 			}
@@ -1024,11 +1024,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ONE;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:350:2: ( '1' )
+			// AbnfAst.g3:351:2: ( '1' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:351:3: '1'
+			// AbnfAst.g3:352:3: '1'
 			{
-			DebugLocation(351, 3);
+			DebugLocation(352, 3);
 			Match('1'); 
 
 			}
@@ -1059,11 +1059,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = OTHER_DIGIT;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:355:2: ( '2' .. '9' )
+			// AbnfAst.g3:356:2: ( '2' .. '9' )
 			DebugEnterAlt(1);
 			// AbnfAst.g3:
 			{
-			DebugLocation(355, 2);
+			DebugLocation(356, 2);
 			if ((input.LA(1)>='2' && input.LA(1)<='9'))
 			{
 				input.Consume();
@@ -1105,14 +1105,14 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = QUOTED_STRING;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:360:2: ( DQUOTE ( '\\u0020' .. '\\u0021' | '\\u0023' .. '\\u007E' )* DQUOTE )
+			// AbnfAst.g3:361:2: ( DQUOTE ( '\\u0020' .. '\\u0021' | '\\u0023' .. '\\u007E' )* DQUOTE )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:361:3: DQUOTE ( '\\u0020' .. '\\u0021' | '\\u0023' .. '\\u007E' )* DQUOTE
+			// AbnfAst.g3:362:3: DQUOTE ( '\\u0020' .. '\\u0021' | '\\u0023' .. '\\u007E' )* DQUOTE
 			{
-			DebugLocation(361, 3);
+			DebugLocation(362, 3);
 			mDQUOTE(); 
-			DebugLocation(361, 10);
-			// AbnfAst.g3:361:10: ( '\\u0020' .. '\\u0021' | '\\u0023' .. '\\u007E' )*
+			DebugLocation(362, 10);
+			// AbnfAst.g3:362:10: ( '\\u0020' .. '\\u0021' | '\\u0023' .. '\\u007E' )*
 			try { DebugEnterSubRule(3);
 			while (true)
 			{
@@ -1133,7 +1133,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(361, 10);
+					DebugLocation(362, 10);
 					input.Consume();
 
 
@@ -1150,7 +1150,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(3); }
 
-			DebugLocation(361, 55);
+			DebugLocation(362, 55);
 			mDQUOTE(); 
 
 			}
@@ -1181,14 +1181,14 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SINGLE_QUOTED_STRING;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:367:2: ( QUOTE ( '\\u0020' .. '\\u0026' | '\\u0028' .. '\\u007E' )* QUOTE )
+			// AbnfAst.g3:368:2: ( QUOTE ( '\\u0020' .. '\\u0026' | '\\u0028' .. '\\u007E' )* QUOTE )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:368:3: QUOTE ( '\\u0020' .. '\\u0026' | '\\u0028' .. '\\u007E' )* QUOTE
+			// AbnfAst.g3:369:3: QUOTE ( '\\u0020' .. '\\u0026' | '\\u0028' .. '\\u007E' )* QUOTE
 			{
-			DebugLocation(368, 3);
+			DebugLocation(369, 3);
 			mQUOTE(); 
-			DebugLocation(368, 9);
-			// AbnfAst.g3:368:9: ( '\\u0020' .. '\\u0026' | '\\u0028' .. '\\u007E' )*
+			DebugLocation(369, 9);
+			// AbnfAst.g3:369:9: ( '\\u0020' .. '\\u0026' | '\\u0028' .. '\\u007E' )*
 			try { DebugEnterSubRule(4);
 			while (true)
 			{
@@ -1209,7 +1209,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(368, 9);
+					DebugLocation(369, 9);
 					input.Consume();
 
 
@@ -1226,7 +1226,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(4); }
 
-			DebugLocation(368, 54);
+			DebugLocation(369, 54);
 			mQUOTE(); 
 
 			}
@@ -1255,11 +1255,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		TraceIn("QUOTE", 27);
 		try
 		{
-			// AbnfAst.g3:374:2: ( '\\'' )
+			// AbnfAst.g3:375:2: ( '\\'' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:375:3: '\\''
+			// AbnfAst.g3:376:3: '\\''
 			{
-			DebugLocation(375, 3);
+			DebugLocation(376, 3);
 			Match('\''); 
 
 			}
@@ -1286,11 +1286,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		TraceIn("DQUOTE", 28);
 		try
 		{
-			// AbnfAst.g3:380:2: ( '\\u0022' )
+			// AbnfAst.g3:381:2: ( '\\u0022' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:381:3: '\\u0022'
+			// AbnfAst.g3:382:3: '\\u0022'
 			{
-			DebugLocation(381, 3);
+			DebugLocation(382, 3);
 			Match('\"'); 
 
 			}
@@ -1317,11 +1317,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		TraceIn("HTAB", 29);
 		try
 		{
-			// AbnfAst.g3:386:2: ( '\\u0009' )
+			// AbnfAst.g3:387:2: ( '\\u0009' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:387:3: '\\u0009'
+			// AbnfAst.g3:388:3: '\\u0009'
 			{
-			DebugLocation(387, 3);
+			DebugLocation(388, 3);
 			Match('\t'); 
 
 			}
@@ -1348,11 +1348,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		TraceIn("LF", 30);
 		try
 		{
-			// AbnfAst.g3:392:2: ( '\\u000A' )
+			// AbnfAst.g3:393:2: ( '\\u000A' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:393:3: '\\u000A'
+			// AbnfAst.g3:394:3: '\\u000A'
 			{
-			DebugLocation(393, 3);
+			DebugLocation(394, 3);
 			Match('\n'); 
 
 			}
@@ -1379,11 +1379,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		TraceIn("SP", 31);
 		try
 		{
-			// AbnfAst.g3:398:2: ( '\\u0020' )
+			// AbnfAst.g3:399:2: ( '\\u0020' )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:399:3: '\\u0020'
+			// AbnfAst.g3:400:3: '\\u0020'
 			{
-			DebugLocation(399, 3);
+			DebugLocation(400, 3);
 			Match(' '); 
 
 			}
@@ -1410,11 +1410,11 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		TraceIn("VCHAR", 32);
 		try
 		{
-			// AbnfAst.g3:404:2: ( '\\u0021' .. '\\u007E' )
+			// AbnfAst.g3:405:2: ( '\\u0021' .. '\\u007E' )
 			DebugEnterAlt(1);
 			// AbnfAst.g3:
 			{
-			DebugLocation(404, 2);
+			DebugLocation(405, 2);
 			if ((input.LA(1)>='!' && input.LA(1)<='~'))
 			{
 				input.Consume();
@@ -1454,12 +1454,12 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WSP;
 			int _channel = DefaultTokenChannel;
-			// AbnfAst.g3:410:2: ( ( SP | HTAB )+ )
+			// AbnfAst.g3:411:2: ( ( SP | HTAB )+ )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:411:3: ( SP | HTAB )+
+			// AbnfAst.g3:412:3: ( SP | HTAB )+
 			{
-			DebugLocation(411, 3);
-			// AbnfAst.g3:411:3: ( SP | HTAB )+
+			DebugLocation(412, 3);
+			// AbnfAst.g3:412:3: ( SP | HTAB )+
 			int cnt5=0;
 			try { DebugEnterSubRule(5);
 			while (true)
@@ -1481,7 +1481,7 @@ public partial class AbnfAstLexer : Antlr.Runtime.Lexer
 					DebugEnterAlt(1);
 					// AbnfAst.g3:
 					{
-					DebugLocation(411, 3);
+					DebugLocation(412, 3);
 					input.Consume();
 
 

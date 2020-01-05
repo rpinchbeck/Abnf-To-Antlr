@@ -31,18 +31,36 @@ namespace AbnfToAntlr.Common
 {
     public static class AntlrHelper
     {
-        public static ITree GetAndValidateChild(this ITree node, int index)
+        public static ITree GetChildWithValidation(this ITree node, int index)
         {
+            ThrowIfErrorNode(node);
+
             var result = node.GetChild(index);
 
-            if (result is CommonErrorNode)
+            ThrowIfErrorNode(result);
+
+            return result;
+        }
+
+        public static void Validate(this ITree node, int expectedNodeType)
+        {
+            ThrowIfErrorNode(node);
+
+            if (node.Type != expectedNodeType)
             {
-                var commonErrorNode = (CommonErrorNode)result;
+                throw new InvalidOperationException("Unexpected node type encountered");
+            }
+        }
+
+        public static void ThrowIfErrorNode(ITree node)
+        {
+            if (node is CommonErrorNode)
+            {
+                var commonErrorNode = (CommonErrorNode)node;
 
                 throw commonErrorNode.trappedException;
             }
 
-            return result;
         }
 
         public static string GetErrorMessages(IEnumerable<RecognitionException> recognitionExceptions)
@@ -100,5 +118,194 @@ namespace AbnfToAntlr.Common
 
             return result;
         }
+
+        public static readonly HashSet<string> ReservedKeywords =
+            new HashSet<string>
+            {
+                // ANTLR reserved keywords
+                "catch",
+                "finally",
+                "fragment",
+                "grammar",
+                "import",
+                "lexer",
+                "locals",
+                "mode",
+                "options",
+                "parser",
+                "returns",
+                "throws",
+                "tokens",
+
+                // ANTLR recommended reserved keywords
+                "rule",
+
+
+                // Java reserved keywords
+                "abstract",
+                "assert",
+                "boolean",
+                "break",
+                "byte",
+                "case",
+                "catch", // ANTLR keyword too
+                "char",
+                "class",
+                "const",
+                "continue",
+                "default",
+                "do",
+                "double",
+                "else",
+                "enum",
+                "extends",
+                "final",
+                "finally", // ANTLR keyword too
+                "float",
+                "for",
+                "goto",
+                "if",
+                "implements",
+                "import", // ANTLR keyword too
+                "instanceof",
+                "int",
+                "interface",
+                "long",
+                "native",
+                "new",
+                "package",
+                "private",
+                "protected",
+                "public",
+                "return",
+                "short",
+                "static",
+                "strictfp",
+                "super",
+                "switch",
+                "synchronized",
+                "this",
+                "throw",
+                "throws", // ANTLR keyword too
+                "transient",
+                "try",
+                "void",
+                "volatile",
+                "while",
+
+                "false",
+                "null",
+                "true",
+
+                // C# reserved keywords
+                "abstract",
+                "as",
+                "base",
+                "bool",
+                "break",
+                "byte",
+                "case",
+                "catch",
+                "char",
+                "checked",
+                "class",
+                "const",
+                "continue",
+                "decimal",
+                "default",
+                "delegate",
+                "do",
+                "double",
+                "else",
+                "enum",
+                "event",
+                "explicit",
+                "extern",
+                "false",
+                "finally",
+                "fixed",
+                "float",
+                "for",
+                "foreach",
+                "goto",
+                "if",
+                "implicit",
+                "in",
+                "int",
+                "interface",
+                "internal",
+                "is",
+                "lock",
+                "long",
+                "namespace",
+                "new",
+                "null",
+                "object",
+                "operator",
+                "out",
+                "override",
+                "params",
+                "private",
+                "protected",
+                "public",
+                "readonly",
+                "ref",
+                "return",
+                "sbyte",
+                "sealed",
+                "short",
+                "sizeof",
+                "stackalloc",
+                "static",
+                "string",
+                "struct",
+                "switch",
+                "this",
+                "throw",
+                "true",
+                "try",
+                "typeof",
+                "uint",
+                "ulong",
+                "unchecked",
+                "unsafe",
+                "ushort",
+                "using",
+                "virtual",
+                "void",
+                "volatile",
+                "while"
+            };
+
+        /// <summary>
+        /// Determine if the specified string is a reserved keyword in ANTLR, Java or C#
+        /// </summary>
+        public static bool IsReservedKeyWord(string text)
+        {
+            var result = ReservedKeywords.Contains(text);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Get ANTLR compatible rule name
+        /// </summary>
+        /// <returns>ANTLR compatible rule name</returns>
+        public static string GetParserRuleName(string ruleName)
+        {
+            string result;
+
+            result = ruleName;
+
+            // translate all rules into parser rules until they are later proven to be lexer rules
+            result = result.ToLowerInvariant();
+
+            // dashes are not allowed in ANTLR rule names (so replace them with underscores)
+            result = result.Replace("-", "_");
+
+            return result;
+        }
+
+
     }
 }

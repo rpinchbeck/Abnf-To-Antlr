@@ -168,7 +168,7 @@ namespace AbnfToAntlr.Common
 
             for (int index = 0; index < childCount; index++)
             {
-                var child = node.GetAndValidateChild(index);
+                var child = node.GetChildWithValidation(index);
 
                 Visit(child);
             }
@@ -218,7 +218,7 @@ namespace AbnfToAntlr.Common
             var maxIndex = node.ChildCount;
             for (int index = 0; index < maxIndex; index++)
             {
-                child = node.GetAndValidateChild(index);
+                child = node.GetChildWithValidation(index);
 
                 if (child.ChildCount == 0)
                 {
@@ -239,13 +239,13 @@ namespace AbnfToAntlr.Common
 
             if (node.Type == AbnfAstParser.CHAR_VAL_NODE)
             {
-                var string_node = node.GetAndValidateChild(0);
+                var string_node = node.GetChildWithValidation(0);
 
-                char_val = string_node.GetAndValidateChild(0);
+                char_val = string_node.GetChildWithValidation(0);
             }
             else if (node.Type == AbnfAstParser.PROSE_VAL_NODE)
             {
-                char_val = node.GetAndValidateChild(0);
+                char_val = node.GetChildWithValidation(0);
             }
             else
             {
@@ -258,13 +258,24 @@ namespace AbnfToAntlr.Common
             return result;
         }
 
+        protected string GetProseVal(ITree node)
+        {
+            node.Validate(AbnfAstParser.PROSE_VAL_NODE);
+
+            var rawProseVal = GetChildrenText(node);
+
+            var result = rawProseVal.Substring(1, rawProseVal.Length - 2);
+
+            return result;
+        }
+
         public bool IsCaseSensitive(ITree node)
         {
             bool result;
 
             if (node.Type == AbnfAstParser.CHAR_VAL_NODE)
             {
-                var string_node = node.GetAndValidateChild(0);
+                var string_node = node.GetChildWithValidation(0);
 
                 result = (string_node.Type == AbnfAstParser.CASE_SENSITIVE_STRING_NODE);
             }
@@ -279,175 +290,6 @@ namespace AbnfToAntlr.Common
 
             return result;
         }
-
-        public readonly HashSet<string> ReservedKeywords =
-            new HashSet<string>
-            {
-                // ANTLR reserved keywords
-                "catch",
-                "finally",
-                "fragment",
-                "grammar",
-                "import",
-                "lexer",
-                "locals",
-                "mode",
-                "options",
-                "parser",
-                "returns",
-                "throws",
-                "tokens",
-
-                // ANTLR recommended reserved keywords
-                "rule",
-
-
-                // Java reserved keywords
-                "abstract",
-                "assert",
-                "boolean",
-                "break",
-                "byte",
-                "case",
-                "catch", // ANTLR keyword too
-                "char",
-                "class",
-                "const",
-                "continue",
-                "default",
-                "do",
-                "double",
-                "else",
-                "enum",
-                "extends",
-                "final",
-                "finally", // ANTLR keyword too
-                "float",
-                "for",
-                "goto",
-                "if",
-                "implements",
-                "import", // ANTLR keyword too
-                "instanceof",
-                "int",
-                "interface",
-                "long",
-                "native",
-                "new",
-                "package",
-                "private",
-                "protected",
-                "public",
-                "return",
-                "short",
-                "static",
-                "strictfp",
-                "super",
-                "switch",
-                "synchronized",
-                "this",
-                "throw",
-                "throws", // ANTLR keyword too
-                "transient",
-                "try",
-                "void",
-                "volatile",
-                "while",
-
-                "false",
-                "null",
-                "true",
-
-                // C# reserved keywords
-                "abstract",
-                "as",
-                "base",
-                "bool",
-                "break",
-                "byte",
-                "case",
-                "catch",
-                "char",
-                "checked",
-                "class",
-                "const",
-                "continue",
-                "decimal",
-                "default",
-                "delegate",
-                "do",
-                "double",
-                "else",
-                "enum",
-                "event",
-                "explicit",
-                "extern",
-                "false",
-                "finally",
-                "fixed",
-                "float",
-                "for",
-                "foreach",
-                "goto",
-                "if",
-                "implicit",
-                "in",
-                "int",
-                "interface",
-                "internal",
-                "is",
-                "lock",
-                "long",
-                "namespace",
-                "new",
-                "null",
-                "object",
-                "operator",
-                "out",
-                "override",
-                "params",
-                "private",
-                "protected",
-                "public",
-                "readonly",
-                "ref",
-                "return",
-                "sbyte",
-                "sealed",
-                "short",
-                "sizeof",
-                "stackalloc",
-                "static",
-                "string",
-                "struct",
-                "switch",
-                "this",
-                "throw",
-                "true",
-                "try",
-                "typeof",
-                "uint",
-                "ulong",
-                "unchecked",
-                "unsafe",
-                "ushort",
-                "using",
-                "virtual",
-                "void",
-                "volatile",
-                "while"
-            };
-
-        /// <summary>
-        /// Determine if the specified string is a reserved keyword in ANTLR, Java or C#
-        /// </summary>
-        protected bool IsReservedKeyWord(string text)
-        {
-            var result = ReservedKeywords.Contains(text);
-
-            return result;
-        }
-
 
         protected virtual void BeforeVisit(ITree node)
         {
@@ -501,7 +343,7 @@ namespace AbnfToAntlr.Common
 
         protected virtual void VisitRepetition(ITree node)
         {
-            var element = node.GetAndValidateChild(0);
+            var element = node.GetChildWithValidation(0);
 
             Visit(element);
         }
@@ -575,5 +417,64 @@ namespace AbnfToAntlr.Common
         {
             // do nothing, terminal node
         }
+
+        protected string GetRuleName(ITree ruleNameNode)
+        {
+            ruleNameNode.Validate(AbnfAstParser.RULE_NAME_NODE);
+
+            // ABNF rule names are case-insensitive, so return a lowercase rule name
+            var result = GetChildrenText(ruleNameNode).ToLowerInvariant();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determine if the specified node contains any rule name nodes
+        /// </summary>
+        /// <returns>true if the specified node contains a rule name node, false otherwise</returns>
+        protected bool ContainsAnyRuleName(ITree node, HashSet<string> lhsRawRuleNames)
+        {
+            int minIndex;
+            ITree child;
+
+            if (node.Type == AbnfAstParser.RULE_NAME_NODE)
+            {
+                return true;
+            }
+
+            if (node.Type == AbnfAstParser.PROSE_VAL_NODE)
+            {
+                var proseVal = GetProseVal(node);
+
+                var proseValAsRuleName = proseVal.ToLowerInvariant();
+
+                if (lhsRawRuleNames.Contains(proseValAsRuleName))
+                {
+                    return true;
+                }
+            }
+
+            if (node.Type == AbnfAstParser.RULE_NODE)
+            {
+                minIndex = 1;
+            }
+            else
+            {
+                minIndex = 0;
+            }
+
+            for (int index = minIndex; index < node.ChildCount; index++)
+            {
+                child = node.GetChildWithValidation(index);
+
+                if (ContainsAnyRuleName(child, lhsRawRuleNames))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
     }
 }

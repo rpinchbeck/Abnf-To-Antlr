@@ -1,0 +1,5 @@
+fragment = "0"
+
+fragment-1 = fragment "1"
+
+fragment-2 = fragment-1 "2"

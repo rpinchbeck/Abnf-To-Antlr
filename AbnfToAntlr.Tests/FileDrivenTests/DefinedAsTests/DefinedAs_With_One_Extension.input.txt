@@ -1,5 +1,0 @@
-rule-using-extension-1 =/ ""
-rule-using-extension-2 =/""
-rule-using-extension-3=/ ""
-rule-using-extension-4=/""
-

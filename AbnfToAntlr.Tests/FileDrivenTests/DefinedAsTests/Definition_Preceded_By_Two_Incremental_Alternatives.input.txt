@@ -1,0 +1,3 @@
+definition-preceded-by-two-incremental-alternatives =/ "2"
+definition-preceded-by-two-incremental-alternatives =/ "3"
+definition-preceded-by-two-incremental-alternatives = "1"

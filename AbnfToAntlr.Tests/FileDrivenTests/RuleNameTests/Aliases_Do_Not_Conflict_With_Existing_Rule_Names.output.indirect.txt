@@ -1,0 +1,14 @@
+fragment_3 : ZERO;
+
+fragment_1 : fragment_3 ONE;
+
+fragment_2 : fragment_1 TWO;
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Lexer rules generated for each distinct character in original grammar
+// Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ZERO : '0';
+ONE : '1';
+TWO : '2';

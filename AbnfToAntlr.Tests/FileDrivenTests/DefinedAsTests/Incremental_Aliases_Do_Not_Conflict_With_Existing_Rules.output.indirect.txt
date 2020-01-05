@@ -1,0 +1,19 @@
+fragment_2 : (TWO) | fragment_3;
+fragment_3 : (THREE) | fragment_4;
+fragment_1 : (ONE) | fragment_2;
+fragment_4 : (FOUR) | fragment_6;
+fragment_6 : FIVE;
+
+fragment_5 : SIX;
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Lexer rules generated for each distinct character in original grammar
+// Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)
+////////////////////////////////////////////////////////////////////////////////////////////
+
+ONE : '1';
+TWO : '2';
+THREE : '3';
+FOUR : '4';
+FIVE : '5';
+SIX : '6';

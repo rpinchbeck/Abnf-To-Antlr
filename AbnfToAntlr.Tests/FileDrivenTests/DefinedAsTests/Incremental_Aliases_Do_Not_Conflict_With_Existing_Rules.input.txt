@@ -1,0 +1,7 @@
+fragment =/ "2"
+fragment =/ "3"
+fragment = "1"
+fragment =/ "4"
+fragment =/ "5"
+
+fragment-5 = "6"

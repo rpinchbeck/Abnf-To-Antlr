@@ -1,4 +1,4 @@
-repetition_one_to_two_occurences : NINE NINE?;
+repetition_one_to_two_occurences : (NINE  NINE?);
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar

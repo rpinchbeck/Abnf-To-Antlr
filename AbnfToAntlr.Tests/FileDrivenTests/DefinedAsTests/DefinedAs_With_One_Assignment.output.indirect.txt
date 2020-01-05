@@ -1,4 +1,0 @@
-rule_using_assignment_1 : ;
-rule_using_assignment_2 :;
-rule_using_assignment_3: ;
-rule_using_assignment_4:;
