@@ -1,1 +1,3 @@
 DEC_VAL_RANGE : '\u0044'..'\u0046'; //equivalent to (%s"D" | %s"E" | %s"F")
+
+DEC_VAL_RANGE_2 : '\u0044'..'\u0046'; //equivalent to (%s"D" | %s"E" | %s"F")

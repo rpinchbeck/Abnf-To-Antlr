@@ -226,6 +226,7 @@ namespace AbnfToAntlr.Common
             if (literals.Count > 0)
             {
                 writer.WriteLine("");
+                writer.WriteLine("");
                 writer.WriteLine(@"////////////////////////////////////////////////////////////////////////////////////////////");
                 writer.WriteLine(@"// Lexer rules generated for each distinct character in original grammar");
                 writer.WriteLine(@"// " + lookup.Description);

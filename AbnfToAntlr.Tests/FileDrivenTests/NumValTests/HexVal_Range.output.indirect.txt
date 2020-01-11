@@ -1,5 +1,7 @@
 hex_val_range : (CAP_G | CAP_H | CAP_I); //equivalent to (%s"G" / %s"H" / %s"I")
 
+hex_val_range_2 : (CAP_G | CAP_H | CAP_I); //equivalent to (%s"G" / %s"H" / %s"I")
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar
 // Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)

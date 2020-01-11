@@ -1,1 +1,3 @@
 case-sensitive-string-with-one-digit = %s"1"
+
+case-sensitive-string-with-one-digit = %S"1"

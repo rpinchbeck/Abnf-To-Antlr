@@ -1,1 +1,3 @@
 case-insensitive-string-with-one-character = %i"A"
+
+case-insensitive-string-with-one-character = %I"A"

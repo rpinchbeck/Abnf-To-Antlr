@@ -1,1 +1,3 @@
 HEX_VAL_CONCATENATION : ('\u0047' '\u0068'); //equivalent to (%s"Gh")
+
+HEX_VAL_CONCATENATION_2 : ('\u0047' '\u0068'); //equivalent to (%s"Gh")

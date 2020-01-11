@@ -1,1 +1,3 @@
 DEC_VAL_CONCATENATION : ('\u0044' '\u0065'); //equivalent to (%s"De")
+
+DEC_VAL_CONCATENATION_2 : ('\u0044' '\u0065'); //equivalent to (%s"De")

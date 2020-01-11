@@ -1,1 +1,3 @@
 case-sensitive-string-with-one-character = %s"A"
+
+case-sensitive-string-with-one-character = %S"A"

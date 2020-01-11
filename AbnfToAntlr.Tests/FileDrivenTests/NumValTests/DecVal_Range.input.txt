@@ -1,1 +1,3 @@
 dec-val-range = %d68-70 ;equivalent to (%s"D" | %s"E" | %s"F")
+
+dec-val-range-2 = %D68-70 ;equivalent to (%s"D" | %s"E" | %s"F")

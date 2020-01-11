@@ -1,1 +1,3 @@
 DEC_VAL : '\u0044'; //equivalent to (%s"D")
+
+DEC_VAL_2 : '\u0044'; //equivalent to (%s"D")

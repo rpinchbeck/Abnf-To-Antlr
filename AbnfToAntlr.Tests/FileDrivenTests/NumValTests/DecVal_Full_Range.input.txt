@@ -1,3 +1,3 @@
 dec-val-full-range = %d0-65535
 
-dec-val-full-range-2 = %d0-65535
+dec-val-full-range-2 = %D0-65535

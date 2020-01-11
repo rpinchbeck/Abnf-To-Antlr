@@ -1,1 +1,3 @@
 hex-val-range = %x47-49 ;equivalent to (%s"G" / %s"H" / %s"I")
+
+hex-val-range-2 = %X47-49 ;equivalent to (%s"G" / %s"H" / %s"I")

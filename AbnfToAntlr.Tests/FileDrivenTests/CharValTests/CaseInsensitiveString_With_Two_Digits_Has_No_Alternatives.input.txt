@@ -1,1 +1,3 @@
 case-insensitive-string-with-two-digits = %i"12"
+
+case-insensitive-string-with-two-digits = %I"12"

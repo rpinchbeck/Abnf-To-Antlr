@@ -1,5 +1,7 @@
 dec_val_range : (CAP_D | CAP_E | CAP_F); //equivalent to (%s"D" | %s"E" | %s"F")
 
+dec_val_range_2 : (CAP_D | CAP_E | CAP_F); //equivalent to (%s"D" | %s"E" | %s"F")
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar
 // Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)
