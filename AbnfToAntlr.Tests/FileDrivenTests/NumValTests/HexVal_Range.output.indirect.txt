@@ -1,12 +1,12 @@
-hex_val_range : (CAP_G | CAP_H | CAP_I); //equivalent to (%s"G" / %s"H" / %s"I")
+hex_val_range : (CAP_I | CAP_J | CAP_K); //equivalent to (%s"I" / %s"J" / %s"K")
 
-hex_val_range_2 : (CAP_G | CAP_H | CAP_I); //equivalent to (%s"G" / %s"H" / %s"I")
+hex_val_range_2 : (CAP_I | CAP_J | CAP_K); //equivalent to (%s"I" / %s"J" / %s"K")
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar
 // Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-CAP_G : 'G';
-CAP_H : 'H';
 CAP_I : 'I';
+CAP_J : 'J';
+CAP_K : 'K';

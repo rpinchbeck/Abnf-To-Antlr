@@ -32,7 +32,6 @@
 //     and Errata 5334...
 //     https://www.rfc-editor.org/errata/eid5334
 // --------------------------------------------------------------------------------
-*/
 
 grammar AbnfAst;
  
@@ -212,12 +211,12 @@ char_val
 
 case_insensitive_string
 	:
-		'%i'? QUOTED_STRING -> ^(CASE_INSENSITIVE_STRING_NODE QUOTED_STRING)
+		('%I'|'%i')? QUOTED_STRING -> ^(CASE_INSENSITIVE_STRING_NODE QUOTED_STRING)
 		;
 
 case_sensitive_string
 	:
-		('%s' QUOTED_STRING) -> ^(CASE_SENSITIVE_STRING_NODE QUOTED_STRING)
+		(('%S'|'%s') QUOTED_STRING) -> ^(CASE_SENSITIVE_STRING_NODE QUOTED_STRING)
 		| SINGLE_QUOTED_STRING -> ^(CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING)
 		;
 
@@ -288,22 +287,22 @@ prose_val
 		
 COMMENT
 	:
-		';' ( WSP | VCHAR )* CRLF
+		';' ( WSP | VCHAR )* (CRLF | EOF)
 		;
 
 BIN_VAL_PREFIX
 	:
-		'%b'
+		'%B' | '%b'
 	 	;
 
 DEC_VAL_PREFIX
 	:
-		'%d'
+		'%D' | '%d'
 	 	;
 
 HEX_VAL_PREFIX
 	:
-		'%x'
+		'%X' | '%x'
 	 	;
 
 PROSE_VAL
@@ -313,12 +312,12 @@ PROSE_VAL
 
 HEX_ALPHA
 	:
-		'A'..'F'
+		'A'..'F' | 'a'..'f'
 	;
 
 OTHER_ALPHA
 	:
-		'G'..'Z' | 'a'..'z'
+		'G'..'Z' | 'g'..'z'
 		;
 
 ASTERISK
