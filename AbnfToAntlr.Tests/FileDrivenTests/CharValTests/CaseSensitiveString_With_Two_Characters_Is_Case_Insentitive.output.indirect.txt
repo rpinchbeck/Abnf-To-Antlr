@@ -1,5 +1,7 @@
 case_sensitive_string_with_two_characters : (CAP_A B);
 
+case_sensitive_string_with_two_characters : (CAP_A B);
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar
 // Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)

@@ -1,5 +1,7 @@
 bin_val_concatenation : (CAP_A B); //equivalent to (%s"Ab")
 
+bin_val_concatenation_2 : (CAP_A B); //equivalent to (%s"Ab")
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Lexer rules generated for each distinct character in original grammar
 // Simplified character names based on Unicode (http://www.unicode.org/charts/PDF/U0000.pdf)

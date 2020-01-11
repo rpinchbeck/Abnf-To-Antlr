@@ -1,1 +1,3 @@
 hex-val = %x47 ;equivalent to (%s"G")
+
+hex-val-2 = %X47 ;equivalent to (%s"G")

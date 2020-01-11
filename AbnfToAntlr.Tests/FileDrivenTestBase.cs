@@ -73,15 +73,6 @@ namespace AbnfToAntlr.Tests
 
             inputText = File.ReadAllText(inputPath);
 
-            if (inputText.EndsWith("\r\n"))
-            {
-                // do nothing
-            }
-            else
-            {
-                inputText = inputText + "\r\n";
-            }
-
             if (string.IsNullOrWhiteSpace(inputText))
             {
                 TestContext.WriteLine(inputPath);
@@ -114,7 +105,7 @@ namespace AbnfToAntlr.Tests
             }
         }
 
-        protected void PerformConsoleTest(string testName, string folderName)
+        protected void PerformConsoleTest(string testName, string folderName, ExpectedReturnValueEnum expectedReturnValue = ExpectedReturnValueEnum.Success)
         {
             var pathPrefix = Path.Combine(@"..\..\FileDrivenTests", folderName);
 
@@ -150,15 +141,6 @@ namespace AbnfToAntlr.Tests
 
             var inputText = File.ReadAllText(inputPath);
 
-            if (inputText.EndsWith("\r\n"))
-            {
-                // do nothing
-            }
-            else
-            {
-                inputText = inputText + "\r\n";
-            }
-
             if (string.IsNullOrWhiteSpace(inputText))
             {
                 TestContext.WriteLine(inputPath);
@@ -174,7 +156,9 @@ namespace AbnfToAntlr.Tests
             {
                 var program = new Program();
 
-                program.ConsoleMain(args, stdin, stdout, stderr);
+                var returnValue = program.ConsoleMain(args, stdin, stdout, stderr);
+
+                Assert.AreEqual((int)expectedReturnValue, returnValue);
             }
 
             var actualOutput = stdoutBuilder.ToString();

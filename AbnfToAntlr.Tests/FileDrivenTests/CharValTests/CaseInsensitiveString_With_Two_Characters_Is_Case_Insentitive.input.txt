@@ -1,1 +1,3 @@
 case-insensitive-string-with-two-characters = %i"Ab"
+
+case-insensitive-string-with-two-characters = %I"Ab"

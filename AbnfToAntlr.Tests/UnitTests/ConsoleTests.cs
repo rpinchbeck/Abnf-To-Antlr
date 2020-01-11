@@ -40,19 +40,19 @@ namespace AbnfToAntlr.Tests
         [TestMethod]
         public void Show_Help_Using_Dash_H()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         [TestMethod]
         public void Show_Help_Using_Slash_H()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         [TestMethod]
         public void Show_Help_Using_Dash_Dash_H()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         /////////////////////////////////////
@@ -62,19 +62,19 @@ namespace AbnfToAntlr.Tests
         [TestMethod]
         public void Show_Help_Using_Dash_Question_Mark()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         [TestMethod]
         public void Show_Help_Using_Slash_Question_Mark()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         [TestMethod]
         public void Show_Help_Using_Dash_Dash_QuestionMark()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         /////////////////////////////////////
@@ -84,19 +84,19 @@ namespace AbnfToAntlr.Tests
         [TestMethod]
         public void Show_Help_Using_Dash_Help()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         [TestMethod]
         public void Show_Help_Using_Slash_Help()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         [TestMethod]
         public void Show_Help_Using_Dash_Dash_Help()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         /////////////////////////////////////
@@ -134,19 +134,19 @@ namespace AbnfToAntlr.Tests
         [TestMethod]
         public void No_Args()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.SyntaxError);
         }
 
         [TestMethod]
         public void Recognition_Error_From_StdIn()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.RecognitionError);
         }
 
         [TestMethod]
         public void Recognition_Error_From_File()
         {
-            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name);
+            PerformConsoleTest(MethodBase.GetCurrentMethod().Name, MethodBase.GetCurrentMethod().ReflectedType.Name, ExpectedReturnValueEnum.RecognitionError);
         }
     }
 }

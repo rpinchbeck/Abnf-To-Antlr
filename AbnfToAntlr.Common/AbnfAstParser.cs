@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 AbnfAst.g3 2020-01-05 10:41:05
+// $ANTLR 3.5.1 AbnfAst.g3 2020-01-12 06:04:11
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -33,7 +33,7 @@ using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
 public partial class AbnfAstParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ALTERNATION_NODE", "ASTERISK", "BIN_VAL_CONCAT_NODE", "BIN_VAL_NODE", "BIN_VAL_NUMBER_NODE", "BIN_VAL_PREFIX", "BIN_VAL_RANGE_NODE", "CASE_INSENSITIVE_STRING_NODE", "CASE_SENSITIVE_STRING_NODE", "CHAR_VAL_NODE", "COMMENT", "CONCATENATION_NODE", "CR", "CRLF", "DASH", "DEC_VAL_CONCAT_NODE", "DEC_VAL_NODE", "DEC_VAL_NUMBER_NODE", "DEC_VAL_PREFIX", "DEC_VAL_RANGE_NODE", "DEFINED_AS_NODE", "DQUOTE", "EXACT_OCCURENCES", "GROUP_NODE", "HEX_ALPHA", "HEX_VAL_CONCAT_NODE", "HEX_VAL_NODE", "HEX_VAL_NUMBER_NODE", "HEX_VAL_PREFIX", "HEX_VAL_RANGE_NODE", "HTAB", "LF", "NUMBER_NODE", "ONE", "ONE_OCCURENCE", "OPTION_NODE", "ORMORE_OCCURENCES", "OTHER_ALPHA", "OTHER_DIGIT", "PROSE_VAL", "PROSE_VAL_NODE", "QUOTE", "QUOTED_STRING", "REPEAT_NODE", "REPETITION_NODE", "RULE_LIST_NODE", "RULE_NAME_NODE", "RULE_NODE", "SINGLE_QUOTED_STRING", "SP", "VCHAR", "WSP", "ZERO", "ZERO_OCCURENCES", "'%i'", "'%s'", "'('", "')'", "'.'", "'/'", "'='", "'=/'", "'['", "']'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ALTERNATION_NODE", "ASTERISK", "BIN_VAL_CONCAT_NODE", "BIN_VAL_NODE", "BIN_VAL_NUMBER_NODE", "BIN_VAL_PREFIX", "BIN_VAL_RANGE_NODE", "CASE_INSENSITIVE_STRING_NODE", "CASE_SENSITIVE_STRING_NODE", "CHAR_VAL_NODE", "COMMENT", "CONCATENATION_NODE", "CR", "CRLF", "DASH", "DEC_VAL_CONCAT_NODE", "DEC_VAL_NODE", "DEC_VAL_NUMBER_NODE", "DEC_VAL_PREFIX", "DEC_VAL_RANGE_NODE", "DEFINED_AS_NODE", "DQUOTE", "EXACT_OCCURENCES", "GROUP_NODE", "HEX_ALPHA", "HEX_VAL_CONCAT_NODE", "HEX_VAL_NODE", "HEX_VAL_NUMBER_NODE", "HEX_VAL_PREFIX", "HEX_VAL_RANGE_NODE", "HTAB", "LF", "NUMBER_NODE", "ONE", "ONE_OCCURENCE", "OPTION_NODE", "ORMORE_OCCURENCES", "OTHER_ALPHA", "OTHER_DIGIT", "PROSE_VAL", "PROSE_VAL_NODE", "QUOTE", "QUOTED_STRING", "REPEAT_NODE", "REPETITION_NODE", "RULE_LIST_NODE", "RULE_NAME_NODE", "RULE_NODE", "SINGLE_QUOTED_STRING", "SP", "VCHAR", "WSP", "ZERO", "ZERO_OCCURENCES", "'%I'", "'%S'", "'%i'", "'%s'", "'('", "')'", "'.'", "'/'", "'='", "'=/'", "'['", "']'"
 	};
 	public const int EOF=-1;
 	public const int ALTERNATION_NODE=4;
@@ -100,6 +100,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	public const int T__65=65;
 	public const int T__66=66;
 	public const int T__67=67;
+	public const int T__68=68;
+	public const int T__69=69;
 
 	public AbnfAstParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
@@ -1095,7 +1097,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			DebugLocation(125, 2);
 
 			set17=(CommonToken)input.LT(1);
-			if ((input.LA(1)>=64 && input.LA(1)<=65))
+			if ((input.LA(1)>=66 && input.LA(1)<=67))
 			{
 				input.Consume();
 				if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set17));
@@ -1583,7 +1585,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		AstParserRuleReturnScope<CommonTree, CommonToken> concatenation30 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
 		CommonTree char_literal28_tree = default(CommonTree);
-		RewriteRuleITokenStream stream_63=new RewriteRuleITokenStream(adaptor,"token 63");
+		RewriteRuleITokenStream stream_65=new RewriteRuleITokenStream(adaptor,"token 65");
 		RewriteRuleSubtreeStream stream_concatenation=new RewriteRuleSubtreeStream(adaptor,"rule concatenation");
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		try { DebugEnterRule(GrammarFileName, "alternation");
@@ -1666,8 +1668,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(10); }
 
 					DebugLocation(152, 26);
-					char_literal28=(CommonToken)Match(input,63,Follow._63_in_alternation529); if (state.failed) return retval; 
-					if (state.backtracking == 0) stream_63.Add(char_literal28);
+					char_literal28=(CommonToken)Match(input,65,Follow._65_in_alternation529); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_65.Add(char_literal28);
 
 					DebugLocation(152, 30);
 					// AbnfAst.g3:152:30: ( c_wsp )*
@@ -2706,12 +2708,12 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				alt17 = 1;
 				}
 				break;
-			case 60:
+			case 62:
 				{
 				alt17 = 2;
 				}
 				break;
-			case 66:
+			case 68:
 				{
 				alt17 = 3;
 				}
@@ -2720,6 +2722,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			case SINGLE_QUOTED_STRING:
 			case 58:
 			case 59:
+			case 60:
+			case 61:
 				{
 				alt17 = 4;
 				}
@@ -2890,8 +2894,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree char_literal55_tree = default(CommonTree);
 		CommonTree char_literal59_tree = default(CommonTree);
-		RewriteRuleITokenStream stream_60=new RewriteRuleITokenStream(adaptor,"token 60");
-		RewriteRuleITokenStream stream_61=new RewriteRuleITokenStream(adaptor,"token 61");
+		RewriteRuleITokenStream stream_62=new RewriteRuleITokenStream(adaptor,"token 62");
+		RewriteRuleITokenStream stream_63=new RewriteRuleITokenStream(adaptor,"token 63");
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		RewriteRuleSubtreeStream stream_alternation=new RewriteRuleSubtreeStream(adaptor,"rule alternation");
 		try { DebugEnterRule(GrammarFileName, "group");
@@ -2903,8 +2907,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			// AbnfAst.g3:193:3: '(' ( c_wsp )* alternation ( c_wsp )* ')'
 			{
 			DebugLocation(193, 3);
-			char_literal55=(CommonToken)Match(input,60,Follow._60_in_group938); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_60.Add(char_literal55);
+			char_literal55=(CommonToken)Match(input,62,Follow._62_in_group938); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_62.Add(char_literal55);
 
 			DebugLocation(193, 7);
 			// AbnfAst.g3:193:7: ( c_wsp )*
@@ -2997,8 +3001,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(19); }
 
 			DebugLocation(193, 33);
-			char_literal59=(CommonToken)Match(input,61,Follow._61_in_group948); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_61.Add(char_literal59);
+			char_literal59=(CommonToken)Match(input,63,Follow._63_in_group948); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_63.Add(char_literal59);
 
 
 
@@ -3088,8 +3092,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree char_literal60_tree = default(CommonTree);
 		CommonTree char_literal64_tree = default(CommonTree);
-		RewriteRuleITokenStream stream_66=new RewriteRuleITokenStream(adaptor,"token 66");
-		RewriteRuleITokenStream stream_67=new RewriteRuleITokenStream(adaptor,"token 67");
+		RewriteRuleITokenStream stream_68=new RewriteRuleITokenStream(adaptor,"token 68");
+		RewriteRuleITokenStream stream_69=new RewriteRuleITokenStream(adaptor,"token 69");
 		RewriteRuleSubtreeStream stream_c_wsp=new RewriteRuleSubtreeStream(adaptor,"rule c_wsp");
 		RewriteRuleSubtreeStream stream_alternation=new RewriteRuleSubtreeStream(adaptor,"rule alternation");
 		try { DebugEnterRule(GrammarFileName, "option");
@@ -3101,8 +3105,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			// AbnfAst.g3:198:3: '[' ( c_wsp )* alternation ( c_wsp )* ']'
 			{
 			DebugLocation(198, 3);
-			char_literal60=(CommonToken)Match(input,66,Follow._66_in_option970); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_66.Add(char_literal60);
+			char_literal60=(CommonToken)Match(input,68,Follow._68_in_option970); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_68.Add(char_literal60);
 
 			DebugLocation(198, 7);
 			// AbnfAst.g3:198:7: ( c_wsp )*
@@ -3195,8 +3199,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(21); }
 
 			DebugLocation(198, 33);
-			char_literal64=(CommonToken)Match(input,67,Follow._67_in_option980); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_67.Add(char_literal64);
+			char_literal64=(CommonToken)Match(input,69,Follow._69_in_option980); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_69.Add(char_literal64);
 
 
 
@@ -3428,11 +3432,11 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			try { DebugEnterDecision(23, false);
 			int LA23_1 = input.LA(1);
 
-			if ((LA23_1==QUOTED_STRING||LA23_1==58))
+			if ((LA23_1==QUOTED_STRING||LA23_1==58||LA23_1==60))
 			{
 				alt23 = 1;
 			}
-			else if ((LA23_1==SINGLE_QUOTED_STRING||LA23_1==59))
+			else if ((LA23_1==SINGLE_QUOTED_STRING||LA23_1==59||LA23_1==61))
 			{
 				alt23 = 2;
 			}
@@ -3574,7 +3578,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_case_insensitive_string();
 	partial void LeaveRule_case_insensitive_string();
 	// $ANTLR start "case_insensitive_string"
-	// AbnfAst.g3:212:1: case_insensitive_string : ( '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) ;
+	// AbnfAst.g3:212:1: case_insensitive_string : ( '%I' | '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) ;
 	[GrammarRule("case_insensitive_string")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> case_insensitive_string()
 	{
@@ -3587,23 +3591,26 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		CommonTree root_0 = default(CommonTree);
 
 		CommonToken string_literal70 = default(CommonToken);
-		CommonToken QUOTED_STRING71 = default(CommonToken);
+		CommonToken string_literal71 = default(CommonToken);
+		CommonToken QUOTED_STRING72 = default(CommonToken);
 
 		CommonTree string_literal70_tree = default(CommonTree);
-		CommonTree QUOTED_STRING71_tree = default(CommonTree);
+		CommonTree string_literal71_tree = default(CommonTree);
+		CommonTree QUOTED_STRING72_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_58=new RewriteRuleITokenStream(adaptor,"token 58");
+		RewriteRuleITokenStream stream_60=new RewriteRuleITokenStream(adaptor,"token 60");
 		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 		try { DebugEnterRule(GrammarFileName, "case_insensitive_string");
 		DebugLocation(212, 2);
 		try
 		{
-			// AbnfAst.g3:213:2: ( ( '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) )
+			// AbnfAst.g3:213:2: ( ( '%I' | '%i' )? QUOTED_STRING -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING ) )
 			DebugEnterAlt(1);
-			// AbnfAst.g3:214:3: ( '%i' )? QUOTED_STRING
+			// AbnfAst.g3:214:3: ( '%I' | '%i' )? QUOTED_STRING
 			{
 			DebugLocation(214, 3);
-			// AbnfAst.g3:214:3: ( '%i' )?
-			int alt24=2;
+			// AbnfAst.g3:214:3: ( '%I' | '%i' )?
+			int alt24=3;
 			try { DebugEnterSubRule(24);
 			try { DebugEnterDecision(24, false);
 			int LA24_1 = input.LA(1);
@@ -3612,16 +3619,31 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 				alt24 = 1;
 			}
+			else if ((LA24_1==60))
+			{
+				alt24 = 2;
+			}
 			} finally { DebugExitDecision(24); }
 			switch (alt24)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:214:3: '%i'
+				// AbnfAst.g3:214:4: '%I'
 				{
-				DebugLocation(214, 3);
-				string_literal70=(CommonToken)Match(input,58,Follow._58_in_case_insensitive_string1064); if (state.failed) return retval; 
+				DebugLocation(214, 4);
+				string_literal70=(CommonToken)Match(input,58,Follow._58_in_case_insensitive_string1065); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_58.Add(string_literal70);
+
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// AbnfAst.g3:214:9: '%i'
+				{
+				DebugLocation(214, 9);
+				string_literal71=(CommonToken)Match(input,60,Follow._60_in_case_insensitive_string1067); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_60.Add(string_literal71);
 
 
 				}
@@ -3630,9 +3652,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			}
 			} finally { DebugExitSubRule(24); }
 
-			DebugLocation(214, 9);
-			QUOTED_STRING71=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_insensitive_string1067); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_QUOTED_STRING.Add(QUOTED_STRING71);
+			DebugLocation(214, 16);
+			QUOTED_STRING72=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_insensitive_string1071); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_QUOTED_STRING.Add(QUOTED_STRING72);
 
 
 
@@ -3649,16 +3671,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 			root_0 = (CommonTree)adaptor.Nil();
-			// 214:23: -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
+			// 214:30: -> ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
 			{
-				DebugLocation(214, 26);
-				// AbnfAst.g3:214:26: ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
+				DebugLocation(214, 33);
+				// AbnfAst.g3:214:33: ^( CASE_INSENSITIVE_STRING_NODE QUOTED_STRING )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
-				DebugLocation(214, 28);
+				DebugLocation(214, 35);
 				root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CASE_INSENSITIVE_STRING_NODE, "CASE_INSENSITIVE_STRING_NODE"), root_1);
 
-				DebugLocation(214, 57);
+				DebugLocation(214, 64);
 				adaptor.AddChild(root_1, stream_QUOTED_STRING.NextNode());
 
 				adaptor.AddChild(root_0, root_1);
@@ -3702,7 +3724,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	partial void EnterRule_case_sensitive_string();
 	partial void LeaveRule_case_sensitive_string();
 	// $ANTLR start "case_sensitive_string"
-	// AbnfAst.g3:217:1: case_sensitive_string : ( ( '%s' QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) );
+	// AbnfAst.g3:217:1: case_sensitive_string : ( ( ( '%S' | '%s' ) QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) );
 	[GrammarRule("case_sensitive_string")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> case_sensitive_string()
 	{
@@ -3714,59 +3736,109 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken string_literal72 = default(CommonToken);
-		CommonToken QUOTED_STRING73 = default(CommonToken);
-		CommonToken SINGLE_QUOTED_STRING74 = default(CommonToken);
+		CommonToken string_literal73 = default(CommonToken);
+		CommonToken string_literal74 = default(CommonToken);
+		CommonToken QUOTED_STRING75 = default(CommonToken);
+		CommonToken SINGLE_QUOTED_STRING76 = default(CommonToken);
 
-		CommonTree string_literal72_tree = default(CommonTree);
-		CommonTree QUOTED_STRING73_tree = default(CommonTree);
-		CommonTree SINGLE_QUOTED_STRING74_tree = default(CommonTree);
+		CommonTree string_literal73_tree = default(CommonTree);
+		CommonTree string_literal74_tree = default(CommonTree);
+		CommonTree QUOTED_STRING75_tree = default(CommonTree);
+		CommonTree SINGLE_QUOTED_STRING76_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_59=new RewriteRuleITokenStream(adaptor,"token 59");
+		RewriteRuleITokenStream stream_61=new RewriteRuleITokenStream(adaptor,"token 61");
 		RewriteRuleITokenStream stream_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token QUOTED_STRING");
 		RewriteRuleITokenStream stream_SINGLE_QUOTED_STRING=new RewriteRuleITokenStream(adaptor,"token SINGLE_QUOTED_STRING");
 		try { DebugEnterRule(GrammarFileName, "case_sensitive_string");
 		DebugLocation(217, 2);
 		try
 		{
-			// AbnfAst.g3:218:2: ( ( '%s' QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) )
-			int alt25=2;
-			try { DebugEnterDecision(25, false);
-			int LA25_1 = input.LA(1);
+			// AbnfAst.g3:218:2: ( ( ( '%S' | '%s' ) QUOTED_STRING ) -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING ) | SINGLE_QUOTED_STRING -> ^( CASE_SENSITIVE_STRING_NODE SINGLE_QUOTED_STRING ) )
+			int alt26=2;
+			try { DebugEnterDecision(26, false);
+			int LA26_1 = input.LA(1);
 
-			if ((LA25_1==59))
+			if ((LA26_1==59||LA26_1==61))
 			{
-				alt25 = 1;
+				alt26 = 1;
 			}
-			else if ((LA25_1==SINGLE_QUOTED_STRING))
+			else if ((LA26_1==SINGLE_QUOTED_STRING))
 			{
-				alt25 = 2;
+				alt26 = 2;
 			}
 			else
 			{
 				if (state.backtracking>0) {state.failed=true; return retval;}
-				NoViableAltException nvae = new NoViableAltException("", 25, 0, input, 1);
+				NoViableAltException nvae = new NoViableAltException("", 26, 0, input, 1);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(25); }
-			switch (alt25)
+			} finally { DebugExitDecision(26); }
+			switch (alt26)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// AbnfAst.g3:219:3: ( '%s' QUOTED_STRING )
+				// AbnfAst.g3:219:3: ( ( '%S' | '%s' ) QUOTED_STRING )
 				{
 				DebugLocation(219, 3);
-				// AbnfAst.g3:219:3: ( '%s' QUOTED_STRING )
+				// AbnfAst.g3:219:3: ( ( '%S' | '%s' ) QUOTED_STRING )
 				DebugEnterAlt(1);
-				// AbnfAst.g3:219:4: '%s' QUOTED_STRING
+				// AbnfAst.g3:219:4: ( '%S' | '%s' ) QUOTED_STRING
 				{
 				DebugLocation(219, 4);
-				string_literal72=(CommonToken)Match(input,59,Follow._59_in_case_sensitive_string1090); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_59.Add(string_literal72);
+				// AbnfAst.g3:219:4: ( '%S' | '%s' )
+				int alt25=2;
+				try { DebugEnterSubRule(25);
+				try { DebugEnterDecision(25, false);
+				int LA25_1 = input.LA(1);
 
-				DebugLocation(219, 9);
-				QUOTED_STRING73=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_sensitive_string1092); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_QUOTED_STRING.Add(QUOTED_STRING73);
+				if ((LA25_1==59))
+				{
+					alt25 = 1;
+				}
+				else if ((LA25_1==61))
+				{
+					alt25 = 2;
+				}
+				else
+				{
+					if (state.backtracking>0) {state.failed=true; return retval;}
+					NoViableAltException nvae = new NoViableAltException("", 25, 0, input, 1);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
+				} finally { DebugExitDecision(25); }
+				switch (alt25)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// AbnfAst.g3:219:5: '%S'
+					{
+					DebugLocation(219, 5);
+					string_literal73=(CommonToken)Match(input,59,Follow._59_in_case_sensitive_string1095); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_59.Add(string_literal73);
+
+
+					}
+					break;
+				case 2:
+					DebugEnterAlt(2);
+					// AbnfAst.g3:219:10: '%s'
+					{
+					DebugLocation(219, 10);
+					string_literal74=(CommonToken)Match(input,61,Follow._61_in_case_sensitive_string1097); if (state.failed) return retval; 
+					if (state.backtracking == 0) stream_61.Add(string_literal74);
+
+
+					}
+					break;
+
+				}
+				} finally { DebugExitSubRule(25); }
+
+				DebugLocation(219, 16);
+				QUOTED_STRING75=(CommonToken)Match(input,QUOTED_STRING,Follow._QUOTED_STRING_in_case_sensitive_string1100); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_QUOTED_STRING.Add(QUOTED_STRING75);
 
 
 				}
@@ -3786,16 +3858,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 				root_0 = (CommonTree)adaptor.Nil();
-				// 219:24: -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
+				// 219:31: -> ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
 				{
-					DebugLocation(219, 27);
-					// AbnfAst.g3:219:27: ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
+					DebugLocation(219, 34);
+					// AbnfAst.g3:219:34: ^( CASE_SENSITIVE_STRING_NODE QUOTED_STRING )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
-					DebugLocation(219, 29);
+					DebugLocation(219, 36);
 					root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(CASE_SENSITIVE_STRING_NODE, "CASE_SENSITIVE_STRING_NODE"), root_1);
 
-					DebugLocation(219, 56);
+					DebugLocation(219, 63);
 					adaptor.AddChild(root_1, stream_QUOTED_STRING.NextNode());
 
 					adaptor.AddChild(root_0, root_1);
@@ -3814,8 +3886,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				// AbnfAst.g3:220:5: SINGLE_QUOTED_STRING
 				{
 				DebugLocation(220, 5);
-				SINGLE_QUOTED_STRING74=(CommonToken)Match(input,SINGLE_QUOTED_STRING,Follow._SINGLE_QUOTED_STRING_in_case_sensitive_string1107); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_SINGLE_QUOTED_STRING.Add(SINGLE_QUOTED_STRING74);
+				SINGLE_QUOTED_STRING76=(CommonToken)Match(input,SINGLE_QUOTED_STRING,Follow._SINGLE_QUOTED_STRING_in_case_sensitive_string1115); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_SINGLE_QUOTED_STRING.Add(SINGLE_QUOTED_STRING76);
 
 
 
@@ -3899,65 +3971,65 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken BIN_VAL_PREFIX75 = default(CommonToken);
-		CommonToken DASH76 = default(CommonToken);
 		CommonToken BIN_VAL_PREFIX77 = default(CommonToken);
-		CommonToken char_literal79 = default(CommonToken);
-		CommonToken BIN_VAL_PREFIX81 = default(CommonToken);
+		CommonToken DASH78 = default(CommonToken);
+		CommonToken BIN_VAL_PREFIX79 = default(CommonToken);
+		CommonToken char_literal81 = default(CommonToken);
+		CommonToken BIN_VAL_PREFIX83 = default(CommonToken);
 		AstParserRuleReturnScope<CommonTree, CommonToken> min = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> max = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
-		AstParserRuleReturnScope<CommonTree, CommonToken> bin_val_number78 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> bin_val_number80 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> bin_val_number82 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
+		AstParserRuleReturnScope<CommonTree, CommonToken> bin_val_number84 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
-		CommonTree BIN_VAL_PREFIX75_tree = default(CommonTree);
-		CommonTree DASH76_tree = default(CommonTree);
 		CommonTree BIN_VAL_PREFIX77_tree = default(CommonTree);
-		CommonTree char_literal79_tree = default(CommonTree);
-		CommonTree BIN_VAL_PREFIX81_tree = default(CommonTree);
+		CommonTree DASH78_tree = default(CommonTree);
+		CommonTree BIN_VAL_PREFIX79_tree = default(CommonTree);
+		CommonTree char_literal81_tree = default(CommonTree);
+		CommonTree BIN_VAL_PREFIX83_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_BIN_VAL_PREFIX=new RewriteRuleITokenStream(adaptor,"token BIN_VAL_PREFIX");
 		RewriteRuleITokenStream stream_DASH=new RewriteRuleITokenStream(adaptor,"token DASH");
-		RewriteRuleITokenStream stream_62=new RewriteRuleITokenStream(adaptor,"token 62");
+		RewriteRuleITokenStream stream_64=new RewriteRuleITokenStream(adaptor,"token 64");
 		RewriteRuleSubtreeStream stream_bin_val_number=new RewriteRuleSubtreeStream(adaptor,"rule bin_val_number");
 		try { DebugEnterRule(GrammarFileName, "bin_val");
 		DebugLocation(223, 2);
 		try
 		{
 			// AbnfAst.g3:224:2: ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) )
-			int alt27=3;
-			try { DebugEnterDecision(27, false);
+			int alt28=3;
+			try { DebugEnterDecision(28, false);
 			try
 			{
-				alt27 = dfa27.Predict(input);
+				alt28 = dfa28.Predict(input);
 			}
 			catch (NoViableAltException nvae)
 			{
 				DebugRecognitionException(nvae);
 				throw;
 			}
-			} finally { DebugExitDecision(27); }
-			switch (alt27)
+			} finally { DebugExitDecision(28); }
+			switch (alt28)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// AbnfAst.g3:225:3: BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number
 				{
 				DebugLocation(225, 3);
-				BIN_VAL_PREFIX75=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1129); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX75);
+				BIN_VAL_PREFIX77=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1137); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX77);
 
 				DebugLocation(225, 21);
-				PushFollow(Follow._bin_val_number_in_bin_val1133);
+				PushFollow(Follow._bin_val_number_in_bin_val1141);
 				min=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_bin_val_number.Add(min.Tree);
 				DebugLocation(225, 37);
-				DASH76=(CommonToken)Match(input,DASH,Follow._DASH_in_bin_val1135); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_DASH.Add(DASH76);
+				DASH78=(CommonToken)Match(input,DASH,Follow._DASH_in_bin_val1143); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_DASH.Add(DASH78);
 
 				DebugLocation(225, 45);
-				PushFollow(Follow._bin_val_number_in_bin_val1139);
+				PushFollow(Follow._bin_val_number_in_bin_val1147);
 				max=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4009,67 +4081,67 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				// AbnfAst.g3:226:5: BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+
 				{
 				DebugLocation(226, 5);
-				BIN_VAL_PREFIX77=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1157); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX77);
+				BIN_VAL_PREFIX79=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1165); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX79);
 
 				DebugLocation(226, 20);
-				PushFollow(Follow._bin_val_number_in_bin_val1159);
-				bin_val_number78=bin_val_number();
+				PushFollow(Follow._bin_val_number_in_bin_val1167);
+				bin_val_number80=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_bin_val_number.Add(bin_val_number78.Tree);
+				if (state.backtracking == 0) stream_bin_val_number.Add(bin_val_number80.Tree);
 				DebugLocation(226, 35);
 				// AbnfAst.g3:226:35: ( '.' bin_val_number )+
-				int cnt26=0;
-				try { DebugEnterSubRule(26);
+				int cnt27=0;
+				try { DebugEnterSubRule(27);
 				while (true)
 				{
-					int alt26=2;
-					try { DebugEnterDecision(26, false);
-					int LA26_1 = input.LA(1);
+					int alt27=2;
+					try { DebugEnterDecision(27, false);
+					int LA27_1 = input.LA(1);
 
-					if ((LA26_1==62))
+					if ((LA27_1==64))
 					{
-						alt26 = 1;
+						alt27 = 1;
 					}
 
 
-					} finally { DebugExitDecision(26); }
-					switch (alt26)
+					} finally { DebugExitDecision(27); }
+					switch (alt27)
 					{
 					case 1:
 						DebugEnterAlt(1);
 						// AbnfAst.g3:226:36: '.' bin_val_number
 						{
 						DebugLocation(226, 36);
-						char_literal79=(CommonToken)Match(input,62,Follow._62_in_bin_val1162); if (state.failed) return retval; 
-						if (state.backtracking == 0) stream_62.Add(char_literal79);
+						char_literal81=(CommonToken)Match(input,64,Follow._64_in_bin_val1170); if (state.failed) return retval; 
+						if (state.backtracking == 0) stream_64.Add(char_literal81);
 
 						DebugLocation(226, 40);
-						PushFollow(Follow._bin_val_number_in_bin_val1164);
-						bin_val_number80=bin_val_number();
+						PushFollow(Follow._bin_val_number_in_bin_val1172);
+						bin_val_number82=bin_val_number();
 						PopFollow();
 						if (state.failed) return retval;
-						if (state.backtracking == 0) stream_bin_val_number.Add(bin_val_number80.Tree);
+						if (state.backtracking == 0) stream_bin_val_number.Add(bin_val_number82.Tree);
 
 						}
 						break;
 
 					default:
-						if (cnt26 >= 1)
-							goto loop26;
+						if (cnt27 >= 1)
+							goto loop27;
 
 						if (state.backtracking>0) {state.failed=true; return retval;}
-						EarlyExitException eee26 = new EarlyExitException( 26, input );
-						DebugRecognitionException(eee26);
-						throw eee26;
+						EarlyExitException eee27 = new EarlyExitException( 27, input );
+						DebugRecognitionException(eee27);
+						throw eee27;
 					}
-					cnt26++;
+					cnt27++;
 				}
-				loop26:
+				loop27:
 					;
 
-				} finally { DebugExitSubRule(26); }
+				} finally { DebugExitSubRule(27); }
 
 
 
@@ -4124,15 +4196,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				// AbnfAst.g3:227:5: BIN_VAL_PREFIX bin_val_number
 				{
 				DebugLocation(227, 5);
-				BIN_VAL_PREFIX81=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1185); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX81);
+				BIN_VAL_PREFIX83=(CommonToken)Match(input,BIN_VAL_PREFIX,Follow._BIN_VAL_PREFIX_in_bin_val1193); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_BIN_VAL_PREFIX.Add(BIN_VAL_PREFIX83);
 
 				DebugLocation(227, 20);
-				PushFollow(Follow._bin_val_number_in_bin_val1187);
-				bin_val_number82=bin_val_number();
+				PushFollow(Follow._bin_val_number_in_bin_val1195);
+				bin_val_number84=bin_val_number();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_bin_val_number.Add(bin_val_number82.Tree);
+				if (state.backtracking == 0) stream_bin_val_number.Add(bin_val_number84.Tree);
 
 
 				{
@@ -4215,7 +4287,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		AstParserRuleReturnScope<CommonTree, CommonToken> bin_number83 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
+		AstParserRuleReturnScope<CommonTree, CommonToken> bin_number85 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
 		RewriteRuleSubtreeStream stream_bin_number=new RewriteRuleSubtreeStream(adaptor,"rule bin_number");
 		try { DebugEnterRule(GrammarFileName, "bin_val_number");
@@ -4227,11 +4299,11 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			// AbnfAst.g3:234:3: bin_number
 			{
 			DebugLocation(234, 3);
-			PushFollow(Follow._bin_number_in_bin_val_number1253);
-			bin_number83=bin_number();
+			PushFollow(Follow._bin_number_in_bin_val_number1261);
+			bin_number85=bin_number();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) stream_bin_number.Add(bin_number83.Tree);
+			if (state.backtracking == 0) stream_bin_number.Add(bin_number85.Tree);
 
 
 			{
@@ -4312,9 +4384,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken set84 = default(CommonToken);
+		CommonToken set86 = default(CommonToken);
 
-		CommonTree set84_tree = default(CommonTree);
+		CommonTree set86_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "bin_number");
 		DebugLocation(237, 2);
 		try
@@ -4327,22 +4399,22 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			DebugLocation(239, 3);
 			// AbnfAst.g3:239:3: ( ZERO | ONE )+
-			int cnt28=0;
-			try { DebugEnterSubRule(28);
+			int cnt29=0;
+			try { DebugEnterSubRule(29);
 			while (true)
 			{
-				int alt28=2;
-				try { DebugEnterDecision(28, false);
-				int LA28_1 = input.LA(1);
+				int alt29=2;
+				try { DebugEnterDecision(29, false);
+				int LA29_1 = input.LA(1);
 
-				if ((LA28_1==ONE||LA28_1==ZERO))
+				if ((LA29_1==ONE||LA29_1==ZERO))
 				{
-					alt28 = 1;
+					alt29 = 1;
 				}
 
 
-				} finally { DebugExitDecision(28); }
-				switch (alt28)
+				} finally { DebugExitDecision(29); }
+				switch (alt29)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -4350,11 +4422,11 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					{
 					DebugLocation(239, 3);
 
-					set84=(CommonToken)input.LT(1);
+					set86=(CommonToken)input.LT(1);
 					if (input.LA(1)==ONE||input.LA(1)==ZERO)
 					{
 						input.Consume();
-						if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set84));
+						if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set86));
 						state.errorRecovery=false;state.failed=false;
 					}
 					else
@@ -4370,20 +4442,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt28 >= 1)
-						goto loop28;
+					if (cnt29 >= 1)
+						goto loop29;
 
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee28 = new EarlyExitException( 28, input );
-					DebugRecognitionException(eee28);
-					throw eee28;
+					EarlyExitException eee29 = new EarlyExitException( 29, input );
+					DebugRecognitionException(eee29);
+					throw eee29;
 				}
-				cnt28++;
+				cnt29++;
 			}
-			loop28:
+			loop29:
 				;
 
-			} finally { DebugExitSubRule(28); }
+			} finally { DebugExitSubRule(29); }
 
 
 			}
@@ -4430,65 +4502,65 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken DEC_VAL_PREFIX85 = default(CommonToken);
-		CommonToken DASH86 = default(CommonToken);
 		CommonToken DEC_VAL_PREFIX87 = default(CommonToken);
-		CommonToken char_literal89 = default(CommonToken);
-		CommonToken DEC_VAL_PREFIX91 = default(CommonToken);
+		CommonToken DASH88 = default(CommonToken);
+		CommonToken DEC_VAL_PREFIX89 = default(CommonToken);
+		CommonToken char_literal91 = default(CommonToken);
+		CommonToken DEC_VAL_PREFIX93 = default(CommonToken);
 		AstParserRuleReturnScope<CommonTree, CommonToken> min = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> max = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
-		AstParserRuleReturnScope<CommonTree, CommonToken> dec_val_number88 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> dec_val_number90 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> dec_val_number92 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
+		AstParserRuleReturnScope<CommonTree, CommonToken> dec_val_number94 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
-		CommonTree DEC_VAL_PREFIX85_tree = default(CommonTree);
-		CommonTree DASH86_tree = default(CommonTree);
 		CommonTree DEC_VAL_PREFIX87_tree = default(CommonTree);
-		CommonTree char_literal89_tree = default(CommonTree);
-		CommonTree DEC_VAL_PREFIX91_tree = default(CommonTree);
+		CommonTree DASH88_tree = default(CommonTree);
+		CommonTree DEC_VAL_PREFIX89_tree = default(CommonTree);
+		CommonTree char_literal91_tree = default(CommonTree);
+		CommonTree DEC_VAL_PREFIX93_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_DEC_VAL_PREFIX=new RewriteRuleITokenStream(adaptor,"token DEC_VAL_PREFIX");
 		RewriteRuleITokenStream stream_DASH=new RewriteRuleITokenStream(adaptor,"token DASH");
-		RewriteRuleITokenStream stream_62=new RewriteRuleITokenStream(adaptor,"token 62");
+		RewriteRuleITokenStream stream_64=new RewriteRuleITokenStream(adaptor,"token 64");
 		RewriteRuleSubtreeStream stream_dec_val_number=new RewriteRuleSubtreeStream(adaptor,"rule dec_val_number");
 		try { DebugEnterRule(GrammarFileName, "dec_val");
 		DebugLocation(243, 2);
 		try
 		{
 			// AbnfAst.g3:244:2: ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) )
-			int alt30=3;
-			try { DebugEnterDecision(30, false);
+			int alt31=3;
+			try { DebugEnterDecision(31, false);
 			try
 			{
-				alt30 = dfa30.Predict(input);
+				alt31 = dfa31.Predict(input);
 			}
 			catch (NoViableAltException nvae)
 			{
 				DebugRecognitionException(nvae);
 				throw;
 			}
-			} finally { DebugExitDecision(30); }
-			switch (alt30)
+			} finally { DebugExitDecision(31); }
+			switch (alt31)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// AbnfAst.g3:245:3: DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number
 				{
 				DebugLocation(245, 3);
-				DEC_VAL_PREFIX85=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1301); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX85);
+				DEC_VAL_PREFIX87=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1309); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX87);
 
 				DebugLocation(245, 21);
-				PushFollow(Follow._dec_val_number_in_dec_val1305);
+				PushFollow(Follow._dec_val_number_in_dec_val1313);
 				min=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_dec_val_number.Add(min.Tree);
 				DebugLocation(245, 37);
-				DASH86=(CommonToken)Match(input,DASH,Follow._DASH_in_dec_val1307); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_DASH.Add(DASH86);
+				DASH88=(CommonToken)Match(input,DASH,Follow._DASH_in_dec_val1315); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_DASH.Add(DASH88);
 
 				DebugLocation(245, 45);
-				PushFollow(Follow._dec_val_number_in_dec_val1311);
+				PushFollow(Follow._dec_val_number_in_dec_val1319);
 				max=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -4540,67 +4612,67 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				// AbnfAst.g3:246:5: DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+
 				{
 				DebugLocation(246, 5);
-				DEC_VAL_PREFIX87=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1329); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX87);
+				DEC_VAL_PREFIX89=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1337); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX89);
 
 				DebugLocation(246, 20);
-				PushFollow(Follow._dec_val_number_in_dec_val1331);
-				dec_val_number88=dec_val_number();
+				PushFollow(Follow._dec_val_number_in_dec_val1339);
+				dec_val_number90=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_dec_val_number.Add(dec_val_number88.Tree);
+				if (state.backtracking == 0) stream_dec_val_number.Add(dec_val_number90.Tree);
 				DebugLocation(246, 35);
 				// AbnfAst.g3:246:35: ( '.' dec_val_number )+
-				int cnt29=0;
-				try { DebugEnterSubRule(29);
+				int cnt30=0;
+				try { DebugEnterSubRule(30);
 				while (true)
 				{
-					int alt29=2;
-					try { DebugEnterDecision(29, false);
-					int LA29_1 = input.LA(1);
+					int alt30=2;
+					try { DebugEnterDecision(30, false);
+					int LA30_1 = input.LA(1);
 
-					if ((LA29_1==62))
+					if ((LA30_1==64))
 					{
-						alt29 = 1;
+						alt30 = 1;
 					}
 
 
-					} finally { DebugExitDecision(29); }
-					switch (alt29)
+					} finally { DebugExitDecision(30); }
+					switch (alt30)
 					{
 					case 1:
 						DebugEnterAlt(1);
 						// AbnfAst.g3:246:36: '.' dec_val_number
 						{
 						DebugLocation(246, 36);
-						char_literal89=(CommonToken)Match(input,62,Follow._62_in_dec_val1334); if (state.failed) return retval; 
-						if (state.backtracking == 0) stream_62.Add(char_literal89);
+						char_literal91=(CommonToken)Match(input,64,Follow._64_in_dec_val1342); if (state.failed) return retval; 
+						if (state.backtracking == 0) stream_64.Add(char_literal91);
 
 						DebugLocation(246, 40);
-						PushFollow(Follow._dec_val_number_in_dec_val1336);
-						dec_val_number90=dec_val_number();
+						PushFollow(Follow._dec_val_number_in_dec_val1344);
+						dec_val_number92=dec_val_number();
 						PopFollow();
 						if (state.failed) return retval;
-						if (state.backtracking == 0) stream_dec_val_number.Add(dec_val_number90.Tree);
+						if (state.backtracking == 0) stream_dec_val_number.Add(dec_val_number92.Tree);
 
 						}
 						break;
 
 					default:
-						if (cnt29 >= 1)
-							goto loop29;
+						if (cnt30 >= 1)
+							goto loop30;
 
 						if (state.backtracking>0) {state.failed=true; return retval;}
-						EarlyExitException eee29 = new EarlyExitException( 29, input );
-						DebugRecognitionException(eee29);
-						throw eee29;
+						EarlyExitException eee30 = new EarlyExitException( 30, input );
+						DebugRecognitionException(eee30);
+						throw eee30;
 					}
-					cnt29++;
+					cnt30++;
 				}
-				loop29:
+				loop30:
 					;
 
-				} finally { DebugExitSubRule(29); }
+				} finally { DebugExitSubRule(30); }
 
 
 
@@ -4655,15 +4727,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				// AbnfAst.g3:247:5: DEC_VAL_PREFIX dec_val_number
 				{
 				DebugLocation(247, 5);
-				DEC_VAL_PREFIX91=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1357); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX91);
+				DEC_VAL_PREFIX93=(CommonToken)Match(input,DEC_VAL_PREFIX,Follow._DEC_VAL_PREFIX_in_dec_val1365); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_DEC_VAL_PREFIX.Add(DEC_VAL_PREFIX93);
 
 				DebugLocation(247, 20);
-				PushFollow(Follow._dec_val_number_in_dec_val1359);
-				dec_val_number92=dec_val_number();
+				PushFollow(Follow._dec_val_number_in_dec_val1367);
+				dec_val_number94=dec_val_number();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_dec_val_number.Add(dec_val_number92.Tree);
+				if (state.backtracking == 0) stream_dec_val_number.Add(dec_val_number94.Tree);
 
 
 				{
@@ -4746,7 +4818,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		AstParserRuleReturnScope<CommonTree, CommonToken> dec_number93 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
+		AstParserRuleReturnScope<CommonTree, CommonToken> dec_number95 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
 		RewriteRuleSubtreeStream stream_dec_number=new RewriteRuleSubtreeStream(adaptor,"rule dec_number");
 		try { DebugEnterRule(GrammarFileName, "dec_val_number");
@@ -4758,11 +4830,11 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			// AbnfAst.g3:252:3: dec_number
 			{
 			DebugLocation(252, 3);
-			PushFollow(Follow._dec_number_in_dec_val_number1407);
-			dec_number93=dec_number();
+			PushFollow(Follow._dec_number_in_dec_val_number1415);
+			dec_number95=dec_number();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) stream_dec_number.Add(dec_number93.Tree);
+			if (state.backtracking == 0) stream_dec_number.Add(dec_number95.Tree);
 
 
 			{
@@ -4843,9 +4915,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken set94 = default(CommonToken);
+		CommonToken set96 = default(CommonToken);
 
-		CommonTree set94_tree = default(CommonTree);
+		CommonTree set96_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "dec_number");
 		DebugLocation(255, 2);
 		try
@@ -4858,22 +4930,22 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			DebugLocation(257, 3);
 			// AbnfAst.g3:257:3: ( ZERO | ONE | OTHER_DIGIT )+
-			int cnt31=0;
-			try { DebugEnterSubRule(31);
+			int cnt32=0;
+			try { DebugEnterSubRule(32);
 			while (true)
 			{
-				int alt31=2;
-				try { DebugEnterDecision(31, false);
-				int LA31_1 = input.LA(1);
+				int alt32=2;
+				try { DebugEnterDecision(32, false);
+				int LA32_1 = input.LA(1);
 
-				if ((LA31_1==ONE||LA31_1==OTHER_DIGIT||LA31_1==ZERO))
+				if ((LA32_1==ONE||LA32_1==OTHER_DIGIT||LA32_1==ZERO))
 				{
-					alt31 = 1;
+					alt32 = 1;
 				}
 
 
-				} finally { DebugExitDecision(31); }
-				switch (alt31)
+				} finally { DebugExitDecision(32); }
+				switch (alt32)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -4881,11 +4953,11 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					{
 					DebugLocation(257, 3);
 
-					set94=(CommonToken)input.LT(1);
+					set96=(CommonToken)input.LT(1);
 					if (input.LA(1)==ONE||input.LA(1)==OTHER_DIGIT||input.LA(1)==ZERO)
 					{
 						input.Consume();
-						if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set94));
+						if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set96));
 						state.errorRecovery=false;state.failed=false;
 					}
 					else
@@ -4901,20 +4973,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt31 >= 1)
-						goto loop31;
+					if (cnt32 >= 1)
+						goto loop32;
 
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee31 = new EarlyExitException( 31, input );
-					DebugRecognitionException(eee31);
-					throw eee31;
+					EarlyExitException eee32 = new EarlyExitException( 32, input );
+					DebugRecognitionException(eee32);
+					throw eee32;
 				}
-				cnt31++;
+				cnt32++;
 			}
-			loop31:
+			loop32:
 				;
 
-			} finally { DebugExitSubRule(31); }
+			} finally { DebugExitSubRule(32); }
 
 
 			}
@@ -4961,65 +5033,65 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken HEX_VAL_PREFIX95 = default(CommonToken);
-		CommonToken DASH96 = default(CommonToken);
 		CommonToken HEX_VAL_PREFIX97 = default(CommonToken);
-		CommonToken char_literal99 = default(CommonToken);
-		CommonToken HEX_VAL_PREFIX101 = default(CommonToken);
+		CommonToken DASH98 = default(CommonToken);
+		CommonToken HEX_VAL_PREFIX99 = default(CommonToken);
+		CommonToken char_literal101 = default(CommonToken);
+		CommonToken HEX_VAL_PREFIX103 = default(CommonToken);
 		AstParserRuleReturnScope<CommonTree, CommonToken> min = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> max = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
-		AstParserRuleReturnScope<CommonTree, CommonToken> hex_val_number98 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> hex_val_number100 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 		AstParserRuleReturnScope<CommonTree, CommonToken> hex_val_number102 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
+		AstParserRuleReturnScope<CommonTree, CommonToken> hex_val_number104 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
-		CommonTree HEX_VAL_PREFIX95_tree = default(CommonTree);
-		CommonTree DASH96_tree = default(CommonTree);
 		CommonTree HEX_VAL_PREFIX97_tree = default(CommonTree);
-		CommonTree char_literal99_tree = default(CommonTree);
-		CommonTree HEX_VAL_PREFIX101_tree = default(CommonTree);
+		CommonTree DASH98_tree = default(CommonTree);
+		CommonTree HEX_VAL_PREFIX99_tree = default(CommonTree);
+		CommonTree char_literal101_tree = default(CommonTree);
+		CommonTree HEX_VAL_PREFIX103_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_HEX_VAL_PREFIX=new RewriteRuleITokenStream(adaptor,"token HEX_VAL_PREFIX");
 		RewriteRuleITokenStream stream_DASH=new RewriteRuleITokenStream(adaptor,"token DASH");
-		RewriteRuleITokenStream stream_62=new RewriteRuleITokenStream(adaptor,"token 62");
+		RewriteRuleITokenStream stream_64=new RewriteRuleITokenStream(adaptor,"token 64");
 		RewriteRuleSubtreeStream stream_hex_val_number=new RewriteRuleSubtreeStream(adaptor,"rule hex_val_number");
 		try { DebugEnterRule(GrammarFileName, "hex_val");
 		DebugLocation(261, 2);
 		try
 		{
 			// AbnfAst.g3:262:2: ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) )
-			int alt33=3;
-			try { DebugEnterDecision(33, false);
+			int alt34=3;
+			try { DebugEnterDecision(34, false);
 			try
 			{
-				alt33 = dfa33.Predict(input);
+				alt34 = dfa34.Predict(input);
 			}
 			catch (NoViableAltException nvae)
 			{
 				DebugRecognitionException(nvae);
 				throw;
 			}
-			} finally { DebugExitDecision(33); }
-			switch (alt33)
+			} finally { DebugExitDecision(34); }
+			switch (alt34)
 			{
 			case 1:
 				DebugEnterAlt(1);
 				// AbnfAst.g3:263:3: HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number
 				{
 				DebugLocation(263, 3);
-				HEX_VAL_PREFIX95=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1457); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX95);
+				HEX_VAL_PREFIX97=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1465); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX97);
 
 				DebugLocation(263, 21);
-				PushFollow(Follow._hex_val_number_in_hex_val1461);
+				PushFollow(Follow._hex_val_number_in_hex_val1469);
 				min=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_hex_val_number.Add(min.Tree);
 				DebugLocation(263, 37);
-				DASH96=(CommonToken)Match(input,DASH,Follow._DASH_in_hex_val1463); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_DASH.Add(DASH96);
+				DASH98=(CommonToken)Match(input,DASH,Follow._DASH_in_hex_val1471); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_DASH.Add(DASH98);
 
 				DebugLocation(263, 45);
-				PushFollow(Follow._hex_val_number_in_hex_val1467);
+				PushFollow(Follow._hex_val_number_in_hex_val1475);
 				max=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
@@ -5071,67 +5143,67 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				// AbnfAst.g3:264:5: HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+
 				{
 				DebugLocation(264, 5);
-				HEX_VAL_PREFIX97=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1485); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX97);
+				HEX_VAL_PREFIX99=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1493); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX99);
 
 				DebugLocation(264, 20);
-				PushFollow(Follow._hex_val_number_in_hex_val1487);
-				hex_val_number98=hex_val_number();
+				PushFollow(Follow._hex_val_number_in_hex_val1495);
+				hex_val_number100=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_hex_val_number.Add(hex_val_number98.Tree);
+				if (state.backtracking == 0) stream_hex_val_number.Add(hex_val_number100.Tree);
 				DebugLocation(264, 35);
 				// AbnfAst.g3:264:35: ( '.' hex_val_number )+
-				int cnt32=0;
-				try { DebugEnterSubRule(32);
+				int cnt33=0;
+				try { DebugEnterSubRule(33);
 				while (true)
 				{
-					int alt32=2;
-					try { DebugEnterDecision(32, false);
-					int LA32_1 = input.LA(1);
+					int alt33=2;
+					try { DebugEnterDecision(33, false);
+					int LA33_1 = input.LA(1);
 
-					if ((LA32_1==62))
+					if ((LA33_1==64))
 					{
-						alt32 = 1;
+						alt33 = 1;
 					}
 
 
-					} finally { DebugExitDecision(32); }
-					switch (alt32)
+					} finally { DebugExitDecision(33); }
+					switch (alt33)
 					{
 					case 1:
 						DebugEnterAlt(1);
 						// AbnfAst.g3:264:36: '.' hex_val_number
 						{
 						DebugLocation(264, 36);
-						char_literal99=(CommonToken)Match(input,62,Follow._62_in_hex_val1490); if (state.failed) return retval; 
-						if (state.backtracking == 0) stream_62.Add(char_literal99);
+						char_literal101=(CommonToken)Match(input,64,Follow._64_in_hex_val1498); if (state.failed) return retval; 
+						if (state.backtracking == 0) stream_64.Add(char_literal101);
 
 						DebugLocation(264, 40);
-						PushFollow(Follow._hex_val_number_in_hex_val1492);
-						hex_val_number100=hex_val_number();
+						PushFollow(Follow._hex_val_number_in_hex_val1500);
+						hex_val_number102=hex_val_number();
 						PopFollow();
 						if (state.failed) return retval;
-						if (state.backtracking == 0) stream_hex_val_number.Add(hex_val_number100.Tree);
+						if (state.backtracking == 0) stream_hex_val_number.Add(hex_val_number102.Tree);
 
 						}
 						break;
 
 					default:
-						if (cnt32 >= 1)
-							goto loop32;
+						if (cnt33 >= 1)
+							goto loop33;
 
 						if (state.backtracking>0) {state.failed=true; return retval;}
-						EarlyExitException eee32 = new EarlyExitException( 32, input );
-						DebugRecognitionException(eee32);
-						throw eee32;
+						EarlyExitException eee33 = new EarlyExitException( 33, input );
+						DebugRecognitionException(eee33);
+						throw eee33;
 					}
-					cnt32++;
+					cnt33++;
 				}
-				loop32:
+				loop33:
 					;
 
-				} finally { DebugExitSubRule(32); }
+				} finally { DebugExitSubRule(33); }
 
 
 
@@ -5186,15 +5258,15 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				// AbnfAst.g3:265:5: HEX_VAL_PREFIX hex_val_number
 				{
 				DebugLocation(265, 5);
-				HEX_VAL_PREFIX101=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1513); if (state.failed) return retval; 
-				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX101);
+				HEX_VAL_PREFIX103=(CommonToken)Match(input,HEX_VAL_PREFIX,Follow._HEX_VAL_PREFIX_in_hex_val1521); if (state.failed) return retval; 
+				if (state.backtracking == 0) stream_HEX_VAL_PREFIX.Add(HEX_VAL_PREFIX103);
 
 				DebugLocation(265, 20);
-				PushFollow(Follow._hex_val_number_in_hex_val1515);
-				hex_val_number102=hex_val_number();
+				PushFollow(Follow._hex_val_number_in_hex_val1523);
+				hex_val_number104=hex_val_number();
 				PopFollow();
 				if (state.failed) return retval;
-				if (state.backtracking == 0) stream_hex_val_number.Add(hex_val_number102.Tree);
+				if (state.backtracking == 0) stream_hex_val_number.Add(hex_val_number104.Tree);
 
 
 				{
@@ -5277,7 +5349,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		AstParserRuleReturnScope<CommonTree, CommonToken> hex_number103 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
+		AstParserRuleReturnScope<CommonTree, CommonToken> hex_number105 = default(AstParserRuleReturnScope<CommonTree, CommonToken>);
 
 		RewriteRuleSubtreeStream stream_hex_number=new RewriteRuleSubtreeStream(adaptor,"rule hex_number");
 		try { DebugEnterRule(GrammarFileName, "hex_val_number");
@@ -5289,11 +5361,11 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			// AbnfAst.g3:270:3: hex_number
 			{
 			DebugLocation(270, 3);
-			PushFollow(Follow._hex_number_in_hex_val_number1563);
-			hex_number103=hex_number();
+			PushFollow(Follow._hex_number_in_hex_val_number1571);
+			hex_number105=hex_number();
 			PopFollow();
 			if (state.failed) return retval;
-			if (state.backtracking == 0) stream_hex_number.Add(hex_number103.Tree);
+			if (state.backtracking == 0) stream_hex_number.Add(hex_number105.Tree);
 
 
 			{
@@ -5374,9 +5446,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken set104 = default(CommonToken);
+		CommonToken set106 = default(CommonToken);
 
-		CommonTree set104_tree = default(CommonTree);
+		CommonTree set106_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "hex_number");
 		DebugLocation(273, 2);
 		try
@@ -5389,22 +5461,22 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 			DebugLocation(275, 3);
 			// AbnfAst.g3:275:3: ( ZERO | ONE | OTHER_DIGIT | HEX_ALPHA )+
-			int cnt34=0;
-			try { DebugEnterSubRule(34);
+			int cnt35=0;
+			try { DebugEnterSubRule(35);
 			while (true)
 			{
-				int alt34=2;
-				try { DebugEnterDecision(34, false);
-				int LA34_1 = input.LA(1);
+				int alt35=2;
+				try { DebugEnterDecision(35, false);
+				int LA35_1 = input.LA(1);
 
-				if ((LA34_1==HEX_ALPHA||LA34_1==ONE||LA34_1==OTHER_DIGIT||LA34_1==ZERO))
+				if ((LA35_1==HEX_ALPHA||LA35_1==ONE||LA35_1==OTHER_DIGIT||LA35_1==ZERO))
 				{
-					alt34 = 1;
+					alt35 = 1;
 				}
 
 
-				} finally { DebugExitDecision(34); }
-				switch (alt34)
+				} finally { DebugExitDecision(35); }
+				switch (alt35)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -5412,11 +5484,11 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					{
 					DebugLocation(275, 3);
 
-					set104=(CommonToken)input.LT(1);
+					set106=(CommonToken)input.LT(1);
 					if (input.LA(1)==HEX_ALPHA||input.LA(1)==ONE||input.LA(1)==OTHER_DIGIT||input.LA(1)==ZERO)
 					{
 						input.Consume();
-						if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set104));
+						if (state.backtracking == 0) adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set106));
 						state.errorRecovery=false;state.failed=false;
 					}
 					else
@@ -5432,20 +5504,20 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt34 >= 1)
-						goto loop34;
+					if (cnt35 >= 1)
+						goto loop35;
 
 					if (state.backtracking>0) {state.failed=true; return retval;}
-					EarlyExitException eee34 = new EarlyExitException( 34, input );
-					DebugRecognitionException(eee34);
-					throw eee34;
+					EarlyExitException eee35 = new EarlyExitException( 35, input );
+					DebugRecognitionException(eee35);
+					throw eee35;
 				}
-				cnt34++;
+				cnt35++;
 			}
-			loop34:
+			loop35:
 				;
 
-			} finally { DebugExitSubRule(34); }
+			} finally { DebugExitSubRule(35); }
 
 
 			}
@@ -5492,9 +5564,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 
 		CommonTree root_0 = default(CommonTree);
 
-		CommonToken PROSE_VAL105 = default(CommonToken);
+		CommonToken PROSE_VAL107 = default(CommonToken);
 
-		CommonTree PROSE_VAL105_tree = default(CommonTree);
+		CommonTree PROSE_VAL107_tree = default(CommonTree);
 		RewriteRuleITokenStream stream_PROSE_VAL=new RewriteRuleITokenStream(adaptor,"token PROSE_VAL");
 		try { DebugEnterRule(GrammarFileName, "prose_val");
 		DebugLocation(279, 2);
@@ -5505,8 +5577,8 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			// AbnfAst.g3:281:3: PROSE_VAL
 			{
 			DebugLocation(281, 3);
-			PROSE_VAL105=(CommonToken)Match(input,PROSE_VAL,Follow._PROSE_VAL_in_prose_val1617); if (state.failed) return retval; 
-			if (state.backtracking == 0) stream_PROSE_VAL.Add(PROSE_VAL105);
+			PROSE_VAL107=(CommonToken)Match(input,PROSE_VAL,Follow._PROSE_VAL_in_prose_val1625); if (state.failed) return retval; 
+			if (state.backtracking == 0) stream_PROSE_VAL.Add(PROSE_VAL107);
 
 
 
@@ -5670,9 +5742,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 	private DFA12 dfa12;
 	private DFA14 dfa14;
 	private DFA15 dfa15;
-	private DFA27 dfa27;
-	private DFA30 dfa30;
-	private DFA33 dfa33;
+	private DFA28 dfa28;
+	private DFA31 dfa31;
+	private DFA34 dfa34;
 
 	protected override void InitDFAs()
 	{
@@ -5681,9 +5753,9 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		dfa12 = new DFA12( this );
 		dfa14 = new DFA14( this );
 		dfa15 = new DFA15( this );
-		dfa27 = new DFA27( this );
-		dfa30 = new DFA30( this );
-		dfa33 = new DFA33( this );
+		dfa28 = new DFA28( this );
+		dfa31 = new DFA31( this );
+		dfa34 = new DFA34( this );
 	}
 
 	private class DFA7 : DFA
@@ -5869,16 +5941,16 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		private const string DFA12_minS =
 			"\x4\xE\x2\xFFFF\xC\xE";
 		private const string DFA12_maxS =
-			"\x2\x43\x2\x37\x2\xFFFF\x2\x37\x2\x43\x2\x37\x1\x43\x2\x37\x3\x43";
+			"\x2\x45\x2\x37\x2\xFFFF\x2\x37\x2\x45\x2\x37\x1\x45\x2\x37\x3\x45";
 		private const string DFA12_acceptS =
 			"\x4\xFFFF\x1\x2\x1\x1\xC\xFFFF";
 		private const string DFA12_specialS =
 			"\x12\xFFFF}>";
 		private static readonly string[] DFA12_transitionS =
 			{
-				"\x1\x2\x2\xFFFF\x1\x3\x25\xFFFF\x1\x1\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\x2\x2\xFFFF\x1\x3\x25\xFFFF\x1\x1\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4",
-				"\x1\x6\x2\xFFFF\x1\x7\x25\xFFFF\x1\x1\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\x6\x2\xFFFF\x1\x7\x25\xFFFF\x1\x1\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x8",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x8",
@@ -5886,21 +5958,21 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				"",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x9",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x9",
-				"\x1\xA\x2\xFFFF\x1\xB\x25\xFFFF\x1\xC\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\xA\x2\xFFFF\x1\xB\x25\xFFFF\x1\xC\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4",
-				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x10",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x10",
-				"\x1\xA\x2\xFFFF\x1\xB\x25\xFFFF\x1\xC\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\xA\x2\xFFFF\x1\xB\x25\xFFFF\x1\xC\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x11",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x11",
-				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4",
-				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4",
-				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x5\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
+				"\x1\xD\x2\xFFFF\x1\xE\x25\xFFFF\x1\xF\x7\xFFFF\x1\x4\x1\xFFFF\x1\x5"+
 				"\x3\xFFFF\x1\x4"
 			};
 
@@ -5953,19 +6025,19 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			"\x1\xE\x1\x5\x2\xE\x1\xFFFF\x2\xE\x1\xFFFF\x3\x5\x2\xE\x1\x5\x2\xE\x2"+
 			"\x5";
 		private const string DFA14_maxS =
-			"\x2\x43\x2\x37\x1\xFFFF\x2\x37\x1\xFFFF\x3\x43\x2\x37\x1\x43\x2\x37\x2"+
-			"\x43";
+			"\x2\x45\x2\x37\x1\xFFFF\x2\x37\x1\xFFFF\x3\x45\x2\x37\x1\x45\x2\x37\x2"+
+			"\x45";
 		private const string DFA14_acceptS =
 			"\x4\xFFFF\x1\x2\x2\xFFFF\x1\x1\xA\xFFFF";
 		private const string DFA14_specialS =
 			"\x12\xFFFF}>";
 		private static readonly string[] DFA14_transitionS =
 			{
-				"\x1\x2\x2\xFFFF\x1\x3\x25\xFFFF\x1\x1\x5\xFFFF\x1\x4\x1\xFFFF\x1\x4"+
+				"\x1\x2\x2\xFFFF\x1\x3\x25\xFFFF\x1\x1\x7\xFFFF\x1\x4\x1\xFFFF\x1\x4"+
 				"\x3\xFFFF\x1\x4",
 				"\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x5\x2\xFFFF\x1\x6\x4\xFFFF\x1\x7\x5"+
 				"\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x3\x7\x2\xFFFF\x1"+
-				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\x1\x1\x7\x1\xFFFF\x3\x7\x1\x4\x1\xFFFF"+
+				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\x1\x1\x7\x1\xFFFF\x5\x7\x1\x4\x1\xFFFF"+
 				"\x1\x4\x2\xFFFF\x1\x7\x1\x4",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x8",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x8",
@@ -5975,31 +6047,31 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 				"",
 				"\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\xB\x2\xFFFF\x1\xC\x4\xFFFF\x1\x7\x5"+
 				"\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x3\x7\x2\xFFFF\x1"+
-				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xA\x1\x7\x1\xFFFF\x3\x7\x1\x4\x1\xFFFF"+
+				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xA\x1\x7\x1\xFFFF\x5\x7\x1\x4\x1\xFFFF"+
 				"\x1\x4\x2\xFFFF\x1\x7\x1\x4",
 				"\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\xE\x2\xFFFF\x1\xF\x4\xFFFF\x1\x7\x5"+
 				"\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x3\x7\x2\xFFFF\x1"+
-				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x3\x7\x1\x4\x1\xFFFF"+
+				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x5\x7\x1\x4\x1\xFFFF"+
 				"\x1\x4\x2\xFFFF\x1\x7\x1\x4",
 				"\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\xB\x2\xFFFF\x1\xC\x4\xFFFF\x1\x7\x5"+
 				"\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x3\x7\x2\xFFFF\x1"+
-				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xA\x1\x7\x1\xFFFF\x3\x7\x1\x4\x1\xFFFF"+
+				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xA\x1\x7\x1\xFFFF\x5\x7\x1\x4\x1\xFFFF"+
 				"\x1\x4\x2\xFFFF\x1\x7\x1\x4",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x10",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x10",
 				"\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\xE\x2\xFFFF\x1\xF\x4\xFFFF\x1\x7\x5"+
 				"\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x3\x7\x2\xFFFF\x1"+
-				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x3\x7\x1\x4\x1\xFFFF"+
+				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x5\x7\x1\x4\x1\xFFFF"+
 				"\x1\x4\x2\xFFFF\x1\x7\x1\x4",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x11",
 				"\x1\x4\x2\xFFFF\x1\x4\xA\xFFFF\x1\x4\xC\xFFFF\x1\x4\xD\xFFFF\x1\x11",
 				"\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\xE\x2\xFFFF\x1\xF\x4\xFFFF\x1\x7\x5"+
 				"\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x3\x7\x2\xFFFF\x1"+
-				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x3\x7\x1\x4\x1\xFFFF"+
+				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x5\x7\x1\x4\x1\xFFFF"+
 				"\x1\x4\x2\xFFFF\x1\x7\x1\x4",
 				"\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\xE\x2\xFFFF\x1\xF\x4\xFFFF\x1\x7\x5"+
 				"\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4\xFFFF\x1\x7\x3\xFFFF\x3\x7\x2\xFFFF\x1"+
-				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x3\x7\x1\x4\x1\xFFFF"+
+				"\x7\x5\xFFFF\x1\x7\x2\xFFFF\x1\xD\x1\x7\x1\xFFFF\x5\x7\x1\x4\x1\xFFFF"+
 				"\x1\x4\x2\xFFFF\x1\x7\x1\x4"
 			};
 
@@ -6051,7 +6123,7 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		private const string DFA15_minS =
 			"\x1\x5\x1\x9\x1\x5\x3\xFFFF\x1\x9\x3\xFFFF";
 		private const string DFA15_maxS =
-			"\x3\x42\x3\xFFFF\x1\x42\x3\xFFFF";
+			"\x3\x44\x3\xFFFF\x1\x44\x3\xFFFF";
 		private const string DFA15_acceptS =
 			"\x3\xFFFF\x1\x6\x1\x1\x1\x4\x1\xFFFF\x1\x5\x1\x2\x1\x3";
 		private const string DFA15_specialS =
@@ -6060,19 +6132,19 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 			{
 				"\x1\x1\x3\xFFFF\x1\x3\xC\xFFFF\x1\x3\x5\xFFFF\x1\x3\x3\xFFFF\x1\x3\x4"+
 				"\xFFFF\x1\x2\x3\xFFFF\x1\x3\x1\x2\x1\x3\x2\xFFFF\x1\x3\x5\xFFFF\x1\x3"+
-				"\x3\xFFFF\x1\x2\x1\xFFFF\x3\x3\x5\xFFFF\x1\x3",
+				"\x3\xFFFF\x1\x2\x1\xFFFF\x5\x3\x5\xFFFF\x1\x3",
 				"\x1\x5\xC\xFFFF\x1\x5\x5\xFFFF\x1\x5\x3\xFFFF\x1\x5\x4\xFFFF\x1\x4\x3"+
 				"\xFFFF\x1\x5\x1\x4\x1\x5\x2\xFFFF\x1\x5\x5\xFFFF\x1\x5\x3\xFFFF\x1\x4"+
-				"\x1\xFFFF\x3\x5\x5\xFFFF\x1\x5",
+				"\x1\xFFFF\x5\x5\x5\xFFFF\x1\x5",
 				"\x1\x6\x3\xFFFF\x1\x7\xC\xFFFF\x1\x7\x5\xFFFF\x1\x7\x3\xFFFF\x1\x7\x4"+
 				"\xFFFF\x1\x2\x3\xFFFF\x1\x7\x1\x2\x1\x7\x2\xFFFF\x1\x7\x5\xFFFF\x1\x7"+
-				"\x3\xFFFF\x1\x2\x1\xFFFF\x3\x7\x5\xFFFF\x1\x7",
+				"\x3\xFFFF\x1\x2\x1\xFFFF\x5\x7\x5\xFFFF\x1\x7",
 				"",
 				"",
 				"",
 				"\x1\x9\xC\xFFFF\x1\x9\x5\xFFFF\x1\x9\x3\xFFFF\x1\x9\x4\xFFFF\x1\x8\x3"+
 				"\xFFFF\x1\x9\x1\x8\x1\x9\x2\xFFFF\x1\x9\x5\xFFFF\x1\x9\x3\xFFFF\x1\x8"+
-				"\x1\xFFFF\x3\x9\x5\xFFFF\x1\x9",
+				"\x1\xFFFF\x5\x9\x5\xFFFF\x1\x9",
 				"",
 				"",
 				""
@@ -6117,60 +6189,60 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		}
 	}
 
-	private class DFA27 : DFA
+	private class DFA28 : DFA
 	{
-		private const string DFA27_eotS =
+		private const string DFA28_eotS =
 			"\x6\xFFFF";
-		private const string DFA27_eofS =
+		private const string DFA28_eofS =
 			"\x2\xFFFF\x1\x5\x3\xFFFF";
-		private const string DFA27_minS =
+		private const string DFA28_minS =
 			"\x1\x9\x1\x25\x1\xE\x3\xFFFF";
-		private const string DFA27_maxS =
-			"\x1\x9\x1\x38\x1\x43\x3\xFFFF";
-		private const string DFA27_acceptS =
+		private const string DFA28_maxS =
+			"\x1\x9\x1\x38\x1\x45\x3\xFFFF";
+		private const string DFA28_acceptS =
 			"\x3\xFFFF\x1\x1\x1\x2\x1\x3";
-		private const string DFA27_specialS =
+		private const string DFA28_specialS =
 			"\x6\xFFFF}>";
-		private static readonly string[] DFA27_transitionS =
+		private static readonly string[] DFA28_transitionS =
 			{
 				"\x1\x1",
 				"\x1\x2\x12\xFFFF\x1\x2",
-				"\x1\x5\x2\xFFFF\x1\x5\x1\x3\x12\xFFFF\x1\x2\x11\xFFFF\x1\x5\x1\x2\x4"+
+				"\x1\x5\x2\xFFFF\x1\x5\x1\x3\x12\xFFFF\x1\x2\x11\xFFFF\x1\x5\x1\x2\x6"+
 				"\xFFFF\x1\x5\x1\x4\x1\x5\x3\xFFFF\x1\x5",
 				"",
 				"",
 				""
 			};
 
-		private static readonly short[] DFA27_eot = DFA.UnpackEncodedString(DFA27_eotS);
-		private static readonly short[] DFA27_eof = DFA.UnpackEncodedString(DFA27_eofS);
-		private static readonly char[] DFA27_min = DFA.UnpackEncodedStringToUnsignedChars(DFA27_minS);
-		private static readonly char[] DFA27_max = DFA.UnpackEncodedStringToUnsignedChars(DFA27_maxS);
-		private static readonly short[] DFA27_accept = DFA.UnpackEncodedString(DFA27_acceptS);
-		private static readonly short[] DFA27_special = DFA.UnpackEncodedString(DFA27_specialS);
-		private static readonly short[][] DFA27_transition;
+		private static readonly short[] DFA28_eot = DFA.UnpackEncodedString(DFA28_eotS);
+		private static readonly short[] DFA28_eof = DFA.UnpackEncodedString(DFA28_eofS);
+		private static readonly char[] DFA28_min = DFA.UnpackEncodedStringToUnsignedChars(DFA28_minS);
+		private static readonly char[] DFA28_max = DFA.UnpackEncodedStringToUnsignedChars(DFA28_maxS);
+		private static readonly short[] DFA28_accept = DFA.UnpackEncodedString(DFA28_acceptS);
+		private static readonly short[] DFA28_special = DFA.UnpackEncodedString(DFA28_specialS);
+		private static readonly short[][] DFA28_transition;
 
-		static DFA27()
+		static DFA28()
 		{
-			int numStates = DFA27_transitionS.Length;
-			DFA27_transition = new short[numStates][];
+			int numStates = DFA28_transitionS.Length;
+			DFA28_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA27_transition[i] = DFA.UnpackEncodedString(DFA27_transitionS[i]);
+				DFA28_transition[i] = DFA.UnpackEncodedString(DFA28_transitionS[i]);
 			}
 		}
 
-		public DFA27( BaseRecognizer recognizer )
+		public DFA28( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 27;
-			this.eot = DFA27_eot;
-			this.eof = DFA27_eof;
-			this.min = DFA27_min;
-			this.max = DFA27_max;
-			this.accept = DFA27_accept;
-			this.special = DFA27_special;
-			this.transition = DFA27_transition;
+			this.decisionNumber = 28;
+			this.eot = DFA28_eot;
+			this.eof = DFA28_eof;
+			this.min = DFA28_min;
+			this.max = DFA28_max;
+			this.accept = DFA28_accept;
+			this.special = DFA28_special;
+			this.transition = DFA28_transition;
 		}
 
 		public override string Description { get { return "223:1: bin_val : ( BIN_VAL_PREFIX min= bin_val_number DASH max= bin_val_number -> ^( BIN_VAL_RANGE_NODE $min $max) | BIN_VAL_PREFIX bin_val_number ( '.' bin_val_number )+ -> ^( BIN_VAL_CONCAT_NODE ( bin_val_number )+ ) | BIN_VAL_PREFIX bin_val_number -> ^( BIN_VAL_NODE bin_val_number ) );"; } }
@@ -6181,60 +6253,60 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		}
 	}
 
-	private class DFA30 : DFA
+	private class DFA31 : DFA
 	{
-		private const string DFA30_eotS =
+		private const string DFA31_eotS =
 			"\x6\xFFFF";
-		private const string DFA30_eofS =
+		private const string DFA31_eofS =
 			"\x2\xFFFF\x1\x5\x3\xFFFF";
-		private const string DFA30_minS =
+		private const string DFA31_minS =
 			"\x1\x16\x1\x25\x1\xE\x3\xFFFF";
-		private const string DFA30_maxS =
-			"\x1\x16\x1\x38\x1\x43\x3\xFFFF";
-		private const string DFA30_acceptS =
+		private const string DFA31_maxS =
+			"\x1\x16\x1\x38\x1\x45\x3\xFFFF";
+		private const string DFA31_acceptS =
 			"\x3\xFFFF\x1\x1\x1\x2\x1\x3";
-		private const string DFA30_specialS =
+		private const string DFA31_specialS =
 			"\x6\xFFFF}>";
-		private static readonly string[] DFA30_transitionS =
+		private static readonly string[] DFA31_transitionS =
 			{
 				"\x1\x1",
 				"\x1\x2\x4\xFFFF\x1\x2\xD\xFFFF\x1\x2",
 				"\x1\x5\x2\xFFFF\x1\x5\x1\x3\x12\xFFFF\x1\x2\x4\xFFFF\x1\x2\xC\xFFFF"+
-				"\x1\x5\x1\x2\x4\xFFFF\x1\x5\x1\x4\x1\x5\x3\xFFFF\x1\x5",
+				"\x1\x5\x1\x2\x6\xFFFF\x1\x5\x1\x4\x1\x5\x3\xFFFF\x1\x5",
 				"",
 				"",
 				""
 			};
 
-		private static readonly short[] DFA30_eot = DFA.UnpackEncodedString(DFA30_eotS);
-		private static readonly short[] DFA30_eof = DFA.UnpackEncodedString(DFA30_eofS);
-		private static readonly char[] DFA30_min = DFA.UnpackEncodedStringToUnsignedChars(DFA30_minS);
-		private static readonly char[] DFA30_max = DFA.UnpackEncodedStringToUnsignedChars(DFA30_maxS);
-		private static readonly short[] DFA30_accept = DFA.UnpackEncodedString(DFA30_acceptS);
-		private static readonly short[] DFA30_special = DFA.UnpackEncodedString(DFA30_specialS);
-		private static readonly short[][] DFA30_transition;
+		private static readonly short[] DFA31_eot = DFA.UnpackEncodedString(DFA31_eotS);
+		private static readonly short[] DFA31_eof = DFA.UnpackEncodedString(DFA31_eofS);
+		private static readonly char[] DFA31_min = DFA.UnpackEncodedStringToUnsignedChars(DFA31_minS);
+		private static readonly char[] DFA31_max = DFA.UnpackEncodedStringToUnsignedChars(DFA31_maxS);
+		private static readonly short[] DFA31_accept = DFA.UnpackEncodedString(DFA31_acceptS);
+		private static readonly short[] DFA31_special = DFA.UnpackEncodedString(DFA31_specialS);
+		private static readonly short[][] DFA31_transition;
 
-		static DFA30()
+		static DFA31()
 		{
-			int numStates = DFA30_transitionS.Length;
-			DFA30_transition = new short[numStates][];
+			int numStates = DFA31_transitionS.Length;
+			DFA31_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA30_transition[i] = DFA.UnpackEncodedString(DFA30_transitionS[i]);
+				DFA31_transition[i] = DFA.UnpackEncodedString(DFA31_transitionS[i]);
 			}
 		}
 
-		public DFA30( BaseRecognizer recognizer )
+		public DFA31( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 30;
-			this.eot = DFA30_eot;
-			this.eof = DFA30_eof;
-			this.min = DFA30_min;
-			this.max = DFA30_max;
-			this.accept = DFA30_accept;
-			this.special = DFA30_special;
-			this.transition = DFA30_transition;
+			this.decisionNumber = 31;
+			this.eot = DFA31_eot;
+			this.eof = DFA31_eof;
+			this.min = DFA31_min;
+			this.max = DFA31_max;
+			this.accept = DFA31_accept;
+			this.special = DFA31_special;
+			this.transition = DFA31_transition;
 		}
 
 		public override string Description { get { return "243:1: dec_val : ( DEC_VAL_PREFIX min= dec_val_number DASH max= dec_val_number -> ^( DEC_VAL_RANGE_NODE $min $max) | DEC_VAL_PREFIX dec_val_number ( '.' dec_val_number )+ -> ^( DEC_VAL_CONCAT_NODE ( dec_val_number )+ ) | DEC_VAL_PREFIX dec_val_number -> ^( DEC_VAL_NODE dec_val_number ) );"; } }
@@ -6245,60 +6317,60 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		}
 	}
 
-	private class DFA33 : DFA
+	private class DFA34 : DFA
 	{
-		private const string DFA33_eotS =
+		private const string DFA34_eotS =
 			"\x6\xFFFF";
-		private const string DFA33_eofS =
+		private const string DFA34_eofS =
 			"\x2\xFFFF\x1\x5\x3\xFFFF";
-		private const string DFA33_minS =
+		private const string DFA34_minS =
 			"\x1\x20\x1\x1C\x1\xE\x3\xFFFF";
-		private const string DFA33_maxS =
-			"\x1\x20\x1\x38\x1\x43\x3\xFFFF";
-		private const string DFA33_acceptS =
+		private const string DFA34_maxS =
+			"\x1\x20\x1\x38\x1\x45\x3\xFFFF";
+		private const string DFA34_acceptS =
 			"\x3\xFFFF\x1\x1\x1\x2\x1\x3";
-		private const string DFA33_specialS =
+		private const string DFA34_specialS =
 			"\x6\xFFFF}>";
-		private static readonly string[] DFA33_transitionS =
+		private static readonly string[] DFA34_transitionS =
 			{
 				"\x1\x1",
 				"\x1\x2\x8\xFFFF\x1\x2\x4\xFFFF\x1\x2\xD\xFFFF\x1\x2",
 				"\x1\x5\x2\xFFFF\x1\x5\x1\x3\x9\xFFFF\x1\x2\x8\xFFFF\x1\x2\x4\xFFFF\x1"+
-				"\x2\xC\xFFFF\x1\x5\x1\x2\x4\xFFFF\x1\x5\x1\x4\x1\x5\x3\xFFFF\x1\x5",
+				"\x2\xC\xFFFF\x1\x5\x1\x2\x6\xFFFF\x1\x5\x1\x4\x1\x5\x3\xFFFF\x1\x5",
 				"",
 				"",
 				""
 			};
 
-		private static readonly short[] DFA33_eot = DFA.UnpackEncodedString(DFA33_eotS);
-		private static readonly short[] DFA33_eof = DFA.UnpackEncodedString(DFA33_eofS);
-		private static readonly char[] DFA33_min = DFA.UnpackEncodedStringToUnsignedChars(DFA33_minS);
-		private static readonly char[] DFA33_max = DFA.UnpackEncodedStringToUnsignedChars(DFA33_maxS);
-		private static readonly short[] DFA33_accept = DFA.UnpackEncodedString(DFA33_acceptS);
-		private static readonly short[] DFA33_special = DFA.UnpackEncodedString(DFA33_specialS);
-		private static readonly short[][] DFA33_transition;
+		private static readonly short[] DFA34_eot = DFA.UnpackEncodedString(DFA34_eotS);
+		private static readonly short[] DFA34_eof = DFA.UnpackEncodedString(DFA34_eofS);
+		private static readonly char[] DFA34_min = DFA.UnpackEncodedStringToUnsignedChars(DFA34_minS);
+		private static readonly char[] DFA34_max = DFA.UnpackEncodedStringToUnsignedChars(DFA34_maxS);
+		private static readonly short[] DFA34_accept = DFA.UnpackEncodedString(DFA34_acceptS);
+		private static readonly short[] DFA34_special = DFA.UnpackEncodedString(DFA34_specialS);
+		private static readonly short[][] DFA34_transition;
 
-		static DFA33()
+		static DFA34()
 		{
-			int numStates = DFA33_transitionS.Length;
-			DFA33_transition = new short[numStates][];
+			int numStates = DFA34_transitionS.Length;
+			DFA34_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA33_transition[i] = DFA.UnpackEncodedString(DFA33_transitionS[i]);
+				DFA34_transition[i] = DFA.UnpackEncodedString(DFA34_transitionS[i]);
 			}
 		}
 
-		public DFA33( BaseRecognizer recognizer )
+		public DFA34( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 33;
-			this.eot = DFA33_eot;
-			this.eof = DFA33_eof;
-			this.min = DFA33_min;
-			this.max = DFA33_max;
-			this.accept = DFA33_accept;
-			this.special = DFA33_special;
-			this.transition = DFA33_transition;
+			this.decisionNumber = 34;
+			this.eot = DFA34_eot;
+			this.eof = DFA34_eof;
+			this.min = DFA34_min;
+			this.max = DFA34_max;
+			this.accept = DFA34_accept;
+			this.special = DFA34_special;
+			this.transition = DFA34_transition;
 		}
 
 		public override string Description { get { return "261:1: hex_val : ( HEX_VAL_PREFIX min= hex_val_number DASH max= hex_val_number -> ^( HEX_VAL_RANGE_NODE $min $max) | HEX_VAL_PREFIX hex_val_number ( '.' hex_val_number )+ -> ^( HEX_VAL_CONCAT_NODE ( hex_val_number )+ ) | HEX_VAL_PREFIX hex_val_number -> ^( HEX_VAL_NODE hex_val_number ) );"; } }
@@ -6320,14 +6392,14 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		public static readonly BitSet _c_wsp_in_rulelist226 = new BitSet(new ulong[]{0x80000000024000UL});
 		public static readonly BitSet _c_nl_in_rulelist233 = new BitSet(new ulong[]{0x0UL});
 		public static readonly BitSet _EOF_in_rulelist239 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _rulename_in_rule262 = new BitSet(new ulong[]{0x80000000024000UL,0x3UL});
-		public static readonly BitSet _defined_as_in_rule264 = new BitSet(new ulong[]{0x1D104E2110400220UL,0x4UL});
+		public static readonly BitSet _rulename_in_rule262 = new BitSet(new ulong[]{0x80000000024000UL,0xCUL});
+		public static readonly BitSet _defined_as_in_rule264 = new BitSet(new ulong[]{0x7D104E2110400220UL,0x10UL});
 		public static readonly BitSet _elements_in_rule266 = new BitSet(new ulong[]{0x0UL});
 		public static readonly BitSet _c_nl_in_rule269 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _EOF_in_rule273 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _rulechars_in_rulename306 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _set_in_rulechars328 = new BitSet(new ulong[]{0x100062010040002UL});
-		public static readonly BitSet _c_wsp_in_defined_as380 = new BitSet(new ulong[]{0x80000000024000UL,0x3UL});
+		public static readonly BitSet _c_wsp_in_defined_as380 = new BitSet(new ulong[]{0x80000000024000UL,0xCUL});
 		public static readonly BitSet _defined_as_operator_in_defined_as385 = new BitSet(new ulong[]{0x80000000024002UL});
 		public static readonly BitSet _c_wsp_in_defined_as389 = new BitSet(new ulong[]{0x80000000024002UL});
 		public static readonly BitSet _alternation_in_elements436 = new BitSet(new ulong[]{0x80000000024002UL});
@@ -6338,27 +6410,27 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		public static readonly BitSet _comment_in_c_nl487 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _CRLF_in_c_nl491 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _COMMENT_in_comment508 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _concatenation_in_alternation522 = new BitSet(new ulong[]{0x8080000000024002UL});
-		public static readonly BitSet _c_wsp_in_alternation526 = new BitSet(new ulong[]{0x8080000000024000UL});
-		public static readonly BitSet _63_in_alternation529 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _c_wsp_in_alternation531 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _concatenation_in_alternation534 = new BitSet(new ulong[]{0x8080000000024002UL});
+		public static readonly BitSet _concatenation_in_alternation522 = new BitSet(new ulong[]{0x80000000024002UL,0x2UL});
+		public static readonly BitSet _c_wsp_in_alternation526 = new BitSet(new ulong[]{0x80000000024000UL,0x2UL});
+		public static readonly BitSet _65_in_alternation529 = new BitSet(new ulong[]{0x7D904E2110424220UL,0x10UL});
+		public static readonly BitSet _c_wsp_in_alternation531 = new BitSet(new ulong[]{0x7D904E2110424220UL,0x10UL});
+		public static readonly BitSet _concatenation_in_alternation534 = new BitSet(new ulong[]{0x80000000024002UL,0x2UL});
 		public static readonly BitSet _repetition_in_concatenation560 = new BitSet(new ulong[]{0x80000000024002UL});
-		public static readonly BitSet _c_wsp_in_concatenation564 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
+		public static readonly BitSet _c_wsp_in_concatenation564 = new BitSet(new ulong[]{0x7D904E2110424220UL,0x10UL});
 		public static readonly BitSet _repetition_in_concatenation567 = new BitSet(new ulong[]{0x80000000024002UL});
 		public static readonly BitSet _ASTERISK_in_repetition593 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _number_in_repetition595 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _number_in_repetition595 = new BitSet(new ulong[]{0x7C104A0110400200UL,0x10UL});
 		public static readonly BitSet _element_in_repetition597 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _number_in_repetition634 = new BitSet(new ulong[]{0x20UL});
 		public static readonly BitSet _ASTERISK_in_repetition636 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _number_in_repetition640 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _number_in_repetition640 = new BitSet(new ulong[]{0x7C104A0110400200UL,0x10UL});
 		public static readonly BitSet _element_in_repetition642 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _number_in_repetition662 = new BitSet(new ulong[]{0x20UL});
-		public static readonly BitSet _ASTERISK_in_repetition664 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _ASTERISK_in_repetition664 = new BitSet(new ulong[]{0x7C104A0110400200UL,0x10UL});
 		public static readonly BitSet _element_in_repetition666 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ASTERISK_in_repetition699 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _ASTERISK_in_repetition699 = new BitSet(new ulong[]{0x7C104A0110400200UL,0x10UL});
 		public static readonly BitSet _element_in_repetition701 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _number_in_repetition741 = new BitSet(new ulong[]{0x1C104A0110400200UL,0x4UL});
+		public static readonly BitSet _number_in_repetition741 = new BitSet(new ulong[]{0x7C104A0110400200UL,0x10UL});
 		public static readonly BitSet _element_in_repetition743 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _element_in_repetition785 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _number_val_in_number842 = new BitSet(new ulong[]{0x2UL});
@@ -6368,60 +6440,62 @@ public partial class AbnfAstParser : Antlr.Runtime.Parser
 		public static readonly BitSet _char_val_in_element912 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _num_val_in_element918 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _prose_val_in_element924 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _60_in_group938 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _c_wsp_in_group940 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _alternation_in_group943 = new BitSet(new ulong[]{0x2080000000024000UL});
-		public static readonly BitSet _c_wsp_in_group945 = new BitSet(new ulong[]{0x2080000000024000UL});
-		public static readonly BitSet _61_in_group948 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _66_in_option970 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _c_wsp_in_option972 = new BitSet(new ulong[]{0x1D904E2110424220UL,0x4UL});
-		public static readonly BitSet _alternation_in_option975 = new BitSet(new ulong[]{0x80000000024000UL,0x8UL});
-		public static readonly BitSet _c_wsp_in_option977 = new BitSet(new ulong[]{0x80000000024000UL,0x8UL});
-		public static readonly BitSet _67_in_option980 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _62_in_group938 = new BitSet(new ulong[]{0x7D904E2110424220UL,0x10UL});
+		public static readonly BitSet _c_wsp_in_group940 = new BitSet(new ulong[]{0x7D904E2110424220UL,0x10UL});
+		public static readonly BitSet _alternation_in_group943 = new BitSet(new ulong[]{0x8080000000024000UL});
+		public static readonly BitSet _c_wsp_in_group945 = new BitSet(new ulong[]{0x8080000000024000UL});
+		public static readonly BitSet _63_in_group948 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _68_in_option970 = new BitSet(new ulong[]{0x7D904E2110424220UL,0x10UL});
+		public static readonly BitSet _c_wsp_in_option972 = new BitSet(new ulong[]{0x7D904E2110424220UL,0x10UL});
+		public static readonly BitSet _alternation_in_option975 = new BitSet(new ulong[]{0x80000000024000UL,0x20UL});
+		public static readonly BitSet _c_wsp_in_option977 = new BitSet(new ulong[]{0x80000000024000UL,0x20UL});
+		public static readonly BitSet _69_in_option980 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _bin_val_in_num_val1004 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _dec_val_in_num_val1008 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _hex_val_in_num_val1012 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _case_insensitive_string_in_char_val1028 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _case_sensitive_string_in_char_val1042 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _58_in_case_insensitive_string1064 = new BitSet(new ulong[]{0x400000000000UL});
-		public static readonly BitSet _QUOTED_STRING_in_case_insensitive_string1067 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _59_in_case_sensitive_string1090 = new BitSet(new ulong[]{0x400000000000UL});
-		public static readonly BitSet _QUOTED_STRING_in_case_sensitive_string1092 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SINGLE_QUOTED_STRING_in_case_sensitive_string1107 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1129 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1133 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _DASH_in_bin_val1135 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1139 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1157 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1159 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_bin_val1162 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1164 = new BitSet(new ulong[]{0x4000000000000002UL});
-		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1185 = new BitSet(new ulong[]{0x100002000000000UL});
-		public static readonly BitSet _bin_val_number_in_bin_val1187 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _bin_number_in_bin_val_number1253 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1301 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1305 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _DASH_in_dec_val1307 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1311 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1329 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1331 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_dec_val1334 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1336 = new BitSet(new ulong[]{0x4000000000000002UL});
-		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1357 = new BitSet(new ulong[]{0x100042000000000UL});
-		public static readonly BitSet _dec_val_number_in_dec_val1359 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _dec_number_in_dec_val_number1407 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1457 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1461 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _DASH_in_hex_val1463 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1467 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1485 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1487 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _62_in_hex_val1490 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1492 = new BitSet(new ulong[]{0x4000000000000002UL});
-		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1513 = new BitSet(new ulong[]{0x100042010000000UL});
-		public static readonly BitSet _hex_val_number_in_hex_val1515 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _hex_number_in_hex_val_number1563 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _PROSE_VAL_in_prose_val1617 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _58_in_case_insensitive_string1065 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _60_in_case_insensitive_string1067 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _QUOTED_STRING_in_case_insensitive_string1071 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _59_in_case_sensitive_string1095 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _61_in_case_sensitive_string1097 = new BitSet(new ulong[]{0x400000000000UL});
+		public static readonly BitSet _QUOTED_STRING_in_case_sensitive_string1100 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SINGLE_QUOTED_STRING_in_case_sensitive_string1115 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1137 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1141 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _DASH_in_bin_val1143 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1147 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1165 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1167 = new BitSet(new ulong[]{0x0UL,0x1UL});
+		public static readonly BitSet _64_in_bin_val1170 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1172 = new BitSet(new ulong[]{0x2UL,0x1UL});
+		public static readonly BitSet _BIN_VAL_PREFIX_in_bin_val1193 = new BitSet(new ulong[]{0x100002000000000UL});
+		public static readonly BitSet _bin_val_number_in_bin_val1195 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _bin_number_in_bin_val_number1261 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1309 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1313 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _DASH_in_dec_val1315 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1319 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1337 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1339 = new BitSet(new ulong[]{0x0UL,0x1UL});
+		public static readonly BitSet _64_in_dec_val1342 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1344 = new BitSet(new ulong[]{0x2UL,0x1UL});
+		public static readonly BitSet _DEC_VAL_PREFIX_in_dec_val1365 = new BitSet(new ulong[]{0x100042000000000UL});
+		public static readonly BitSet _dec_val_number_in_dec_val1367 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _dec_number_in_dec_val_number1415 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1465 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1469 = new BitSet(new ulong[]{0x40000UL});
+		public static readonly BitSet _DASH_in_hex_val1471 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1475 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1493 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1495 = new BitSet(new ulong[]{0x0UL,0x1UL});
+		public static readonly BitSet _64_in_hex_val1498 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1500 = new BitSet(new ulong[]{0x2UL,0x1UL});
+		public static readonly BitSet _HEX_VAL_PREFIX_in_hex_val1521 = new BitSet(new ulong[]{0x100042010000000UL});
+		public static readonly BitSet _hex_val_number_in_hex_val1523 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _hex_number_in_hex_val_number1571 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _PROSE_VAL_in_prose_val1625 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _c_nl_in_synpred1_AbnfAst230 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _c_wsp_in_synpred2_AbnfAst440 = new BitSet(new ulong[]{0x2UL});
 	}
